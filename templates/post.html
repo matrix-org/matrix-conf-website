@@ -1,0 +1,115 @@
+{% extends "page.html" %}
+{% block head_extra %}
+{#
+{% if page.summary %}
+<meta name="description" content="{{ page.summary | safe }}">
+{% endif %}
+#}
+
+{%- if page.authors | length > 0 or page.taxonomies.author is undefined -%}
+{{ throw(message="Please put author under the taxonomies area.") }}
+{%- endif -%}
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "{{ page.title }}",
+    "datePublished": "{{ page.date | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% if page.updated %}
+    "dateModified": "{{ page.updated | date(format="%Y-%m-%dT%H:%M+00:00") }}",
+    {% endif %}
+    {% if page.extra.image %}
+    "image": [
+        "{{ page.extra.image }}"
+    ],
+    {% elif section.extra.image %}
+    "image": [
+        "{{ section.extra.image }}"
+    ],
+    {% else %}
+    "image": [
+        "https://matrix.org/blog/img/matrix-logo.png"
+    ],
+    {% endif %}
+    "author": [
+    {% for author in page.taxonomies.author %}
+    {
+        "@type": "Person",
+        "name": "{{ author }}",
+        "url": "{{ config.base_url | safe }}/authors/{{ author | slugify }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
+}
+</script>
+{% endblock head_extra %}
+{% block content %}
+<article class="content post {%- if page.toc %} with-sidebar{% endif %}">
+    <header>
+        <h1>{{ page.title }}</h1>
+        <span>
+            {{ page.date | date(format="%d.%m.%Y %H:%M") }}
+            {% if page.taxonomies.category %}
+            —
+            {% for category in
+            page.taxonomies.category %}<a href="/category/{{ category | slugify }}">{{ category }}</a>{% if not
+            loop.last %}, {% endif %}{% endfor %}
+            {% endif %}
+            —
+            {% for author in page.taxonomies.author %}<a
+                href="/author/{{ author | default (value=['unknown author']) | slugify }}">{{ author | default
+                (value=["unknown author"]) }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </span>
+        {% if page.updated %}
+        <br><small>Last update: {{ page.updated | date(format="%d.%m.%Y %H:%M") }}</small>
+        {% endif %}
+    </header>
+    <div class="post-main">
+        <div class="post-content">
+            {{ page.content | safe | markdown | safe }}
+            <div class="callout">
+                <div class="left-col">
+                    <h2>The Foundation needs you</h2>
+                </div>
+                <div class="right-col">
+                    <p>
+                        The Matrix.org Foundation is a non-profit and only relies
+                        on donations to operate. Its core mission is to maintain
+                        the Matrix Specification, but it does much more than that.
+                    </p>
+                    <p>
+                        It maintains the matrix.org homeserver and hosts several
+                        bridges for free. It fights for our collective rights to
+                        digital privacy and dignity.
+                    </p>
+                    <a class="call-to-action plausible-event-name=BlogPostCtaSupportUs" href="/support">Support us</a>
+                </div>
+            </div>
+        </div>
+        {% if page.toc %}
+        <aside>
+            <h3>Post Contents</h3>
+
+            <ul style="list-style: none; padding-left: 0px;">
+                {% for h1 in page.toc %}
+                <li>
+                    <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                    {% if h1.children %}
+                    <ul>
+                        {% for h2 in h1.children %}
+                        <li>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </aside>
+        {% endif %}
+    </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,15 @@
+header = [
+    { title = "About", href="/about" },
+    { title = "Attend", href="/attend" }, 
+    { title = "Sponsor", href="/sponsor" },
+    { title = "Program", href="/program" },
+    { title = "Register", href = "/register", primary = true }
+]
+
+footer_internal = [
+#    { title = "Donate", href = "/support" },
+]
+
+footer_external = [
+#    { image = "github.svg", alt = "GitHub", href = "https://github.com/matrix-org" },
+]
