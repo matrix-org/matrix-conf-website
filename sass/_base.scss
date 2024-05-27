@@ -1,5 +1,5 @@
 :root {
-    --page-max-width: 62rem;
+    --page-max-width: 70rem;
     --page-with-toc-max-width: 81rem;
     --navbar-height: 5.937rem;
 
@@ -365,6 +365,17 @@ a>code {
             border-color: var(--accent-color);
             background-color: #fff;
             color: var(--accent-color);
+        }
+    }
+
+    &.light-bg {
+        border-color: #fff;
+        background-color: #fff;
+        color: #000;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
         }
     }
 }
