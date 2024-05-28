@@ -1,0 +1,129 @@
+#sponsor-content {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+        padding: 0.5rem;
+    }
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #000;
+        background-image: url("/assets/frontpage/hero-bg.svg");
+        background-size: cover;
+        min-height: 400px;
+
+        color: #fff;
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            place-content: end space-between;
+            gap: 40px;
+
+            .intro {
+                h1 {
+                    margin: 0;
+                    font-weight: 700;
+                    font-size: 64px;
+                    line-height: 1;
+                    color: #fff;
+                }
+
+                p {
+                    margin-top: 8px;
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+
+            .info {
+                background-color: #181A1F;
+                border: 1px solid #656C76;
+                border-radius: 16px;
+                padding: 12px 24px;
+                height: fit-content;
+                margin-block-start: auto;
+
+                line-height: 1;
+
+                p {
+                    margin: 0;
+                }
+
+                .date {
+                    color: #fff;
+                    font-size: 32px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    padding-block-end: 4px;
+                }
+
+                .location {
+                    color: #959595;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    text-align: right;
+                }
+            }
+
+            .cta-row {
+                justify-content: start;
+            }
+        }
+
+        .cta-row {
+            margin-inline-end: auto;
+        }
+    }
+
+    #benefits {
+        padding-block: 60px;
+
+        .intro {
+            max-width: 800px;
+            margin-inline: auto;
+            margin-block-end: 40px;
+            text-align: center;
+
+            h2 {
+                font-size: 40px;
+                margin-block: 0 20px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.5;
+            }
+        }
+
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+
+            .benefit-card {
+                border: 1px solid #D2D2D2;
+                border-radius: 16px;
+                padding: 24px;
+                width: 350px;
+
+                h3 {
+                    text-align: center;
+                    font-size: 20px;
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    text-align: center;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+}
