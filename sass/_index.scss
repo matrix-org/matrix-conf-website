@@ -1,19 +1,10 @@
 #index-content {
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        max-width: var(--page-max-width);
-        margin-inline: auto;
-        padding: 0.5rem;
-    }
-
     #hero {
         h1 {
             margin: 0;
             text-transform: uppercase;
             font-weight: 700;
-            font-size: 80px;
+            font-size: 5rem;
             line-height: 1;
             color: #fff;
         }

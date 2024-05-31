@@ -24,24 +24,29 @@
             flex-direction: row;
             place-content: end space-between;
             gap: 40px;
+            flex-wrap: wrap;
 
             .intro {
+                flex: 3;
+
                 h1 {
                     margin: 0;
                     font-weight: 700;
-                    font-size: 64px;
+                    font-size: 4rem;
                     line-height: 1;
                     color: #fff;
                 }
 
                 p {
                     margin-top: 8px;
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     line-height: 1.5;
                 }
             }
 
             .info {
+                flex: 1;
+                max-width: fit-content;
                 background-color: #181A1F;
                 border: 1px solid #656C76;
                 border-radius: 16px;
@@ -57,7 +62,7 @@
 
                 .date {
                     color: #fff;
-                    font-size: 32px;
+                    font-size: 2rem;
                     text-transform: uppercase;
                     font-weight: 700;
                     padding-block-end: 4px;
@@ -65,14 +70,10 @@
 
                 .location {
                     color: #959595;
-                    font-size: 20px;
+                    font-size: 1.25rem;
                     text-transform: uppercase;
                     text-align: right;
                 }
-            }
-
-            .cta-row {
-                justify-content: start;
             }
         }
 

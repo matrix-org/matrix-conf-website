@@ -23,7 +23,7 @@
 
 html {
     scroll-snap-type: y proximity;
-    scroll-padding-top: var(--navbar-height); // obtained by fine tuning
+    scroll-padding-top: var(--navbar-height);
     scroll-behavior: smooth;
 }
 
@@ -82,25 +82,6 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-.content {
-    width: 100%;
-    max-width: var(--page-max-width);
-
-    img {
-        height: auto;
-        max-height: 40rem;
-        max-width: 100%;
-    }
-
-    video {
-        max-height: 40rem;
-        max-width: 100%;
-    }
-}
-
-.content.with-sidebar {
-    max-width: var(--page-with-toc-max-width);
-}
 
 .site-footer {
     position: relative;
@@ -193,56 +174,6 @@ pre table {
     border-collapse: collapse;
 }
 
-/* The black block on pages at the top. */
-.page-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-inline: 5.625rem;
-
-    @media (max-width: 767px) {
-        padding-inline: 2rem;
-    }
-
-    padding-bottom: calc(var(--navbar-height)/2);
-
-    min-height: var(--page-header-height);
-    background-color: #000000;
-    overflow: hidden;
-
-    background-image: url(/assets/page-header-bg.svg);
-    background-size: 90% 100%;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-
-    @media (max-width: 767px) {
-        background-size: 250% 100%;
-        background-position-x: -533px;
-    }
-
-    .hero-block {
-        h1 {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 2.8rem;
-            line-height: 120%;
-            color: #FFFFFF;
-        }
-
-        p {
-            font-style: normal;
-            font-size: 1.4rem;
-            line-height: 120%;
-
-            display: flex;
-            align-items: center;
-
-            color: #FFFFFF;
-            word-wrap: normal;
-        }
-    }
-}
-
 :not(pre)>code {
     color: #f54029;
     border: 1px solid #f54029;
@@ -253,93 +184,6 @@ pre table {
 a>code {
     border-color: var(--color-link);
     color: var(--color-link);
-}
-
-.page_card {
-    background-color: #000;
-    border-radius: 16px;
-    background-image: url("/assets/frontpage/hero_dancing_lines.svg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 1rem;
-
-    max-width: 23rem;
-
-    .wrapper {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .card_content {
-        color: #fff;
-
-        h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            padding: 0;
-            margin: 0 0 1rem 0;
-        }
-
-        p {
-            font-size: .9rem;
-        }
-    }
-
-    .arrow {
-        background-image: url("/assets/down-arrow.svg");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        width: 3rem;
-        height: 3rem;
-        margin: auto 0 auto .5rem;
-        transform: rotate(-90deg);
-        filter: invert(1);
-    }
-}
-
-.youtube_placeholder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    aspect-ratio: 16/9;
-    width: 100%;
-    background-color: #333;
-
-    div {
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-        padding: 1.5rem;
-        gap: 1.5rem;
-
-        img {
-            margin-inline: auto;
-        }
-
-        p {
-            max-width: 30rem;
-            text-align: center;
-            margin-inline: auto;
-        }
-
-        button {
-            max-width: fit-content;
-            margin-inline: auto;
-            padding: .5rem 1rem;
-            border-radius: 9999px;
-            background-color: #fff;
-            border: 1px solid transparent;
-            color: #000;
-            cursor: pointer;
-
-            &:hover {
-                border: 1px solid #fff;
-                color: #fff;
-                background-color: #333;
-            }
-        }
-    }
 }
 
 .cta {
