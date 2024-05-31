@@ -1,0 +1,119 @@
+#attend-content {
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        max-width: var(--page-max-width);
+        margin-inline: auto;
+        padding: 60px 0.5rem;
+
+        h2 {
+            margin-block-start: 0;
+        }
+
+        img {
+            border-radius: 16px;
+        }
+    }
+
+    #hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #000;
+        background-image: url("/assets/frontpage/hero-bg.svg");
+        background-size: cover;
+        min-height: 400px;
+
+        color: #fff;
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            place-content: end space-between;
+            gap: 40px;
+
+            .intro {
+                h1 {
+                    margin: 0;
+                    font-weight: 700;
+                    font-size: 64px;
+                    line-height: 1;
+                    color: #fff;
+                }
+
+                p {
+                    margin-top: 8px;
+                    font-size: 20px;
+                    line-height: 1.5;
+                }
+            }
+
+            .info {
+                background-color: #181A1F;
+                border: 1px solid #656C76;
+                border-radius: 16px;
+                padding: 12px 24px;
+                height: fit-content;
+                margin-block-start: auto;
+
+                line-height: 1;
+
+                p {
+                    margin: 0;
+                }
+
+                .date {
+                    color: #fff;
+                    font-size: 32px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    padding-block-end: 4px;
+                }
+
+                .location {
+                    color: #959595;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    text-align: right;
+                }
+            }
+
+            .cta-row {
+                justify-content: start;
+            }
+        }
+
+        .cta-row {
+            margin-inline-end: auto;
+        }
+    }
+
+    #health-and-safety {
+        .content-wrapper {
+            gap: 0;
+        }
+
+        .float-end {
+            @media (min-width: 850px) {
+                float: inline-end;
+                margin-inline-start: 40px;
+            }
+        }
+    }
+
+    #getting-there {
+        background-color: #F5F5F5;
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 40px;
+
+            &.reverse {
+                flex-wrap: wrap-reverse;
+            }
+        }
+    }
+}
