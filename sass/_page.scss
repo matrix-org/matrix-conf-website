@@ -52,6 +52,10 @@
 
         color: #fff;
 
+        .content-wrapper {
+            gap: 40px;
+        }
+
         .main {
             display: flex;
             flex-direction: row;
