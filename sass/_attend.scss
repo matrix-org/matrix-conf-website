@@ -9,8 +9,12 @@
         }
     }
 
+    .blurb-and-image:not(:first-child):not(:last-child) {
+        margin-block: 0;
+    }
+
     #health-and-safety {
-        .content-wrapper {
+        .content {
             gap: 0;
         }
 
