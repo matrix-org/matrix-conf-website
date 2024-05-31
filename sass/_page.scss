@@ -6,10 +6,29 @@
         max-width: var(--page-max-width);
         margin-inline: auto;
         padding: 0.5rem;
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+
+            &.blurb-and-image>*:first-child {
+                flex: 1 1 300px;
+            }
+
+            &.blurb-and-image>*:nth-child(2) {
+                flex: 1 1 300px;
+            }
+
+            img {
+                align-self: center;
+            }
+        }
     }
 
     img {
         max-width: 100%;
+        height: auto;
         border-radius: 16px;
     }
 
