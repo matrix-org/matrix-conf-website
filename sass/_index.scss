@@ -6,7 +6,7 @@
             margin: 0;
             text-transform: uppercase;
             font-weight: 700;
-            font-size: 5rem;
+            font-size: clamp(3rem, 13vw, 5rem);
             line-height: 1;
             color: #fff;
         }
