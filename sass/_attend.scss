@@ -38,6 +38,30 @@
             &.reverse {
                 flex-wrap: wrap-reverse;
             }
+
+            .public-transport {
+                padding: 0.2em;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+
+            .public-transport-round {
+                border-radius: 1em;
+            }
+
+            .public-transport-bus {
+                background-color: #A5027d;
+            }
+
+            .public-transport-s-bahn {
+                background-color: #008D4F;
+                padding-inline: 0.4em;
+            }
+
+            .public-transport-u-bahn {
+                background-color: #004F8D;
+                padding-inline: 0.4em;
+            }
         }
     }
 }
