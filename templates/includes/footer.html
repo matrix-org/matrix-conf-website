@@ -1,15 +1,26 @@
-<footer class="site-footer">
-    <div class="internal-links">
-        {% for link in navigation.footer_internal %}
-        <a href="{{ link.href }}">{{ link.title }}</a>
-        {% endfor %}
+<footer id="site-footer">
+    <div class="content-wrapper">
+        <section>
+            <h2>Information</h2>
+            <ul>
+                <li><a href="">Venue & Travel</a></li>
+                <li><a href="">Health & Safety</a></li>
+                <li><a href="">Register</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <ul>
+                <li><a href="">Mail</a></li>
+                <li><a href="">Mastodon</a></li>
+                <li><a href="">LinkedIn</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Legal</h2>
+            <ul>
+                <li><a href="">Privacy Policy</a></li>
+            </ul>
+        </section>
     </div>
-    <div class="external-links">
-        <div>
-            {% for link in navigation.footer_external %}
-            <a href="{{ link.href }}" rel="me"><img src="/assets/{{ link.image }}" alt="{{ link.alt }}"></a>
-            {% endfor %}
-        </div>
-    </div>
-    <p><a href="/legal/copyright-notice">Copyright Notice</a></p>
 </footer>
