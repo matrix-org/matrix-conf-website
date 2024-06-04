@@ -172,10 +172,14 @@ a>code {
 
 .cta-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     column-gap: 1rem;
     row-gap: .5rem;
+    @media screen and (max-width: 767px) {
+        width: -webkit-fill-available;
+        width: -moz-available;
+    }
 }
 
 .cta-col {
