@@ -4,7 +4,9 @@
         flex-direction: column;
         max-width: var(--page-max-width);
         margin-inline: auto;
-        padding-inline: 0.5rem;
+        padding-inline: 1rem;
+        width: -webkit-fill-available;
+        width: -moz-available;
 
         .content {
             display: flex;
@@ -83,6 +85,7 @@
 
             .info {
                 flex: 1;
+                min-width: fit-content;
                 max-width: fit-content;
                 background-color: #181A1F;
                 border: 1px solid #656C76;
@@ -90,7 +93,6 @@
                 padding: 12px 24px;
                 height: fit-content;
                 margin-block-start: auto;
-
                 line-height: 1;
 
                 p {
