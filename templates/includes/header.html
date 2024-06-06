@@ -29,7 +29,7 @@
             </div>
         </div>
         {% else %}
-        <a href="{{ link.href }}" class="{% if link.primary %}cta light-bg{% endif %}
+        <a href="{{ link.href }}" class="{% if link.primary %}primary cta light-bg{% endif %}
             {{ util::current_class(if_path_starts_with=link.href) }}">
             {{ link.title }}
         </a>
