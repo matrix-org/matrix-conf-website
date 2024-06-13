@@ -7,4 +7,17 @@
         background-color: #000;
         color: #fff;
     }
+
+    #tickets {
+        h2 {
+            text-align: center;
+        }
+
+        .pretix-widget-wrapper {
+            max-width: 700px;
+            margin-inline: auto;
+        }
+
+        padding-block: 2rem 3rem;
+    }
 }
