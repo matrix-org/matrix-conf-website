@@ -20,7 +20,7 @@
                 z-index: 200;
                 place-items: center end;
                 margin-block: 2rem;
-                padding-inline-end: clamp(0px, 20vw, 40px);
+                padding-inline-end: clamp(0px, 10vw, 40px);
 
                 @media (max-width: 850px) {
                     place-items: center;
@@ -42,7 +42,7 @@
                 z-index: 0;
                 background-color: #000;
                 padding-block: 2rem;
-                padding-inline: clamp(0px, 20vw, 40px);
+                padding-inline: clamp(0px, 10vw, 40px);
                 place-content: center start;
 
                 .hero-text {
