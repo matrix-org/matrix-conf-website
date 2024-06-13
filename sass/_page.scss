@@ -43,81 +43,58 @@
     }
 
     #hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: #000;
-        background-image: url("/assets/frontpage/hero-bg.svg");
-        background-size: cover;
-        min-height: 400px;
-        padding-block: 2em;
+        background-image: url('/assets/pattern.svg');
+        background-repeat: repeat;
+        position: relative;
 
-        color: #fff;
+        .hero-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
-        .content-wrapper {
-            gap: 40px;
-        }
-
-        .main {
-            display: flex;
-            flex-direction: row;
-            place-content: end space-between;
-            gap: 40px;
-            flex-wrap: wrap;
-
-            .intro {
-                flex: 3;
-
-                h1 {
-                    margin: 0;
-                    font-weight: 700;
-                    font-size: 4rem;
-                    line-height: 1;
-                    color: #fff;
-                }
-
-                p {
-                    margin-top: 8px;
-                    font-size: 1.25rem;
-                    line-height: 1.5;
-                }
+            @media (max-width: 850px) {
+                grid-template-columns: 1fr;
             }
 
-            .info {
-                flex: 1;
-                min-width: fit-content;
-                max-width: fit-content;
-                background-color: #181A1F;
-                border: 1px solid #656C76;
-                border-radius: 16px;
-                padding: 12px 24px;
-                height: fit-content;
-                margin-block-start: auto;
-                line-height: 1;
+            margin-inline: auto;
 
-                p {
-                    margin: 0;
-                }
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
 
-                .date {
-                    color: #fff;
-                    font-size: 2rem;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    padding-block-end: 4px;
-                }
+            h1,
+            p {
+                color: #fff;
+            }
 
-                .location {
-                    color: #959595;
-                    font-size: 1.25rem;
-                    text-transform: uppercase;
-                    text-align: right;
+            .hero-text-wrapper {
+                display: grid;
+                z-index: 0;
+                background-color: #000;
+                padding-block: 2rem;
+                padding-inline: clamp(0px, 10vw, 40px);
+                place-content: center end;
+
+                .hero-text {
+                    max-width: 500px;
+
+                    h2 {
+                        margin-block-start: 0;
+                        font-size: 2.5rem;
+                        font-weight: 400;
+                        color: #A3AAB4;
+                        line-height: 1.2;
+                    }
+
+                    p {
+                        color: #fff;
+                    }
+
+                    .cta-row {
+                        justify-content: start;
+                    }
                 }
             }
-        }
-
-        .cta-row {
-            margin-inline-end: auto;
         }
     }
 }
