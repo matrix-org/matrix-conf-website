@@ -2,6 +2,6 @@ header = [
     { title = "About", href="/about" },
     { title = "Attend", href="/attend" }, 
     { title = "Sponsor", href="/sponsor" },
-    { title = "Programme", href="/programme" },
+    { title = "Programme", href="https://cfp.matrix.org" },
     { title = "Register", href = "/register", primary = true }
 ]
