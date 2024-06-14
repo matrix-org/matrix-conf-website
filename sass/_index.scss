@@ -42,7 +42,7 @@
                 z-index: 0;
                 background-color: #000;
                 padding-block: 2rem;
-                padding-inline: clamp(0px, 10vw, 40px);
+                padding-inline: clamp(1rem, 5vw, 40px);
                 place-content: center start;
 
                 .hero-text {
