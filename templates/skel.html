@@ -27,7 +27,7 @@
     {% elif section.extra.meta_description %}
     {% set og_description = section.extra.meta_description %}
     {% else %}
-    {% set og_description = "Matrix, the open protocol for secure decentralised communications" %}
+    {% set og_description = "The Matrix Conference is coming to Berlin, Germany on September 19–22, 2024." %}
     {% endif %}
     <meta property="og:description" content="{{ og_description }}" />
     <meta name="description" content="{{ og_description }}" />
@@ -40,7 +40,7 @@
     {% endif %}
     <title>
         {%- if config.mode == "serve" -%}&#x1F6E0;&#xFE0F; {% endif -%}
-        {%- block html_title %}Matrix Conf{% endblock html_title -%}
+        {%- block html_title %}The Matrix Conference{% endblock html_title -%}
     </title>
     <link rel="shortcut icon" href="/assets/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
