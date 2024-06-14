@@ -2,6 +2,7 @@
     #hero {
         background-image: url('/assets/pattern.svg');
         background-repeat: repeat;
+        background-position: center;
         position: relative;
 
         .hero-wrapper {
@@ -30,7 +31,6 @@
                 .logo-bg {
                     display: grid;
                     background-color: #000;
-                    aspect-ratio: 1;
                     place-content: center;
 
                     max-width: 80%;
@@ -49,15 +49,18 @@
                     max-width: 600px;
 
                     h2 {
-                        margin-block-start: 0;
+                        margin-block: 0;
                         font-size: 2.5rem;
-                        font-weight: 400;
+                        font-weight: 700;
                         color: #A3AAB4;
                         line-height: 1.2;
                     }
 
                     p {
                         color: #fff;
+                        font-weight: 300;
+                        margin-block: 1.5rem;
+                        line-height: 1.4;
                     }
 
                     .cta-row {
