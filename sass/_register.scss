@@ -16,6 +16,14 @@
         .pretix-widget-wrapper {
             max-width: var(--page-max-width);
             margin-inline: auto;
+
+            .pretix-widget-item-title {
+                font-size: 1.125rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
         }
 
         padding-block: 2rem 3rem;
