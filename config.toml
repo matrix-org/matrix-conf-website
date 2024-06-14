@@ -1,8 +1,8 @@
 # The URL the site will be built for
 base_url = "https://2024.matrix.org"
 
-title = "Matrix Conference 2024"
-description = "Matrix Conference - 2024"
+title = "The Matrix Conference 2024"
+description = "The Matrix Conference is coming to Berlin, Germany on September 19–22, 2024."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
