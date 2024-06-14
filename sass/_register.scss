@@ -14,10 +14,14 @@
         }
 
         .pretix-widget-wrapper {
-            max-width: 700px;
+            max-width: var(--page-max-width);
             margin-inline: auto;
         }
 
         padding-block: 2rem 3rem;
+    }
+
+    .cta-row {
+        justify-content: start;
     }
 }
