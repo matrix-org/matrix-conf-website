@@ -1,9 +1,6 @@
 #index-content {
     #hero {
-        background-image: url('/assets/pattern.svg');
-        background-repeat: repeat;
-        background-position: center;
-        position: relative;
+         background-color: #000;
 
         .hero-wrapper {
             display: grid;
@@ -20,20 +17,20 @@
                 flex: 1 300px;
                 z-index: 200;
                 place-items: center end;
-                margin-block: 2rem;
-                padding-inline-end: clamp(0px, 10vw, 40px);
+                margin-block: var(--pattern-cell-size);
+                padding-inline-end: clamp(0px, 10vw, var(--pattern-cell-size));
 
                 @media (max-width: 850px) {
                     place-items: center;
-                    padding-inline: 1rem;
+                    padding-inline: 0;
                 }
 
                 .logo-bg {
                     display: grid;
                     background-color: #000;
                     place-content: center;
+                    max-width: calc(8*var(--pattern-cell-size));
 
-                    max-width: 80%;
                 }
             }
 
