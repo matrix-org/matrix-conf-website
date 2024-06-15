@@ -12,27 +12,31 @@
 
             margin-inline: auto;
 
-            .logo-wrapper {
-                display: grid;
-                flex: 1 300px;
-                z-index: 200;
-                place-items: center end;
-                margin-block: var(--pattern-cell-size);
-                padding-inline-end: clamp(0px, 10vw, var(--pattern-cell-size));
-
-                @media (max-width: 850px) {
-                    place-items: center;
-                    padding-inline: 0;
-                }
-
-                .logo-bg {
+            .pattern-wrapper {
+                background-position: top right;
+ 
+                .logo-wrapper {
                     display: grid;
-                    background-color: #000;
-                    place-content: center;
-                    max-width: calc(8*var(--pattern-cell-size));
+                    flex: 1 300px;
+                    z-index: 200;
+                    place-items: center end;
+                    margin-block: var(--pattern-cell-size);
+                    padding-inline-end: clamp(0px, 10vw, var(--pattern-cell-size));
 
-                    .conference-logo {
-                        border-radius: 0;
+                    @media (max-width: 850px) {
+                        place-items: center;
+                        padding-inline: 0;
+                    }
+
+                    .logo-bg {
+                        display: grid;
+                        background-color: #000;
+                        place-content: center;
+                        max-width: calc(8*var(--pattern-cell-size));
+
+                        .conference-logo {
+                            border-radius: 0;
+                        }
                     }
                 }
             }

@@ -72,8 +72,10 @@
 
                 background-image: url('/assets/pattern.svg');
                 background-repeat: repeat;
-                background-position: top right;
+                background-position: top left;
                 background-size: calc(var(--logo-width-base) / (var(--hero-columns) * 2));
+
+                height: calc(var(--pattern-height) * var(--pattern-cell-size));
 
                 @media (max-width: 850px) {
                     --logo-width-base: 100%;

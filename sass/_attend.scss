@@ -1,4 +1,8 @@
 #attend-content {
+    @media (min-width: 851px) {
+        --pattern-height: 6;
+    }
+
     .content-wrapper {
         h2 {
             margin-block-start: 0;
