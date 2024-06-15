@@ -44,6 +44,7 @@
                 padding-block: 2rem;
                 padding-inline: clamp(1rem, 5vw, 40px);
                 place-content: center start;
+                max-width: calc(var(--page-max-width) / 2);
 
                 .hero-text {
                     max-width: 600px;
