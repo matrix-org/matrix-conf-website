@@ -31,6 +31,9 @@
                     place-content: center;
                     max-width: calc(8*var(--pattern-cell-size));
 
+                    .conference-logo {
+                        border-radius: 0;
+                    }
                 }
             }
 
