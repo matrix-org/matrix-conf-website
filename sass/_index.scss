@@ -1,9 +1,6 @@
 #index-content {
     #hero {
-        background-image: url('/assets/pattern.svg');
-        background-repeat: repeat;
-        background-position: center;
-        position: relative;
+         background-color: #000;
 
         .hero-wrapper {
             display: grid;
@@ -15,25 +12,32 @@
 
             margin-inline: auto;
 
-            .logo-wrapper {
-                display: grid;
-                flex: 1 300px;
-                z-index: 200;
-                place-items: center end;
-                margin-block: 2rem;
-                padding-inline-end: clamp(0px, 10vw, 40px);
-
-                @media (max-width: 850px) {
-                    place-items: center;
-                    padding-inline: 1rem;
-                }
-
-                .logo-bg {
+            .pattern-wrapper {
+                background-position: top right;
+ 
+                .logo-wrapper {
                     display: grid;
-                    background-color: #000;
-                    place-content: center;
+                    flex: 1 300px;
+                    z-index: 200;
+                    place-items: center end;
+                    margin-block: var(--pattern-cell-size);
+                    padding-inline-end: clamp(0px, 10vw, var(--pattern-cell-size));
 
-                    max-width: 80%;
+                    @media (max-width: 850px) {
+                        place-items: center;
+                        padding-inline: 0;
+                    }
+
+                    .logo-bg {
+                        display: grid;
+                        background-color: #000;
+                        place-content: center;
+                        max-width: calc(8*var(--pattern-cell-size));
+
+                        .conference-logo {
+                            border-radius: 0;
+                        }
+                    }
                 }
             }
 
@@ -44,6 +48,7 @@
                 padding-block: 2rem;
                 padding-inline: clamp(1rem, 5vw, 40px);
                 place-content: center start;
+                max-width: calc(var(--page-max-width) / 2);
 
                 .hero-text {
                     max-width: 600px;

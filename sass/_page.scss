@@ -43,15 +43,14 @@
     }
 
     #hero {
-        background-image: url('/assets/pattern.svg');
-        background-repeat: repeat;
-        position: relative;
 
         .hero-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            --hero-columns: 2;
 
             @media (max-width: 850px) {
+                --hero-columns: 1;
                 grid-template-columns: 1fr;
             }
 
@@ -65,6 +64,22 @@
             h1,
             p {
                 color: #fff;
+            }
+
+            .pattern-wrapper {
+                --logo-width-base: var(--page-max-width);
+                --pattern-cell-size: calc(var(--logo-width-base) / (var(--hero-columns) * 10));
+
+                background-image: url('/assets/pattern.svg');
+                background-repeat: repeat;
+                background-position: top left;
+                background-size: calc(var(--logo-width-base) / (var(--hero-columns) * 2));
+
+                height: calc(var(--pattern-height) * var(--pattern-cell-size));
+
+                @media (max-width: 850px) {
+                    --logo-width-base: 100%;
+                }
             }
 
             .hero-text-wrapper {
