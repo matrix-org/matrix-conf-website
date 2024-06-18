@@ -96,7 +96,10 @@
             &.primary {
                 padding-inline: clamp(1em, 3dvw, 2em);
 
+                margin-inline-start: var(--header-padding);
+
                 @media screen and (max-width: 767px) {
+                    margin-inline-start: unset;
                     margin-block: 1.2rem 2.4rem;
                     text-align: center;
                 }
