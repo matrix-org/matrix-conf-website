@@ -1,6 +1,6 @@
 #index-content {
     #hero {
-         background-color: #000;
+        background-color: #000;
 
         .hero-wrapper {
             display: grid;
@@ -14,7 +14,7 @@
 
             .pattern-wrapper {
                 background-position: top right;
- 
+
                 .logo-wrapper {
                     display: grid;
                     flex: 1 300px;
@@ -88,6 +88,10 @@
 
             p:last-of-type {
                 margin-block-end: 1.5em;
+            }
+
+            .cta-row {
+                justify-content: start;
             }
 
             .cta {
