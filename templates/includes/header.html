@@ -29,7 +29,7 @@
             </div>
         </div>
         {% else %}
-        <a href="{{ link.href }}" class="{% if link.primary %}primary cta{% endif %}
+        <a href="{{ link.href }}" class="{% if link.primary %}primary cta plausible-event-name=Navbar+Register{% endif %}
             {{ util::current_class(if_path_starts_with=link.href) }}">
             {{ link.title }}
         </a>
