@@ -2,7 +2,7 @@ header = [
     { title = "About", href="/about" },
     { title = "Attend", href="/attend" }, 
     { title = "Sponsor", href="/sponsor" },
-    { title = "Submit a Proposal", href="https://cfp.matrix.org" },
+    { title = "Schedule", href="/schedule" },
     { title = "Volunteer", href="/volunteer" },
     { title = "Register", href = "/register", primary = true }
 ]

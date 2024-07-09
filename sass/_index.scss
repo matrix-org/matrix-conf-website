@@ -192,71 +192,72 @@
             }
         }
     }
+}
 
-    #programme {
-        background-color: #F5F5F5;
-        padding-block: 60px;
+// #programme is at the root to share the style between the index and /schedule
+#programme {
+    background-color: #F5F5F5;
+    padding-block: 60px;
 
-        .content {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
 
-            h2 {
-                font-size: 2.5rem;
-                text-align: center;
-                margin: 0;
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        table {
+            display: table;
+            table-layout: fixed;
+            border-spacing: 0;
+            margin-inline: auto;
+            max-width: fit-content;
+
+            --border: 1px solid #D2D2D2;
+            --border-radius: 16px;
+
+            td {
+                background: #fff;
+                border: var(--border);
+                border-bottom: unset;
+                padding: .2em 1em;
             }
 
-            table {
-                display: table;
-                table-layout: fixed;
-                border-spacing: 0;
-                margin-inline: auto;
-                max-width: fit-content;
+            td:first-of-type {
+                font-weight: 700;
+                border-right: unset;
+            }
 
-                --border: 1px solid #D2D2D2;
-                --border-radius: 16px;
-
-                td {
-                    background: #fff;
-                    border: var(--border);
-                    border-bottom: unset;
-                    padding: .2em 1em;
-                }
-
+            tr:first-of-type {
                 td:first-of-type {
-                    font-weight: 700;
-                    border-right: unset;
+                    border-top-left-radius: var(--border-radius);
                 }
 
-                tr:first-of-type {
-                    td:first-of-type {
-                        border-top-left-radius: var(--border-radius);
-                    }
-
-                    td:last-of-type {
-                        border-top-right-radius: var(--border-radius);
-                    }
-                }
-
-                tr:last-of-type {
-                    td:first-of-type {
-                        border-bottom-left-radius: var(--border-radius);
-                        border-bottom: var(--border);
-                    }
-
-                    td:last-of-type {
-                        border-bottom-right-radius: var(--border-radius);
-                        border-bottom: var(--border);
-                    }
+                td:last-of-type {
+                    border-top-right-radius: var(--border-radius);
                 }
             }
 
-            .cta {
-                display: inline-block;
-                margin-inline: auto;
+            tr:last-of-type {
+                td:first-of-type {
+                    border-bottom-left-radius: var(--border-radius);
+                    border-bottom: var(--border);
+                }
+
+                td:last-of-type {
+                    border-bottom-right-radius: var(--border-radius);
+                    border-bottom: var(--border);
+                }
             }
+        }
+
+        .cta {
+            display: inline-block;
+            margin-inline: auto;
         }
     }
 }
