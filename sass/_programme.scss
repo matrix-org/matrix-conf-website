@@ -1,4 +1,8 @@
 #programme-content {
+    @media (min-width: 851px) {
+        --pattern-height: 6;
+    }
+
     #programme {
         overflow-x: scroll;
     }
