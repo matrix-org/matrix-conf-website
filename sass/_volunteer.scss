@@ -1,0 +1,9 @@
+#volunteer-content {
+    h2 {
+        margin-block: 1em 0.2em;
+    }
+
+    h2:first-of-type {
+        margin-block-start: 0;
+    }
+}
