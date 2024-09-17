@@ -80,11 +80,17 @@
         padding: 1em;
         margin: .5em;
 
+        /* Allows centering of link button */
+        display: flex;
+        flex-direction: column;
+
         li {
             font-size: 1rem;
         }
 
         .link-container {
+
+            margin-top: auto;
             display: grid;
             place-items: end center;
         }
