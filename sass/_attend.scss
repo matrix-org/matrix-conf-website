@@ -70,9 +70,36 @@
     }
 }
 
+.restaurants-grid-wrapper {
+    /* Centers the grid properly */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+}
+
 .restaurants-grid {
-    display: grid;
+
+    /* Resize grid responsively to size of screen */
+    min-width: 10em;
+    display: block;
+
+    @media screen and (min-width: 600px) {
+        display: grid;
+        min-width: 20em;
+    }
+
+    @media screen and (min-width: 900px) {
+        display: grid;
+        min-width: 40em;
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: grid;
+        min-width: 60em;
+    }
+
     grid-template-columns: repeat(auto-fit, 250px);
+
 
     .restaurant {
         border: 1px solid #dedede;
@@ -80,11 +107,17 @@
         padding: 1em;
         margin: .5em;
 
+        /* Allows centering of link button */
+        display: flex;
+        flex-direction: column;
+
         li {
             font-size: 1rem;
         }
 
         .link-container {
+
+            margin-top: auto;
             display: grid;
             place-items: end center;
         }
