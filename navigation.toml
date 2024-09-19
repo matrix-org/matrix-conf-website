@@ -4,5 +4,5 @@ header = [
     { title = "Sponsor", href="/sponsor" },
     { title = "Schedule", href="/schedule" },
     { title = "Volunteer", href="/volunteer" },
-    { title = "Register", href = "/register", primary = true }
+    { title = "Watch", href = "/watch", primary = true }
 ]
