@@ -15,13 +15,15 @@
             </div>
             <div class="hero-text-wrapper">
                 <div class="hero-text">
-                    <h1>19-22 September<br />Berlin, Germany</h1>
+                    <h1>{{ config.extra.short_date }}<br />{{ config.extra.short_location }}</h1>
                     <p>Matrix is first and foremost built by its community. Learn what everyone is working on, share or
                         hack
                         on
                         projects, or hire experienced members.</p>
                     <div class="cta-row">
-                        <a href="/watch" class="cta primary plausible-event-name=Index+Hero+Watch">Watch the talks</a>
+                        <a href="{{ config.extra.hero_button_url }}"
+                            class="cta primary plausible-event-name={{ config.extra.hero_button_event }}">
+                            {{ config.extra.hero_button_title }}</a>
                         <a href="/sponsor" class="cta plausible-event-name=Index+Hero+Sponsor">Sponsor</a>
                     </div>
                 </div>
