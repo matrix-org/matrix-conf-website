@@ -29,11 +29,14 @@
             </div>
         </div>
         {% else %}
-        <a href="{{ link.href }}" class="{% if link.primary %}primary cta plausible-event-name=Navbar+Register{% endif %}
-            {{ util::current_class(if_path_starts_with=link.href) }}">
+        <a href="{{ link.href }}" class="{{ util::current_class(if_path_starts_with=link.href) }}">
             {{ link.title }}
         </a>
         {% endif %}
         {% endfor %}
+        <a href="{{ config.extra.hero_button_url }}" class="primary cta plausible-event-name={{ config.extra.hero_button_event }}
+        {{ util::current_class(if_path_starts_with=config.extra.hero_button_url) }}">
+            {{ config.extra.hero_button_callout }}
+        </a>
     </nav>
 </header>
