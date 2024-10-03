@@ -1,39 +1,43 @@
 {% extends "page.html" %}
 {% block content %}
 <div id="watch-content" class="page-content">
-    <div class="content-wrapper">
-        <h2>Participate in the Q&A</h2>
-
-        <p>You can find the YouTube embeds for the various rooms of The Matrix Conference 2024 here for your
-            convenience.</p>
-        <p>You can participate in the Q&A sessions remotely as well either by joining the Matrix rooms for each
-            conference room!</p>
-        <ul>
-            <li><a href="https://matrix.to/#/#matrix-conference-2024:matrix.org">Matrix Space</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab3:matrix.org">LAB 3 Matrix room</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab4:matrix.org">LAB 4 Matrix room</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab-green:matrix.org">LAB Green Matrix room</a></li>
-        </ul>
-
-        <h2>LAB 3 talks</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/y67eHtWDn4I" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-        <h2>LAB 4 talks</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/rQM3YCvGxuA" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-        <h2>LAB Green talks</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/gXmnjMeq8RU" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div id="pills-row">
+        <div class="pill matrix">Matrix</div>
+        <div class="pill matrix-in-practice">Matrix in Patrice</div>
+        <div class="pill public-sector">Pubic Sector</div>
+        <div class="pill matrix-in-the-wild">Matrix in The Wild</div>
+        <div class="pill matrix-internals">Matrix Internals</div>
+        <div class="pill social-impact">Social Impact</div>
+        <div class="pill room">LAB3</div>
+        <div class="pill room">LAB4</div>
+        <div class="pill room">LAB Green</div>
+    </div>
+    <div class="day">
+        <div class="date-separator">
+            <div class="date">Friday 20th September</div>
+            <div class="line"></div>
+        </div>
+        <div class="talks-grid">
+            <div class="talk-card">
+                <div class="thumbnail-container">
+                    <img src="" alt="">
+                </div>
+                <div class="info-container">
+                    <h2>Opening & Welcome</h2>
+                    <p>The Matrix Foundation and Community welcome you to The Matrix Conference</p>
+                    <div class="speaker">
+                        <div class="mugshot-container">
+                            <img src="" alt="">
+                        </div>
+                        <span class="speaker-name">Josh Simmons</span>
+                    </div>
+                    <div class="talk-pills">
+                        <div class="pill matrix">Matrix</div>
+                        <div class="pill room">LAB3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
