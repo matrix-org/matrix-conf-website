@@ -7,9 +7,7 @@
         <h2>{{ title }}</h2>
         <p>{{ summary }}</p>
         <div class="speaker">
-            {% for speaker in speakers %}
-            <span class="speaker-name">{{ speaker }}</span>
-            {% endfor %}
+            {{ speakers | join(sep=", ") }}
         </div>
         <div class="talk-pills">
             <div class="pill {{ track | slugify }}">{{ track | title }}</div>

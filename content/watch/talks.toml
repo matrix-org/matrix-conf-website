@@ -121,7 +121,7 @@ title = "Running a large-scale matrix messenger at university medical center mai
 track = "Public Sector"
 summary = "This talk explores the deployment of a large-scale Matrix-based messenger at University Medical Center Mainz powered by IBM Consulting. Launched in 2020 as part of a hackathon, UMessenger is now the central communication tool at University Medical Center Mainz.   We will delve into the specific requirements of the medical centre, such as compliance with health data regulations, the need for rapid and reliable communication among healthcare professionals, and integration with existing IT infrastructure.  The core of the presentation focuses on the practical aspects of the deployment, the day-to-day operations, and lessons learned in four years of operation."
 speakers = [
-      "Hans H üppelshäuser"
+      "Hans Hüppelshäuser"
     ]
 room = "LAB 4"
 

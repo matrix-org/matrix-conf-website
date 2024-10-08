@@ -111,22 +111,7 @@
             }
 
             .speaker {
-                display: flex;
-                gap: 8px;
-                align-items: center;
-
-                .portrait-container {
-                    flex: none;
-                    background-color: #D9D9D9;
-                    height: 1.5rem;
-                    width: 1.5rem;
-                    border-radius: 50%;
-                    overflow: clip;
-                }
-
-                .speaker-name {
-                    font-size: .75rem;
-                }
+                font-size: .75rem;
             }
 
             .talk-pills {
