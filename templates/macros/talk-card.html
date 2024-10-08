@@ -1,0 +1,20 @@
+{% macro talk_card(speakers, title, summary, thumbnail, track, room) %}
+<div class="talk-card {{ track | slugify }}">
+    <div class="thumbnail-container">
+        <img src="/watch/{{ title | slugify }}.png" alt="">
+    </div>
+    <div class="info-container">
+        <h2>{{ title }}</h2>
+        <p>{{ summary }}</p>
+        <div class="speaker">
+            {% for speaker in speakers %}
+            <span class="speaker-name">{{ speaker }}</span>
+            {% endfor %}
+        </div>
+        <div class="talk-pills">
+            <div class="pill {{ track | slugify }}">{{ track | title }}</div>
+            <div class="pill room">{{ room }}</div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
-    padding: 80px;
+    padding: clamp(1rem, 5vw, 80px);
 
     #pills-row {
         display: flex;
@@ -101,9 +101,13 @@
             }
 
             p {
+                display: -webkit-inline-box;
                 line-height: 1.4;
                 margin-block: 0;
                 font-size: 1rem;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: clip;
             }
 
             .speaker {
@@ -111,10 +115,11 @@
                 gap: 8px;
                 align-items: center;
 
-                .mugshot-container {
+                .portrait-container {
                     flex: none;
                     background-color: #D9D9D9;
-                    aspect-ratio: 1;
+                    height: 1.5rem;
+                    width: 1.5rem;
                     border-radius: 50%;
                     overflow: clip;
                 }
