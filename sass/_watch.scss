@@ -19,6 +19,10 @@
         padding: 0em .5em;
     }
 
+    #pills-row>.pill {
+        cursor: pointer;
+    }
+
     .pill.selected {
         border-color: currentColor;
     }
