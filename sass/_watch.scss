@@ -93,10 +93,6 @@
         border-radius: 16px;
         overflow: clip;
 
-        &.hidden {
-            display: none;
-        }
-
         .thumbnail-container {
             width: 358px;
             height: 200px;
@@ -136,4 +132,7 @@
         }
     }
 
+    .hidden {
+        display: none;
+    }
 }

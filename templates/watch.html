@@ -4,6 +4,7 @@
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         const onlyDisplay = [];
+        const days = document.querySelectorAll(".day");
         const talkCards = document.querySelectorAll(".talk-card");
 
         function refreshCards() {
@@ -11,7 +12,6 @@
                 if (onlyDisplay.length == 0) {
                     talkCard.classList.remove("hidden");
                 } else {
-                    console.log(onlyDisplay);
                     const talkMatchesFilter = Array.from(talkCard.classList).some((e) => onlyDisplay.includes(e));
 
                     if (talkMatchesFilter) {
@@ -19,6 +19,15 @@
                     } else {
                         talkCard.classList.add("hidden");
                     }
+                }
+            }
+
+            for (const day of days) {
+                const visibleTalks = day.querySelectorAll(".talk-card:not(.hidden)");
+                if (visibleTalks.length == 0) {
+                    day.classList.add("hidden");
+                } else {
+                    day.classList.remove("hidden");
                 }
             }
         }
@@ -31,7 +40,6 @@
                 onlyDisplay.push(trackName);
             }
 
-            console.log(onlyDisplay);
             refreshCards();
         }
 
