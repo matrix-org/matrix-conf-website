@@ -12,8 +12,19 @@
     }
 
     .pill {
+        line-height: 1.5;
+        display: inline-block;
+        border: 2px solid transparent;
         border-radius: 9999px;
         padding: 0em .5em;
+    }
+
+    .pill.selected {
+        border-color: currentColor;
+    }
+
+    .pill.selected.matrix {
+        outline: 1px solid black;
     }
 
     .pill.matrix {
@@ -81,6 +92,10 @@
         border: 1px solid #D2D2D2;
         border-radius: 16px;
         overflow: clip;
+
+        &.hidden {
+            display: none;
+        }
 
         .thumbnail-container {
             width: 358px;

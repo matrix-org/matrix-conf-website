@@ -1,17 +1,61 @@
 {% import "macros/talk-card.html" as talk %}
 {% extends "page.html" %}
+{% block head_extra %}
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const onlyDisplay = [];
+        const talkCards = document.querySelectorAll(".talk-card");
+
+        function refreshCards() {
+            for (const talkCard of talkCards) {
+                if (onlyDisplay.length == 0) {
+                    talkCard.classList.remove("hidden");
+                } else {
+                    console.log(onlyDisplay);
+                    const talkMatchesFilter = Array.from(talkCard.classList).some((e) => onlyDisplay.includes(e));
+
+                    if (talkMatchesFilter) {
+                        talkCard.classList.remove("hidden");
+                    } else {
+                        talkCard.classList.add("hidden");
+                    }
+                }
+            }
+        }
+
+        function toggleFilter(trackName) {
+            const index = onlyDisplay.findIndex((e) => e == trackName);
+            if (index > -1) {
+                onlyDisplay.splice(index, 1);
+            } else {
+                onlyDisplay.push(trackName);
+            }
+
+            console.log(onlyDisplay);
+            refreshCards();
+        }
+
+        const pills = document.querySelectorAll("#pills-row > .pill.track");
+        for (const pill of pills) {
+            const trackName = Array.from(pill.classList).find((e) => e != "pill" && e != "track");
+
+            pill.addEventListener('click', (e) => {
+                pill.classList.toggle("selected");
+                toggleFilter(trackName);
+            });
+        }
+    });
+</script>
+{% endblock %}
 {% block content %}
 <div id="watch-content" class="page-content">
     <div id="pills-row">
-        <div class="pill matrix">Matrix</div>
-        <div class="pill matrix-in-practice">Matrix in Patrice</div>
-        <div class="pill public-sector">Pubic Sector</div>
-        <div class="pill matrix-in-the-wild">Matrix in The Wild</div>
-        <div class="pill matrix-internals">Matrix Internals</div>
-        <div class="pill social-impact">Social Impact</div>
-        <div class="pill room">LAB3</div>
-        <div class="pill room">LAB4</div>
-        <div class="pill room">LAB Green</div>
+        <button class="pill track matrix">Matrix</button>
+        <button class="pill track matrix-in-practice">Matrix in Patrice</button>
+        <button class="pill track public-sector">Public Sector</button>
+        <button class="pill track matrix-in-the-wild">Matrix in The Wild</button>
+        <button class="pill track matrix-internals">Matrix Internals</button>
+        <button class="pill track social-impact">Social Impact</button>
     </div>
     <div class="day">
         <div class="date-separator">
