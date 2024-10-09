@@ -113,16 +113,22 @@
                 font-size: 1.25rem;
                 line-height: 1.2;
                 margin-block: 0;
+                display: -webkit-inline-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: clip;
+                height: 2lh;
             }
 
             p {
-                display: -webkit-inline-box;
                 line-height: 1.4;
                 margin-block: 0;
                 font-size: 1rem;
+                display: -webkit-inline-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
                 overflow: clip;
+                height: 3lh;
             }
 
             .speaker {
