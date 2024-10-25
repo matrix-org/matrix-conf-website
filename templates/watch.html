@@ -73,8 +73,7 @@
         <div class="talks-grid">
             {% set talks_data = load_data(path="content/watch/talks.toml") %}
             {% for talk_data in talks_data.day1 %}
-            {{ talk::talk_card(speakers=talk_data.speakers, title=talk_data.title, summary=talk_data.summary,
-            thumbnail="", track=talk_data.track, room=talk_data.room) }}
+            {{ talk::talk_card(talk=talk_data) }}
             {% endfor %}
         </div>
     </div>
@@ -86,8 +85,7 @@
         <div class="talks-grid">
             {% set talks_data = load_data(path="content/watch/talks.toml") %}
             {% for talk_data in talks_data.day2 %}
-            {{ talk::talk_card(speakers=talk_data.speakers, title=talk_data.title, summary=talk_data.summary,
-            thumbnail="", track=talk_data.track, room=talk_data.room) }}
+            {{ talk::talk_card(talk=talk_data) }}
             {% endfor %}
         </div>
     </div>
@@ -99,8 +97,7 @@
         <div class="talks-grid">
             {% set talks_data = load_data(path="content/watch/talks.toml") %}
             {% for talk_data in talks_data.day3 %}
-            {{ talk::talk_card(speakers=talk_data.speakers, title=talk_data.title, summary=talk_data.summary,
-            thumbnail="", track=talk_data.track, room=talk_data.room) }}
+            {{ talk::talk_card(talk=talk_data) }}
             {% endfor %}
         </div>
     </div>

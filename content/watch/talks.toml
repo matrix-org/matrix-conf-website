@@ -4,6 +4,8 @@ track = "Matrix"
 summary = "The Matrix Foundation and Community welcome you to the first-ever Matrix Conference of this nature and size."
 speakers = ["Josh Simmons"]
 room = "LAB 3"
+youtube = "https://youtu.be/1NcBkJf8GEs"
+slides = "https://drive.google.com/file/d/1VQCgCJZna1CFF45nzDVG8ydltVTyIDS1/view"
 
 [[day1]]
 title = "Matrix 2.0 Is Here!"
@@ -13,6 +15,8 @@ speakers = [
       "Matthew Hodgson"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/ZiRYdqkzjDU"
+slides = "https://drive.google.com/file/d/1iXsLgkThhv08rUkT8V2kT6GB2uh6GEh8/view"
 
 [[day1]]
 title = "Strengthening the Base: Laying the Groundwork for a more robust Rust SDK"
@@ -22,6 +26,8 @@ speakers = [
       "Benjamin Bouvier"
     ]
 room = "LAB 3"
+youtube = "https://www.youtube.com/watch?v=KOaoZKc1tgo"
+slides = "https://drive.google.com/file/d/1VFglvhMITuAuwp-CowpHbnhSL7LlA0A9/view"
 
 [[day1]]
 title = "From Protocol to Product: Taking Matrix into a typical workplace environment"
@@ -31,6 +37,8 @@ speakers = [
       "Danielle Kirkwood"
     ]
 room = "LAB 3"
+youtube = "https://www.youtube.com/watch?v=F8qfngVSR5U"
+slides = "https://drive.google.com/file/d/1du-K_1nuAOyh0dfKK39AfBHvqM74tmv2/view"
 
 [[day1]]
 title = "How to fix security issues in a decentralized system with multiple vendors"
@@ -40,6 +48,8 @@ speakers = [
       "deepbluev7"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/Lc5jtu0_WI4"
+slides = "https://drive.google.com/file/d/1wgxGD8MoX6opPsLkfHzCj1QBecAKfKYn/view"
 
 [[day1]]
 title = "Using matrix to coordinate Emergency Services"
@@ -49,6 +59,8 @@ speakers = [
       "Fabian Becker"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/ebWzQGtxCXc"
+slides = "https://drive.google.com/file/d/19fL0GMk3vxOvd2cNCwAzEwoX9SIovH0A/view"
 
 [[day1]]
 title = "NeoToolSuite: A productivity suite integrated with Matrix"
@@ -58,6 +70,8 @@ speakers = [
       "Robert Pascal Gerbauld Catalao"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/7WEPjYnvV5g"
+slides = "https://drive.google.com/file/d/1pvD0KvakhES5P5zmp3oNk6HcL5r99jDr/view"
 
 [[day1]]
 title = "DMA, MIMI, (D)MLS, Linearized Matrix and more…"
@@ -67,6 +81,8 @@ speakers = [
       "Travis Ralston"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/PCIg8Qjn74I"
+slides = "https://drive.google.com/file/d/1RZa-GzIuvfuHx4f4gWUPLTT2pwTh0zQ1/view"
 
 [[day1]]
 title = "Tammy - a modular Matrix messenger"
@@ -77,6 +93,8 @@ speakers = [
       "Michael Thiele"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/rc21V-DKSb8"
+slides = "https://drive.google.com/file/d/1FeFhRvTIRZkeNZQyKlKPr77YtwCvC4vk/view"
 
 [[day1]]
 title = "Element X Launch!"
@@ -88,6 +106,8 @@ speakers = [
       "Amsha Kalra"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/gHyHO3xPfQU"
+slides = "https://drive.google.com/file/d/16tRpjMJnyl61Dc3JObNdLxJb8L_yyz5P/view"
 
 [[day1]]
 title = "Tchap, the French administration federation: past, present and future"
@@ -97,6 +117,8 @@ speakers = [
       "Julie RIPA"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/m1roliPrNqc"
+slides = "https://drive.google.com/file/d/1aYZ2RNxcjHA2q0LaQx3-Z4cJzmfjlZnv/view"
 
 [[day1]]
 title = "Federated, not out of control"
@@ -106,6 +128,9 @@ speakers = [
       "Patrick Maier"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/yVvWHEKl4rg"
+slides = "https://drive.google.com/file/d/13sQAxHJg7dyFfon47H51WPVSKgTGe7iz/view"
+
 
 [[day1]]
 title = "The TI-Messenger: Advancing Secure Healthcare Communication within Germany"
@@ -115,6 +140,8 @@ speakers = [
       "Jan Kohnert"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/MoA2cYfHlyA"
+slides = "https://drive.google.com/file/d/15Wh65sZBML7SCegbwOQcJg4T0oMPR7yD/view"
 
 [[day1]]
 title = "Running a large-scale matrix messenger at university medical center mainz"
@@ -124,6 +151,8 @@ speakers = [
       "Hans Hüppelshäuser"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/uRaKEw6Wo3U"
+slides = "https://drive.google.com/file/d/1d-u0NkyPnShuwSApizquL9prXHWHKzZV/view"
 
 [[day1]]
 title = "Matrix as enabler for the SwissPost nationwide ePost communication system"
@@ -133,6 +162,8 @@ speakers = [
       "Renato Stalder"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/EIRuxDuWIDE"
+slides = "https://drive.google.com/file/d/1R_kOQJmMXHa8aNF4fHwOq9QX0hZcDwVW/view"
 
 [[day1]]
 title = "A messenger for NATO and its members"
@@ -142,6 +173,7 @@ speakers = [
       "Jeroen Franssen"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/4aswIHJRwkk"
 
 [[day1]]
 title = "Data Privacy and Signature Management: Battling Digital Surveillance"
@@ -151,6 +183,7 @@ speakers = [
       "Joe Schniebs"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/isoPT3lZ6Vg"
 
 [[day1]]
 title = "Försäkringskassan, Matrix and Sweden’s public sector"
@@ -161,6 +194,8 @@ speakers = [
       "Anna Engström"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/XLt70u0btsM"
+slides = "https://drive.google.com/file/d/1q73OB9v7GpZWnM9UWWxqbv9YNV_EFKxW/view"
 
 [[day1]]
 title = "Innovating Public Sector Collaboration with Secure, Open-Source Platforms"
@@ -170,6 +205,8 @@ speakers = [
       "Peter Klein"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/Oan-bx84ui8"
+slides = "https://drive.google.com/file/d/1AdtIbfOFBcJBaqdoOLA29Kub8y1jvRa2/view"
 
 [[day1]]
 title = "Beyond Instant Messaging: Matrix in the Public Sector"
@@ -182,6 +219,8 @@ speakers = [
       "George-Petru Ciordas-Hertel"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/Fj_tBpTlBEE"
+slides = "https://drive.google.com/file/d/14bGxYqyR_h1mHJi8GxT8qWbi0TmZUpqU/view"
 
 [[day1]]
 title = "Working in a Purple Submarine: Matrix in openDesk"
@@ -191,6 +230,7 @@ speakers = [
       "Alexander Smolianitski"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/oMxxfRiaN98"
 
 [[day1]]
 title = "Polychat - Interoperability for the masses"
@@ -200,15 +240,17 @@ speakers = [
       "Nadine Minagawa"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/16Z8_YvOPqecotR73PZOaO_QLVymJvKHH/view"
 
 [[day1]]
 title = "Invisible Cryptography"
 track = "Matrix"
 summary = "Historically, confusing encryption has been one of Element’s weakest usability points. In this talk, we’ll explain the process that has gone into reworking encryption in both Element X and Matrix as a whole to make it seamless and invisible to users, while further improving security."
 speakers = [
-      "Valère Fdronic"
+      "Valère Fédronic"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/1e0uOF9x98Y9YvFZAlnv4N2nfIx6YVuC9/view"
 
 [[day1]]
 title = "Elm SDK - your favourite SDK you'll never use"
@@ -218,6 +260,7 @@ speakers = [
       "Bram"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/1reBXGHO3upNiz_CEvnu28RnMLyAXLJj1/view"
 
 [[day1]]
 title = "Looking at application performance of Sliding Sync in Dart"
@@ -236,6 +279,7 @@ speakers = [
       "Pavel Zoneff"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/TfZlV0zwlKA"
 
 [[day2]]
 title = "The Macroeconomics Of Privacy and Dignity"
@@ -245,6 +289,7 @@ speakers = [
       "Mike Hoye"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/cs_V8Ns4ggc"
 
 [[day2]]
 title = "The Walled Garden Dilemma: Privacy vs. App Choice in Messaging Ecosystems"
@@ -254,6 +299,8 @@ speakers = [
       "Carla Griggio"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/0OWAPYS2QIE"
+slides = "https://drive.google.com/file/d/15PXHWfNNatgJn_QRNcjl3TpoOv2x9K1i/view"
 
 [[day2]]
 title = "Migrating the gematik TI-Messenger spec from Matrix 1.3 to 1.11"
@@ -263,6 +310,8 @@ speakers = [
       "Johannes Marbach"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/hpKieFGdQtg"
+slides = "https://drive.google.com/file/d/15HwOYlWJl90-tcxrH5Rm3-x6oJFrVvRt/view"
 
 [[day2]]
 title = "Element Call"
@@ -272,6 +321,7 @@ speakers = [
       "Florian Heese"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/NQUrYphH7EA"
 
 [[day2]]
 title = "Implementing a Matrix client inside WorkAdventure - A developer feedback"
@@ -281,6 +331,8 @@ speakers = [
       "David Négrier"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/nelYK2k3TUA"
+slides = "https://drive.google.com/file/d/18UY4rhDQ4S5cfIjd33i4j5TkzweQmtij/view"
 
 [[day2]]
 title = "So Long, and Thanks for All the SDKs: Meet Trixnity!"
@@ -291,6 +343,8 @@ speakers = [
       "Michael Thiele"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/KasGPuMK7QI"
+slides = "https://drive.google.com/file/d/1MTXnLguOx77nGpDlmo30ogpd0YOG3c5a/view"
 
 [[day2]]
 title = "Regulatory compliance in decentralised environments"
@@ -300,6 +354,8 @@ speakers = [
       "Denise Almeida"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/P5S4rTR6a9c"
+slides = "https://drive.google.com/file/d/1y619QZx8FqmClFXJ90h5mCGFNhjWun8s/view"
 
 [[day2]]
 title = "Empowering activists and human rights defenders with Matrix"
@@ -309,6 +365,8 @@ speakers = [
       "Emil"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/qQQNcZzwVnU"
+slides = "https://drive.google.com/file/d/1Gr1S-CRsuww9GgHS2cYlPgWpn0qSVdE5/view"
 
 [[day2]]
 title = "Simplified Sliding Sync"
@@ -318,6 +376,8 @@ speakers = [
       "Ivan Enderlin"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/kI2lSCVEunw"
+slides = "https://drive.google.com/file/d/1tdfYfZeCBxWdHzeDmpgkjB4Ex2P4Bpq5/view"
 
 [[day2]]
 title = "Authenticated media & how to ship spec features"
@@ -327,6 +387,8 @@ speakers = [
       "Travis Ralston"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/94SoicL4elA"
+slides = "https://drive.google.com/file/d/10WeREF8ERlhgSvII2ZGRt1yUA-9irhVE/view"
 
 [[day2]]
 title = "Meet the Governing Board"
@@ -336,6 +398,7 @@ speakers = [
       "Josh Simmons"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/ASRaEXcXHOM"
 
 [[day2]]
 title = "Matrix Cryptographic Key Infrastructure"
@@ -345,6 +408,8 @@ speakers = [
       "Sumner Evans"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/4uC-S0Bb5-g"
+slides = "https://drive.google.com/file/d/1drRa7DNHt-BbsP1uaYZRX5h0erHTxXUb/view"
 
 [[day2]]
 title = "Unable to decrypt this message"
@@ -354,6 +419,7 @@ speakers = [
       "Kegan"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/FHzh2Y7BABQ"
 
 [[day2]]
 title = "State of the Matrix Dart SDK 2024"
@@ -363,6 +429,8 @@ speakers = [
       "Jayesh Nirve (td)"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/L63dy6kXhNo"
+slides = "https://drive.google.com/file/d/1Zvys3LcHqJfBdW2Do42FwJoiXNXKKY2u/view"
 
 [[day2]]
 title = "MatrixRTC: The (not anymore) missing piece to enable great video conferences"
@@ -372,6 +440,8 @@ speakers = [
       "Timo"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/OXPuYbfiXDQ"
+slides = "https://drive.google.com/file/d/1LuvuokRHIRBzuG0eiZbrIqqE4PPDzuXp/view"
 
 [[day2]]
 title = "Harder, better, faster, stronger auth with OpenID Connect"
@@ -381,6 +451,8 @@ speakers = [
       "Quentin Gliech"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/wOW8keNafdE"
+slides = "https://drive.google.com/file/d/1hDC86VK1W4KRhGMrBSA9x95z_mBBvvAL/view"
 
 [[day2]]
 title = "Introducing decentralised identity to Matrix"
@@ -390,6 +462,8 @@ speakers = [
       "Wenjing Chu"
     ]
 room = "LAB 4"
+youtube = "https://youtu.be/eq9pnYB5-Xk"
+slides = "https://drive.google.com/file/d/145HYyJP4iZOL4lbnrlRx81eiaf0v1RUE/view"
 
 [[day2]]
 title = "Brain of the community: Matrix as a viable system"
@@ -399,6 +473,7 @@ speakers = [
       "Alexey Kitsune Rusakov"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/1xcyIBTLLJVraVy-buJJtmK35eaRbzNV4/view"
 
 [[day2]]
 title = "Standalone Matrix-based apps using the Widget API"
@@ -408,6 +483,7 @@ speakers = [
       "Michael Weimann"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/1LkyA9TXqpf56H4ycUOUleiBCWnqmljhS/view"
 
 [[day2]]
 title = "[matrix] Widget Starter"
@@ -426,6 +502,14 @@ speakers = [
       "Alexey Kitsune Rusakov"
     ]
 room = "LAB Green"
+slides = "https://drive.google.com/file/d/1t1_madxlq1eUr0iESMN8y0_CfOLgXQSv/view"
+
+[[day2]]
+title = " Tune Your Chat"
+track = "Matrix"
+summary = "This workshop is an interactive talk with an introduction by the host but the wish for attendees to also present their ideas about [matrix] bridges, bots & other integrations."
+speakers = ["Kim Brose"]
+room = "LAB Green"  
 
 [[day2]]
 title = "Matrix Community Retreat 2024"
@@ -445,6 +529,7 @@ speakers = [
       "Josh Simmons"
     ]
 room = "LAB 3"
+youtube = "https://youtu.be/_GZMIkb7Yxc"
 
 [[day3]]
 title = "MSC Process Guidance"

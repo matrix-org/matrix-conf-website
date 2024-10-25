@@ -1,21 +1,27 @@
-{% macro talk_card(speakers, title, summary, thumbnail, track, room) %}
-<div class="talk-card {{ track | slugify }}">
-    <div class="thumbnail-container">
-        <img src="/watch/{{ title | slugify }}.png" alt="">
-    </div>
-    <div class="info-container">
-        <h2>{{ title }}</h2>
-        <p>{{ summary }}</p>
-        <div class="speaker">
-            {{ speakers | join(sep=", ") }}
+{% macro talk_card(talk) %}
+<div class="talk-card {{ talk.track | slugify }}">
+    <a href="{% if talk.youtube %}{{ talk.youtube }}{% else %}#{% endif %}">
+        <div class="thumbnail-container">
+            <img src="/watch/{{ talk.title | slugify }}.png" alt="">
         </div>
-        <div class="talk-pills">
-            <div class="pill {{ track | slugify }}">{{ track | title }}</div>
-            <div class="pill room">{{ room }}</div>
+        <div class="info-container">
+            <h2>{{ talk.title }}</h2>
+            <p>{{ talk.summary }}</p>
+            <div class="speaker">
+                {{ talk.speakers | join(sep=", ") }}
+            </div>
+            <div class="talk-pills">
+                <div class="pill {{ talk.track | slugify }}">{{ talk.track | title }}</div>
+                <div class="pill room">{{ talk.room }}</div>
+            </div>
         </div>
-    </div>
+    </a>
     <div class="additional-links">
-        <a href="#" class="slides">View slides <img src="/assets/slides-icon.svg" alt="" /></a>
+        {% if talk.slides %}
+        <a href="{{ talk.slides }}" class="slides">View slides <img src="/assets/slides-icon.svg" alt="" /></a>
+        {% else %}
+        Slides not available
+        {% endif %}
     </div>
 </div>
 {% endmacro %}
