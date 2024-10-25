@@ -271,6 +271,7 @@ speakers = [
       "The one with the braid (she/her)"
     ]
 room = "LAB Green"
+slides = "https://slides.com/theonewiththebraid/sliding-sync/"
 
 [[day2]]
 title = "Advancing human rights with Tor"
