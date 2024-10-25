@@ -420,6 +420,7 @@ speakers = [
     ]
 room = "LAB 4"
 youtube = "https://youtu.be/FHzh2Y7BABQ"
+slides = "https://drive.google.com/file/d/1SfjhfVFynph1x_QGrnLF_1lTgbxpF8Iy/view"
 
 [[day2]]
 title = "State of the Matrix Dart SDK 2024"
