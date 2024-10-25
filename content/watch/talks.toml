@@ -174,6 +174,7 @@ speakers = [
     ]
 room = "LAB 4"
 youtube = "https://youtu.be/4aswIHJRwkk"
+slides = "https://drive.google.com/file/d/1bPqUJAFwG7AoNdkSy6T5h9lcVDmsAWqH/view"
 
 [[day1]]
 title = "Data Privacy and Signature Management: Battling Digital Surveillance"
