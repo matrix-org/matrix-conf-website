@@ -2,7 +2,7 @@
 <div class="talk-card {{ talk.track | slugify }}">
     <a href="{% if talk.youtube %}{{ talk.youtube }}{% else %}#{% endif %}">
         <div class="thumbnail-container">
-            <img src="/watch/{{ talk.title | slugify }}.png" alt="">
+            <img src="/watch/{{ talk.title | slugify }}.webp" alt="">
         </div>
         <div class="info-container">
             <h2>{{ talk.title }}</h2>
