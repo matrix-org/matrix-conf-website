@@ -5,184 +5,164 @@ summary = "The Matrix Foundation and Community welcome you to the first-ever Mat
 speakers = ["Josh Simmons"]
 room = "LAB 3"
 youtube = "https://youtu.be/1NcBkJf8GEs"
-slides = "https://drive.google.com/file/d/1VQCgCJZna1CFF45nzDVG8ydltVTyIDS1/view"
+original_slides = "https://drive.google.com/file/d/1VQCgCJZna1CFF45nzDVG8ydltVTyIDS1/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 10_00 Josh Simmons - Opening Remarks.pdf"
 
 [[day1]]
 title = "Matrix 2.0 Is Here!"
 track = "Matrix in Practice"
 summary = "10 years after the original launch of Matrix, and 5 years after the launch of Matrix 1.0 - we’d like to show off Matrix 2.0: the set of MSCs where Matrix finally comes of age: evolving the protocol to support communication apps which can literally outperform the mainstream alternatives."
-speakers = [
-      "Matthew Hodgson"
-    ]
+speakers = ["Matthew Hodgson"]
 room = "LAB 3"
 youtube = "https://youtu.be/ZiRYdqkzjDU"
-slides = "https://drive.google.com/file/d/1iXsLgkThhv08rUkT8V2kT6GB2uh6GEh8/view"
+original_slides = "https://drive.google.com/file/d/1iXsLgkThhv08rUkT8V2kT6GB2uh6GEh8/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 10_15 Matthew - Matrix 2.0 is Here_ The Matrix Conference Keynote.pdf"
 
 [[day1]]
 title = "Strengthening the Base: Laying the Groundwork for a more robust Rust SDK"
 track = "Matrix in Practice"
 summary = "The past year has seen the introduction of several new APIs in the Matrix Rust SDK. In this technical discussion, we aim to explore some of these novel APIs and demonstrate how they facilitate the creation of superior, quicker, and more dependable clients by providing an increasing number of features at no additional integration cost."
-speakers = [
-      "Benjamin Bouvier"
-    ]
+speakers = ["Benjamin Bouvier"]
 room = "LAB 3"
 youtube = "https://www.youtube.com/watch?v=KOaoZKc1tgo"
-slides = "https://drive.google.com/file/d/1VFglvhMITuAuwp-CowpHbnhSL7LlA0A9/view"
+original_slides = "https://drive.google.com/file/d/1VFglvhMITuAuwp-CowpHbnhSL7LlA0A9/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 11_15 Benjamin Bouvier - Rust SDK Foundation.pdf"
 
 [[day1]]
 title = "From Protocol to Product: Taking Matrix into a typical workplace environment"
 track = "Matrix in Practice"
 summary = "The buy or build dilemma: when’s it right to consider a paid-for solution; what do you get and what’s the return on investment?"
-speakers = [
-      "Danielle Kirkwood"
-    ]
+speakers = ["Danielle Kirkwood"]
 room = "LAB 3"
 youtube = "https://www.youtube.com/watch?v=F8qfngVSR5U"
-slides = "https://drive.google.com/file/d/1du-K_1nuAOyh0dfKK39AfBHvqM74tmv2/view"
+original_slides = "https://drive.google.com/file/d/1du-K_1nuAOyh0dfKK39AfBHvqM74tmv2/view"
+slides = "/documents/talk_slides/From Protocol to Product.pdf"
 
 [[day1]]
 title = "How to fix security issues in a decentralized system with multiple vendors"
 track = "Matrix in Practice"
 summary = "Matrix is a decentralized and federated system with many different vendors or rather many independent developers, projects, instances and users. The protocol is also developed as an open specification with public proposals for any changes.  How do you even begin to fix a security issue in the specification that affects possibly every participant in the ecosystem? Let us dive into how this currently works, what challenges result from the way Matrix is used and developed and discuss some possible improvements. After all every system has a hole eventually and its strength is measured in how it deals with them. I am looking forward to hearing your ideas and suggestions!"
-speakers = [
-      "deepbluev7"
-    ]
+speakers = ["deepbluev7"]
 room = "LAB 3"
 youtube = "https://youtu.be/Lc5jtu0_WI4"
-slides = "https://drive.google.com/file/d/1wgxGD8MoX6opPsLkfHzCj1QBecAKfKYn/view"
+original_slides = "https://drive.google.com/file/d/1wgxGD8MoX6opPsLkfHzCj1QBecAKfKYn/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 14_15 deepbluev7 - How to fix security issues in a decentralized system with multiple vendors.pdf"
 
 [[day1]]
 title = "Using matrix to coordinate Emergency Services"
 track = "Matrix in Practice"
 summary = "Can matrix be used to coordinate emergency services? Is it worth, waiting for their colleagues to arrive at the department or should they not waste any more time? Current solutions mostly are proprietary and those few that support messaging are trying to reinvent the wheel. Using the power of matrix's application service API, Alertrix aims to provide a solution to this problem."
-speakers = [
-      "Fabian Becker"
-    ]
+speakers = ["Fabian Becker"]
 room = "LAB 3"
 youtube = "https://youtu.be/ebWzQGtxCXc"
-slides = "https://drive.google.com/file/d/19fL0GMk3vxOvd2cNCwAzEwoX9SIovH0A/view"
+original_slides = "https://drive.google.com/file/d/19fL0GMk3vxOvd2cNCwAzEwoX9SIovH0A/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 15_00 Fabian Becker - Using matrix to coordinate Emergency Services.pdf"
 
 [[day1]]
 title = "NeoToolSuite: A productivity suite integrated with Matrix"
 track = "Matrix in Practice"
 summary = "Nordeck's NeoToolSuite: NeoBoard, NeoDateFix, Map-widget and user search enhancements."
-speakers = [
-      "Robert Pascal Gerbauld Catalao"
-    ]
+speakers = ["Robert Pascal Gerbauld Catalao"]
 room = "LAB 3"
 youtube = "https://youtu.be/7WEPjYnvV5g"
-slides = "https://drive.google.com/file/d/1pvD0KvakhES5P5zmp3oNk6HcL5r99jDr/view"
+original_slides = "https://drive.google.com/file/d/1pvD0KvakhES5P5zmp3oNk6HcL5r99jDr/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 15_30 Robert Catalao - NeoToolSuite_ A productivity suite integrated with Matrix.pdf"
 
 [[day1]]
 title = "DMA, MIMI, (D)MLS, Linearized Matrix and more…"
 track = "Matrix in Practice"
 summary = "There has been lots of work in 2024 around Matrix and the EU Digital Markets Act, and other interoperability initiatives like the IETF’s More Instant Messaging Interoperability Working Group. This talk will give all the latest updates on the various approaches to wider interoperability, including use of interoperable encryption via the Double Ratchet and Decentralised MLS."
-speakers = [
-      "Travis Ralston"
-    ]
+speakers = ["Travis Ralston"]
 room = "LAB 3"
 youtube = "https://youtu.be/PCIg8Qjn74I"
-slides = "https://drive.google.com/file/d/1RZa-GzIuvfuHx4f4gWUPLTT2pwTh0zQ1/view"
+original_slides = "https://drive.google.com/file/d/1RZa-GzIuvfuHx4f4gWUPLTT2pwTh0zQ1/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 16_15 Travis Ralston - DMLS, MIMI, etc.pdf"
 
 [[day1]]
 title = "Tammy - a modular Matrix messenger"
 track = "Matrix in Practice"
 summary = "Do you have many ideas on how to change or extend an existing Matrix messenger? But the hassle of keeping upstream changes seems daunting and maybe burnt you and your team in the past? Join us to explore how our transformative technology can build the ultimate Matrix experience, setting a new standard in the Matrix ecosystem."
-speakers = [
-      "Benedict Benken",
-      "Michael Thiele"
-    ]
+speakers = ["Benedict Benken", "Michael Thiele"]
 room = "LAB 3"
 youtube = "https://youtu.be/rc21V-DKSb8"
-slides = "https://drive.google.com/file/d/1FeFhRvTIRZkeNZQyKlKPr77YtwCvC4vk/view"
+original_slides = "https://drive.google.com/file/d/1FeFhRvTIRZkeNZQyKlKPr77YtwCvC4vk/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 17_00 Michael Thiele - Tammy - a modular Matrix messenger.pdf"
 
 [[day1]]
 title = "Element X Launch!"
 track = "Matrix in Practice"
 summary = "In which Element shows off all the work which has gone into making Element X the world’s fastest and most usable Matrix client, and we launch it LIVE ON STAGE as ready for use by new users!!"
-speakers = [
-      "Amandine Le Pape",
-      "Ștefan Ceriu",
-      "Amsha Kalra"
-    ]
+speakers = ["Amandine Le Pape", "Ștefan Ceriu", "Amsha Kalra"]
 room = "LAB 3"
 youtube = "https://youtu.be/gHyHO3xPfQU"
-slides = "https://drive.google.com/file/d/16tRpjMJnyl61Dc3JObNdLxJb8L_yyz5P/view"
+original_slides = "https://drive.google.com/file/d/16tRpjMJnyl61Dc3JObNdLxJb8L_yyz5P/view"
+slides = "/documents/talk_slides/LAB3 2024-09-20 17_45 Amandine Le Pape, Amsha Kalra, Stefan Ceriu - Element X Launch Complete Presentation.pdf"
 
 [[day1]]
 title = "Tchap, the French administration federation: past, present and future"
 track = "Public Sector"
 summary = "Is Matrix only a movie for the French administration ? Where are we today and where do we want to be in the future ? What are our main challenges and how could we fix them ? If you've never heard of Tchap, don't worry it is not too late !  We will also give a quick introduction of the bigger project in which Tchap is now included, called La Suite Numérique."
-speakers = [
-      "Julie RIPA"
-    ]
+speakers = ["Julie RIPA"]
 room = "LAB 4"
 youtube = "https://youtu.be/m1roliPrNqc"
-slides = "https://drive.google.com/file/d/1aYZ2RNxcjHA2q0LaQx3-Z4cJzmfjlZnv/view"
+original_slides = "https://drive.google.com/file/d/1aYZ2RNxcjHA2q0LaQx3-Z4cJzmfjlZnv/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 11_00 Julie Ripa - Tchap_ the French administration federation_ past_ present and future.pdf"
 
 [[day1]]
 title = "Federated, not out of control"
 track = "Matrix"
 summary = "Secure Border Gateways bring rules-based control to federated networks; how do they work and what's realistic?"
-speakers = [
-      "Patrick Maier"
-    ]
+speakers = ["Patrick Maier"]
 room = "LAB 4"
 youtube = "https://youtu.be/yVvWHEKl4rg"
-slides = "https://drive.google.com/file/d/13sQAxHJg7dyFfon47H51WPVSKgTGe7iz/view"
-
+original_slides = "https://drive.google.com/file/d/13sQAxHJg7dyFfon47H51WPVSKgTGe7iz/view"
+slides = "/documents/talk_slides/LAB 4 2024-09-20 11_30 Patrick Maier - Federated, not out of control.pdf"
 
 [[day1]]
 title = "The TI-Messenger: Advancing Secure Healthcare Communication within Germany"
 track = "Public Sector"
 summary = "This presentation will provide a technical overview of the TI-Messenger, a key communication service within Germany’s healthcare sector, developed by gematik, Germany's Digital Health Agency. We will cover the basics of the TI-Messenger and the Telematics Infrastructure (TI), discuss the architecture of the TI-Messenger service, and address the operational challenges within a federated environment. Additionally, the current market situation in 2024 and future developments will be discussed."
-speakers = [
-      "Jan Kohnert"
-    ]
+speakers = ["Jan Kohnert"]
 room = "LAB 4"
 youtube = "https://youtu.be/MoA2cYfHlyA"
-slides = "https://drive.google.com/file/d/15Wh65sZBML7SCegbwOQcJg4T0oMPR7yD/view"
+original_slides = "https://drive.google.com/file/d/15Wh65sZBML7SCegbwOQcJg4T0oMPR7yD/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 13_30 Jan Kohnert - The TI-Messenger_ Advancing Secure Healthcare Communication within Germany.pdf"
 
 [[day1]]
 title = "Running a large-scale matrix messenger at university medical center mainz"
 track = "Public Sector"
 summary = "This talk explores the deployment of a large-scale Matrix-based messenger at University Medical Center Mainz powered by IBM Consulting. Launched in 2020 as part of a hackathon, UMessenger is now the central communication tool at University Medical Center Mainz.   We will delve into the specific requirements of the medical centre, such as compliance with health data regulations, the need for rapid and reliable communication among healthcare professionals, and integration with existing IT infrastructure.  The core of the presentation focuses on the practical aspects of the deployment, the day-to-day operations, and lessons learned in four years of operation."
-speakers = [
-      "Hans Hüppelshäuser"
-    ]
+speakers = ["Hans Hüppelshäuser"]
 room = "LAB 4"
 youtube = "https://youtu.be/uRaKEw6Wo3U"
-slides = "https://drive.google.com/file/d/1d-u0NkyPnShuwSApizquL9prXHWHKzZV/view"
+original_slides = "https://drive.google.com/file/d/1d-u0NkyPnShuwSApizquL9prXHWHKzZV/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 14_00 Hans Hüppelshäuser - Running a large-scale matrix messenger at university medical center mainz.pdf"
 
 [[day1]]
 title = "Matrix as enabler for the SwissPost nationwide ePost communication system"
 track = "Public Sector"
 summary = "SwissPost is creating a digital easy to use and secure nationwide communication system including messaging based on matrix. In the vision, every citizen can communicate with unlimited numbers of communities, fast and easy."
-speakers = [
-      "Renato Stalder"
-    ]
+speakers = ["Renato Stalder"]
 room = "LAB 4"
 youtube = "https://youtu.be/EIRuxDuWIDE"
-slides = "https://drive.google.com/file/d/1R_kOQJmMXHa8aNF4fHwOq9QX0hZcDwVW/view"
+original_slides = "https://drive.google.com/file/d/1R_kOQJmMXHa8aNF4fHwOq9QX0hZcDwVW/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 14_30 Renato Stalder - Matrix as enabler for the SwissPost nationwide ePost communication system.pdf"
 
 [[day1]]
 title = "A messenger for NATO and its members"
 track = "Public Sector"
 summary = "An insight into how NATO is experimenting with Matrix to create a digitally sovereign and secure BYOD style messenger for ‘unclassified’ use."
-speakers = [
-      "Jeroen Franssen"
-    ]
+speakers = ["Jeroen Franssen"]
 room = "LAB 4"
 youtube = "https://youtu.be/4aswIHJRwkk"
-slides = "https://drive.google.com/file/d/1bPqUJAFwG7AoNdkSy6T5h9lcVDmsAWqH/view"
+original_slides = "https://drive.google.com/file/d/1bPqUJAFwG7AoNdkSy6T5h9lcVDmsAWqH/view"
+slides = "/documents/talk_slides/20240917_NI2CE_in_NATO_Matrix_Conference_VTSl6j2.pdf"
 
 [[day1]]
 title = "Data Privacy and Signature Management: Battling Digital Surveillance"
 track = "Public Sector"
 summary = "With the rise of Surveillance Capitalism, ubiquitous technical surveillance (UTS) poses a threat to the privacy, autonomy, and security of individuals and orgs. Competitors and adversaries leverage vast amounts of data generated through our everyday actions to achieve deep insight into who we are, where we go, and what we do. As we navigate this complex threat landscape, it's become imperative to adopt robust strategies layered on top of cybersecurity measures to safeguard our data. This approach is known as signature management. Ridgeline International is a U.S.-based data privacy and secure infrastructure company on the forefront of the battle to combat UTS through signature management and secure communications solutions."
-speakers = [
-      "Joe Schniebs"
-    ]
+speakers = ["Joe Schniebs"]
 room = "LAB 4"
 youtube = "https://youtu.be/isoPT3lZ6Vg"
 
@@ -190,46 +170,42 @@ youtube = "https://youtu.be/isoPT3lZ6Vg"
 title = "Försäkringskassan, Matrix and Sweden’s public sector"
 track = "Public Sector"
 summary = "Försäkringskassan, the Swedish Social Insurance Agency, offers a smörgåsbord of insight from building on Matrix to create a cloud-based collaboration platform for Sweden’s public authorities."
-speakers = [
-      "Kenneth Edwall",
-      "Anna Engström"
-    ]
+speakers = ["Kenneth Edwall", "Anna Engström"]
 room = "LAB 4"
 youtube = "https://youtu.be/XLt70u0btsM"
-slides = "https://drive.google.com/file/d/1q73OB9v7GpZWnM9UWWxqbv9YNV_EFKxW/view"
+original_slides = "https://drive.google.com/file/d/1q73OB9v7GpZWnM9UWWxqbv9YNV_EFKxW/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 16.15 - Anna Engström, Kenneth Edwall - Försäkringskassan, Matrix and Sweden_s public sector(SAFOS).pdf"
 
 [[day1]]
 title = "Innovating Public Sector Collaboration with Secure, Open-Source Platforms"
 track = "Public Sector"
 summary = "This presentation will explore the emerging market for commercial Matrix-based solutions tailored to Sweden's public sector. With strict regulations necessitating EU-based cloud services and on-premise solutions for security and resilience, Swedish organizations are seeking robust and compliant collaboration platforms."
-speakers = [
-      "Peter Klein"
-    ]
+speakers = ["Peter Klein"]
 room = "LAB 4"
 youtube = "https://youtu.be/Oan-bx84ui8"
-slides = "https://drive.google.com/file/d/1AdtIbfOFBcJBaqdoOLA29Kub8y1jvRa2/view"
+original_slides = "https://drive.google.com/file/d/1AdtIbfOFBcJBaqdoOLA29Kub8y1jvRa2/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 16_45 Peter Klein - Innovating Public Sector Collaboration.pdf"
 
 [[day1]]
 title = "Beyond Instant Messaging: Matrix in the Public Sector"
 track = "Public Sector"
 summary = "Its openness and adaptability is what makes Matrix particularly interesting for government organizations. Recently, FITKO and the German Federal Ministry of the Interior joined efforts to pilot a [Matrix-based next-generation communication infrastructure for digital government services](https://gitlab.opencode.de/fitko/g2x-matrix-pilot). The aim of the pilot is to showcase end-to-end encryption, great usability and machine-readable communication between citizens and public authorities. We would like to give an insight into the project and discuss further applications of the Matrix protocol in the public sector, such as adding real-time capabilities to online procedures and connecting industry and government IT systems."
 speakers = [
-      "Marco Holz (FITKO)",
-      "Inga Greiner-Bild",
-      "Thiemo Zarth",
-      "George-Petru Ciordas-Hertel"
-    ]
+  "Marco Holz (FITKO)",
+  "Inga Greiner-Bild",
+  "Thiemo Zarth",
+  "George-Petru Ciordas-Hertel",
+]
 room = "LAB 4"
 youtube = "https://youtu.be/Fj_tBpTlBEE"
-slides = "https://drive.google.com/file/d/14bGxYqyR_h1mHJi8GxT8qWbi0TmZUpqU/view"
+original_slides = "https://drive.google.com/file/d/14bGxYqyR_h1mHJi8GxT8qWbi0TmZUpqU/view"
+slides = "/documents/talk_slides/LAB4 2024-09-20 17_15 Marco Holz - Beyond Instant Messaging - Matrix in the Public Sector.pdf"
 
 [[day1]]
 title = "Working in a Purple Submarine: Matrix in openDesk"
 track = "Public Sector"
 summary = "Imagine an office suite that can operate anywhere, from the boardroom to the most remote locations - even in a submarine. By integrating Matrix into ZenDiS' office suite openDesk, we've created a robust platform that enables seamless communication and supports daily work in the public sector, no matter the infrastructure. In this presentation, we'll delve into the technical challenges and solutions of this integration, and showcase the tangible benefits it brings to productivity and collaboration across the public sector."
-speakers = [
-      "Alexander Smolianitski"
-    ]
+speakers = ["Alexander Smolianitski"]
 room = "LAB 4"
 youtube = "https://youtu.be/oMxxfRiaN98"
 
@@ -237,49 +213,43 @@ youtube = "https://youtu.be/oMxxfRiaN98"
 title = "Polychat - Interoperability for the masses"
 track = "Matrix"
 summary = "Communication is a human right and the state of chat messenger interoperability a social disaster."
-speakers = [
-      "Nadine Minagawa"
-    ]
+speakers = ["Nadine Minagawa"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/16Z8_YvOPqecotR73PZOaO_QLVymJvKHH/view"
+original_slides = "https://drive.google.com/file/d/16Z8_YvOPqecotR73PZOaO_QLVymJvKHH/view"
+slides = "/documents/talk_slides/LABG 2024-09-20 13_30 Nadine Minagawa - Polychat - Interoperability for the masses.pdf"
 
 [[day1]]
 title = "Invisible Cryptography"
 track = "Matrix"
 summary = "Historically, confusing encryption has been one of Element’s weakest usability points. In this talk, we’ll explain the process that has gone into reworking encryption in both Element X and Matrix as a whole to make it seamless and invisible to users, while further improving security."
-speakers = [
-      "Valère Fédronic"
-    ]
+speakers = ["Valère Fédronic"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/1e0uOF9x98Y9YvFZAlnv4N2nfIx6YVuC9/view"
+original_slides = "https://drive.google.com/file/d/1e0uOF9x98Y9YvFZAlnv4N2nfIx6YVuC9/view"
+slides = "/documents/talk_slides/LAB Green 2024-09-20 Valere Fedronic Patrick Maier Invisible Crypto.pdf"
 
 [[day1]]
 title = "Elm SDK - your favourite SDK you'll never use"
 track = "Matrix"
 summary = "While it has become a household name in the Matrix ecosystem, the Elm SDK hasn't had a proper introduction for most people. This presentation gives explains the Elm SDK in simple terms, and highlights how its relevance reaches beyond those who program in Elm."
-speakers = [
-      "Bram"
-    ]
+speakers = ["Bram"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/1reBXGHO3upNiz_CEvnu28RnMLyAXLJj1/view"
+original_slides = "https://drive.google.com/file/d/1reBXGHO3upNiz_CEvnu28RnMLyAXLJj1/view"
+slides = "/documents/talk_slides/LABG 2024-09-20 15_15 Bram - Elm SDK - your favourite SDK you_ll never use.pdf"
 
 [[day1]]
 title = "Looking at application performance of Sliding Sync in Dart"
 track = "Matrix"
 summary = "Beep-boop ; I had too much time during work meetings - and what happened ? I started experimenting with Sliding Sync in Dart.  This talk will mostly be about the issue of supporting both stable Sync as well as the proposed Sync v3 implementation with some technical touch of Flutter and Dart.  Credits to my friends at Famedly for maintaining the amazing [matrix] Dart SDK. No credits to my employer since we use [matrix] in a proprietary-only ecosystem without any FLOSS contributions back."
-speakers = [
-      "The one with the braid (she/her)"
-    ]
+speakers = ["The one with the braid (she/her)"]
 room = "LAB Green"
-slides = "https://slides.com/theonewiththebraid/sliding-sync/"
+original_slides = "https://slides.com/theonewiththebraid/sliding-sync/"
+slides = "/documents/talk_slides/SlidingSyncFromADartDeveloperPerspective.pdf"
 
 [[day2]]
 title = "Advancing human rights with Tor"
 track = "Social Impact"
 summary = "Censorship and surveillance are the biggest threats against civil rights online and tools that use encryption are the only solution to defend these rights. At this talk we will present different use cases of Tor and how we use encryption to advance human rights around the world. We will share insights into recent online censorship events and the importance of building circumvention tools that also protect people’s privacy."
-speakers = [
-      "Pavel Zoneff"
-    ]
+speakers = ["Pavel Zoneff"]
 room = "LAB 3"
 youtube = "https://youtu.be/TfZlV0zwlKA"
 
@@ -287,9 +257,7 @@ youtube = "https://youtu.be/TfZlV0zwlKA"
 title = "The Macroeconomics Of Privacy and Dignity"
 track = "Social Impact"
 summary = "We talk about privacy and dignity as individual concerns, and their costs to the state, but if we are going to talk about cost, we have to talk about externalities and consequences. What does it really cost a country, to devalue the privacy of its citizens?"
-speakers = [
-      "Mike Hoye"
-    ]
+speakers = ["Mike Hoye"]
 room = "LAB 3"
 youtube = "https://youtu.be/cs_V8Ns4ggc"
 
@@ -297,31 +265,27 @@ youtube = "https://youtu.be/cs_V8Ns4ggc"
 title = "The Walled Garden Dilemma: Privacy vs. App Choice in Messaging Ecosystems"
 track = "Social Impact"
 summary = "What can messaging interoperability learn from academic research on ecosystems of messaging apps? In this talk, I present my research on how people increasingly use not just one, but multiple parallel apps for messaging. This research shows evidence of how messaging-app walled gardens harm freedom of choice and, at the same time, enable personal, discreet strategies for managing privacy across diverse social circles. I will discuss how this tension can inspire new ideas for designing cross-app messaging functionality. Additionally, I will explore its relevance for designing user-friendly interoperable messaging and its potential impact on the adoption of interoperability on mainstream platforms as mandated by the EU’s Digital Markets Act."
-speakers = [
-      "Carla Griggio"
-    ]
+speakers = ["Carla Griggio"]
 room = "LAB 3"
 youtube = "https://youtu.be/0OWAPYS2QIE"
-slides = "https://drive.google.com/file/d/15PXHWfNNatgJn_QRNcjl3TpoOv2x9K1i/view"
+original_slides = "https://drive.google.com/file/d/15PXHWfNNatgJn_QRNcjl3TpoOv2x9K1i/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 11_30 Carla Griggio - The Walled Garden Dilemma_ Privacy vs App Choice in Messaging Ecosystems.pdf"
 
 [[day2]]
 title = "Migrating the gematik TI-Messenger spec from Matrix 1.3 to 1.11"
 track = "Matrix In The Wild"
 summary = "A short experience report covering our journey of moving the TI-Messenger specification from Matrix 1.3 to 1.11"
-speakers = [
-      "Johannes Marbach"
-    ]
+speakers = ["Johannes Marbach"]
 room = "LAB 3"
 youtube = "https://youtu.be/hpKieFGdQtg"
-slides = "https://drive.google.com/file/d/15HwOYlWJl90-tcxrH5Rm3-x6oJFrVvRt/view"
+original_slides = "https://drive.google.com/file/d/15HwOYlWJl90-tcxrH5Rm3-x6oJFrVvRt/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 13_30 Johannes Marbach - Migrating the gematik TI-Messenger spec from Matrix 1.3 to 1.11.pdf"
 
 [[day2]]
 title = "Element Call"
 track = "Matrix In The Wild"
 summary = "Element call is the flagship Element MatrixRTC application. It is replacing the current call system with significant new features. Most notably large encrypted group calls, much improved reliability, ease of use and of course still features the same interoperability."
-speakers = [
-      "Florian Heese"
-    ]
+speakers = ["Florian Heese"]
 room = "LAB 3"
 youtube = "https://youtu.be/NQUrYphH7EA"
 
@@ -329,76 +293,67 @@ youtube = "https://youtu.be/NQUrYphH7EA"
 title = "Implementing a Matrix client inside WorkAdventure - A developer feedback"
 track = "Matrix In The Wild"
 summary = "WorkAdventure is an open platform to build virtual universes for remote events and collaboration.  In 2023, we decided to migrate the chat system from XMPP to Matrix. We are now in 2024 and the work is over. In this session, I will present to you: - why we decided to migrate - the challenges we faced when building this new client - the technical / architectural choices we made  We will be talking about OIDC, migrating React components to Svelte, encryption, and we will end up with a demo!"
-speakers = [
-      "David Négrier"
-    ]
+speakers = ["David Négrier"]
 room = "LAB 3"
 youtube = "https://youtu.be/nelYK2k3TUA"
-slides = "https://drive.google.com/file/d/18UY4rhDQ4S5cfIjd33i4j5TkzweQmtij/view"
+original_slides = "https://drive.google.com/file/d/18UY4rhDQ4S5cfIjd33i4j5TkzweQmtij/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 15_15 David Négrier - Implementing a Matrix client inside WorkAdventure.pdf"
 
 [[day2]]
 title = "So Long, and Thanks for All the SDKs: Meet Trixnity!"
 track = "Matrix In The Wild"
 summary = "Why use different SDKs for each use case when you can have one? Trixnity is not only cross platform capable, but also suitable for clients, bots, servers, appservices or anything in between (e.g. proxy). In this first part of the talk it is shown, what makes Trixnity different from other Matrix-SDKs and how to use it. In the second part Trixnity Messenger is presented as a headless Matrix Messenger SDK. It's key features extensibility and flexibility are shown in a live demo."
-speakers = [
-      "Benedict Benken",
-      "Michael Thiele"
-    ]
+speakers = ["Benedict Benken", "Michael Thiele"]
 room = "LAB 3"
 youtube = "https://youtu.be/KasGPuMK7QI"
-slides = "https://drive.google.com/file/d/1MTXnLguOx77nGpDlmo30ogpd0YOG3c5a/view"
+original_slides = "https://drive.google.com/file/d/1MTXnLguOx77nGpDlmo30ogpd0YOG3c5a/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 16_00 Benedict Benken - So Long and Thanks for All the SDKs_ Meet Trixnity.pdf"
 
 [[day2]]
 title = "Regulatory compliance in decentralised environments"
 track = "Matrix In The Wild"
 summary = "A look at how we approach new regulatory obligations for different types of Matrix use cases, with the Digital Services Act (EU) as a case study."
-speakers = [
-      "Denise Almeida"
-    ]
+speakers = ["Denise Almeida"]
 room = "LAB 3"
 youtube = "https://youtu.be/P5S4rTR6a9c"
-slides = "https://drive.google.com/file/d/1y619QZx8FqmClFXJ90h5mCGFNhjWun8s/view"
+original_slides = "https://drive.google.com/file/d/1y619QZx8FqmClFXJ90h5mCGFNhjWun8s/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 16_45 Denise Almeida - Regulatory compliance in decentralised environments.pdf"
 
 [[day2]]
 title = "Empowering activists and human rights defenders with Matrix"
 track = "Matrix In The Wild"
 summary = "Wonder how the Matrix Protocol can be leveraged to amplify the power of civil society movements and activists around the world, fighting for human rights, equality and action on the climate crisis? Acter is a non-profit who together with global coalition including Amnesty, Greenpeace, Civicus and ActionAid are reimaging digital organizing, providing a mobile-first organzing app based on Matrix, focusing on secure effective organzing. This session will highlight the problems that civil society is facing with the lack of critical digital infrastructure, why we need to move beyond chat as the only means for effecgive organzing as well a proposed solutions and insights from civil society movements."
-speakers = [
-      "Emil"
-    ]
+speakers = ["Emil"]
 room = "LAB 3"
 youtube = "https://youtu.be/qQQNcZzwVnU"
-slides = "https://drive.google.com/file/d/1Gr1S-CRsuww9GgHS2cYlPgWpn0qSVdE5/view"
+original_slides = "https://drive.google.com/file/d/1Gr1S-CRsuww9GgHS2cYlPgWpn0qSVdE5/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 17_30 Emil - Acter - Empowering Activists & Human Rights Defenders with Matrix.pdf"
 
 [[day2]]
 title = "Simplified Sliding Sync"
 track = "Matrix Internals"
 summary = "The final version of Sliding Sync as implemented in Synapse and matrix-rust-sdk is a simplified version of the original MSC3575, relying on clientside ordering and removing the sliding operations.  We explain how the final API works, and why we simplified it in the way we did."
-speakers = [
-      "Ivan Enderlin"
-    ]
+speakers = ["Ivan Enderlin"]
 room = "LAB 4"
 youtube = "https://youtu.be/kI2lSCVEunw"
-slides = "https://drive.google.com/file/d/1tdfYfZeCBxWdHzeDmpgkjB4Ex2P4Bpq5/view"
+original_slides = "https://drive.google.com/file/d/1tdfYfZeCBxWdHzeDmpgkjB4Ex2P4Bpq5/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 10_00 Ivan Enderlin - Simplified Sliding Sync.pdf"
 
 [[day2]]
 title = "Authenticated media & how to ship spec features"
 track = "Matrix Internals"
 summary = "All images, avatars, videos, and files sent over Matrix are represented as media for other servers to download, cache, and serve to their users. A design flaw in Matrix meant that this media was unauthenticated, and able to be downloaded by anyone. Fixing this requires a few moving pieces, cross-team dependencies, and a lot of spec work for the ecosystem to upgrade. This talk walks through the spec process to demonstrate its ability to facilitate large and small features going to production quickly, and covers the specifics of Authenticated Media ([MSC3916](https://github.com/matrix-org/matrix-spec-proposals/pull/3916)) along the way."
-speakers = [
-      "Travis Ralston"
-    ]
+speakers = ["Travis Ralston"]
 room = "LAB 4"
 youtube = "https://youtu.be/94SoicL4elA"
-slides = "https://drive.google.com/file/d/10WeREF8ERlhgSvII2ZGRt1yUA-9irhVE/view"
+original_slides = "https://drive.google.com/file/d/10WeREF8ERlhgSvII2ZGRt1yUA-9irhVE/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 10_45 Travis Ralston - Authenticated Media & How to ship spec features.pdf"
 
 [[day2]]
 title = "Meet the Governing Board"
 track = "Matrix"
 summary = "Matrix now has its first elected Governing Board! Join us to learn about the Governing Board – who is on it, what it does, and how it works – and Matrix's journey to increasingly open governance."
-speakers = [
-      "Josh Simmons"
-    ]
+speakers = ["Josh Simmons"]
 room = "LAB 4"
 youtube = "https://youtu.be/ASRaEXcXHOM"
 
@@ -406,131 +361,116 @@ youtube = "https://youtu.be/ASRaEXcXHOM"
 title = "Matrix Cryptographic Key Infrastructure"
 track = "Matrix Internals"
 summary = "Matrix has a lot of keys. These keys all provide different functionality. If you have ever wondered why do we need all of them, this is the talk for you! This talk is going to focus on Matrix cryptographic key infrastructure: the keys that we need to provide a good user experience, but not message security."
-speakers = [
-      "Sumner Evans"
-    ]
+speakers = ["Sumner Evans"]
 room = "LAB 4"
 youtube = "https://youtu.be/4uC-S0Bb5-g"
-slides = "https://drive.google.com/file/d/1drRa7DNHt-BbsP1uaYZRX5h0erHTxXUb/view"
+original_slides = "https://drive.google.com/file/d/1drRa7DNHt-BbsP1uaYZRX5h0erHTxXUb/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 13_30 Sumner Evans - Matrix Cryptographic Key Infrastructure.pdf"
 
 [[day2]]
 title = "Unable to decrypt this message"
 track = "Matrix Internals"
 summary = "If you’ve used Matrix for a while, you’ll have likely seen at least 1 message you’ve been unable to decrypt (UTD). This talk outlines the anatomy of a UTD bug, how regression tests can be added for them, and progress we’ve made in reducing UTDs across the ecosystem."
-speakers = [
-      "Kegan"
-    ]
+speakers = ["Kegan"]
 room = "LAB 4"
 youtube = "https://youtu.be/FHzh2Y7BABQ"
-slides = "https://drive.google.com/file/d/1SfjhfVFynph1x_QGrnLF_1lTgbxpF8Iy/view"
+original_slides = "https://drive.google.com/file/d/1SfjhfVFynph1x_QGrnLF_1lTgbxpF8Iy/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 14_30 Kegan Dougal - Unable to decrypt this message.pdf"
 
 [[day2]]
 title = "State of the Matrix Dart SDK 2024"
 track = "Matrix Internals"
 summary = "The Matrix Dart SDK is one of the major feature rich Matrix client SDKs out there. It powers quite a few matrix clients including FluffyChat on everything i.e mobile, web, desktop!"
-speakers = [
-      "Jayesh Nirve (td)"
-    ]
+speakers = ["Jayesh Nirve (td)"]
 room = "LAB 4"
 youtube = "https://youtu.be/L63dy6kXhNo"
-slides = "https://drive.google.com/file/d/1Zvys3LcHqJfBdW2Do42FwJoiXNXKKY2u/view"
+original_slides = "https://drive.google.com/file/d/1Zvys3LcHqJfBdW2Do42FwJoiXNXKKY2u/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 15_15 td - State of the Matrix Dart SDK.pdf"
 
 [[day2]]
 title = "MatrixRTC: The (not anymore) missing piece to enable great video conferences"
 track = "Matrix Internals"
 summary = "MatrixRTC is planned to revolutionise how we do calls over Matrix. It will solve most of the shortcomings of the current call system like: large encrypted group calls, ringing based on fundamental matrix primitives, resolving if two ppl call each other at the same time, reliable call connection setup, and extensibility. But it is also a bit more. It provides a fundamental signalling protocol to setup, store and participate in encrypted real time experiences in a distributed system."
-speakers = [
-      "Timo"
-    ]
+speakers = ["Timo"]
 room = "LAB 4"
 youtube = "https://youtu.be/OXPuYbfiXDQ"
-slides = "https://drive.google.com/file/d/1LuvuokRHIRBzuG0eiZbrIqqE4PPDzuXp/view"
+original_slides = "https://drive.google.com/file/d/1LuvuokRHIRBzuG0eiZbrIqqE4PPDzuXp/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 16_00 Timo Kandra - MatrixRTC_ The (not anymore) missing piece to enable great video conferences.pdf"
 
 [[day2]]
 title = "Harder, better, faster, stronger auth with OpenID Connect"
 track = "Matrix Internals"
 summary = "Matrix Authentication Service is rebuilding the authentication logic in Synapse from the ground up, using industry-standard protocols; let's explore what this transition means for client developers, end users and homeserver administrators."
-speakers = [
-      "Quentin Gliech"
-    ]
+speakers = ["Quentin Gliech"]
 room = "LAB 4"
 youtube = "https://youtu.be/wOW8keNafdE"
-slides = "https://drive.google.com/file/d/1hDC86VK1W4KRhGMrBSA9x95z_mBBvvAL/view"
+original_slides = "https://drive.google.com/file/d/1hDC86VK1W4KRhGMrBSA9x95z_mBBvvAL/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 16_45 Quentin Gliech - Harder better faster stronger auth with OpenID Connect.pdf"
 
 [[day2]]
 title = "Introducing decentralised identity to Matrix"
 track = "Matrix Internals"
 summary = "Matrix is an open protocol for decentralised, secure communications. Its federation architecture is exemplary in supporting open standards, privacy protection, user choice and other aspects of system operations. Its digital identity system however is not fully decentralised and is a significant weakness in the overall user experience, authenticity and privacy protection. In this talk, Wenjing will share with the Matrix community an initiative to bring decentralised identity to Matrix and discuss both technical and user facing advantages of doing so. He will also dive into open source implementation options and seek community feedback and interests in such an initiative."
-speakers = [
-      "Wenjing Chu"
-    ]
+speakers = ["Wenjing Chu"]
 room = "LAB 4"
 youtube = "https://youtu.be/eq9pnYB5-Xk"
-slides = "https://drive.google.com/file/d/145HYyJP4iZOL4lbnrlRx81eiaf0v1RUE/view"
+original_slides = "https://drive.google.com/file/d/145HYyJP4iZOL4lbnrlRx81eiaf0v1RUE/view"
+slides = "/documents/talk_slides/LAB4 2024-09-21 17_30 Wenjing Chu - Introducing Decentralised Identity to Matrix.pdf"
 
 [[day2]]
 title = "Brain of the community: Matrix as a viable system"
 track = "Matrix"
 summary = "The talk is based on the speaker's research of the Matrix ecosystem a few years ago while studying at The Open University, applying the [Viable System Model](https://en.wikipedia.org/wiki/Viable_system_model) (VSM) to explore its organisational dynamics. I’ll start with a quick introduction to VSM, its origins and basic concepts; we’ll then review the current community structure, its evolution over the last few years, the implications from the VSM perspective and what the theory has to say about the future of Matrix."
-speakers = [
-      "Alexey Kitsune Rusakov"
-    ]
+speakers = ["Alexey Kitsune Rusakov"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/1xcyIBTLLJVraVy-buJJtmK35eaRbzNV4/view"
+original_slides = "https://drive.google.com/file/d/1xcyIBTLLJVraVy-buJJtmK35eaRbzNV4/view"
+slides = "/documents/talk_slides/LABG 2024-09-21 10_15 kitsune - Brain of the community_ Matrix as a viable system v1.02.pdf"
 
 [[day2]]
 title = "Standalone Matrix-based apps using the Widget API"
 track = "Matrix"
 summary = "Despite having a limited access to the Matrix API, Widgets have shown to be useful in situations where you need to host external applications within your Matrix client. Widgets have also shown that beyond-chat apps are possible using rooms as domain specific data containers, with custom extensible events and uploaded media. Still, they depend on an existing Matrix client that implements the Widget API.  In this talk we will provide an overview of the technology supporting Matrix Widgets, the tools and demos that exist, and present how we have implemented a standalone Widget client that allows us to have the NeoBoard Widget running outside of a traditional Matrix client context, as a full-blown Matrix-based application."
-speakers = [
-      "Michael Weimann"
-    ]
+speakers = ["Michael Weimann"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/1LkyA9TXqpf56H4ycUOUleiBCWnqmljhS/view"
+original_slides = "https://drive.google.com/file/d/1LkyA9TXqpf56H4ycUOUleiBCWnqmljhS/view"
+slides = "/documents/talk_slides/LABG 2024-09-21 13_30 Michael Weimann - Standalone Matrix-based apps using the Widget API.pdf"
 
 [[day2]]
 title = "[matrix] Widget Starter"
 track = "Matrix"
 summary = "Matrix is not only an open network for secure, decentralised communication. It also features extensions, called Widgets, for interacting with rooms. With the Widget API, you can implement your own applications based on Matrix. This workshop guides you to create your first own Matrix widget. Please read the description for requirements.  There will also be a dedicated talk about Matrix Widgets!"
-speakers = [
-      "Michael Weimann"
-    ]
+speakers = ["Michael Weimann"]
 room = "LAB Green"
 
 [[day2]]
 title = "Stop calling Matrix APIs (directly)"
 track = "Matrix"
 summary = "Most people who have seen an introductory talk about Matrix very likely remember the famous it is this easy to send a message in Matrix slide, with a curl call to `/send`. It is factually correct but I dare say, spiritually wrong. You must not ever do this in your scripts or projects, and in this short talk I'm going to explain why. In fact, I will suggest a new slide that should replace the one with curl and `/send`."
-speakers = [
-      "Alexey Kitsune Rusakov"
-    ]
+speakers = ["Alexey Kitsune Rusakov"]
 room = "LAB Green"
-slides = "https://drive.google.com/file/d/1t1_madxlq1eUr0iESMN8y0_CfOLgXQSv/view"
+original_slides = "https://drive.google.com/file/d/1t1_madxlq1eUr0iESMN8y0_CfOLgXQSv/view"
+slides = "/documents/talk_slides/LABG 2024-09-21 16_00 kitsune - Stop calling Matrix APIs (directly).pdf"
 
 [[day2]]
-title = " Tune Your Chat"
+title = "Tune Your Chat"
 track = "Matrix"
 summary = "This workshop is an interactive talk with an introduction by the host but the wish for attendees to also present their ideas about [matrix] bridges, bots & other integrations."
 speakers = ["Kim Brose"]
-room = "LAB Green"  
+room = "LAB Green"
+slides = "/documents/talk_slides/LABG 2024-09-21 16_30 Kim Brose - Tune Your Chat.pdf"
 
 [[day2]]
 title = "Matrix Community Retreat 2024"
 track = "Matrix"
 summary = "I like to show some impressions and results of the Matrix Community Retreat which took place in Krems in 2024"
-speakers = [
-      "Yan Minagawa"
-    ]
+speakers = ["Yan Minagawa"]
 room = "LAB Green"
 
 [[day2]]
 title = "Closing"
 track = "Matrix"
 summary = "So ends The Matrix Conference 2024 - what's next?"
-speakers = [
-      "Yan Minagawa",
-      "Josh Simmons"
-    ]
+speakers = ["Yan Minagawa", "Josh Simmons"]
 room = "LAB 3"
 youtube = "https://youtu.be/_GZMIkb7Yxc"
 
@@ -538,19 +478,15 @@ youtube = "https://youtu.be/_GZMIkb7Yxc"
 title = "MSC Process Guidance"
 track = "Matrix"
 summary = "Let's talk MSC process and get some proposals written and/or pushed forward! Speak with the Spec Core Team (SCT) directly to get early review on your ideas and input on alternative approaches for existing MSCs."
-speakers = [
-      "Travis Ralston",
-      "Andrew Morgan"
-    ]
+speakers = ["Travis Ralston", "Andrew Morgan"]
 room = "LAB Green"
 youtube = "https://youtu.be/CbOkorTE76o"
-slides = "https://drive.google.com/file/d/1fFEH0GPy2oHSEAcdlmAPwYjmqM1TJ_Tl/view"
+original_slides = "https://drive.google.com/file/d/1fFEH0GPy2oHSEAcdlmAPwYjmqM1TJ_Tl/view"
+slides = "/documents/talk_slides/LABG 2024-09-22 10_00 Andrew Morgan, Travis Ralston - The Matrix Spec Process.pdf"
 
 [[day3]]
 title = "Quotient workshop"
 track = "Matrix"
 summary = "Quotient is a C++/Qt-based SDK to build Matrix clients and bots. Whether you know or don’t know but want to use it - come, share ideas, we’ll set you up and might even quickly iterate on some code. C++ skills and some knowledge of Qt are the only prerequisites."
-speakers = [
-      "Alexey Kitsune Rusakov"
-    ]
+speakers = ["Alexey Kitsune Rusakov"]
 room = "LAB Green"
