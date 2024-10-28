@@ -105,6 +105,16 @@
         }
     }
 
+    .pill.no-video {
+        color: #f7dddd;
+        $pill-color: #d64141;
+        background-color: $pill-color;
+
+        &:hover {
+            background-color: lighten($pill-color, 5%);
+        }
+    }
+
     .date-separator {
         display: flex;
         align-items: center;
