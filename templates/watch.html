@@ -1,39 +1,105 @@
+{% import "macros/talk-card.html" as talk %}
 {% extends "page.html" %}
+{% block head_extra %}
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const onlyDisplay = [];
+        const days = document.querySelectorAll(".day");
+        const talkCards = document.querySelectorAll(".talk-card");
+
+        function refreshCards() {
+            for (const talkCard of talkCards) {
+                if (onlyDisplay.length == 0) {
+                    talkCard.classList.remove("hidden");
+                } else {
+                    const talkMatchesFilter = Array.from(talkCard.classList).some((e) => onlyDisplay.includes(e));
+
+                    if (talkMatchesFilter) {
+                        talkCard.classList.remove("hidden");
+                    } else {
+                        talkCard.classList.add("hidden");
+                    }
+                }
+            }
+
+            for (const day of days) {
+                const visibleTalks = day.querySelectorAll(".talk-card:not(.hidden)");
+                if (visibleTalks.length == 0) {
+                    day.classList.add("hidden");
+                } else {
+                    day.classList.remove("hidden");
+                }
+            }
+        }
+
+        function toggleFilter(trackName) {
+            const index = onlyDisplay.findIndex((e) => e == trackName);
+            if (index > -1) {
+                onlyDisplay.splice(index, 1);
+            } else {
+                onlyDisplay.push(trackName);
+            }
+
+            refreshCards();
+        }
+
+        const pills = document.querySelectorAll("#pills-row > .pill.track");
+        for (const pill of pills) {
+            const trackName = Array.from(pill.classList).find((e) => e != "pill" && e != "track");
+
+            pill.addEventListener('click', (e) => {
+                pill.classList.toggle("selected");
+                toggleFilter(trackName);
+            });
+        }
+    });
+</script>
+{% endblock %}
 {% block content %}
 <div id="watch-content" class="page-content">
-    <div class="content-wrapper">
-        <h2>Participate in the Q&A</h2>
-
-        <p>You can find the YouTube embeds for the various rooms of The Matrix Conference 2024 here for your
-            convenience.</p>
-        <p>You can participate in the Q&A sessions remotely as well either by joining the Matrix rooms for each
-            conference room!</p>
-        <ul>
-            <li><a href="https://matrix.to/#/#matrix-conference-2024:matrix.org">Matrix Space</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab3:matrix.org">LAB 3 Matrix room</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab4:matrix.org">LAB 4 Matrix room</a></li>
-            <li><a href="https://matrix.to/#/#matrix-conf-lab-green:matrix.org">LAB Green Matrix room</a></li>
-        </ul>
-
-        <h2>LAB 3 talks</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/y67eHtWDn4I" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-        <h2>LAB 4 talks</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/rQM3YCvGxuA" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-        <h2>LAB Green talks</h2>
-
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/gXmnjMeq8RU" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div id="pills-row">
+        <button class="pill track matrix">Matrix</button>
+        <button class="pill track matrix-in-practice">Matrix in Practice</button>
+        <button class="pill track public-sector">Public Sector</button>
+        <button class="pill track matrix-in-the-wild">Matrix in The Wild</button>
+        <button class="pill track matrix-internals">Matrix Internals</button>
+        <button class="pill track social-impact">Social Impact</button>
+    </div>
+    <div class="day">
+        <div class="date-separator">
+            <div class="date">Friday 20th September</div>
+            <div class="line"></div>
+        </div>
+        <div class="talks-grid">
+            {% set talks_data = load_data(path="content/watch/talks.toml") %}
+            {% for talk_data in talks_data.day1 %}
+            {{ talk::talk_card(talk=talk_data) }}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="day">
+        <div class="date-separator">
+            <div class="date">Saturday 21st September</div>
+            <div class="line"></div>
+        </div>
+        <div class="talks-grid">
+            {% set talks_data = load_data(path="content/watch/talks.toml") %}
+            {% for talk_data in talks_data.day2 %}
+            {{ talk::talk_card(talk=talk_data) }}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="day">
+        <div class="date-separator">
+            <div class="date">Sunday 22nd September</div>
+            <div class="line"></div>
+        </div>
+        <div class="talks-grid">
+            {% set talks_data = load_data(path="content/watch/talks.toml") %}
+            {% for talk_data in talks_data.day3 %}
+            {{ talk::talk_card(talk=talk_data) }}
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
