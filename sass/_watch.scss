@@ -137,15 +137,20 @@
     .talks-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, 358px);
+        grid-template-rows: repeat(auto-fit, 533px);
         row-gap: 48px;
         column-gap: 24px;
     }
 
     .talk-card {
-        display: block;
+        display: grid;
+        grid-template-rows: 1fr min-content;
         border: 1px solid #D2D2D2;
         border-radius: 16px;
         overflow: clip;
+        gap: 0;
+        // This dictates the height of the card
+        //aspect-ratio: 1/0.75;
 
         .thumbnail-container {
             width: 358px;
@@ -158,9 +163,15 @@
             }
         }
 
+        a {
+            display: grid;
+            grid-template-rows: min-content 1fr;
+        }
+
         .info-container {
             padding: 24px;
-            display: flex;
+            display: grid;
+            grid-template-rows: min-content 1fr min-content min-content;
             flex-direction: column;
             gap: 12px;
             color: var(--color-text);
@@ -172,8 +183,8 @@
                 display: -webkit-inline-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
-                /*overflow: clip;*/
-                height: 3lh;
+                overflow: clip;
+                //height: 3lh;
             }
 
             p {
@@ -183,8 +194,9 @@
                 display: -webkit-inline-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 3;
+                //text-overflow: ellipsis;
                 overflow: clip;
-                height: 3lh;
+                //height: 3lh;
             }
 
             .speaker {
