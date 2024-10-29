@@ -171,9 +171,9 @@
                 margin-block: 0;
                 display: -webkit-inline-box;
                 -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                overflow: clip;
-                height: 2lh;
+                -webkit-line-clamp: 3;
+                /*overflow: clip;*/
+                height: 3lh;
             }
 
             p {
@@ -202,9 +202,12 @@
         }
 
         .additional-links {
-            div, a {
+
+            div,
+            a {
                 padding: 16px 24px;
             }
+
             border-top: 1px solid #D2D2D2;
 
             &:hover {
