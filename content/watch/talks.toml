@@ -174,7 +174,7 @@ speakers = ["Kenneth Edwall", "Anna Engström"]
 room = "LAB 4"
 youtube = "https://www.youtube.com/watch?v=XLt70u0btsM"
 original_slides = "https://drive.google.com/file/d/1q73OB9v7GpZWnM9UWWxqbv9YNV_EFKxW/view"
-slides = "/documents/talk_slides/LAB4 2024-09-20 16.15 - Anna Engström, Kenneth Edwall - Försäkringskassan, Matrix and Sweden_s public sector(SAFOS).pdf"
+slides = "/documents/talk_slides/LAB4 2024-09-20 16_15 Anna Engström, Kenneth Edwall - Försäkringskassan, Matrix and Sweden_s public sector.pdf"
 
 [[day1]]
 title = "Innovating Public Sector Collaboration with Secure, Open-Source Platforms"
