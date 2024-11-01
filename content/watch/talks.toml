@@ -36,7 +36,7 @@ speakers = ["Danielle Kirkwood"]
 room = "LAB 3"
 youtube = "https://www.youtube.com/watch?v=F8qfngVSR5U"
 original_slides = "https://drive.google.com/file/d/1du-K_1nuAOyh0dfKK39AfBHvqM74tmv2/view"
-slides = "/documents/talk_slides/From Protocol to Product.pdf"
+slides = "/documents/talk_slides/LAB3 2024-09-20 13_30 Danielle Kirkwood - From Protocol to Product.pdf"
 
 [[day1]]
 title = "How to fix security issues in a decentralized system with multiple vendors"
@@ -116,7 +116,7 @@ speakers = ["Patrick Maier"]
 room = "LAB 4"
 youtube = "https://www.youtube.com/watch?v=yVvWHEKl4rg"
 original_slides = "https://drive.google.com/file/d/13sQAxHJg7dyFfon47H51WPVSKgTGe7iz/view"
-slides = "/documents/talk_slides/LAB 4 2024-09-20 11_30 Patrick Maier - Federated, not out of control.pdf"
+slides = "/documents/talk_slides/LAB4 2024-09-20 11_30 Patrick Maier - Federated, not out of control.pdf"
 
 [[day1]]
 title = "The TI-Messenger: Advancing Secure Healthcare Communication within Germany"
@@ -156,7 +156,7 @@ speakers = ["Jeroen Franssen"]
 room = "LAB 4"
 youtube = "https://www.youtube.com/watch?v=4aswIHJRwkk"
 original_slides = "https://drive.google.com/file/d/1bPqUJAFwG7AoNdkSy6T5h9lcVDmsAWqH/view"
-slides = "/documents/talk_slides/20240917_NI2CE_in_NATO_Matrix_Conference_VTSl6j2.pdf"
+slides = "/documents/talk_slides/LAB4 2024-09-20 15_00 Jeroen Franssen - A messenger for NATO and its members.pdf"
 
 [[day1]]
 title = "Data Privacy and Signature Management: Battling Digital Surveillance"
@@ -225,7 +225,7 @@ summary = "Historically, confusing encryption has been one of Element’s weakes
 speakers = ["Valère Fédronic"]
 room = "LAB Green"
 original_slides = "https://drive.google.com/file/d/1e0uOF9x98Y9YvFZAlnv4N2nfIx6YVuC9/view"
-slides = "/documents/talk_slides/LAB Green 2024-09-20 Valere Fedronic Patrick Maier Invisible Crypto.pdf"
+slides = "/documents/talk_slides/LABG 2024-09-20 14_15 Valere Fedronic - Invisible Cryptography.pdf"
 
 [[day1]]
 title = "Elm SDK - your favourite SDK you'll never use"
@@ -243,7 +243,7 @@ summary = "Beep-boop ; I had too much time during work meetings - and what happe
 speakers = ["The one with the braid (she/her)"]
 room = "LAB Green"
 original_slides = "https://slides.com/theonewiththebraid/sliding-sync/"
-slides = "/documents/talk_slides/SlidingSyncFromADartDeveloperPerspective.pdf"
+slides = "/documents/talk_slides/LABG 2024-09-20 17_30 The one with the braid - Looking at application performance of Sliding Sync in Dart.pdf"
 
 [[day2]]
 title = "Advancing human rights with Tor"
