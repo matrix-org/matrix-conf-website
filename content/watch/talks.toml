@@ -441,6 +441,7 @@ track = "Matrix"
 summary = "Matrix is not only an open network for secure, decentralised communication. It also features extensions, called Widgets, for interacting with rooms. With the Widget API, you can implement your own applications based on Matrix. This workshop guides you to create your first own Matrix widget. Please read the description for requirements.  There will also be a dedicated talk about Matrix Widgets!"
 speakers = ["Michael Weimann"]
 room = "LAB Green"
+slides = "https://codeberg.org/weeman/matrix-widget-starter"
 
 [[day2]]
 title = "Stop calling Matrix APIs (directly)"
