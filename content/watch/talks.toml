@@ -288,6 +288,8 @@ summary = "Element call is the flagship Element MatrixRTC application. It is rep
 speakers = ["Florian Heese"]
 room = "LAB 3"
 youtube = "https://www.youtube.com/watch?v=NQUrYphH7EA"
+original_slides = "https://drive.google.com/file/d/1LqMTN074mmeRxpq2b96zxtSUGkt3qcdA/view"
+slides = "/documents/talk_slides/LAB3 2024-09-21 14_15 Florian Heese - Element Call Worldʼs first decentralised and federatedvideo conferencing solution.pdf"
 
 [[day2]]
 title = "Implementing a Matrix client inside WorkAdventure - A developer feedback"
