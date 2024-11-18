@@ -54,7 +54,7 @@ track = "Matrix in Practice"
 summary = "Can matrix be used to coordinate emergency services? Is it worth, waiting for their colleagues to arrive at the department or should they not waste any more time? Current solutions mostly are proprietary and those few that support messaging are trying to reinvent the wheel. Using the power of matrix's application service API, Alertrix aims to provide a solution to this problem."
 speakers = ["Fabian Becker"]
 room = "LAB 3"
-youtube = "https://www.youtube.com/watch?v=ebWzQGtxCXc"
+youtube = "https://tube.tchncs.de/w/rhJVddSYSXs7bekqeg3aLG"
 original_slides = "https://drive.google.com/file/d/19fL0GMk3vxOvd2cNCwAzEwoX9SIovH0A/view"
 slides = "/documents/talk_slides/LAB3 2024-09-20 15_00 Fabian Becker - Using matrix to coordinate Emergency Services.pdf"
 
