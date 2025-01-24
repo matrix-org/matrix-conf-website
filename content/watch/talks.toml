@@ -224,6 +224,7 @@ track = "Matrix"
 summary = "Historically, confusing encryption has been one of Element’s weakest usability points. In this talk, we’ll explain the process that has gone into reworking encryption in both Element X and Matrix as a whole to make it seamless and invisible to users, while further improving security."
 speakers = ["Valère Fédronic"]
 room = "LAB Green"
+youtube = "https://youtu.be/axBRh3YUGBM"
 original_slides = "https://drive.google.com/file/d/1e0uOF9x98Y9YvFZAlnv4N2nfIx6YVuC9/view"
 slides = "/documents/talk_slides/LABG 2024-09-20 14_15 Valere Fedronic - Invisible Cryptography.pdf"
 
