@@ -1,8 +1,8 @@
 # The URL the site will be built for
-base_url = "https://2024.matrix.org"
+base_url = "https://2025.matrix.org"
 
-title = "The Matrix Conference 2024"
-description = "The Matrix Conference is coming to Berlin, Germany on September 19–22, 2024."
+title = "The Matrix Conference 2025"
+description = "The Matrix Conference is coming to Strasbourg, France in October 2025."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -26,11 +26,11 @@ highlight_code = true
 highlight_theme = "visual-studio-dark"
 
 [extra]
-short_location = "Berlin, Germany"
-short_date = "19-22 September"
+short_location = "Strasbourg, France"
+short_date = "October 2025"
 
 hero_button_url = "/watch"
 hero_button_event = "Index+Hero+Watch"
-hero_button_title = "Watch the talks"
+hero_button_title = "Watch the 2024 talks"
 # Used for the navbar
 hero_button_callout = "Watch"
