@@ -29,8 +29,8 @@ highlight_theme = "visual-studio-dark"
 short_location = "Strasbourg, France"
 short_date = "October 2025"
 
-hero_button_url = "/watch"
-hero_button_event = "Index+Hero+Watch"
-hero_button_title = "Watch the 2024 talks"
+hero_button_url = "https://cfp.matrix.org"
+hero_button_event = "Index+Hero+Cfp"
+hero_button_title = "Propose a Talk"
 # Used for the navbar
-hero_button_callout = "Watch"
+hero_button_callout = "CfP"
