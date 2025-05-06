@@ -29,7 +29,7 @@ highlight_theme = "visual-studio-dark"
 short_location = "Strasbourg, France"
 short_date = "October 2025"
 
-hero_button_url = "/watch"
+hero_button_url = "https://2024.matrix.org/watch"
 hero_button_event = "Index+Hero+Watch"
 hero_button_title = "Watch the 2024 talks"
 # Used for the navbar
