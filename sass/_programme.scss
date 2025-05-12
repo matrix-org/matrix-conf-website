@@ -5,5 +5,13 @@
 
     #programme {
         overflow-x: scroll;
+
+        .content {
+            display: block;
+
+            h2 {
+                margin-block-end: 1em;
+            }
+        }
     }
 }
