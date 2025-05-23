@@ -137,64 +137,72 @@
     .talks-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, 358px);
+        grid-template-rows: repeat(auto-fit, 533px);
         row-gap: 48px;
         column-gap: 24px;
     }
 
     .talk-card {
-        display: block;
+        display: grid;
+        grid-template-rows: 1fr min-content;
         border: 1px solid #D2D2D2;
         border-radius: 16px;
         overflow: clip;
+        gap: 0;
 
-        .thumbnail-container {
-            width: 358px;
-            height: 200px;
-            background-color: #000;
-            overflow: clip;
-
-            img {
-                border-radius: 0;
-            }
-        }
-
-        .info-container {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
+        .infos {
+            display: grid;
+            grid-template-columns: 358px;
+            grid-template-rows: 200px min-content 1fr min-content min-content;
             gap: 12px;
             color: var(--color-text);
 
-            h2 {
-                font-size: 1.25rem;
-                line-height: 1.2;
-                margin-block: 0;
-                display: -webkit-inline-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 3;
-                /*overflow: clip;*/
-                height: 3lh;
-            }
-
-            p {
-                line-height: 1.4;
-                margin-block: 0;
-                font-size: 1rem;
-                display: -webkit-inline-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 3;
+            .thumbnail-container {
+                background-color: #000;
+                border-radius: 0;
                 overflow: clip;
-                height: 3lh;
-            }
 
-            .speaker {
-                font-size: .75rem;
+                img {
+                    border-radius: 0;
+                }
             }
+        }
 
-            .talk-pills {
-                display: flex;
-                gap: 8px;
-            }
+        h2 {
+            // There is already a gap of 12px between the image and the title
+            padding-top: 12px;
+            padding-inline: 24px;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            margin-block: 0;
+            display: -webkit-inline-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: clip;
+        }
+
+        .description {
+            padding-inline: 24px;
+            line-height: 1.4;
+            margin-block: 0;
+            font-size: 1rem;
+            display: -webkit-inline-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: clip;
+            height: 3lh;
+        }
+
+        .speaker {
+            padding-inline: 24px;
+            font-size: .75rem;
+        }
+
+        .talk-pills {
+            padding-inline: 24px;
+            display: flex;
+            gap: 8px;
+            padding-bottom: 24px;
         }
 
         &:hover {
