@@ -20,4 +20,4 @@ Volunteering for the Conference entitles you to a free ticket, and a limited edi
 We will create a schedule to make sure volunteers can enjoy the conference, too.
 The more people lend a hand, the less work each one has to do!
 
-If you are interested, contact the Events Working Group at [#events-wg:matrix.org](https://matrix.to/#/#events-wg:matrix.org) or email the conference organisers at [conference@foundation.matrix.org](mailto:conference@foundation.matrix.org?subject=Volunteering+for+the+Conference)!
+If you are interested, contact the Events Working Group at [#events-wg:matrix.org](https://matrix.to/#/#events-wg:matrix.org) or email the conference organisers at [conference@foundation.matrix.org](mailto:conference@foundation.matrix.org?subject=Volunteering%20for%20the%20Conference)!
