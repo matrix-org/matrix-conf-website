@@ -27,6 +27,7 @@ highlight_theme = "visual-studio-dark"
 
 [extra]
 short_location = "Strasbourg, France"
+year = "2025"
 # always use the format "Month DD to DD, YYYY"
 short_date = "October 15 to 18, 2025"
 
