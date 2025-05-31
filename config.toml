@@ -31,7 +31,7 @@ year = "2025"
 # always use the format "Month DD to DD, YYYY"
 short_date = "October 15 to 18, 2025"
 
-hero_button_url = "https://cfp.2025.matrix.org"
+hero_button_url = "https://cfp.2025.matrix.org/matrix-conf-2025/cfp"
 hero_button_event = "Index+Hero+CfP"
 hero_button_title = "Submit a Proposal"
 # Used for the navbar
