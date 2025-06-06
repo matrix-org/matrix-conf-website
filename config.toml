@@ -27,7 +27,7 @@ highlight_theme = "visual-studio-dark"
 
 [extra]
 short_location = "Berlin, Germany"
-short_date = "19-22 September"
+short_date = "19-22 September, 2024"
 
 hero_button_url = "/watch"
 hero_button_event = "Index+Hero+Watch"
