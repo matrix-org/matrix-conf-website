@@ -54,7 +54,6 @@ body {
 
 main {
     flex: 1;
-    padding-top: var(--navbar-height);
 }
 
 a {
@@ -197,4 +196,11 @@ a>code {
     row-gap: 1rem;
 
     align-items: center;
+}
+
+#main-banner {
+    font-size: 1.5rem;
+    padding: .4em 1em;
+    text-align: center;
+    background-color: rgba(255, 203, 0, .4196078431);
 }
