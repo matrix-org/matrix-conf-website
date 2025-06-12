@@ -55,7 +55,9 @@
 <body>
     {% set navigation = load_data(path="navigation.toml") %}
     {% include "includes/header.html" %}
-
+    <div id="main-banner">
+        This is the 2024 conference website. For the current year, visit <a href="https://conference.matrix.org">conference.matrix.org</a>.
+    </div>
     <main>
         {% block content %}{% endblock content %}
     </main>
