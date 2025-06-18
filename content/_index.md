@@ -1,5 +1,5 @@
 +++
-aliases = ["/register/", "/watch/"]
+aliases = ["/watch/"]
 extra.meta_description = """
 """
 +++
