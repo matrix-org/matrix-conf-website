@@ -16,7 +16,7 @@ We are looking for help in these areas:
 - Helping people with accessibility needs navigate the conference
 - Putting the equipment away after the conference
 
-Volunteering for the Conference entitles you to a free ticket, and a limited edition t-shirt and mug.
+Volunteering for the Conference entitles you to a free ticket, and a limited edition zipper hoodie.
 We will create a schedule to make sure volunteers can enjoy the conference, too.
 The more people lend a hand, the less work each one has to do!
 

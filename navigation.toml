@@ -1,7 +1,8 @@
 header = [
     { title = "About", href="/about" },
-    { title = "Attend", href="/attend" }, 
+    { title = "Attend", href="/attend" },
     { title = "Sponsor", href="/sponsor" },
     { title = "Schedule", href="/schedule" },
     { title = "Volunteer", href="/volunteer" },
+    { title = "Tickets", href="/register" },
 ]
