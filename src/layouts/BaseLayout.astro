@@ -8,6 +8,11 @@ import "../styles/global.css";
     body {
         background-color: var(--bg-color);
         color: var(--fg-color);
+
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
     }
 </style>
 <html lang="en">
@@ -20,5 +25,8 @@ import "../styles/global.css";
     </head>
     <body>
         <Header />
+        <main id="main-content">
+            <slot />
+        </main>
     </body>
 </html>
