@@ -1,0 +1,82 @@
+---
+import Hero from "../components/Hero.astro";
+import TextAndImage from "../components/TextAndImage.astro";
+import TwoTextCols from "../components/TwoTextCols.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <Hero
+        title="Attend the conference"
+        description="Join us for the Matrix Conference from October 15 to 18, 2025. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+        ctaText="Get tickets"
+        ctaHref=""
+    />
+    <section id="large-end-user-orgs">
+        <TextAndImage imgSrc="/meeting.jpg">
+            <h2>Why large end-user organisations attend</h2>
+            <p>
+                The Matrix Conference is the best place to learn more about
+                Matrix. Hear direct from Matthew Hodgson and Amandine Le Pape,
+                Matrix co-founders.
+            </p>
+            <p>
+                See how governments, public sector sector organisations and
+                other workplaces are transforming the way they work using Matrix
+            </p>
+            <p>Learn how service providers deploy Matrix for workplace use.</p>
+        </TextAndImage>
+    </section>
+    <section id="academics-communities">
+        <TextAndImage imgSrc="/large-meeting.jpg" reverse>
+            <h2>Why academics, communities and hackers attend</h2>
+            <p>
+                This is the place to meet your community, users, and
+                contributors. Come solve problems you couldn’t solve online, and
+                learn about the next big thing in the Matrix ecosystem.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="how-to-attend">
+        <TextAndImage imgSrc="/pavement.jpg">
+            <h2>How to attend</h2>
+            <p>
+                Attend the conference in person by purchasing a ticket, join as
+                a sponsor, present a keynote or volunteer.
+            </p>
+            <p>
+                If you can’t attend in person or if the tickets are sold out,
+                join in via livestreaming or watch the recordings on-demand
+                after the conference.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="dietary-requirements">
+        <TextAndImage imgSrc="/food.jpg" reverse>
+            <h2>Dietary Requirements</h2>
+            <p>
+                All meals and refreshments provided will cater to a wide variety
+                of dietary needs and preferences clearly labelled with
+                ingredients and allergen information at the event.
+            </p>
+            <p>
+                If you have specific food allergies or requirements, please
+                don’t hesitate to <a
+                    href="mailto:conference@foundation.matrix.org">contact us</a
+                >.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="accessibility">
+        <TwoTextCols
+            title="Accessiblity"
+            leftParagraph="We are committed to making The Matrix Conference \
+            accessible to all. Our venue is wheelchair accessible. We are \
+            actively working to provide live captioning for our sessions."
+            rightParagraph=`The availability of live captioning will depend \
+            on the support we receive from our generous sponsors. If you know \
+            of any organisations interested in helping us enhance \
+            accessibility, please contact us.`
+        />
+    </section>
+</BaseLayout>

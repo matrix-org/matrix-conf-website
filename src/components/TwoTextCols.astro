@@ -1,0 +1,39 @@
+---
+const { title, leftParagraph, rightParagraph } = Astro.props;
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    :global(h2) {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    :global(p) {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+        margin-block-start: 1.2em;
+    }
+</style>
+
+<div class="content-wrapper">
+    <h2>{title}</h2>
+    <div class="grid">
+        <div class="text">
+            <p>{leftParagraph}</p>
+        </div>
+        <div class="text">
+            <p>{rightParagraph}</p>
+        </div>
+    </div>
+</div>
