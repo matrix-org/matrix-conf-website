@@ -6,6 +6,10 @@
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 }
 
+section {
+    padding: 5rem 1rem;
+}
+
 a {
     color: var(--fg-color);
     text-decoration: none;

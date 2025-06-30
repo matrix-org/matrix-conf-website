@@ -1,5 +1,7 @@
 ---
+import { ACTION_ERROR_CODES } from "astro:actions";
 import Hero from "../components/Hero.astro";
+import TextAndImage from "../components/TextAndImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -10,4 +12,72 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         ctaText="Get tickets"
         ctaHref=""
     />
+    <section id="what-is-conf">
+        <TextAndImage imgSrc="/what-is-conf.jpg">
+            <h2>What is The Matrix Conference</h2>
+            <p>
+                Run by The Matrix Foundation, the conference brings together all
+                parts of the Matrix universe.
+            </p>
+            <p>
+                We deliberately mix all types of Matrix users, developers and
+                enthusiasts so that a whole bunch of people that use Matrix in
+                different ways can learn from one another.
+            </p>
+            <p>
+                Meet people just like you, and meet people who are very
+                different to you!
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="who-attends">
+        <TextAndImage imgSrc="" reverse>
+            <h2>Who attends The Matrix Conference</h2>
+            <p>
+                More than 200 people attended The Matrix Conference 2024, in
+                Berlin (we were totally sold out!).
+            </p>
+
+            <p>
+                Around a third of those attending were running Matrix-based
+                deployments in public sector organisations or other large
+                workplaces.
+            </p>
+
+            <p>
+                Another third were from organisations offering Matrix-based
+                products and services.
+            </p>
+
+            <p>
+                And the other third are developers, hackers, academics and
+                digital rights activists.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="work-play-hard">
+        <TextAndImage imgSrc="play-hard.jpg">
+            <h2>Work hard, play hard!</h2>
+            <p>
+                During the day, The Matrix Conference offers a packed and varied
+                agenda.
+            </p>
+
+            <p>
+                Pick and choose from simultaneous sessions to suit your
+                interests, from delivering on service levels agreement to
+                geeking out.
+            </p>
+
+            <p>
+                Your brain will be bursting with ideas by the end of each day!
+            </p>
+
+            <p>
+                Come the evening, hang out with other Matrix enthusiasts in more
+                casual environments and enjoy the warm Autumnal evenings in
+                beautiful Strasbourg!
+            </p>
+        </TextAndImage>
+    </section>
 </BaseLayout>
