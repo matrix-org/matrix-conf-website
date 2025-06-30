@@ -5,7 +5,7 @@ const { imgSrc, reverse } = Astro.props;
 <style>
     .content-wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template: 1fr / 1fr 1fr;
         gap: 1rem;
         max-width: var(--max-page-width);
         margin-inline: auto;
@@ -22,12 +22,14 @@ const { imgSrc, reverse } = Astro.props;
         margin-block-start: 1.2em;
     }
 
-    .content-wrapper.reverse .text {
-        grid-column: 2;
-    }
-
     .content-wrapper.reverse img {
         grid-column: 1;
+        grid-row: 1;
+    }
+
+    .content-wrapper.reverse .text {
+        grid-column: 2;
+        grid-row: 1;
     }
 </style>
 
