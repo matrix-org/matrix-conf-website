@@ -1,11 +1,12 @@
 ---
-
+import PrimaryCta from "./PrimaryCta.astro";
 ---
 
 <style>
     nav {
         display: flex;
         justify-content: space-between;
+        align-content: center;
         padding: 1rem 2rem;
     }
 
@@ -15,6 +16,11 @@
         padding: 0;
         font-weight: 700;
         gap: 40px;
+    }
+
+    li {
+        display: grid;
+        place-content: center;
     }
 </style>
 <nav>
@@ -27,6 +33,6 @@
         <li><a href="/sponsor">Sponsor</a></li>
         <li><a href="/schedule">Schedule</a></li>
         <li><a href="/volunteer">Volunteer</a></li>
-        <li><a href="/attend#tickets">Get Tickets</a></li>
+        <li><PrimaryCta href="/attend#tickets">Get Tickets</PrimaryCta></li>
     </ul>
 </nav>
