@@ -51,6 +51,12 @@
         font-weight: 700;
         place-content: center;
         background-image: url("/grey-repeating-lines.svg");
+        padding-inline: 10px;
+    }
+
+    .inner-line img {
+        display: inline-block;
+        margin-inline-start: 0.1rem;
     }
 </style>
 <div class="content-wrapper">
@@ -71,8 +77,10 @@
             </div>
         </a>
         <a id="become-sponsor" href="/sponsor">
-            <span>Become a sponsor</span>
-            <img src="chevron" alt="" />
+            <span class="inner-line">
+                Become a sponsor
+                <img src="/pixel-chevron.svg" alt="" />
+            </span>
         </a>
         <a id="famedly" href="https://famedly.de" target="_blank">
             <img src="/sponsors/famedly.svg" alt="Famedly" />
