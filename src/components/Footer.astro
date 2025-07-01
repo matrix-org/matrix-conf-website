@@ -6,10 +6,26 @@
     .content-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
+        column-gap: clamp(20px, calc(10vw - 40px), 60px);
+        row-gap: 60px;
         max-width: fit-content;
         margin-inline: auto;
         margin-block-end: 5rem;
+        padding-inline: 1.5rem;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .content-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 550px) {
+        /* Number obtained by manually testing */
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     ul {
