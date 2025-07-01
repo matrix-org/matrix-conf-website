@@ -4,6 +4,14 @@ import Header from "../components/Header.astro";
 import "../styles/reset.css";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+    pageTitle: string;
+    description: string;
+    ogTitle?: string;
+}
+
+const { pageTitle, ogTitle, description } = Astro.props;
 ---
 
 <style>
@@ -37,7 +45,32 @@ import Footer from "../components/Footer.astro";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
+
+        <meta property="og:title" content={ogTitle || pageTitle} />
+        <meta name="twitter:title" content={ogTitle || pageTitle} />
+
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="twitter:domain" content="conference.matrix.org" />
+        <meta property="twitter:url" content={Astro.url} />
+
+        <meta
+            name="image"
+            property="og:image"
+            content={Astro.site + "matrix-conference-opengraph.png"}
+        />
+        <meta
+            name="twitter:image"
+            content={Astro.site + "matrix-conference-opengraph.png"}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+
         <ClientRouter />
     </head>
     <body>
