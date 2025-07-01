@@ -1,13 +1,19 @@
 ---
 import PrimaryCta from "./PrimaryCta.astro";
+import { Image } from "astro:assets";
 ---
 
 <style>
     nav {
+        position: sticky;
+        top: 0;
+        background-color: #000000;
+
         display: flex;
         justify-content: space-between;
         align-content: center;
         padding: 1rem 2rem;
+        z-index: 99999;
     }
 
     ul {
@@ -22,12 +28,64 @@ import PrimaryCta from "./PrimaryCta.astro";
         display: grid;
         place-content: center;
     }
+
+    #menu-button {
+        position: absolute;
+        display: none;
+        background-color: transparent;
+        border-color: transparent;
+        z-index: 1000;
+        width: 42px;
+        height: 42px;
+        top: 30px;
+        right: 30px;
+        padding: 0;
+    }
+
+    @media (max-width: 890px) {
+        nav.expanded > #matrix-logo {
+            display: none;
+        }
+
+        #menu-button {
+            display: block;
+        }
+
+        #sections.expanded ~ #menu-button > #hamburger-icon {
+            display: none;
+        }
+
+        #sections:not(.expanded) ~ #menu-button > #close-icon {
+            display: none;
+        }
+
+        #sections {
+            display: none;
+            margin-block-start: 5rem;
+        }
+
+        #sections.expanded {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+        }
+
+        #sections.expanded li {
+            place-content: start;
+        }
+
+        nav.expanded {
+            position: absolute;
+            inset: 0;
+            padding-inline: 3rem;
+        }
+    }
 </style>
 <nav>
-    <a href="/">
+    <a id="matrix-logo" href="/">
         <img src="/matrix-logo.svg" alt="Home Page" />
     </a>
-    <ul>
+    <ul id="sections">
         <li><a href="/about">About</a></li>
         <li><a href="/attend">Attend</a></li>
         <li><a href="/sponsor">Sponsor</a></li>
@@ -35,4 +93,38 @@ import PrimaryCta from "./PrimaryCta.astro";
         <li><a href="/volunteer">Volunteer</a></li>
         <li><PrimaryCta href="/attend#tickets">Get Tickets</PrimaryCta></li>
     </ul>
+
+    <button id="menu-button" title="Menu button">
+        <Image
+            id="hamburger-icon"
+            src="/hamburger.svg"
+            width="42"
+            height="42"
+            alt="Hamburger icon menu"
+        />
+        <Image
+            id="close-icon"
+            src="/close.svg"
+            width="42"
+            height="42"
+            alt="Cross icon menu"
+        />
+    </button>
 </nav>
+<script>
+    document.addEventListener("astro:after-swap", () => {
+        document.querySelector("nac")?.classList.remove("expanded");
+        document.querySelector("#sections")?.classList.remove("expanded");
+    });
+
+    document.addEventListener("astro:page-load", () => {
+        document
+            .querySelector("#menu-button")
+            ?.addEventListener("click", () => {
+                document.querySelector("nav")?.classList.toggle("expanded");
+                document
+                    .querySelector("#sections")
+                    ?.classList.toggle("expanded");
+            });
+    });
+</script>
