@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://conference.matrix.org/sitemap-index.xml
