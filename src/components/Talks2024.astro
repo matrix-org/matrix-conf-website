@@ -14,6 +14,21 @@
         gap: 40px;
     }
 
+    @media (max-width: 680px) {
+        /* Number obtained by manually testing */
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .left-col {
+            grid-row: 2;
+        }
+
+        img {
+            grid-row: 1;
+        }
+    }
+
     .left-col {
         display: flex;
         flex-direction: column;
