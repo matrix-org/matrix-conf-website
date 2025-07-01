@@ -12,9 +12,23 @@ const { title, description, ctaText, ctaHref } = Astro.props;
         border-block-end: 1px solid #3c3f44;
     }
 
+    @media (max-width: 800px) {
+        .hero {
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            line-height: 120%;
+        }
+
+        .right-col {
+            min-height: 50px;
+        }
+    }
+
     .left-col {
         place-content: center;
-        padding: 60px;
+        padding: clamp(1.5rem, 5vw, 3.75rem);
 
         display: flex;
         flex-direction: column;
