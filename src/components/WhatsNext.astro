@@ -16,6 +16,14 @@
         grid-template: repeat(3, 1fr) / repeat(2, 1fr);
     }
 
+    @media (max-width: 625px) {
+        /* Number obtained by manually testing */
+
+        .whats-next-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
     .whats-next-grid > * {
         padding: 20px;
     }
