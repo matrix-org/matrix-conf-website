@@ -1,5 +1,6 @@
 ---
 import GettingThere from "../components/GettingThere.astro";
+import HealthSafetyPolicy from "../components/HealthSafetyPolicy.astro";
 import Hero from "../components/Hero.astro";
 import TextAndImage from "../components/TextAndImage.astro";
 import TwoTextCols from "../components/TwoTextCols.astro";
@@ -79,16 +80,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section id="getting-there">
         <GettingThere />
     </section>
-    <section id="accessibility">
-        <TwoTextCols
-            title="Accessiblity"
-            leftParagraph="We are committed to making The Matrix Conference \
-            accessible to all. Our venue is wheelchair accessible. We are \
-            actively working to provide live captioning for our sessions."
-            rightParagraph=`The availability of live captioning will depend \
-            on the support we receive from our generous sponsors. If you know \
-            of any organisations interested in helping us enhance \
-            accessibility, please contact us.`
-        />
+    <section id="health-and-safety">
+        <HealthSafetyPolicy />
     </section>
 </BaseLayout>
