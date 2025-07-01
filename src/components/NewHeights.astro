@@ -26,8 +26,16 @@ import PrimaryCta from "../components/PrimaryCta.astro";
     .bottom-third {
         display: grid;
         padding-block: 1rem;
-        gap: 40px;
+        column-gap: clamp(10px, 5vw, 40px);
+        row-gap: 30px;
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 680px) {
+        /* Number obtained by manually testing */
+        .bottom-third {
+            grid-template-columns: 1fr;
+        }
     }
 
     .left-col {
