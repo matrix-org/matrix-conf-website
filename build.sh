@@ -8,5 +8,5 @@ elif [ "$CF_PAGES_BRANCH" == "staging" ]; then
   zola build --base-url $CF_STAGING_URL
 else
   # build using the default cf pages env url
-  zola build --base-url $CF_PAGES_URL
+  pnpm run build
 fi
