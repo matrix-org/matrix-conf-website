@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import PrimaryCta from "../components/PrimaryCta.astro";
+import GroupPicture from "../img/GroupPicture.jpg";
 ---
 
 <style>
@@ -58,8 +60,8 @@ import PrimaryCta from "../components/PrimaryCta.astro";
 <div class="content-wrapper">
     <h2>This year, we're taking the conference to new heights!</h2>
     <div class="content">
-        <img
-            src="/new-heights.webp"
+        <Image
+            src={GroupPicture}
             alt="A picture of an enthusiastic crowd taken from above."
         />
         <div class="bottom-third">

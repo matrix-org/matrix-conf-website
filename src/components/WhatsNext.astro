@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import banner from "../img/WhatsNext.png";
 ---
 
 <style>
@@ -54,6 +55,10 @@
         );
     }
 
+    .image-container {
+        background-color: #000;
+    }
+
     h2 {
         font-size: 2rem;
         line-height: 120%;
@@ -79,7 +84,9 @@
 <div class="content-wrapper">
     <div class="whats-next-grid">
         <div class="left-col">
-            <img class="banner" src="/whats-next-banner.webp" alt="" />
+            <div class="image-container">
+                <Image src={banner} alt="" />
+            </div>
             <h2>Discover what's next for Matrix and help shape it.</h2>
         </div>
         <div class="item">
