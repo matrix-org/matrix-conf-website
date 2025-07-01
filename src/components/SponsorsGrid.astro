@@ -42,6 +42,17 @@
         grid-column: 1 / span 2;
     }
 
+    @media (max-width: 625px) {
+        /* Number obtained by manually testing */
+        .sponsors-grid {
+            grid-template-columns: 1fr;
+        }
+
+        #element {
+            grid-column: 1;
+        }
+    }
+
     #element .description .main-sentence {
         font-weight: 700;
         margin-block-end: 0.5rem;
