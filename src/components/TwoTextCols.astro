@@ -14,6 +14,13 @@ const { title, leftParagraph, rightParagraph } = Astro.props;
         gap: 1rem;
     }
 
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
     :global(h2) {
         font-size: 2rem;
         font-weight: 700;

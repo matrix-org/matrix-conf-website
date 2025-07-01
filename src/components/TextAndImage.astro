@@ -11,6 +11,13 @@ const { imgSrc, reverse } = Astro.props;
         margin-inline: auto;
     }
 
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+
     :global(h2) {
         font-size: 2rem;
         font-weight: 700;
