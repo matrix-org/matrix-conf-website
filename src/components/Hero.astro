@@ -4,8 +4,8 @@ import PrimaryCta from "./PrimaryCta.astro";
 interface Props {
     title: string;
     description: string;
-    ctaText: string;
-    ctaHref: string;
+    ctaText?: string;
+    ctaHref?: string;
 }
 
 const { title, description, ctaText, ctaHref } = Astro.props;
@@ -61,7 +61,11 @@ const { title, description, ctaText, ctaHref } = Astro.props;
     <div class="left-col">
         <h1>{title}</h1>
         <p>{description}</p>
-        <PrimaryCta href={ctaHref}>{ctaText}</PrimaryCta>
+        {
+            ctaText && ctaHref && (
+                <PrimaryCta href={ctaHref}>{ctaText}</PrimaryCta>
+            )
+        }
     </div>
     <div class="right-col"></div>
 </div>
