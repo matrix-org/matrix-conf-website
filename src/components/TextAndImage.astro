@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 const { imgSrc, reverse } = Astro.props;
 ---
 
@@ -44,5 +45,5 @@ const { imgSrc, reverse } = Astro.props;
     <div class="text">
         <slot />
     </div>
-    <img src={imgSrc} />
+    <Image src={imgSrc} alt="" />
 </div>

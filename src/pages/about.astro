@@ -2,6 +2,9 @@
 import Hero from "../components/Hero.astro";
 import TextAndImage from "../components/TextAndImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import WhatIsConf from "../img/WhatIsConf.png";
+import WhoAttends from "../img/WhoAttends.png";
+import WorkHardPlayHard from "../img/WorkHardPlayHard.png";
 ---
 
 <BaseLayout
@@ -15,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         ctaHref=""
     />
     <section id="what-is-conf">
-        <TextAndImage imgSrc="/what-is-conf.jpg">
+        <TextAndImage imgSrc={WhatIsConf}>
             <h2>What is The Matrix Conference</h2>
             <p>
                 Run by The Matrix Foundation, the conference brings together all
@@ -33,7 +36,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </TextAndImage>
     </section>
     <section id="who-attends">
-        <TextAndImage imgSrc="" reverse>
+        <TextAndImage imgSrc={WhoAttends} reverse>
             <h2>Who attends The Matrix Conference</h2>
             <p>
                 More than 200 people attended The Matrix Conference 2024, in
@@ -58,7 +61,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </TextAndImage>
     </section>
     <section id="work-play-hard">
-        <TextAndImage imgSrc="play-hard.jpg">
+        <TextAndImage imgSrc={WorkHardPlayHard}>
             <h2>Work hard, play hard!</h2>
             <p>
                 During the day, The Matrix Conference offers a packed and varied
