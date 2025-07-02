@@ -4,6 +4,10 @@ import HealthSafetyPolicy from "../components/HealthSafetyPolicy.astro";
 import Hero from "../components/Hero.astro";
 import TextAndImage from "../components/TextAndImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SmallMeeting from "../img/SmallMeeting.png";
+import LargeMeeting from "../img/LargeMeeting.png";
+import MatrixStep from "../img/MatrixStep.png";
+import Buffet from "../img/Buffet.png";
 ---
 
 <style>
@@ -22,7 +26,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         ctaHref=""
     />
     <section id="large-end-user-orgs">
-        <TextAndImage imgSrc="/meeting.jpg">
+        <TextAndImage imgSrc={SmallMeeting}>
             <h2>Why large end-user organisations attend</h2>
             <p>
                 The Matrix Conference is the best place to learn more about
@@ -37,7 +41,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </TextAndImage>
     </section>
     <section id="academics-communities">
-        <TextAndImage imgSrc="/large-meeting.jpg" reverse>
+        <TextAndImage imgSrc={LargeMeeting} reverse>
             <h2>Why academics, communities and hackers attend</h2>
             <p>
                 This is the place to meet your community, users, and
@@ -47,7 +51,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </TextAndImage>
     </section>
     <section id="how-to-attend">
-        <TextAndImage imgSrc="/pavement.jpg">
+        <TextAndImage imgSrc={MatrixStep}>
             <h2>How to attend</h2>
             <p>
                 Attend the conference in person by purchasing a ticket, join as
@@ -61,7 +65,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </TextAndImage>
     </section>
     <section id="dietary-requirements">
-        <TextAndImage imgSrc="/food.jpg" reverse>
+        <TextAndImage imgSrc={Buffet} reverse>
             <h2>Dietary Requirements</h2>
             <p>
                 All meals and refreshments provided will cater to a wide variety
