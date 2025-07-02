@@ -1,0 +1,66 @@
+---
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<style>
+    section#volunteer {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    p,
+    ul {
+        font-size: 1.125rem;
+        margin-block: 1em;
+    }
+
+    p a {
+        color: var(--link-color);
+    }
+</style>
+<BaseLayout
+    pageTitle="Volunteer for The Matrix Conference"
+    description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
+>
+    <Hero
+        title="Volunteer for The Matrix Conference"
+        description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
+    />
+    <section id="volunteer">
+        <p>We are looking for help in these areas:</p>
+        <ul>
+            <li>Installing the equipment before the conference</li>
+            <li>
+                Welcoming attendees, scanning tickets and handing badges during
+                the event
+            </li>
+            <li>Introducing speakers on stage</li>
+            <li>Handing out pre-ordered merch & selling merch</li>
+            <li>Supporting the video recording team</li>
+            <li>
+                Helping people with accessibility needs navigate the conference
+            </li>
+            <li>Putting the equipment away after the conference</li>
+        </ul>
+
+        <p>
+            Volunteering for the Conference entitles you to a free ticket, and a
+            limited edition zipper hoodie. We will create a schedule to make
+            sure volunteers can enjoy the conference, too. The more people lend
+            a hand, the less work each one has to do!
+        </p>
+
+        <p>
+            If you are interested, contact the Events Working Group at
+            <a href="https://matrix.to/#/#events-wg:matrix.org"
+                >#events-wg:matrix.org</a
+            >
+            or email the conference organisers at
+            <a
+                href="mailto:conference@foundation.matrix.org?subject=Volunteering%20for%20the%20Conference"
+                >conference@foundation.matrix.org</a
+            >!
+        </p>
+    </section>
+</BaseLayout>
