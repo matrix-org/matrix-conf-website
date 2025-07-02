@@ -1,6 +1,13 @@
 ---
 import PrimaryCta from "./PrimaryCta.astro";
 
+interface Props {
+    title: string;
+    description: string;
+    ctaText: string;
+    ctaHref: string;
+}
+
 const { title, description, ctaText, ctaHref } = Astro.props;
 ---
 

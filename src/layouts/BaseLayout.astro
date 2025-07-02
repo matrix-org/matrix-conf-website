@@ -71,6 +71,17 @@ const { pageTitle, ogTitle, description } = Astro.props;
         />
 
         <meta name="twitter:card" content="summary_large_image" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://pretix.eu/matrix/matrix-conf-2025/widget/v2.css"
+            crossorigin
+        />
+        <script
+            type="text/javascript"
+            src="https://pretix.eu/widget/v2.en.js"
+            async
+            crossorigin="anonymous"></script>
 
         <ClientRouter />
     </head>
