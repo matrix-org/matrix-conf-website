@@ -19,3 +19,8 @@ a {
         text-decoration: underline;
     }
 }
+
+a.bold-white {
+    color: var(--fg-color);
+    font-weight: 700;
+}
