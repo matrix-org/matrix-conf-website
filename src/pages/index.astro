@@ -1,63 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import PrimaryCta from "../components/PrimaryCta.astro";
 import SponsorsGrid from "../components/SponsorsGrid.astro";
 import WhatsNext from "../components/WhatsNext.astro";
 import Conf2024 from "../components/Conf2024.astro";
 import NewHeights from "../components/NewHeights.astro";
 import Talks2024 from "../components/Talks2024.astro";
+import IndexHero from "../components/IndexHero.astro";
 ---
 
 <style>
     #hero {
         padding: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .left-half {
-        --hero-columns: 2;
-        --logo-width-base: var(--page-max-width);
-        --pattern-cell-size: calc(
-            var(--logo-width-base) / (var(--hero-columns) * 10)
-        );
-        height: 100%;
-        position: relative;
-        background-image: url("/pattern.svg");
-        background-repeat: repeat;
-        background-position: top left;
-        background-size: calc(
-            var(--logo-width-base) / (var(--hero-columns) * 2)
-        );
-
-        height: calc(var(--pattern-height) * var(--pattern-cell-size));
-    }
-
-    .left-half .background {
-        position: absolute;
-        right: 116px;
-        background-color: black;
-        padding: 40px;
-        margin-block: 64px;
-    }
-
-    h1 {
-        display: flex;
-        flex-direction: column;
-        margin: 0;
-        line-height: 120%;
-    }
-
-    .right-half {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        padding: 60px;
-    }
-
-    .right-half p {
-        font-size: 1.125rem;
-        margin-bottom: 1.5em;
     }
 
     #matrix-conf-2024 {
@@ -69,26 +22,7 @@ import Talks2024 from "../components/Talks2024.astro";
     description="Come along to see the latest and greatest progress in the Matrix world! From huge government deployments to the latest innovations, hang out with your peers to share the best learning, insights, projects and tips!"
 >
     <section id="hero">
-        <div class="left-half">
-            <div class="background">
-                <img src="conference-logo.svg" alt="" />
-            </div>
-        </div>
-        <div class="right-half">
-            <h1>
-                <span>October 15 to 18, 2025</span>
-                <span>Strasbourg, France</span>
-            </h1>
-            <div>
-                <p>
-                    Come along to see the latest and greatest progress in the
-                    Matrix world! From huge government deployments to the latest
-                    innovations, hang out with your peers to share the best
-                    learning, insights, projects and tips!
-                </p>
-                <PrimaryCta href="/register">Get Tickets</PrimaryCta>
-            </div>
-        </div>
+        <IndexHero />
     </section>
     <section id="sponsors">
         <SponsorsGrid />
