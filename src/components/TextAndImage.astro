@@ -12,13 +12,6 @@ const { imgSrc, reverse } = Astro.props;
         margin-inline: auto;
     }
 
-    @media (max-width: 800px) {
-        /* Number obtained by manually testing */
-        .content-wrapper {
-            grid-template-columns: 1fr;
-        }
-    }
-
     :global(h2) {
         font-size: 2rem;
         font-weight: 700;
@@ -38,6 +31,23 @@ const { imgSrc, reverse } = Astro.props;
     .content-wrapper.reverse .text {
         grid-column: 2;
         grid-row: 1;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .content-wrapper.reverse img {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .content-wrapper.reverse .text {
+            grid-column: 1;
+            grid-row: 1;
+        }
     }
 </style>
 
