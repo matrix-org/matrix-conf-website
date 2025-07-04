@@ -112,12 +112,12 @@ import { Image } from "astro:assets";
     </button>
 </nav>
 <script>
-    document.addEventListener("astro:after-swap", () => {
+    document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("nac")?.classList.remove("expanded");
         document.querySelector("#sections")?.classList.remove("expanded");
     });
 
-    document.addEventListener("astro:page-load", () => {
+    document.addEventListener("DOMContentLoaded", () => {
         document
             .querySelector("#menu-button")
             ?.addEventListener("click", () => {
