@@ -1,5 +1,6 @@
 ---
-
+import { Image } from "astro:assets";
+import GareStrasbourg from "../img/GareStrasbourg.png";
 ---
 
 <style>
@@ -22,7 +23,7 @@
         gap: 40px;
     }
 
-    @media (max-width: 625px) {
+    @media (max-width: 800px) {
         /* Number obtained by manually testing */
         .grid {
             grid-template-columns: 1fr;
@@ -125,8 +126,7 @@
             </div>
         </div>
         <div class="item">
-            <h3></h3>
-            <p></p>
+            <Image src={GareStrasbourg} alt="" />
         </div>
     </div>
 </div>
