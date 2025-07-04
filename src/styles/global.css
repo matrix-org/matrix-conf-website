@@ -8,7 +8,7 @@
 }
 
 section {
-    padding: 5rem 1.5rem;
+    padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
 }
 
 a {
