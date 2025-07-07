@@ -42,6 +42,10 @@ import { Image } from "astro:assets";
         padding: 0;
     }
 
+    #sections li.home {
+        display: none;
+    }
+
     @media (max-width: 890px) {
         nav.expanded > #matrix-logo {
             display: none;
@@ -74,6 +78,10 @@ import { Image } from "astro:assets";
             place-content: start;
         }
 
+        #sections.expanded li.home {
+            display: inline;
+        }
+
         nav.expanded {
             position: sticky;
             inset: 0;
@@ -87,6 +95,7 @@ import { Image } from "astro:assets";
         <img src="/matrix-logo.svg" alt="Home Page" />
     </a>
     <ul id="sections">
+        <li class="home"><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/attend">Attend</a></li>
         <li><a href="/sponsor">Sponsor</a></li>
