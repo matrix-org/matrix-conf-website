@@ -2,10 +2,10 @@
 
 if [ "$CF_PAGES_BRANCH" == "main" ]; then
   # build production using base_url from the site config.toml
-  zola build
+  pnpm run build
 elif [ "$CF_PAGES_BRANCH" == "staging" ]; then
   # build staging using CF_STAGING_URL env
-  zola build --base-url $CF_STAGING_URL
+  pnpm run build
 else
   # build using the default cf pages env url
   pnpm run build
