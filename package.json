@@ -14,6 +14,5 @@
         "astro": "^5.10.1",
         "sharp": "^0.34.2",
         "typescript": "^5.8.3"
-    },
-    "packageManager": "^pnpm@10.12.4"
+    }
 }
