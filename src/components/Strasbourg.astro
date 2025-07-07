@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import StrasbourgPicture from "../img/Strasbourg.png";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+
+    @media (max-width: 800px) {
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<div class="content-wrapper">
+    <Image src={StrasbourgPicture} alt="" />
+    <div class="right-col">
+        <h2>Beautiful Strasbourg</h2>
+        <p>Who says learning can't be fun?</p>
+        <p>
+            Come join us in beautiful Strasbourg, known for its architecture,
+            cuisine, and vibrant atmosphere.
+        </p>
+        <p>
+            The conference will take place at a centrally located venue, easily
+            accessible by various transportation options.
+        </p>
+    </div>
+</div>

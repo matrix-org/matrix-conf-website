@@ -1,0 +1,89 @@
+---
+import GettingThere from "../components/GettingThere.astro";
+import HealthSafetyPolicy from "../components/HealthSafetyPolicy.astro";
+import Hero from "../components/Hero.astro";
+import TextAndImage from "../components/TextAndImage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SmallMeeting from "../img/SmallMeeting.png";
+import LargeMeeting from "../img/LargeMeeting.png";
+import MatrixStep from "../img/MatrixStep.png";
+import Buffet from "../img/Buffet.png";
+---
+
+<style>
+    #getting-there {
+        background-color: #1a1a1a;
+    }
+</style>
+<BaseLayout
+    pageTitle="Attend The Matrix Conference"
+    description="Join us for the Matrix Conference from October 15 to 18, 2025. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+>
+    <Hero
+        title="Attend the conference"
+        description="Join us for the Matrix Conference from October 15 to 18, 2025. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+        ctaText="Get tickets"
+        ctaHref="/register"
+    />
+    <section id="large-end-user-orgs">
+        <TextAndImage imgSrc={SmallMeeting}>
+            <h2>Why large end-user organisations attend</h2>
+            <p>
+                The Matrix Conference is the best place to learn more about
+                Matrix. Hear directly from Matthew Hodgson and Amandine Le Pape,
+                Matrix co-founders.
+            </p>
+            <p>
+                See how governments, public sector sector organisations and
+                other workplaces are transforming the way they work using Matrix.
+            </p>
+            <p>Learn how service providers deploy Matrix for workplace use.</p>
+        </TextAndImage>
+    </section>
+    <section id="academics-communities">
+        <TextAndImage imgSrc={LargeMeeting} reverse>
+            <h2>Why academics, communities and hackers attend</h2>
+            <p>
+                This is the place to meet your community, users, and
+                contributors. Come solve problems you couldn’t solve online, and
+                learn about the next big thing in the Matrix ecosystem.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="how-to-attend">
+        <TextAndImage imgSrc={MatrixStep}>
+            <h2>How to attend</h2>
+            <p>
+                Attend the conference in person by purchasing a ticket, join as
+                a sponsor, present a keynote, or volunteer.
+            </p>
+            <p>
+                If you can’t attend in person or if the tickets are sold out,
+                join in via livestreaming or watch the recordings on-demand
+                after the conference.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="dietary-requirements">
+        <TextAndImage imgSrc={Buffet} reverse>
+            <h2>Dietary Requirements</h2>
+            <p>
+                All meals and refreshments provided will cater to a wide variety
+                of dietary needs and preferences clearly labelled with
+                ingredients and allergen information at the event.
+            </p>
+            <p>
+                If you have specific food allergies or requirements, please
+                don’t hesitate to <a
+                    href="mailto:conference@foundation.matrix.org">contact us</a
+                >.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="getting-there">
+        <GettingThere />
+    </section>
+    <section id="health-and-safety">
+        <HealthSafetyPolicy />
+    </section>
+</BaseLayout>

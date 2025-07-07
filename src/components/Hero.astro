@@ -1,0 +1,72 @@
+---
+import PrimaryCta from "./PrimaryCta.astro";
+
+interface Props {
+    title: string;
+    description: string;
+    ctaText?: string;
+    ctaHref?: string;
+}
+
+const { title, description, ctaText, ctaHref } = Astro.props;
+---
+
+<style>
+    .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 448px;
+        border-block-end: 1px solid #3c3f44;
+    }
+
+    @media (max-width: 800px) {
+        .hero {
+            min-height: unset;
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            line-height: 120%;
+        }
+
+        .right-col {
+            min-height: 64px;
+        }
+    }
+
+    .left-col {
+        place-content: center;
+        padding: clamp(1.5rem, 5vw, 3.75rem);
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: start;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+    }
+
+    .right-col {
+        background-image: url("/pattern.svg");
+    }
+</style>
+<div class="hero">
+    <div class="left-col">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        {
+            ctaText && ctaHref && (
+                <PrimaryCta href={ctaHref}>{ctaText}</PrimaryCta>
+            )
+        }
+    </div>
+    <div class="right-col"></div>
+</div>

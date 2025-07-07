@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+const { imgSrc, reverse } = Astro.props;
+---
+
+<style>
+    .content-wrapper {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    :global(h2) {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    :global(p) {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+        margin-block-start: 1.2em;
+    }
+
+    .content-wrapper.reverse img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .content-wrapper.reverse .text {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .content-wrapper.reverse img {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .content-wrapper.reverse .text {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+</style>
+
+<div class={`content-wrapper ${reverse && "reverse"}`}>
+    <div class="text">
+        <slot />
+    </div>
+    <Image src={imgSrc} alt="" />
+</div>

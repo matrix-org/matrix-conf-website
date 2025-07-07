@@ -1,0 +1,94 @@
+---
+import PrimaryCta from "./PrimaryCta.astro";
+import LogoPattern from "./logo-pattern.svg";
+import LogoNoPattern from "./logo-no-pattern.svg";
+import { Image } from "astro:assets";
+---
+
+<style>
+    .content-wrapper {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .left-half {
+        display: grid;
+        place-content: center end;
+        background: url("/pattern-2h.svg");
+        background-size: contain;
+        background-position: center right;
+    }
+
+    .small-size {
+        display: none;
+    }
+
+    h1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 2.5rem;
+        margin: 0;
+        line-height: 120%;
+    }
+
+    .right-half {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 60px;
+    }
+
+    .right-half p {
+        font-size: 1.125rem;
+        margin-bottom: 1.5em;
+    }
+
+    @media (max-width: 1100px) {
+        .content-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .full-size {
+            display: none;
+        }
+
+        .small-size {
+            display: block;
+            margin-block: 46px;
+        }
+
+        .left-half {
+            place-content: center;
+            background-image: url("/pattern.svg");
+            background-position: center;
+        }
+
+        .right-half {
+            padding: 2rem 1rem;
+        }
+    }
+</style>
+<div class="content-wrapper">
+    <div class="left-half">
+        <div class="before"></div>
+        <Image src={LogoPattern} class="full-size" alt="" />
+        <Image src={LogoNoPattern} class="small-size" alt="" />
+        <div class="after"></div>
+    </div>
+    <div class="right-half">
+        <h1>
+            <span>October 15 to 18, 2025</span>
+            <span>Strasbourg, France</span>
+        </h1>
+        <div>
+            <p>
+                Come along to see the latest and greatest progress in the Matrix
+                world! From huge government deployments to the latest
+                innovations, hang out with your peers to share the best
+                learning, insights, projects and tips!
+            </p>
+            <PrimaryCta href="/register">Get Tickets</PrimaryCta>
+        </div>
+    </div>
+</div>

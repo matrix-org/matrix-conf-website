@@ -1,0 +1,101 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/reset.css";
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+    pageTitle: string;
+    description: string;
+    ogTitle?: string;
+}
+
+const { pageTitle, ogTitle, description } = Astro.props;
+---
+
+<style>
+    body {
+        background-color: var(--bg-color);
+        color: var(--fg-color);
+
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 100%;
+    }
+
+    .skip-to-main {
+        position: absolute;
+        transform: translateX(-120%);
+        background: var(--background-color);
+        border: 2px solid var(--accent-color);
+        padding: 0.5rem 1.5rem;
+        z-index: 9999;
+        transition: transform 150ms ease-in;
+    }
+
+    .skip-to-main:focus {
+        transform: translateX(0);
+    }
+</style>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+
+        <meta property="og:title" content={ogTitle || pageTitle} />
+        <meta name="twitter:title" content={ogTitle || pageTitle} />
+
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:description" content={description} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={Astro.url} />
+        <meta property="twitter:domain" content="conference.matrix.org" />
+        <meta property="twitter:url" content={Astro.url} />
+
+        <meta
+            name="image"
+            property="og:image"
+            content={Astro.site + "matrix-conference-opengraph.png"}
+        />
+        <meta
+            name="twitter:image"
+            content={Astro.site + "matrix-conference-opengraph.png"}
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://pretix.eu/matrix/matrix-conf-2025/widget/v2.css"
+            crossorigin
+        />
+
+        <script
+            defer
+            data-domain="conference.matrix.org"
+            src="https://plausible.io/js/script.js"
+            is:inline></script>
+
+        <script
+            type="text/javascript"
+            src="https://pretix.eu/widget/v2.en.js"
+            async
+            crossorigin="anonymous"
+            is:inline></script>
+    </head>
+    <body>
+        <a class="skip-to-main" href="#main-content">Skip to main content</a>
+        <Header />
+        <main id="main-content">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

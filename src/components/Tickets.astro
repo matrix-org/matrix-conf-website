@@ -1,0 +1,178 @@
+---
+
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    p a {
+        color: var(--link-color);
+    }
+
+    .info-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    @media (max-width: 675px) {
+        .info-row {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .info-row p {
+        margin-block-start: 0.5rem;
+    }
+
+    :global(.pretix-widget) {
+        border: 1px solid #3c3f44;
+    }
+
+    :global(.pretix-widget a) {
+        color: var(--link-color);
+        text-decoration: none;
+    }
+
+    :global(.pretix-widget a:hover) {
+        color: var(--link-color);
+        text-decoration: underline;
+    }
+
+    :global(.pretix-widget-item-title-and-description) {
+        display: grid;
+        gap: 1px;
+        border: 1px solid #3c3f44;
+    }
+
+    :global(.pretix-widget-item-title) {
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0.5rem;
+        background-color: #d4d4d415;
+        text-transform: uppercase;
+    }
+
+    :global(.pretix-widget-item-description) {
+        padding: 0.5rem;
+        box-shadow: 0 0 0 1px #3c3f44; /* box-shadow is used to achieve a border-collapse effect within the grid */
+    }
+
+    :global(.pretix-widget-item-description p) {
+        font-size: 0.875rem;
+    }
+
+    :global(.pretix-widget button) {
+        background-color: var(--bg-color);
+        border: 1px solid #636569;
+    }
+
+    :global(.pretix-widget button:hover) {
+        background-color: #0999ff20;
+        border: 1px solid var(--link-color);
+    }
+
+    :global(.pretix-widget h3) {
+        font-size: 1.125rem;
+    }
+
+    :global(
+            .pretix-widget input[type="text"],
+            .pretix-widget input[type="number"]
+        ) {
+        color: var(--fg-color);
+        background-color: #000000;
+        border: 1px solid #3c3f44;
+    }
+
+    :global(.pretix-widget-voucher) {
+        margin-block-start: 2rem;
+        border-block-start: 1px solid #3c3f44;
+    }
+
+    :global(.pretix-widget button.pretix-widget-btn-default) {
+        background-color: #000000;
+        border: 1px solid #3c3f44;
+        color: var(--fg-color);
+    }
+
+    :global(
+            .pretix-widget
+                button.pretix-widget-btn-default.pretix-widget-item-count-dec
+        ) {
+        border-right: none;
+    }
+
+    :global(
+            .pretix-widget
+                button.pretix-widget-btn-default.pretix-widget-item-count-inc
+        ) {
+        border-left: none;
+    }
+
+    :global(.pretix-widget-action button) {
+        font-weight: 700;
+    }
+
+    :global(.pretix-widget-action button:focus) {
+        font-weight: 700;
+        border: 1px solid var(--link-color);
+    }
+
+    :global(.pretix-widget-voucher-button-wrap button) {
+        font-weight: 700;
+    }
+
+    :global(.pretix-widget-voucher-button-wrap button:focus) {
+        font-weight: 700;
+        border: 1px solid var(--link-color);
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="info-row">
+        <div class="left-col">
+            <h3>Foundation member?</h3>
+            <p>
+                If you are an Individual, Ecosystem, Associate, Silver, Gold, or
+                Platinum <a href="https://matrix.org/membership/"
+                    >member of the Matrix Foundation</a
+                >, please email us to get your free ticket voucher at <a
+                    href="mailto:conference@foundation.matrix.org"
+                    >conference@foundation.matrix.org</a
+                >.
+            </p>
+        </div>
+        <div class="right-col">
+            <h3>Availability</h3>
+            <p>
+                Tickets are available until the venue capacity is reached.
+                Please note that merch has to be purchased before the end of
+                August 31 for logistic reasons. You can view the details in the
+                next step after adding a ticket to your cart, before checkout.
+            </p>
+        </div>
+    </div>
+    <pretix-widget event="https://pretix.eu/matrix/matrix-conf-2025/"
+    ></pretix-widget>
+    <noscript>
+        <div class="pretix-widget">
+            <div class="pretix-widget-info-message">
+                JavaScript is disabled in your browser. To access our ticket
+                shop without JavaScript, please
+                <a
+                    target="_blank"
+                    rel="noopener"
+                    href="https://pretix.eu/matrix/matrix-conf-2025/"
+                    >click here</a
+                >.
+            </div>
+        </div>
+    </noscript>
+</div>

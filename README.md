@@ -1,4 +1,6 @@
-## Matrix.org Website
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+
+## Matrix Conference Website
 
 If you want to contribute to the website, make sure the problem you're trying to
 fix or the feature you want to implement has been discussed in our issue tracker
@@ -9,13 +11,20 @@ To discuss maintenance of this site, please come talk to the team in
 
 ## Building the website
 
-Install the latest version of [Zola](https://www.getzola.org), clone the repo, and from the root of the
-repo type
+To build the website, ensure `pnpm` is installed on your machine. Then, at the root of the project directory, install dependencies with
 
 ```
-zola serve
+pnpm i
 ```
 
-Zola will build the website and start a web server, usually at
-http://127.0.0.1:1111
+You can run the development version (and it's local server) with
 
+```
+pnpm run dev
+```
+
+You can check that there are no errors, warning, or hints with
+
+```
+pnpm astro check
+```

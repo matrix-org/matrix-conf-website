@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import PrimaryCta from "../components/PrimaryCta.astro";
+import GroupPicture from "../img/GroupPicture.jpg";
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        box-shadow: 0 0 0 1px #636569;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 0.5rem auto;
+        text-align: center;
+        max-width: calc(30vw + 200px);
+    }
+
+    .content {
+        padding-inline: 1rem;
+    }
+
+    .bottom-third {
+        display: grid;
+        padding-block: 1rem;
+        column-gap: clamp(10px, 5vw, 40px);
+        row-gap: 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 680px) {
+        /* Number obtained by manually testing */
+        .bottom-third {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .left-col {
+        height: 100%;
+        margin-block-end: auto;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .right-col p {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+    }
+
+    .right-col p:not(:last-child) {
+        margin-block-end: 1em;
+    }
+</style>
+
+<div class="content-wrapper">
+    <h2>This year, we're taking the conference to new heights!</h2>
+    <div class="content">
+        <Image
+            src={GroupPicture}
+            alt="A picture of an enthusiastic crowd taken from above."
+        />
+        <div class="bottom-third">
+            <div class="left-col">
+                <p>
+                    Join us for four days packed with keynotes, interactive
+                    breakout sessions, and collaborative open spaces.
+                </p>
+                <PrimaryCta href="/register">Get tickets</PrimaryCta>
+            </div>
+            <div class="right-col">
+                <p>
+                    We’ll also dedicate half a day to contributor sprints and
+                    focused meetings—perfect for deep dives and hands-on
+                    progress.
+                </p>
+                <p>
+                    After selling out last year, we’re excited to welcome more
+                    than 400 passionate participants from around the world.
+                    Don’t miss your chance to be part of the Matrix community’s
+                    biggest event yet!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

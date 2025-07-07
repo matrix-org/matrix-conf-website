@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import TextAndImage from "../components/TextAndImage.astro";
+import GroupPicture from "../img/GroupPicture.jpg";
+import VenueRainbow from "../img/VenueRainbow.png";
+import HealthSafetyShort from "../components/HealthSafetyShort.astro";
+import Tickets from "../components/Tickets.astro";
+---
+
+<style></style>
+<BaseLayout
+    pageTitle="Register for The Matrix Conference"
+    description="Join us for the Matrix Conference this October. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+>
+    <Hero
+        title="Get your tickets now"
+        description="Join us for the Matrix Conference this October. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+        ctaText="Get Tickets"
+        ctaHref="#tickets"
+    />
+
+    <section id="meet">
+        <TextAndImage imgSrc={GroupPicture}>
+            <h2>We're looking forward to meeting you!</h2>
+            <p>
+                The Matrix Conference is a great place for developers,
+                architects, sysadmins, community leaders from the public and
+                private sector, as well as students and anyone interested in
+                open, secure, decentralised communication.
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="venue">
+        <TextAndImage imgSrc={VenueRainbow} reverse>
+            <h2>Venue</h2>
+            <p>
+                The Matrix Conference will happen at Kaleidoscoop in Strasbourg,
+                France.
+            </p>
+            <p>
+                The venue is wheelchair accessible, and can be easily joined by
+                public transport.
+            </p>
+            <p>
+                <a href="/attend#getting-there" class="bold-white"
+                    >How to get there</a
+                >
+            </p>
+        </TextAndImage>
+    </section>
+    <section id="health-and-safety">
+        <HealthSafetyShort />
+    </section>
+    <section id="tickets">
+        <Tickets />
+    </section>
+</BaseLayout>

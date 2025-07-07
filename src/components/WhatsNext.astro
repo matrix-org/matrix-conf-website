@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+import banner from "../img/WhatsNext.png";
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .whats-next-grid {
+        display: grid;
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    }
+
+    @media (max-width: 625px) {
+        /* Number obtained by manually testing */
+
+        .whats-next-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .whats-next-grid > * {
+        padding: 20px;
+    }
+
+    .whats-next-grid .left-col {
+        position: relative;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        padding: 0px;
+        grid-row: 1 / span 3;
+
+        display: grid;
+        grid-template: repeat(2, 1fr) / 1fr;
+    }
+
+    .whats-next-grid .left-col::before {
+        position: absolute;
+        content: "";
+        inset: -2px;
+        z-index: -1;
+        background: linear-gradient(
+            314deg,
+            #f45b69 15.02%,
+            #f6ae2d 32.83%,
+            #a6ffa1 50.64%,
+            #75f4f4 68.44%,
+            #ae7fe9 86.25%
+        );
+    }
+
+    .image-container {
+        background-color: #000;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 120%;
+        background-color: #1a1a1a;
+        padding: 20px;
+    }
+
+    .item {
+        box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    p {
+        color: var(--secondary-color);
+    }
+</style>
+<div class="content-wrapper">
+    <div class="whats-next-grid">
+        <div class="left-col">
+            <div class="image-container">
+                <Image src={banner} alt="" />
+            </div>
+            <h2>Discover what's next for Matrix and help shape it.</h2>
+        </div>
+        <div class="item">
+            <h3>Workplace</h3>
+            <p>
+                See how Matrix is transforming the way governments, public
+                sector organisations and the German healthcare industry operate.
+            </p>
+        </div>
+        <div class="item">
+            <h3>Communities</h3>
+            <p>
+                Come see what’s next on the roadmap of your favorite projects
+                and get a sneak peek at what’s happening behind the scenes.
+            </p>
+        </div>
+        <div class="item">
+            <h3>Projects</h3>
+            <p>
+                Meet your users and contributors, learn from each other, and
+                work together in sprints to improve your projects.
+            </p>
+        </div>
+    </div>
+</div>

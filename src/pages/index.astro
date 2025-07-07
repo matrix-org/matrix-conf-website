@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SponsorsGrid from "../components/SponsorsGrid.astro";
+import WhatsNext from "../components/WhatsNext.astro";
+import Conf2024 from "../components/Conf2024.astro";
+import NewHeights from "../components/NewHeights.astro";
+import Talks2024 from "../components/Talks2024.astro";
+import IndexHero from "../components/IndexHero.astro";
+import Strasbourg from "../components/Strasbourg.astro";
+---
+
+<style>
+    #hero {
+        padding: 0;
+    }
+
+    #matrix-conf-2024 {
+        background-image: url("/grey-repeating-lines.svg");
+    }
+</style>
+<BaseLayout
+    pageTitle="The Matrix Conference"
+    description="Come along to see the latest and greatest progress in the Matrix world! From huge government deployments to the latest innovations, hang out with your peers to share the best learning, insights, projects and tips!"
+>
+    <section id="hero">
+        <IndexHero />
+    </section>
+    <section id="sponsors">
+        <SponsorsGrid />
+    </section>
+    <section id="whats-next">
+        <WhatsNext />
+    </section>
+    <section id="matrix-conf-2024">
+        <Conf2024 />
+    </section>
+    <section id="strasbourg">
+        <Strasbourg />
+    </section>
+    <section id="new-heights">
+        <NewHeights />
+    </section>
+    <section id="talks-2024">
+        <Talks2024 />
+    </section>
+</BaseLayout>

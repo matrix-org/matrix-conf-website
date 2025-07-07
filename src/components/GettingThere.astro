@@ -1,0 +1,132 @@
+---
+import { Image } from "astro:assets";
+import GareStrasbourg from "../img/GareStrasbourg.png";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    h2 {
+        margin-block-end: 1rem;
+    }
+
+    h3 {
+        margin-block-end: 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    p:first-of-type {
+        margin-block-start: 0.5rem;
+    }
+
+    .tram-D {
+        padding: 0.2em 0.6em;
+        color: #fff;
+        background-color: #009933;
+        border-radius: 4px;
+    }
+
+    .ter {
+        padding: 0.2em 0.6em;
+        color: #fff;
+        background-color: #0060a1;
+        border-radius: 4px;
+    }
+
+    .bus-2 {
+        padding: 0.2em 0.6em;
+        color: #fff;
+        background-color: #e10d19;
+        border-radius: 4px;
+    }
+
+    .apps-row {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .apps-row img {
+        margin-block: 2rem;
+        border-radius: 0;
+        transition: transform 0.05s ease-in;
+    }
+
+    .apps-row img:hover {
+        transform: scale(1.1);
+    }
+</style>
+<div class="content-wrapper">
+    <h2>Getting there</h2>
+    <div class="grid">
+        <div class="item">
+            <h3>By Train</h3>
+            <p>
+                Strasbourg is a well connected city. The train station will lead
+                you to the city centre, right next to the picturesque
+                neighborhood of Petite France. The train station itself is
+                connected to Tramway Line <span class="tram-D">D</span> or bus line
+                <span class="bus-2">2</span> that lead to the venue.
+            </p>
+        </div>
+        <div class="item">
+            <h3>By Plane</h3>
+            <p>
+                Strasbourg's Airport (SXB) is another option for attendees
+                coming from farther. The <span class="ter">TER</span> train connects
+                the Airport to Strasbourg's city center in about 30 min. A taxi ride
+                will get you there in bout 20 min.
+            </p>
+        </div>
+        <div class="item">
+            <h3>Public Transportation</h3>
+            <p>
+                Strasbourg has a dense public transportation network. From the
+                central train station, Tramway Line <span class="tram-D">D</span
+                > or bus line <span class="bus-2">2</span> lead to the venue. For
+                non-french speakers, tramway might be an easier solution.
+            </p>
+            <p>
+                You can book a ticket for public transport using the CTS App.
+                The app is available in English.
+            </p>
+            <div class="apps-row">
+                <a
+                    href="https://apps.apple.com/fr/app/cts-transports-strasbourg/id1241895758"
+                    ><img
+                        src="/download-app-store.svg"
+                        alt="Download CTS on the Apple App Store."
+                        width="180"
+                        height="60"
+                    /></a
+                >
+                <a
+                    href="https://play.google.com/store/apps/details?id=fr.cts.strasbourg.ugo"
+                    ><img
+                        src="/download-google-play.svg"
+                        alt="Download CTS on the Google Play Store."
+                        width="200"
+                        height="60"
+                    /></a
+                >
+            </div>
+        </div>
+        <div class="item">
+            <Image src={GareStrasbourg} alt="" />
+        </div>
+    </div>
+</div>
