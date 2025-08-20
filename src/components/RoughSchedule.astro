@@ -1,0 +1,108 @@
+---
+
+---
+
+<style>
+    #schedule {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-block-end: 3rem;
+    }
+
+    .schedule-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: 1px solid #636569;
+        gap: 1px;
+    }
+
+    @media (max-width: 700px) {
+        .schedule-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .schedule-grid > * {
+        padding: 1rem;
+        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .day {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .day .date {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .day .time {
+        color: var(--secondary-color);
+    }
+
+    p {
+        margin-block: 0.5em;
+    }
+
+    a {
+        color: var(--link-color);
+    }
+</style>
+<div id="schedule">
+    <h2>Schedule</h2>
+
+    <div class="schedule-grid">
+        <div class="day">
+            <span class="date">Wednesday 15</span>
+            <span class="time">13:00 - 18:00</span>
+        </div>
+        <div class="events">
+            <h3>Barcamp / Unconference</h3>
+            <p>
+                A self-organised and open gathering at the venue to get to know the participants,
+                the community, and shared areas of interest.
+            </p>
+            <p>
+                We start with a common kick-off session where we form the first clusters
+                and a rough agenda. Attendees arriving during the afternoon can join at any time!
+            </p>
+        </div>
+
+        <div class="day">
+            <div class="date">Wednesday 15</div>
+            <div class="time">18:00 - 23:00</div>
+        </div>
+        <div class="events">
+            <h3>Welcome party</h3>
+            <p>
+                Joins us in the city center of Strasbourg in the bar <a
+                    href="https://www.lemeteor.fr/">Le Météor</a
+                > to enjoy local beers and the famous Flammekueche thanks to our
+                sponsors <a href="https://element.io">Element</a> and <a
+                    href="https://rocket.chat">Rocket.Chat</a
+                >!
+            </p>
+            <p>Le Météor has vegetarian and vegan options.</p>
+        </div>
+
+        <div class="day">
+            <div class="date">Thursday 16 - Saturday 18</div>
+            <div class="time">10:00 - 18:00</div>
+        </div>
+        <div class="events">
+            <h3>Conference Days</h3>
+            <p>
+                The detailed schedule of the conference will be published in
+                early September!
+            </p>
+        </div>
+    </div>
+</div>

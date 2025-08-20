@@ -7,6 +7,7 @@ import NewHeights from "../components/NewHeights.astro";
 import Talks2024 from "../components/Talks2024.astro";
 import IndexHero from "../components/IndexHero.astro";
 import Strasbourg from "../components/Strasbourg.astro";
+import RoughSchedule from "../components/RoughSchedule.astro";
 ---
 
 <style>
@@ -37,10 +38,13 @@ import Strasbourg from "../components/Strasbourg.astro";
     <section id="strasbourg">
         <Strasbourg />
     </section>
-    <section id="new-heights">
-        <NewHeights />
-    </section>
-    <section id="talks-2024">
-        <Talks2024 />
+    <section id="schedule">
+        <RoughSchedule />
+        <section id="new-heights">
+            <NewHeights />
+        </section>
+        <section id="talks-2024">
+            <Talks2024 />
+        </section>
     </section>
 </BaseLayout>
