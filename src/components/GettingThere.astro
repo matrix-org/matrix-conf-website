@@ -1,6 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import GareStrasbourg from "../img/GareStrasbourg.png";
+import { Image, imageConfig } from "astro:assets";
+import Kaleidoscoop from "../img/Kaleidoscoop.png";
+import Map from "../img/Map.png";
 ---
 
 <style>
@@ -35,21 +36,21 @@ import GareStrasbourg from "../img/GareStrasbourg.png";
     }
 
     .tram-D {
-        padding: 0.2em 0.6em;
+        padding: 0.1em 0.5em;
         color: #fff;
         background-color: #009933;
         border-radius: 4px;
     }
 
     .ter {
-        padding: 0.2em 0.6em;
+        padding: 0.1em 0.5em;
         color: #fff;
         background-color: #0060a1;
         border-radius: 4px;
     }
 
     .bus-2 {
-        padding: 0.2em 0.6em;
+        padding: 0.1em 0.5em;
         color: #fff;
         background-color: #e10d19;
         border-radius: 4px;
@@ -69,37 +70,77 @@ import GareStrasbourg from "../img/GareStrasbourg.png";
     .apps-row img:hover {
         transform: scale(1.1);
     }
+
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-block-start: 0.3rem;
+    }
+
+    li {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template: repeat(2, auto) / 1fr 1fr;
+        gap: 1px;
+    }
+
+    .map-grid img {
+        grid-column: 1 / -1;
+    }
+
+    .map-grid a {
+        padding: 1em;
+        display: grid;
+        place-content: center;
+        box-shadow: 0 0 0 1px #636569;
+    }
 </style>
 <div class="content-wrapper">
     <h2>Getting there</h2>
     <div class="grid">
         <div class="item">
-            <h3>By Train</h3>
+            <h3>The Venue</h3>
             <p>
-                Strasbourg is a well connected city. The train station will lead
-                you to the city centre, right next to the picturesque
-                neighborhood of Petite France. The train station itself is
-                connected to Tramway Line <span class="tram-D">D</span> or bus line
-                <span class="bus-2">2</span> that lead to the venue.
+                The Matrix Conference 2025 will take place at <a
+                    href="https://kaleidos.coop">Kaleidoscoop</a
+                >, 5 Rue de la Coopérative, in Strasbourg, France.
+            </p>
+            <p>
+                We warmly recommend staying in the city center near tram line D
+                or bus line 2 to both enjoy the conference and to socialize with
+                attendees in the evening!
             </p>
         </div>
         <div class="item">
-            <h3>By Plane</h3>
-            <p>
-                Strasbourg's Airport (SXB) is another option for attendees
-                coming from farther. The <span class="ter">TER</span> train connects
-                the Airport to Strasbourg's city center in about 30 min. A taxi ride
-                will get you there in bout 20 min.
-            </p>
+            <Image src={Kaleidoscoop} alt="" />
+        </div>
+
+        <div class="item">
+            <div class="map-grid">
+                <Image src={Map} alt="" />
+                <a href="https://maps.app.goo.gl/ARex2qD5cH5WoWrE7"
+                    >Google Maps</a
+                >
+                <a
+                    href="https://www.openstreetmap.org/directions?to=Kaleidoscoop#map=14/48.57928/7.74888&layers=S"
+                    >OpenStreet Map</a
+                >
+            </div>
         </div>
         <div class="item">
             <h3>Public Transportation</h3>
-            <p>
-                Strasbourg has a dense public transportation network. From the
-                central train station, Tramway Line <span class="tram-D">D</span
-                > or bus line <span class="bus-2">2</span> lead to the venue. For
-                non-french speakers, tramway might be an easier solution.
-            </p>
+            <ul>
+                <li>
+                    Tram Line <span class="tram-D">D</span> Get off at "Capitainerie"
+                </li>
+                <li>
+                    Bus line <span class="bus-2">2</span> Get off at "Port du Rhin".
+                </li>
+            </ul>
             <p>
                 You can book a ticket for public transport using the CTS App.
                 The app is available in English.
@@ -125,8 +166,25 @@ import GareStrasbourg from "../img/GareStrasbourg.png";
                 >
             </div>
         </div>
+
         <div class="item">
-            <Image src={GareStrasbourg} alt="" />
+            <h3>By Train</h3>
+            <p>
+                Strasbourg is a well connected city. The train station will lead
+                you to the city centre, right next to the picturesque
+                neighborhood of Petite France. The train station itself is
+                connected to Tramway Line <span class="tram-D">D</span> or bus line
+                <span class="bus-2">2</span> that lead to the venue.
+            </p>
+        </div>
+        <div class="item">
+            <h3>By Plane</h3>
+            <p>
+                Strasbourg's Airport (SXB) is another option for attendees
+                coming from farther. The <span class="ter">TER</span> train connects
+                the Airport to Strasbourg's city center in about 30 min. A taxi ride
+                will get you there in bout 20 min.
+            </p>
         </div>
     </div>
 </div>
