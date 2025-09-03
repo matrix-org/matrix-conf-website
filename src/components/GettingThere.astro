@@ -56,26 +56,33 @@ import Map from "../img/Map.png";
         border-radius: 4px;
     }
 
-    .apps-row {
+    #db-row {
         display: flex;
         gap: 1rem;
     }
 
-    @media (max-width: 525px) {
-        /* Number obtained by manually testing */
-        #db-logo {
+    #db-logo {
+        margin-block: 2rem;
+
+        @media (max-width: 525px) {
+            /* Number obtained by manually testing */
             display: none;
         }
     }
 
-    .apps-row img {
-        margin-block: 2rem;
-        border-radius: 0;
-        transition: transform 0.05s ease-in;
-    }
+    .apps-row {
+        display: flex;
+        gap: 1rem;
 
-    .apps-row img:hover {
-        transform: scale(1.1);
+        img {
+            margin-block: 2rem;
+            border-radius: 0;
+            transition: transform 0.05s ease-in;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
     }
 
     ul {
@@ -183,7 +190,7 @@ import Map from "../img/Map.png";
                 connected to Tramway Line <span class="tram-D">D</span> or bus line
                 <span class="bus-2">2</span> that lead to the venue.
             </p>
-            <div class="apps-row">
+            <div id="db-row">
                 <img
                     id="db-logo"
                     src="/DB_Logo.png"
