@@ -1,5 +1,5 @@
 ---
-import { Image, imageConfig } from "astro:assets";
+import {Image} from "astro:assets";
 import Kaleidoscoop from "../img/Kaleidoscoop.png";
 import Map from "../img/Map.png";
 ---
@@ -142,10 +142,10 @@ import Map from "../img/Map.png";
             <h3>Public Transportation</h3>
             <ul>
                 <li>
-                    Tram Line <span class="tram-D">D</span> Get off at "Capitainerie"
+                    Tram Line <span class="tram-D">D</span> - Get off at "Capitainerie"
                 </li>
                 <li>
-                    Bus line <span class="bus-2">2</span> Get off at "Port du Rhin".
+                    Bus Line <span class="bus-2">2</span> - Get off at "Port du Rhin"
                 </li>
             </ul>
             <p>
@@ -177,11 +177,24 @@ import Map from "../img/Map.png";
         <div class="item">
             <h3>By Train</h3>
             <p>
-                Strasbourg is a well connected city. The train station will lead
-                you to the city centre, right next to the picturesque
-                neighborhood of Petite France. The train station itself is
-                connected to Tramway Line <span class="tram-D">D</span> or bus line
-                <span class="bus-2">2</span> that lead to the venue.
+                The venue is located right at the border between Strasbourg (FR) and
+                Kehl (DE). Depending on whether you are arriving from France or from Germany,
+                you can either book a ticket to the French station <b>Strasbourg</b> or
+                the German station <b>Kehl</b>.
+            </p>
+            <p>
+                Attendees arriving via France are advised to book a ticket to <a
+                href="https://www.sncf-connect.com/home/search/od?destinationLabel=Strasbourg&destinationId=RESARAIL_STA_8721202"
+                target="_blank">Strasbourg</a>. The railway station is located in the city
+                centre and the venue can be reached using the Tramway Line
+                <span class="tram-D">D</span> or Bus Line <span class="bus-2">2</span>.
+            </p>
+            <p>
+                Attendees looking for a flexible travel option when arriving via Germany can
+                alternatively book a ticket to <b>Kehl</b>. The railway station is located
+                on the opposite side of the Rhine river. The venue is a 20 minutes walk from
+                Kehl and can alternatively be reached using the Tramway Line
+                <span class="tram-D">D</span>.
             </p>
             <div class="apps-row">
                 <img
@@ -193,9 +206,8 @@ import Map from "../img/Map.png";
                 />
                 <p>
                     The Matrix Conference ticket holders are eligible to use the "<a
-                        href="https://www.veranstaltungsticket-bahn.de/?event=35482&language=en"
-                        target="_blank">Event Ticket</a>"
-                    special offer by Deutsche Bahn to and from the conference!
+                    href="https://www.veranstaltungsticket-bahn.de/?event=35482&language=en"
+                    target="_blank">Event Ticket</a>" special offer by Deutsche Bahn to and from the conference!
                 </p>
             </div>
         </div>
@@ -206,6 +218,10 @@ import Map from "../img/Map.png";
                 coming from farther. The <span class="ter">TER</span> train connects
                 the Airport to Strasbourg's city center in about 30 min. A taxi ride
                 will get you there in bout 20 min.
+            </p>
+            <p>
+                From the major international airports in Paris (CDG) and Frankfurt (FRA)
+                you can conveniently reach the venue by a 2 hours train ride.
             </p>
         </div>
     </div>
