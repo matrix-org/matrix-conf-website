@@ -61,13 +61,6 @@ import Map from "../img/Map.png";
         gap: 1rem;
     }
 
-    @media (max-width: 525px) {
-        /* Number obtained by manually testing */
-        #db-logo {
-            display: none;
-        }
-    }
-
     .apps-row img {
         margin-block: 2rem;
         border-radius: 0;
@@ -76,6 +69,15 @@ import Map from "../img/Map.png";
 
     .apps-row img:hover {
         transform: scale(1.1);
+    }
+
+    #db-logo {
+        max-width: None;
+
+        @media (max-width: 525px) {
+            /* Number obtained by manually testing */
+                display: none;
+        }
     }
 
     ul {
@@ -197,13 +199,17 @@ import Map from "../img/Map.png";
                 <span class="tram-D">D</span>.
             </p>
             <div class="apps-row">
-                <img
-                    id="db-logo"
-                    src="/DB_Logo.png"
-                    alt="The 'DB' logo of Deutsche Bahn."
-                    width="100"
-                    height="70"
-                />
+                <a
+                    href="https://www.veranstaltungsticket-bahn.de/?event=35482&language=en"
+                    target="_blank">
+                    <img
+                        id="db-logo"
+                        src="/DB_Logo.png"
+                        alt="The 'DB' logo of Deutsche Bahn."
+                        width="100"
+                        height="70"
+                    />
+                </a>
                 <p>
                     The Matrix Conference ticket holders are eligible to use the "<a
                     href="https://www.veranstaltungsticket-bahn.de/?event=35482&language=en"
