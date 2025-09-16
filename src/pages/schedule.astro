@@ -25,6 +25,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     p a {
         color: var(--link-color);
     }
+
+    @media (width <= 710px) {
+        #full-schedule {
+            background-color: #fff; /* Needed to keep the schedule legible at small size */
+        }
+    }
 </style>
 <BaseLayout
     pageTitle="Schedule of The Matrix Conference"
@@ -47,5 +53,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 >following us on the fediverse</a
             >!
         </p>
+    </section>
+    <section id="full-schedule">
+        <pretalx-schedule
+            event-url="https://cfp.2025.matrix.org/matrix-conf-2025/"
+            locale="en"
+            format="grid"
+            style="--pretalx-clr-primary: #000000"></pretalx-schedule>
+        <noscript>
+            <div class="pretalx-widget">
+                <div class="pretalx-widget-info-message">
+                    JavaScript is disabled in your browser. To access our
+                    schedule without JavaScript, please <a
+                        target="_blank"
+                        href="https://cfp.2025.matrix.org/matrix-conf-2025/schedule/"
+                        >click here</a
+                    >.
+                </div>
+            </div>
+        </noscript>
     </section>
 </BaseLayout>
