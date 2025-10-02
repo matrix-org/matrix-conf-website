@@ -1,6 +1,6 @@
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+# Matrix Conference Website
 
-## Matrix Conference Website
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
 
 If you want to contribute to the website, make sure the problem you're trying to
 fix or the feature you want to implement has been discussed in our issue tracker
@@ -13,18 +13,18 @@ To discuss maintenance of this site, please come talk to the team in
 
 To build the website, ensure `pnpm` is installed on your machine. Then, at the root of the project directory, install dependencies with
 
-```
+```shell
 pnpm i
 ```
 
 You can run the development version (and it's local server) with
 
-```
+```shell
 pnpm run dev
 ```
 
 You can check that there are no errors, warning, or hints with
 
-```
+```shell
 pnpm astro check
 ```
