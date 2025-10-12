@@ -1,0 +1,9 @@
+# This file registers ownership for the code.
+# Review from a member of the corresponding code owner is required to merge pull requests.
+#
+# The last matching pattern takes precedence.
+# https://help.github.com/articles/about-codeowners/
+
+* @matrix-org/website-wg
+# while the events wg is responsible for managing events, they currently do not have commit access to this repository
+/.github/CODEOWNERS @matrix-org/matrix-foundation
