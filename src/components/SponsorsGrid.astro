@@ -19,7 +19,7 @@
 
     .sponsors-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         border: 1px solid #636569;
         gap: 1px;
     }
@@ -39,7 +39,7 @@
     #element {
         gap: 20px;
         background-color: #1a1a1a;
-        grid-column: 1 / span 2;
+        grid-column: 1 / span 3;
     }
 
     @media (max-width: 625px) {
@@ -64,6 +64,18 @@
 
     .sustaining {
         place-content: center;
+
+        img {
+            max-height: 33px;
+        }
+    }
+
+    #ercom {
+        grid-column: 1 / span 2;
+    }
+
+    #futurewei {
+        grid-column: 3 / span 2;
     }
 
     #become-sponsor {
@@ -147,12 +159,35 @@
             </div>
         </a>
         <a
+            id="automattic"
+            class="champion"
+            href="https://automattic.com/"
+            target="_blank"
+        >
+            <img src="/sponsors/automattic.svg" alt="Automattic" />
+            <div class="description">
+                <p>
+                    Tower of Babel</br>
+                    fragmented messaging woes</br>
+                    you need a Beeper.
+                </p>
+            </div>
+        </a>
+        <a
             id="ercom"
             class="sustaining"
             href="https://cds.thalesgroup.com/en/ercom"
             target="_blank"
         >
             <img src="/sponsors/ercom.svg" alt="Ercom" />
+        </a>
+        <a
+            id="futurewei"
+            class="sustaining"
+            href="https://www.futurewei.com/"
+            target="_blank"
+        >
+            <img src="/sponsors/futurewei.svg" alt="Futurewei Technologies" />
         </a>
     </div>
 </div>
