@@ -42,14 +42,24 @@
         grid-column: 1 / span 3;
     }
 
+    #ercom {
+        grid-column: 1 / span 2;
+    }
+
+    #futurewei {
+        grid-column: 3 / span 2;
+    }
+
     @media (max-width: 625px) {
         /* Number obtained by manually testing */
         .sponsors-grid {
             grid-template-columns: 1fr;
         }
 
-        #element {
-            grid-column: 1;
+        #element,
+        #ercom,
+        #futurewei {
+            grid-column: 1 / span 1;
         }
     }
 
@@ -69,15 +79,6 @@
             max-height: 33px;
         }
     }
-
-    #ercom {
-        grid-column: 1 / span 2;
-    }
-
-    #futurewei {
-        grid-column: 3 / span 2;
-    }
-
     #become-sponsor {
         font-weight: 700;
         place-content: center;
@@ -167,7 +168,8 @@
             <img src="/sponsors/automattic.svg" alt="Automattic" />
             <div class="description">
                 <p>
-                    Automattic tries to make the web a better place. Building software for freedom.
+                    Automattic tries to make the web a better place. Building
+                    software for freedom.
                 </p>
             </div>
         </a>
