@@ -1,5 +1,6 @@
 ---
 import SponsorsGrid from "../components/SponsorsGrid.astro";
+import Rooms from "../components/Rooms.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -7,7 +8,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     :root {
         --bg-color: #000000;
         --fg-color: #ffffff;
-        --secondary-color: #b8b8b8;
         --max-page-width: 960px;
         --link-color: #0999ff;
         --purple: #ae7fe9;
@@ -72,10 +72,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         background-image: url(/grey-repeating-lines.svg);
         height: 100px;
     }
-    #discussion .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
     h1 {
         font-size: 2.5rem;
         line-height: 120%;
@@ -87,20 +83,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         font-size: 2rem;
         line-height: 120%;
     }
-    #discussion h2 {
-        margin-top: 0px;
-        color: var(--secondary-color);
-        font-size: 0.875rem;
-        text-transform: uppercase;
-    }
     a {
         color: var(--link-color);
         text-decoration: none;
-    }
-    .cell {
-        padding: 20px;
-        background-color: var(--bg-color);
-        box-shadow: 0 0 0 1px #636569;
     }
     .stream-item {
         display: flex;
@@ -123,23 +108,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <section id="discussion">
-        <div class="content-wrapper">
-            <div class="grid">
-                <div class="cell">
-                    <h2>Join the Space</h2>
-                    <a
-                        href="https://matrix.to/#/%23matrix-conference-2025%3Amatrix.org"
-                        >#matrix-conference-2025:matrix.org</a
-                    >
-                </div>
-                <div class="cell">
-                    <h2>Join the General room</h2>
-                    <a href="https://matrix.to/#/%23general-mc25%3Amatrix.org"
-                        >#general-mc25:matrix.org</a
-                    >
-                </div>
-            </div>
-        </div>
+        <Rooms />
     </section>
 
     <section id="stream-list">
