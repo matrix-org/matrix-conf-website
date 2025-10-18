@@ -95,6 +95,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .stream-detail h2 {
         margin-bottom: 8px;
     }
+    .ccc-player {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
 </style>
 
 <BaseLayout
@@ -121,8 +125,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     >
                 </div>
                 <iframe
-                    width="560"
-                    height="315"
+                    class="ccc-player"
                     src="https://streaming.media.ccc.de/matrix-conf-2025/embed/byron/hls/native"
                     title="video player"
                     frameborder="none"
@@ -139,8 +142,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     >
                 </div>
                 <iframe
-                    width="560"
-                    height="315"
+                    class="ccc-player"
                     src="https://streaming.media.ccc.de/matrix-conf-2025/embed/turing/hls/native"
                     title="video player"
                     frameborder="none"
@@ -157,8 +159,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     >
                 </div>
                 <iframe
-                    width="560"
-                    height="315"
+                    class="ccc-player"
                     src="https://streaming.media.ccc.de/matrix-conf-2025/embed/conway/hls/native"
                     title="video player"
                     frameborder="none"
@@ -168,6 +169,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
         </div>
     </section>
+
+    <section id="Recordings">
+        <div class="content-wrapper">
+            <h2>Watch the recordings</h2>
+            <div>
+                on <a href="https://media.ccc.de/c/matrix-conf-2025"
+                    >media.ccc.de</a
+                > or <a
+                    href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG"
+                >YouTube</a>.
+            </div>
+        </div>
+    </section>
+
     <section id="sponsors">
         <SponsorsGrid />
     </section>
