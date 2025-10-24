@@ -304,6 +304,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             }
         }
     }
+
+    .date-separator {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 48px;
+
+        .date {
+            flex: none;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-secondary)
+        }
+
+        .line {
+            flex: 1;
+            height: 0px;
+            border-top: 2px solid var(--border);
+        }
+    }
 </style>
 
 <BaseLayout
@@ -329,6 +349,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <button class="pill education">Matrix in Education</button>
                 <button class="pill privacy-policy-moderation">Privacy, Policy and Moderation</button>
                 <button class="pill bots-bridges">Bots &amp; Bridges</button>
+            </div>
+            <div class="date-separator">
+                <div class="date">Wednesday 15<sup>th</sup> October</div>
+                <div class="line"></div>
             </div>
         </div>
     </section>
