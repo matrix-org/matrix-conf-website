@@ -1,5 +1,8 @@
 ---
-const { Type, slug, label } = Astro.props;
+import slugify from '@sindresorhus/slugify';
+
+const { Type, label } = Astro.props;
+const slug = slugify(label);
 ---
 
 <style lang="scss">
@@ -75,7 +78,7 @@ const { Type, slug, label } = Astro.props;
         }
     }
 
-    .pill.security-encryption {
+    .pill.security-and-encryption {
         $text-color: #000;
         $pill-color: #f45b69;
         color: $text-color;
@@ -111,7 +114,7 @@ const { Type, slug, label } = Astro.props;
         }
     }
 
-    .pill.business {
+    .pill.business-with-matrix {
         $text-color: #000;
         $pill-color: #f6ae2d;
         color: $text-color;
@@ -147,7 +150,7 @@ const { Type, slug, label } = Astro.props;
         }
     }
 
-    .pill.education {
+    .pill.matrix-in-education {
         $text-color: #000;
         $pill-color: #c2d115;
         color: $text-color;
@@ -165,7 +168,7 @@ const { Type, slug, label } = Astro.props;
         }
     }
 
-    .pill.privacy-policy-moderation {
+    .pill.privacy-policy-and-moderation {
         $text-color: #fff;
         $pill-color: #003399;
         color: $text-color;
@@ -183,7 +186,7 @@ const { Type, slug, label } = Astro.props;
         }
     }
 
-    .pill.bots-bridges {
+    .pill.bots-and-bridges {
         $text-color: #000;
         $pill-color: #e136f3;
         color: $text-color;
