@@ -3,6 +3,9 @@ import SponsorsGrid from "../components/SponsorsGrid.astro";
 import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import raw_talks from '/static/watch/matrix-conf-2025_sessions.json';
+const talks = raw_talks.toSorted((a,b) => new Date(a.Start) < new Date(b.Start))
 ---
 
 <style lang="scss">
@@ -156,8 +159,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <div class="line"></div>
             </div>
             <div class="talks-grid">
-                {items.map((item) => (
-                    <WatchCard talk={item} />
+                {talks.map((talk) => (
+                    <WatchCard talk={talk} />
                 ))}
             </div>
         </div>

@@ -1,0 +1,1201 @@
+[
+  {
+    "ID": "3RXLTQ",
+    "Proposal title": "The Matrix.org Foundation Updates",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "This session will present the latest updates from the Foundation itself, and the progress it has made in standing on its own legs during the last year.",
+    "Speaker names": [
+      "Amandine Le Pape"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T10:10:00+02:00"
+  },
+  {
+    "ID": "3YMJFP",
+    "Proposal title": "Solving the Fork Dilemma: How We Built a Maintainable Matrix Messenger",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Tammy is a multiplatform Matrix Messenger designed to be redefined by you. Want a different room list layout? Need a messaging interface tailored to a specific use case? Tammy\u2019s extensible architecture makes that not only possible - but easy. In this talk, we\u2019ll showcase how Tammy empowers developers to create radically customized Matrix experiences through its extension system.\r\n\r\nWe\u2019ll walk you through how we\u2019re using Tammy to build Timmy, a TI-Messenger variant tailored for a very specific user group, with a completely different look and feel - all without forking or rewriting the core client.\r\n\r\nExpect a live demo, some under-the-hood insights, and a glimpse into the roadmap: spaces, audio/video, Matrix 2.0 and more. Whether you want a more focused UI, a minimalist mobile mode, or something wildly experimental, Tammy gives you the tools to build it.",
+    "Speaker names": [
+      "Benedict Benken",
+      "Michael Thiele"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-18T10:35:00+02:00"
+  },
+  {
+    "ID": "7LNZZ3",
+    "Proposal title": "Why do I have 2 passwords? How to talk about encryption in Matrix",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "Most modern software applications give total trust to the service provider. End-to-end encrypted (E2EE) services are different: the service provider is a gateway, and the real trust is with other people.\r\n\r\nThis is unfamiliar, and can make using E2EE confusing. When you add in federation (meaning lots of different service providers) and a diverse set of client apps, trying to make Matrix's encryption understandable is tricky.\r\n\r\nIt would help to have a shared set of words and definitions. In this talk I describe MSC4161, which attempts to establish a shared vocabulary, and then my own thoughts about some metaphors we can use to make these ideas easier to grasp.",
+    "Speaker names": [
+      "Andy Balaam"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T16:00:00+02:00"
+  },
+  {
+    "ID": "7SRHXV",
+    "Proposal title": "No Desk Is an Island: Enabling Cross-Border Workspace Communication",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "As EU member states (co-)develop sovereign workspace solutions for the public sector, the need for seamless communication between these platforms becomes increasingly important. France, Germany, and the Netherlands are among the countries working on such solutions together, with the goal of facilitating cross-border collaboration and data exchange while maintaining security and sovereignty. In collaboration with our French and Dutch partners, we at ZenDiS are developing a framework to enable communication between our openDesk office and collaboration suite and its international equivalents. Our effort aims to facilitate cross-border information sharing and promote a more integrated European digital landscape.",
+    "Speaker names": [
+      "Alexander Smolianitski"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T14:00:00+02:00"
+  },
+  {
+    "ID": "7ZXT8V",
+    "Proposal title": "Supporting TF-X with Matrix: best practices and pitfalls",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "NATO organised a TaskForce-X Baltics event where we very quickly contracted, deployed and integrated telemetry and video streams from uncrewed platforms. This required a lot of coordination and this was done through our on-prem Matrix capability. I would like to share my experience by using Matrix to support this very demanding operational project.",
+    "Speaker names": [
+      "Jeroen Franssen"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T17:00:00+02:00"
+  },
+  {
+    "ID": "8N8HZS",
+    "Proposal title": "Getting started with Element Server Suite Community",
+    "Session type": {
+      "de": "Workshop",
+      "en": "Workshop",
+      "fr": "Workshop"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Join us for an introduction to the Element Server Suite Community, the simplest way to deploy a Kubernetes-based Matrix 2.0-ready stack, maintained by Element. \r\n\r\nThis workshop will deploy all the components of the suite: a Synapse homeserver with Matrix Authentication Service enabled, a Matrix RTC backend for calls, and an Element web client. \r\n\r\nYou'll be able to try it on your local laptop using your Docker daemon, or deploy it on a virtual machine with a single-node Kubernetes setup. \r\n\r\nWhether you're new to Kubernetes and Matrix or looking to expand your server capabilities, this session will give you the foundation to get started and experience the latest Matrix features on your own machine.",
+    "Speaker names": [
+      "Ga\u00ebl Goinvic"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-18T13:35:00+02:00"
+  },
+  {
+    "ID": "8PEMJB",
+    "Proposal title": "The Matrix State of the Union",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "As project lead of Matrix, Matthew gives a snapshot of where the project is at.  Highlights should include:\r\n * Overview of recent high-profile Matrix deployments and uptake\r\n * Overview of the recent major projects to fix state resets and improve decentralisation reliability\r\n * Overview of making Matrix a safer place via improved Trust & Safety work\r\n * Progress on Matrix 2.0 MSCs (Next Gen Auth, Sliding Sync, MatrixRTC) and uptake\r\n * Progress on Olm/Megolm improvements (history sharing, TOFU, invisible crypto, etc)\r\n * Progress on Next-generation encryption work\r\n...and more!",
+    "Speaker names": [
+      "Matthew Hodgson"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T10:35:00+02:00"
+  },
+  {
+    "ID": "9HKYHA",
+    "Proposal title": "The German BundesMessenger",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "The BundesMessenger is the soverein communication solution for the German government and armed forces. Developed to be robust, secure and interconnected it serves as the basis for collaboration in the public sector. With a sharp focus on user experience, an uncompromised commitment to free and open-source software and state-of-the-art deployment of cloud technologies, it brings a high-quality messenger to firefighters, soldiers and office workers.\r\n\r\nWant to know what makes the BundesMessenger quite a special piece of software? Is it better than fax? And will it shut up after I call it a day? Join the talk to find out!",
+    "Speaker names": [
+      "Kai A. Hiller"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T16:10:00+02:00"
+  },
+  {
+    "ID": "A9YW3B",
+    "Proposal title": "Integrating Matrix in a trustworthy collaborative ecosystem",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "At Oodrive, our mission is to offer a secure and sovereign solution to manage our partners' most sensitive data.\r\nBuilding on this foundation, we are developing a secure collaboration platform that fully aligns with these values.\r\n \r\nCollaboration cannot happen without communication, therefore we decided to integrate a secure chat in our product. We chose the Matrix protocol to achieve that goal.\r\nNow that a first version is out and available to our partners, we want to share with the community how we integrated matrix in our product, and the challenges we overcame.\r\nNamely :\r\n - How we provision user accounts in our matrix instance.\r\n - How users authenticate transparently in the chat.\r\n - Make a demonstration to illustrate the seamless integration",
+    "Speaker names": [
+      "Francois HERBRETEAU",
+      "Anthony"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-18T11:35:00+02:00"
+  },
+  {
+    "ID": "AETNRS",
+    "Proposal title": "Large-scale multi-tenancy hosting for TI-Messenger",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "In this talk we will introduce Synapse Pro, the Matrix server for professional environments from Element. Synapse Pro is built to support professional Matrix deployments in terms of scalability, efficiency and high availability. It comes in two flavours, Synapse Pro for Small Hosts and Synapse Pro for Large Hosts. The Small Hosts solution introduces multi-tenancy capabilities in order to host plenty of small Matrix servers in a resource-saving and cost-efficient way. The Large Hosts solution enhances Synapse with more efficient implementations of its subsystems and provides auto-scaling as well as high availability capabilities. This talk will give you detailed insights on both solutions and their benefits for Element customers.",
+    "Speaker names": [
+      "Patrick Maier"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T16:10:00+02:00"
+  },
+  {
+    "ID": "AS8JHQ",
+    "Proposal title": "Leading the way into CRA compliance: Element\u2019s approach to the incoming regulation",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Privacy, Policy & Moderation"
+    },
+    "Abstract": "The Cyber Resilience Act is a new European regulation that has the main goal to increase European cyber security and resilience, through accountability. A lot has been said about the impacts of the CRA on open source, in particular towards non-profit foundations, but what about organisations - such as Element - that operate complex licensing models with a mix of monetised and non-monetised products?\r\n\r\nIn this talk we endeavour to shine a light on our thinking regarding CRA compliance for our products, as well as implications for the wider ecosystem of vendors and communities building on Matrix. We also introduce our roadmap of communications around the CRA, aimed at those using and building on top of our products.",
+    "Speaker names": [
+      "Denise Almeida",
+      "Amandine Le Pape"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T15:15:00+02:00"
+  },
+ {
+    "ID": "BAKSEA",
+    "Proposal title": "Beyond Olm: About challenges and opportunities in Messaging Layer Security (MLS)",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "[matrix] as an end-to-end encrypted communication standard has its flaws. Flaws in privacy, flaws in complexity. With the standard of Messaging Layer Security (MLS), the [matrix] ecosystem has the opportunity to address old flaws, rethink room state and increase interoperability.\r\n\r\nIn this talk, I will provide a beginner's guide on challenges of [matrix] 3.0.",
+    "Speaker names": [
+      "The one with the braid (she/her)"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T11:20:00+02:00"
+  },
+  {
+    "ID": "BBXTLT",
+    "Proposal title": "Famedly \u2013 Secure Communication in Health Care with Matrix",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "Nobody likes fax machines, yet everyone still uses them \u2013 that's the reality in German hospitals. Since 2019, Famedly has been challenging this status quo. With our TI Messenger, built on the Matrix protocol, we've created a secure and decentralized alternative.\r\nLearn how we're using and extending Matrix to modernize communication in the German healthcare system.",
+    "Speaker names": [
+      "Krille (Christian K.)"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T15:10:00+02:00"
+  },
+  {
+    "ID": "BCLRR3",
+    "Proposal title": "The Matrix SDK No One Talks About",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Trixnity is rapidly emerging as a powerful, flexible, and fully asynchronous SDK for building Matrix applications using Kotlin Multiplatform. What many don't realize: Trixnity is already in widespread use - potentially powering apps usable by over 50 million people. It\u2019s embedded in multiple Matrix-based messengers, though you\u2019d only know it by digging into app license disclosures. This talk shines a light on Trixnity\u2019s hidden but significant role in the Matrix ecosystem and why more developers should pay attention. This session also presents the current state of Trixnity in 2025, highlighting key milestones, recent developments, and its growing adoption in real-world applications.",
+    "Speaker names": [
+      "Benedict Benken"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T16:30:00+02:00"
+  },
+  {
+    "ID": "BQZHAH",
+    "Proposal title": "Element Call: Redefining conferencing for privacy, scale, and sovereignty",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Beyond Chat"
+    },
+    "Abstract": "Element Call, the flagship MatrixRTC application by Element, is shaping the future of secure, federated calling. As the successor to the traditional call system in Element apps, it now powers large-scale, end-to-end encrypted (E2EE) group calls with improved reliability and seamless federation support. This talk follows up on last year\u2019s introduction of Element Call, showcasing a year of rapid innovation \u2014 from new media transport mechanisms to enhanced mobile features \u2014 all aimed at making secure communication effortless and intuitive.",
+    "Speaker names": [
+      "Florian Heese",
+      "Timo Kandra",
+      "Aaron Thornburgh"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T15:35:00+02:00"
+  },
+  {
+    "ID": "BT8WR9",
+    "Proposal title": "Invisible Crypto: can Matrix be both secure and easy to use?",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "The Invisible Crypto initiative intends to make Matrix easier to use by ensuring that encrypted messaging is secure by default, and the user is not bothered by irrelevant information.\r\n\r\nIn this talk we will give a status update, hopefully explaining why crypto needed to become slightly more visible on the journey towards making it disappear.\r\n\r\nWe'll go into some detail about what we've done (and why some of it makes things a little more noisy) and what we plan to do to really get there.",
+    "Speaker names": [
+      "Andy Balaam"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T14:00:00+02:00"
+  },
+  {
+    "ID": "CAUAHD",
+    "Proposal title": "How Matrix is becoming the communication standard for Public Sector",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Matrix was built to become the open communication of the web and serve everyone. But, as the Internet and email did, its network effect started with governments. Today, and as proven by the audience in the room,  most European governments and several others are either using it or looking at implementing it for their communications. This talk will tell the story of how we got there and why.",
+    "Speaker names": [
+      "Amandine Le Pape"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T11:40:00+02:00"
+  },
+  {
+    "ID": "CJSBUZ",
+    "Proposal title": "The Role of the Matrix Protocol within Germany\u2019s Sovereign and Secure Health Messenger Solution \u2013 A Loyal Player Embracing the Evolution of Secure Architectures",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "Germany\u2019s digital health infrastructure has long been built on the principles of sovereignty, open standards, and interoperability. With the electronic patient record (ePA) and KIM for secure data and document exchange, Germany established a federated ecosystem using standards such as FHIR and OIDC with sectoral identity providers. The recent introduction of the TI-Messenger (TIM) extends this ecosystem to real-time communication \u2014 now connecting over 25 million insured citizens through the RISE TI-Messenger, directly integrated into their ePA app (ePA FdV).\r\nMatrix serves here not as the foundation of sovereignty, but as a loyal enabler within an existing sovereign architecture. Operating own Matrix instances (e.g. via the RISE Cloud) ensures data locality and governance under German regulatory control, while federation allows secure inter-institutional communication. This approach balances federated flexibility and controlled trust domains, distinguishing Germany\u2019s model from purely centralized or global platform solutions.\r\nThe talk discusses the integration of Matrix within the sovereign health stack \u2014 ePA, sIDP, KIM, TIM, and OIDC \u2014 and explores risks and resilience in large-scale federation. It illustrates how Germany\u2019s health communication layer evolves from document exchange to conversational care, preserving sovereignty while embracing interoperable, open technologies.",
+    "Speaker names": [
+      "Univ.Prof. Dipl.-Ing. Dr. Thomas Grechenig"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T17:00:00+02:00"
+  },
+  {
+    "ID": "CL3HJB",
+    "Proposal title": "Opening",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "Welcome",
+    "Speaker names": [
+      "Yan Minagawa"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T10:00:00+02:00"
+  },
+  {
+    "ID": "CYXHGK",
+    "Proposal title": "SIP/Element: Unifying Telephony and Modern Communication",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Beyond Chat"
+    },
+    "Abstract": "Our project's main goal was to fill a gap by developing a telephony bridge that natively integrates XiVO enterprise telephony (based on SIP) within the alternative and open-source Matrix/Element ecosystem. Our focus with this bridge is to offer a credible and high-performing alternative to dominant proprietary solutions, such as Teams and its \"Telephony System\" licenses.",
+    "Speaker names": [
+      "Laurent Meiller"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T14:40:00+02:00"
+  },
+  {
+    "ID": "D83FKE",
+    "Proposal title": "Holding the Fort: How did bridges happen",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Bots & Bridges"
+    },
+    "Abstract": "Take a trip back through time with me as we learn about how bridges happened. Why did we do it at all? Whose idea was it to hook up the then fledgling matrix.org network to the biggest IRC network? How many databases were shredded in the line of duty?",
+    "Speaker names": [
+      "Half-Shot"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T15:55:00+02:00"
+  },
+  {
+    "ID": "DDKP3V",
+    "Proposal title": "How do messaging app users feel about untraceability?",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Privacy, Policy & Moderation"
+    },
+    "Abstract": "Messaging platforms offer to protect user privacy via a variety of features, such as disappearing messages, password-protected chats, and end-to-end encryption (E2EE), which primarily protect message contents. Beyond such features, \"untraceable communication\" tools for instant messaging protect users from network attackers observing transport layer metadata, which can reveal who communicates with whom, when, and how often. However, unlike E2EE, the effectiveness of these tools depends on large anonymity sets, making widespread user adoption critical. This talk presents a research study with 189 users of messaging apps about their perceptions of \"untraceability\" as a concept, as well as their opinions on the widespread availability of tools for untraceability. The study explores their perceptions of  \"untraceability'' from a broad conceptual standpoint; rather than focusing on a particular tool or implementation, we analyze how users reason about what features should be incorporated by two fictitious messaging platforms, Texty and Chatty, to prevent third parties from \"knowing who communicates with whom\". The results point to a critical gap between how users and privacy experts understand untraceability, as well as tensions between users that see untraceability as a protection to individual privacy and users that see it as a threat to online safety and criminal accountability. Beyond untraceability, I discuss how this research is relevant to the design of messaging platforms that promote privacy as a central value.",
+    "Speaker names": [
+      "Carla Griggio"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T13:40:00+02:00"
+  },
+  {
+    "ID": "DZBGLP",
+    "Proposal title": "Sweden's Public Sector in Transition: Exploring Open Standards for Interoperable Communication",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "For decades, government agencies have relied on proprietary, siloed communication systems. Today, several Swedish initiatives are exploring new paths forward.\r\n\r\nFirst, we will provide details on the latest developments within SAFOS, a service designed to establish a potential national standard for secure messaging, video conferencing, and real-time collaboration.\r\n\r\nSecond, we will share insights from eSam \u2014 a voluntary collaboration between public agencies \u2014 where a multi-agency task force is evaluating options for a common, open, and federated protocol for real-time communication. We will discuss our evaluation criteria, the challenges, and the potential of solutions such as Matrix to foster true interoperability, decentralization, and robust security for Sweden's public administration.\r\n\r\nJoin us to learn how F\u00f6rs\u00e4kringskassan and eSam are exploring ways to build a future-proof communication infrastructure based on openness and collaboration.",
+    "Speaker names": [
+      "Kenneth Edwall",
+      "Anna Engstr\u00f6m"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T11:50:00+02:00"
+  },
+  {
+    "ID": "GDWSJR",
+    "Proposal title": "Matrix as a Bridge \u2013 Enabling Cross-Border Healthcare Communication Through Open Standards",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "European healthcare communication is at a turning point. Fragmented national systems are reaching their limits, while the need for interoperable, secure, and user-friendly digital spaces across borders continues to grow.\r\nThis talk explores how the open-source Matrix protocol has become a strategic foundation for secure messaging in healthcare \u2014 powering derived solutions like TI Messenger and CGM Messenger. Our approach highlights not only the technology itself but also the importance of collaboration with the open-source community, especially through our partnership with Element, to drive innovation, scalability, and trust.\r\nKey themes include deep integration into primary systems, the use of headless clients, and tackling challenges around usability, eID identity models, and technical complexity.\r\nWe argue that while Matrix alone is not the silver bullet for interoperability, it provides the missing bridge between siloed infrastructures and the vision of a unified European Health Space \u2014 rooted in open standards and coordinated implementation.",
+    "Speaker names": [
+      "Patrice Zoe Brend'amour"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T14:10:00+02:00"
+  },
+  {
+    "ID": "GEEKMY",
+    "Proposal title": "Luxchat(4gov)",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Presentation of the Luxembourg efforts to establish a sovereign instant messaging ecosystem for the public and private sector for Luxembourg. \r\n\r\nMore details to follow.",
+    "Speaker names": [
+      "Patrick Weber"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T11:10:00+02:00"
+  },
+  {
+    "ID": "GX397V",
+    "Proposal title": "Commercialising Matrix",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Business with Matrix"
+    },
+    "Abstract": "Can Matrix compete with Big Tech? That remains an open question - but the market conditions in Europe have never been more favorable to sovereign, European software solutions. So how do we build commercially sound companies based on Matrix? This talk will focus on real-world use cases, showcase features built for public-sector customers, explore viable business models, and share hard-earned lessons from bringing Matrix to market.",
+    "Speaker names": [
+      "Runi Hammer",
+      "Arnas",
+      "Johannes"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T16:30:00+02:00"
+  },
+  {
+    "ID": "J7YNGR",
+    "Proposal title": "Rocket.Chat: Entering the Matrix",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "In this talk, we trace the journey of evolving Rocket.Chat from a standalone collaboration server into a full-fledged Matrix home-server \u2014 all built in TypeScript. We\u2019ll dive into the architecture decisions, the incremental features (federation, room state sync, identity translation, event routing, crypto, and bridging), and the real challenges of combining two paradigms (Rocket.Chat\u2019s internal model + the Matrix spec) in one codebase. You\u2019ll hear about lessons learned: when to build vs reuse, how we manage consistency under asynchronous federation, strategies for performance and rate limits, and how we maintain feature parity while gradually merging homeserver responsibilities. Whether you\u2019re running a chat platform, building a new homeserver, or simply interested in bridging monolithic systems with Matrix, this session will provide deep technical insight and lessons you can bring back to your project.",
+    "Speaker names": [
+      "Gabriel Engel"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T14:00:00+02:00"
+  },
+  {
+    "ID": "KAB39N",
+    "Proposal title": "Closing",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "See you next year!",
+    "Speaker names": [
+      "Yan Minagawa"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T17:00:00+02:00"
+  },
+  {
+    "ID": "KCKEYJ",
+    "Proposal title": "How the new Swiss Open Source Law EMOTA strengthens Digital Sovereignty",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Since 2024, the Swiss federal government has been obliged by the new EMOTA law to publish all its software under open source licenses. This new 'Federal Act on the Use of Electronic Means to Conduct Official Tasks' (EMOTA) has had an impact on IT procurement and open source activities in Switzerland. By encouraging the creation of open source communities, the law reduces vendor lock-in and strengthens digital sovereignty.",
+    "Speaker names": [
+      "Matthias St\u00fcrmer"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T11:20:00+02:00"
+  },
+  {
+    "ID": "KHM9ZY",
+    "Proposal title": "NeoBoard S: a whiteboard matrix client offering endless possibilities for real-time collaboration",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Beyond Chat"
+    },
+    "Abstract": "Last year, we introduced NeoToolSuite, Nordeck\u2019s productivity suite of Matrix widgets designed for efficient collaboration and communication.\r\n\r\nThis year, our focus shifts to our flagship product: NeoBoard Standalone. This real-time collaborative whiteboard matrix client has evolved through continuous development and iteration and now it features an immersive infinite canvas that redefines what\u2019s possible for open-source productivity and creative tools.\r\n\r\nJoin us for a tour of NeoBoard\u2019s latest features and share our vision for the future of real-time collaboration, powered by the Matrix protocol.",
+    "Speaker names": [
+      "Robert Gerbauld"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T14:10:00+02:00"
+  },
+  {
+    "ID": "L8LXQU",
+    "Proposal title": "Consolidating Germany\u2019s administrative communication: Towards a joint Matrix-based architecture",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "The German public administration aims to consolidate its disparate solutions for G2C and G2B communications and transition to a unified yet decentralized Matrix-based infrastructure. In this talk we will dive into this new federal infrastructure\u2019s target architecture and explore its key requirements, drivers and architecture decisions \u2013 including the crucial choice of Matrix as the E2EE communications layer. We further share key learnings from the accompanying political process and reflect on the challenges ahead in constructing, negotiating and implementing transition pathways to achieve change in the complex brownfield-environment of Germany\u2019s administrative IT.",
+    "Speaker names": [
+      "Dominik Braun"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T14:10:00+02:00"
+  },
+  {
+    "ID": "MDHBPY",
+    "Proposal title": "Trialing Matrix within the European Commission for resilient and sovereign communications",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Looking for more resilience and sovereignty, the European Commission has been running a trial Matrix deployment. This talk will present some of the work done.",
+    "Speaker names": [
+      "Nicolas Dubois"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T15:10:00+02:00"
+  },
+  {
+    "ID": "MHZQVK",
+    "Proposal title": "ESS - Element\u2019s distribution for Matrix deployments",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "In this talk we will provide insights on the new Element Server Suite (ESS) editions which provide an Element-supported way to deploy Matrix stacks. \r\n\r\nESS is available in three editions\r\n- [ESS Community](https://github.com/element-hq/ess-helm) - the free Matrix distribution from Element for small-/mid-scale, non-commercial community use cases\r\n- [ESS Pro](https://element.io/server-suite) - the commercial Matrix distribution from Element for professional use\r\n- [ESS TI-M](https://element.io/server-suite/ti-messenger) - a special version of ESS Pro focused on the requirements of TI-Messenger Pro and ePA\r\n\r\nWe will dive deep into each edition, explain how they're meant to be used, shed light on the components they include and discuss which use cases they are tailored to.",
+    "Speaker names": [
+      "Patrick Maier"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T12:10:00+02:00"
+  },
+  {
+    "ID": "MLHCY7",
+    "Proposal title": "Building Matrix-Powered Campus Communication Platform Thousands Students",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Matrix in Education"
+    },
+    "Abstract": "In this talk I will present my journey in developing a decentralized and secure communication platform for a university with thousands students and faculty members. Using Matrix and Element as foundation I tailored the solution to meet academic needs, ensure data privacy and integrate with some systems, bots, widgets etc.\r\n\r\nThe session will cover:\r\n- Why Matrix was chosen over other platforms.\r\n- Technical stack and deployment model.\r\n- Customization of Element and federation decisions.\r\n- Challenges (including authentication, onboarding, moderation and compliance).\r\n- Real-world impact and feedback.\r\n- Future plans including bridging, widgets and improvements.\r\n\r\nThis case study shows how Matrix can empower large academic communities and help other institutions explore privacy-respecting and scalable alternatives to traditional messaging platforms.\r\n\r\nBy the way, it is real story. :)",
+    "Speaker names": [
+      "Vladislav Kalinin"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T10:35:00+02:00"
+  },
+  {
+    "ID": "PEJYHG",
+    "Proposal title": "A Contextual Integrity approach to privacy in interoperable messaging",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Privacy, Policy & Moderation"
+    },
+    "Abstract": "This talk will introduce the Helen Nissenbaum's theory of Contextual Integrity as a framework for understanding privacy in messaging platforms. Contextual Integrity views privacy not as keeping information secret, but as making sure information flows in ways that match people\u2019s expectations in a given context, or in other words, what feels appropriate to share, with whom, and for what purpose. For example, if Alice shares her live location with Bob through a messaging app, she likely expects the app to use her location only to deliver it to Bob. But if the app also uses her location to target ads, she may feel that her privacy was breached. The problem isn\u2019t that the location was shared, but that it was shared in a way that didn\u2019t match the context or her understanding of how the information would be used.\r\nI will explain the theoretical framework with examples of how it can be adapted to identify and explain privacy expectations of particular messaging features, and discuss how it can be applied to interoperable messaging to identify potential privacy concerns.",
+    "Speaker names": [
+      "Carla Griggio"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T12:10:00+02:00"
+  },
+  {
+    "ID": "PTAPZE",
+    "Proposal title": "Portable identites (MSC 2787) and the GDPR right to rectification, a pressing need for server operators",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Privacy, Policy & Moderation"
+    },
+    "Abstract": "Most of the discussions around privacy laws have been focused on the protection of data and condition of processing. But some others rights are starting to be litigated more widley and will soon play a bigger role for IT systems managers. This talk will focus on the GDPR article 16 (right to rectification), and how the current Matrix spec is inadequate for servers operators aiming to let people change their username, since MXID can't be changed (as of this proposal writing in June 2025).\r\n\r\nBased on the ongoing work done by the [Fedora community](https://fedoraproject.org/) on the [Fedora Username Change project](https://communityblog.fedoraproject.org/call-for-volunteers-regarding-the-fedora-username-change-project/), on recent legal cases in Europe, we will see why the adoption of [MSC 2787 (Portable identites)](https://github.com/matrix-org/matrix-spec-proposals/pull/2787) should be more than a nice to have, and how it intersect with questions of privacy and anti-discrimination. The talk will also touch on the topic of SSO configuration and downstream consumers best practice to deal with such changes.",
+    "Speaker names": [
+      "Michael S."
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T11:10:00+02:00"
+  },
+  {
+    "ID": "PUUXDL",
+    "Proposal title": "Texting Through the Silence: Medical Care over Matrix with Delay during a Simulated Moonwalk",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Twenty seconds is a long time when someone can\u2019t breathe. At ESA\u00b4s LUNA Analog Facility we turned that reality into a design constraint: a moonwalk emergency with voice cut by design, Matrix/Element carrying clinical guidance across a built-in one-way delay. We tested two styles of instant messaging, open free-text versus a tiny, structured grammar, to coordinate assessment, treatment, and evacuation over a delay-tolerant (store-and-forward) network. The first signals are clear: structure lowers cognitive load and keeps decisions moving even when replies arrive \u201clate.\u201d We\u2019ll share what worked, what didn\u2019t, and how the same patterns translate to Earth during hospital IT outages. With publications in progress, this talk focuses on early signals and the method itself, showing how Matrix enabled care under delay and how small changes could improve resilience.",
+    "Speaker names": [
+      "Jan-Lukas Furmanek",
+      "Aileen Rabsahl"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T12:30:00+02:00"
+  },
+  {
+    "ID": "Q3LKTY",
+    "Proposal title": "An Update on reaching the German Government via Matrix",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "With *Beyond Instant Messaging: Matrix in the Public Sector* last year, we presented FITKO and the German Federal Ministry of the Interior joining efforts to pilot a Matrix-based next-generation communication infrastructure for digital government services, with the goal to showcase end-to-end encryption, great usability and machine-readable communication between citizens and public authorities.\r\n\r\nLets take another look at the project, what we have done since and what else there is to come for *reaching the German Government via Matrix*",
+    "Speaker names": [
+      "networkException"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-16T17:10:00+02:00"
+  },
+  {
+    "ID": "QCYBMC",
+    "Proposal title": "MatrixRTC - The key sharing problem",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Why is having large encrypted group calls difficult? How do other providers solve this? The future? Demos!",
+    "Speaker names": [
+      "Jayesh Nirve (td)"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T16:00:00+02:00"
+  },
+  {
+    "ID": "QG8QQU",
+    "Proposal title": "The High Price of Open Source: Building a Business Around Matrix",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Business with Matrix"
+    },
+    "Abstract": "Open Source has never been easy, but doing Open Source in the Matrix ecosystem poses a unique set of challenges. Add the pressure of sustaining a company on top of that, and you quickly find yourself in uncharted, and often uncomfortable, territory. This talk reflects on the reality of maintaining open source projects in the Matrix universe, especially from the perspective of a business. It dives into the tension between openness and exploitation, when others take your work without contributing anything in return, undermining sustainability and motivation.\r\n\r\nThrough real-world experiences and hard-learned lessons, this session will outline the structural and cultural issues that make it harder for corporate contributors to survive in the ecosystem. We'll look at why fair contribution is hard to enforce, how \"Trittbrettfahrer\" (free riders) hurt long-term progress, and what we as a community - maintainers, companies, and individuals - can do to shift the dynamic. Whether it's licensing strategies, community governance, or pushing for upstream responsibility, this talk will explore the imperfect but necessary mechanisms we need to keep Matrix open, but not exploitable.\r\n\r\nThe goal isn't to complain, but to open up a grounded and honest discussion about sustainability, fairness, and the future of open collaboration in Matrix.",
+    "Speaker names": [
+      "Benedict Benken",
+      "Dr. Patrick Alberts"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T17:25:00+02:00"
+  },
+  {
+    "ID": "QGQX9L",
+    "Proposal title": "Matrix\u2019s Role in the German Healthcare System: The TI-Messenger as a Communication Infrastructure for Healthcare",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "In this presentation, we will examine processes within the German healthcare system and explore the underlying structural challenges that make intersectoral communication so difficult. We will discuss why Matrix is the ideal protocol for the foundation of this infrastructure and explain how we build upon the Matrix specification to meet healthcare-specific requirements.\r\n\r\nSpecial insights will be shared regarding the challenges and lessons learned during the implementation of the TI-Messenger in Germany\u2019s healthcare system. The presentation will outline the different stages of development and highlight specific use cases that demonstrably improve the quality of care.",
+    "Speaker names": [
+      "Marie Ruddeck"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T12:30:00+02:00"
+  },
+  {
+    "ID": "QTBJP3",
+    "Proposal title": "Schulchat RLP as [matrix]-based school messenger",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Matrix in Education"
+    },
+    "Abstract": "fairkom has developed a [matrix]-based school messenger for the Department of Education of the German state of Rhineland-Palatinate to serve up to half a million users. Schulchat RLP has one code base for all platforms and is available as app on Apple and Google Play Stores.\r\n\r\nWhat makes this solution unique is the deep integration of the identity and user management system from the \"Bildungsportal RLP\", ensuring seamless use for teachers, students, and even parents - from primary to vocational schools.",
+    "Speaker names": [
+      "Lisa Kostrzewa",
+      "Jan Krammer (Janonym)",
+      "Philipp Monz",
+      "Dr. Roland Alton"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-18T10:00:00+02:00"
+  },
+  {
+    "ID": "SHDUM3",
+    "Proposal title": "Nationwide Rollout of Matrix-Based Instant Messaging (TI-M) for 74 Million Statutorily Insured Citizens in German Healthcare",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "On July 15, 2025, Germany\u2019s statutory health insurance funds will introduce the Matrix-based instant messaging service TI-M (Telematikinfrastruktur Messenger) into their electronic patient record (ePA) apps. This marks a significant milestone, as Matrix-based messengers will become potentially available to 74 million insured individuals across Germany.\r\n\r\nThis talk will provide an overview of the nationwide rollout, highlighting the technical and organizational challenges faced during the development and operation of TI-M, including interoperability, security, and scalability within the highly regulated healthcare environment. We will present up-to-date usage data and insights on user adoption, reflecting the initial impact and acceptance of TI-M among patients and healthcare professionals.\r\n\r\nFinally, the session will offer an outlook on the future of secure, decentralized communication in the German healthcare system, discussing opportunities for further integration, innovation, and the broader implications for digital health infrastructure.",
+    "Speaker names": [
+      "Jan Kohnert"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T15:40:00+02:00"
+  },
+  {
+    "ID": "SJFXGH",
+    "Proposal title": "Element X Web",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Element X is coming to web and desktop! What does that mean? We\u2019re going to make the apps simple, familiar, reliable and fast! Come learn more about the vision we have put together and all the progress we have made so far!",
+    "Speaker names": [
+      "Danielle Kirkwood",
+      "David Langley",
+      "Ga\u00eblle Hunt"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T11:10:00+02:00"
+  },
+  {
+    "ID": "TM3ASG",
+    "Proposal title": "Scaling Real-Time in NeoBoard: Our Journey from P2P to MatrixRTC + LiveKit",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "[NeoBoard](https://neoboard.io/) is an open source real-time collaborative whiteboard built on the Matrix protocol. It functions both as a widget within chat-focused Matrix clients like Element Web, and as a standalone web app that acts as a lightweight, whiteboard-centric Matrix client\r\n\r\nIn this talk, we\u2019ll share how we migrated NeoBoard\u2019s real-time collaboration feature from a peer-to-peer WebRTC implementation to MatrixRTC with a LiveKit backend, a shift that was key to scaling to hundreds of concurrent users. We\u2019ll cover the challenges we faced, the lessons we learned, and the architectural decisions that made the transition smooth. We\u2019ll also touch on what\u2019s still missing and what\u2019s next for both NeoBoard and MatrixRTC.",
+    "Speaker names": [
+      "Milton Moura"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-18T12:10:00+02:00"
+  },
+  {
+    "ID": "UQVVRV",
+    "Proposal title": "MatrixRTC - Introducing a new concept to the Matrix-specification",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "In this talk, we will share the newest improvements to MatrixRTC. We'll focus on how the security and encryption architecture has evolved to provide robust, private communications for Matrix users. Additionally, we will show how to integrate Element Call into clients using the Rust or JS-SDK in a matter of minutes. Whether you're building a custom Matrix client or want to know what makes MatrixRTC such a great solution for secure communication, you'll walk away with practical knowledge to bring encrypted calling capabilities to your users and an in-depth understanding about the key distribution for real- time (MatrixRTC) sessions.",
+    "Speaker names": [
+      "Timo Kandra"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T15:00:00+02:00"
+  },
+  {
+    "ID": "VLF9QQ",
+    "Proposal title": "Joining the conversation: balancing privacy with usability for encrypted messages",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "Being able to read the conversation in a room before you joined is a critical feature for some usecases, but end-to-end encryption makes it tricky to implement.\r\n\r\nIn this technically-focussed talk, we'll cover the challenges behind implementing \"history sharing\", why previous attempts in this area failed, and how we solved those problems with minimal impact on the security or efficiency of the protocol.",
+    "Speaker names": [
+      "Richard van der Hoff"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T15:00:00+02:00"
+  },
+  {
+    "ID": "W9LUVA",
+    "Proposal title": "Element X and Pro Updates",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "We will provide you with the latest updates on Element X mobile apps, as well the plan to sunset our classic Element apps. This includes both the current state, as well as a look into what to expect during the next couple of months and details about specific features like threads and spaces that many people are looking forward to on Element X. In the second part we\u2019ll cover the intent and purpose behind the Element Pro apps - who are these for and why, and as part of it, look into how we\u2019re allowing our customers to publish self-branded apps for a complete sovereign messaging solution.",
+    "Speaker names": [
+      "Aaron Thornburgh",
+      "Andreas",
+      "Doug Earnshaw"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T16:00:00+02:00"
+  },
+  {
+    "ID": "WEASKJ",
+    "Proposal title": "The Element update: Shininess, scalability and sustainability",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "A whistle stop tour of Element\u2019s progress over the last year! Highlights include Element Server Suite Community, the latest on Element X, Spaces, Threads and Element Call. There\u2019s also Element Server Suite Pro, Synapse Pro and the launch of Element Pro; the Element app specifically for the workplace!",
+    "Speaker names": [
+      "Neil Johnson"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T10:00:00+02:00"
+  },
+  {
+    "ID": "WM9WAE",
+    "Proposal title": "Secure and Sovereign communications for United Nations International Computing Centre and its Partners",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "Secure communication leveraging the Matrix protocol for UNICC and its partners",
+    "Speaker names": [
+      "Tima Soni"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T15:30:00+02:00"
+  },
+  {
+    "ID": "WWAVBQ",
+    "Proposal title": "Matrix French gov deployment: opening a private federation securely",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Public Sector"
+    },
+    "Abstract": "The French government has deployed a private Matrix federation for French civil servants called Tchap.\r\n\r\nCurrently this federation has about 300 000 monthly active users and its usage is growing constantly.\r\n\r\nToday our federation is closed and we would like to be able to connect with other public French Matrix nodes (local authorities for instance), and also other European countries.\r\n\r\nWe should implement measures to ensure that the federation remains resilient against potential attacks, both technical (e.g., DDoS, data interception) and organizational (e.g., unauthorized access, insider threats) :\r\n- How can we restrict the servers we wish to communicate with? How can we be sure that we are actually communicating with them? Since TLS can be vulnerable to man-in-the-middle attacks by state actors, we can't rely on it entirely.\r\n- How can we trust the identities of users from external deployments that we don\u2019t control?\r\n- How can we limit the interactions that external users can have with users from our federation?\r\n\r\nWe spent a lot of time thinking about this and now have a plan that looks legit, and that we are currently implementing. I'm sure you want to know more about it, right?\r\n\r\nIn this talk, we will share the approach we\u2019ve taken to address these challenges and we will present the architecture we designed.",
+    "Speaker names": [
+      "Mathieu Velten"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T15:00:00+02:00"
+  },
+  {
+    "ID": "X3KDAQ",
+    "Proposal title": "Eventually Consistent Access Control: Practical Insights on Matrix from Decentralized Systems Theory",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "Access control is the core of any system's security, but usually provided by a single, centralized server. However, access control in a Matrix room is decentralized: every participating server *independently* decides *who* is authorized to send and receive *which* events, without consulting any other server. To the surprise of many, these decisions are still *eventually* consistent even if all but one server is malicious, but seeing *why* requires a new way of thinking about access control. I will explain  the necessary design patterns from decentralized systems science, and show how they can be weaved together for a practical explanation of what Matrix is, and why Matrix can reach its astonishing levels of security and resilience.",
+    "Speaker names": [
+      "Florian Jacob",
+      "Hannes Hartenstein"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T11:10:00+02:00"
+  },
+  {
+    "ID": "XDT3BL",
+    "Proposal title": "Governing Board transparency update",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Keynote"
+    },
+    "Abstract": "In this talk we will cover\r\n\r\n- what is the Governing Board about\r\n- how does it fit into the Foundation\r\n- reviewing the last 12 months and outputs\r\n- showing some of the different processes like establishing Working Groups, what Committees are, interactions with the Foundation\r\n- what next\r\n- how to get involved in open governance\r\n- take some questions",
+    "Speaker names": [
+      "Kim Brose",
+      "Nico"
+    ],
+    "Room": {
+      "en": "Ada Byron"
+    },
+    "Start": "2025-10-17T10:30:00+02:00"
+  },
+  {
+    "ID": "XLV7PZ",
+    "Proposal title": "Lessons learned from implementing Native OIDC from scratch",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "Are we OIDC yet ? YES ! We are !\r\n\r\nOpenID Connect evolved as the one and only identity standard in the modern web. With MSC3861, the [matrix] ecosystem is finally moving to OIDC as the authentication standard amongst clients and homeservers.\r\n\r\nOut of curiosity, I started implementing a native OIDC implementation from scratch : no OAuth 2.0 library, no Ruma ; just the [matrix] Dart SDK, an HTTP client and the MSC in front of me. This talk will be about the lessons learned.",
+    "Speaker names": [
+      "The one with the braid (she/her)"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-17T12:35:00+02:00"
+  },
+  {
+    "ID": "XTTQ3R",
+    "Proposal title": "From Healthcare to Governments: Building Europe\u2019s Secure Messaging Standard",
+    "Session type": {
+      "de-formal": "Kurzer Vortrag",
+      "en": "Short Talk",
+      "fr": "Short Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "With the TI-Messenger, built on the Matrix protocol, Famedly has enabled secure and interoperable communication across the German healthcare system, from hospitals to pharmacies. Adoption is growing rapidly, with millions of potential users on the horizon.\r\n\r\nIn this opening talk, we\u2019ll look back at TIM\u2019s journey so far, highlight its impact and adoption, and then take a step beyond healthcare into the government. We\u2019ll also give a glimpse into MLS and how it will strengthen security and interoperability for all Matrix-based applications in the future.",
+    "Speaker names": [
+      "Phillipp Kurtz"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T11:20:00+02:00"
+  },
+  {
+    "ID": "YK9F38",
+    "Proposal title": "Improving the security of the federation protocol",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "The federation protocol is how Matrix homeservers communicate between each other. In private federations this isn't particularly challenging as the network is trusted but in the public federation this isn't true. This talk dives into what protocol improvements are in the works to make the public federation more secure against Byzantine actors, particularly against \"state resets\": an unintended rollback of room state. We'll explore why this problem is hard, what some of the failure modes are, and how we are working on addressing them.",
+    "Speaker names": [
+      "Kegan Dougal"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-17T12:10:00+02:00"
+  },
+  {
+    "ID": "YMCDE7",
+    "Proposal title": "The TI-Messenger Story",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Healthcare"
+    },
+    "Abstract": "In this talk, we\u2019ll take you through the real-world journey of developing and approving a TI-Messenger - a secure, interoperable messaging application built on top of the Matrix protocol for use within Germany\u2019s healthcare system. What began as am idea soon grew into a tightly regulated, multi-stakeholder project, with high demands on privacy, trust, and compliance.\r\n\r\nThis session is less about features and more about transformation. It\u2019s a case study of how we shaped a Matrix-based messenger to meet the strict security, interoperability, and governance requirements defined by the gematik specification, and how that shaped our development process in return. Unlike general-purpose Matrix clients, the TI-Messenger is deeply constrained by legal frameworks, security audits, and standardized certification making the path from concept to approval full of unique challenges.\r\n\r\nWe\u2019ll reflect on what we learned about applying Matrix in high-trust environments, what we would do differently, and how our experience could inform similar efforts elsewhere. Whether you\u2019re working in the public sector, healthcare, or simply curious how Matrix can scale to more regulated use cases, this talk offers an inside look at what it takes to make Matrix meet mission-critical standards.",
+    "Speaker names": [
+      "Michael Thiele"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-16T11:50:00+02:00"
+  },
+  {
+    "ID": "Z9B878",
+    "Proposal title": "Matrix and MLS - Water, Oil and Mayonnaise",
+    "Session type": {
+      "de-formal": "Vortrag",
+      "en": "Talk",
+      "fr": "Talk"
+    },
+    "Track": {
+      "en": "Security & Encryption"
+    },
+    "Abstract": "MLS and Matrix don't mix well. But why is that and what can we do about it?\r\n\r\nSince I got to touch that area a bit, I'll try to give some answers, but don't expect solutions.\r\n\r\nWe will be looking how MLS and Matrix work internally, how a tree is a DAG but a DAG not a tree and maybe we will have some glorious idea or get frustrated. No promises!",
+    "Speaker names": [
+      "Nico"
+    ],
+    "Room": {
+      "en": "Lynn Conway"
+    },
+    "Start": "2025-10-16T12:20:00+02:00"
+  },
+  {
+    "ID": "ZJLB3Q",
+    "Proposal title": "Tune Your Chat",
+    "Session type": {
+      "de": "Workshop",
+      "en": "Workshop",
+      "fr": "Workshop"
+    },
+    "Track": {
+      "en": "Hands-on"
+    },
+    "Abstract": "This workshop is an \"interactive talk\" with an introduction by the host but the wish for attendees to also present their ideas about [matrix] bridges, bots & other integrations.",
+    "Speaker names": [
+      "Kim Brose"
+    ],
+    "Room": {
+      "en": "Alan Turing"
+    },
+    "Start": "2025-10-18T15:15:00+02:00"
+  }
+]

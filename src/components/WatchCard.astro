@@ -6,7 +6,13 @@ import Pill from "../components/Pill.astro";
 
 const { talk } = Astro.props;
 const hasVideo = talk.youtube;
-const thumb = "/watch/thumbs/" + slugify(talk.title) + ".avif";
+const youtube = talk.youtube;
+const title = talk['Proposal title'];
+const track = talk.Track ? talk.Track.en : false;
+const summary = talk.Abstract;
+const speakers = talk['Speaker names'];
+const room = talk.Room.en;
+const thumb = "/watch/thumbs/" + slugify(title) + ".avif";
 const slides = ["/watch/slides/", talk.slides].join("");
 ---
 
@@ -103,21 +109,21 @@ const slides = ["/watch/slides/", talk.slides].join("");
         }
     }
 </style>
-<div class:list={['talk-card', slugify(talk.track)]}>
+<div class:list={['talk-card', track ? slugify(track) : null]}>
     { hasVideo ?
-    <a href={talk.youtube}>
+    <a href={youtube}>
         <div class="thumbnail-container">
             <img src={ thumb } alt="">
         </div>
         <div class="info-container">
-            <h2>{ talk.title }</h2>
-            <p>{ talk.summary }</p>
+            <h2>{ title }</h2>
+            <p>{ summary }</p>
             <div class="speaker">
-                { talk.speakers.join(", ") }
+                { speakers.join(", ") }
             </div>
             <div class="talk-pills">
-                <Pill Type="div" label={ talk.track } />
-                <Pill Type="div" label={ talk.room } />
+                <Pill Type="div" label={ track } />
+                <Pill Type="div" label={ room } />
             </div>
         </div>
     </a>
@@ -127,20 +133,20 @@ const slides = ["/watch/slides/", talk.slides].join("");
             <img src={ thumb } alt="">
         </div>
         <div class="info-container">
-            <h2>{ talk.title }</h2>
-            <p>{ talk.summary }</p>
+            <h2>{ title }</h2>
+            <p>{ summary }</p>
             <div class="speaker">
-                { talk.speakers.join(", ") }
+                { speakers.join(", ") }
             </div>
             <div class="talk-pills">
-                <Pill Type="div" label={ talk.track } />
-                <Pill Type="div" label={ talk.room } />
+                <Pill Type="div" label={ track } />
+                <Pill Type="div" label={ room } />
             </div>
         </div>
     </div>
     }
     <div class="additional-links">
-        { talk.slides ?
+        { slides ?
         <a href={ slides } class="slides">View slides <img src="/watch/slides-icon.svg" alt="" /></a>
         :
         <div>No slides available</div>
