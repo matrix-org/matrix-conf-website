@@ -155,11 +155,31 @@ const talks = raw_talks.toSorted((a,b) => new Date(a.Start) - new Date(b.Start))
         </div>
         <div class="content-wrapper" id="talks">
             <div class="date-separator">
-                <div class="date">Wednesday 15<sup>th</sup> October</div>
+                <div class="date">Thursday 16<sup>th</sup> October</div>
                 <div class="line"></div>
             </div>
             <div class="talks-grid">
                 {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-16T00:00+02:00") && new Date(a.Start) < new Date("2025-10-17T00:00+02:00"))
+                      .map((talk) => (
+                    <WatchCard talk={talk} />
+                ))}
+            </div>
+            <div class="date-separator">
+                <div class="date">Friday 17<sup>th</sup> October</div>
+                <div class="line"></div>
+            </div>
+            <div class="talks-grid">
+                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-17T00:00+02:00") && new Date(a.Start) < new Date("2025-10-18T00:00+02:00"))
+                      .map((talk) => (
+                    <WatchCard talk={talk} />
+                ))}
+            </div>
+            <div class="date-separator">
+                <div class="date">Saturday 18<sup>th</sup> October</div>
+                <div class="line"></div>
+            </div>
+            <div class="talks-grid">
+                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-18T00:00+02:00") && new Date(a.Start) < new Date("2025-10-19T00:00+02:00"))
                       .map((talk) => (
                     <WatchCard talk={talk} />
                 ))}
