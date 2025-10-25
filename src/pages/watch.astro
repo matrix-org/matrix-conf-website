@@ -1,6 +1,7 @@
 ---
 import SponsorsGrid from "../components/SponsorsGrid.astro";
 import Rooms from "../components/Rooms.astro";
+import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
@@ -69,6 +70,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         max-width: var(--max-page-width);
         margin-inline: auto;
     }
+    .content-wrapper#talks {
+        max-width: 1122px;
+    }
     #hero {
         background-image: url(/grey-repeating-lines.svg);
         height: 100px;
@@ -128,6 +132,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             border-top: 2px solid var(--border);
         }
     }
+
+    .talks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 358px);
+        row-gap: 48px;
+        column-gap: 24px;
+    }
 </style>
 
 <BaseLayout
@@ -159,6 +170,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="date-separator">
                 <div class="date">Wednesday 15<sup>th</sup> October</div>
                 <div class="line"></div>
+            </div>
+            <div class="talks-grid">
+                {items.map((item) => (
+                    <WatchCard talk={item} />
+                ))}
             </div>
         </div>
     </section>

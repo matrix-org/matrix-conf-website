@@ -203,5 +203,15 @@ const slug = slugify(label);
             }
         }
     }
+
+    .pill.ada-byron,.pill.alan-turing,.pill.lynn-conway {
+        $text-color: #000;
+        $pill-color: #b3b3b3;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+    }
 </style>
 <Type class:list={['pill', slug]}>{ label }</div>
