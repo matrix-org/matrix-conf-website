@@ -1,6 +1,5 @@
 ---
 import SponsorsGrid from "../components/SponsorsGrid.astro";
-import Rooms from "../components/Rooms.astro";
 import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -60,9 +59,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     section {
         padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
     }
-    section#stream-list {
-        padding-top: 0px;
-    }
     .content-wrapper {
         display: flex;
         flex-direction: column;
@@ -91,18 +87,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     a {
         color: var(--link-color);
         text-decoration: none;
-    }
-    .stream-item {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-    }
-    .stream-detail h2 {
-        margin-bottom: 8px;
-    }
-    .ccc-player {
-        width: 100%;
-        aspect-ratio: 16/9;
     }
 
     #filters {
