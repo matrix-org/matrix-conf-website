@@ -5,7 +5,7 @@ import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import raw_talks from '/static/watch/matrix-conf-2025_sessions.json';
-const talks = raw_talks.toSorted((a,b) => new Date(a.Start) < new Date(b.Start))
+const talks = raw_talks.toSorted((a,b) => new Date(a.Start) - new Date(b.Start))
 ---
 
 <style lang="scss">
@@ -159,7 +159,8 @@ const talks = raw_talks.toSorted((a,b) => new Date(a.Start) < new Date(b.Start))
                 <div class="line"></div>
             </div>
             <div class="talks-grid">
-                {talks.map((talk) => (
+                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-16T00:00+02:00") && new Date(a.Start) < new Date("2025-10-17T00:00+02:00"))
+                      .map((talk) => (
                     <WatchCard talk={talk} />
                 ))}
             </div>
