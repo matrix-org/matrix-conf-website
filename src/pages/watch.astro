@@ -1,12 +1,11 @@
 ---
 import SponsorsGrid from "../components/SponsorsGrid.astro";
 import Rooms from "../components/Rooms.astro";
+import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <style lang="scss">
-    @use "sass:color";
-
     :root {
         --bg-color: #000000;
         --fg-color: #ffffff;
@@ -109,202 +108,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         justify-content: center
     }
 
-    .pill {
-        line-height: 1.5;
-        display: inline-block;
-        border: 2px solid transparent;
-        border-radius: 2px;
-        padding: 0em .5em;
-
-        &:focus {
-            outline: 1px solid black;
-        }
-    }
-
-    #filters>.pill {
-        cursor: pointer;
-    }
-
-    .pill.keynote {
-        $text-color: #000;
-        $pill-color: #fff;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: -2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.public-sector {
-        $text-color: #000;
-        $pill-color: #0dbd8b;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.healthcare {
-        $text-color: #fff;
-        $pill-color: #1e1b4b;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.security-encryption {
-        $text-color: #000;
-        $pill-color: #f45b69;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.beyond-chat {
-        $text-color: #000;
-        $pill-color: #12dede;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.business {
-        $text-color: #000;
-        $pill-color: #f6ae2d;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.hands-on {
-        $text-color: #000;
-        $pill-color: #ae7fe9;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.education {
-        $text-color: #000;
-        $pill-color: #c2d115;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.privacy-policy-moderation {
-        $text-color: #fff;
-        $pill-color: #003399;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
-    .pill.bots-bridges {
-        $text-color: #000;
-        $pill-color: #e136f3;
-        color: $text-color;
-        background-color: $pill-color;
-        &:hover {
-            background-color: color.adjust($pill-color, $lightness: 2.5%);
-        }
-        &.selected {
-            color: $pill-color;
-            background-color: $text-color;
-            border: 1px solid $pill-color;
-            &:hover {
-                background-color: color.adjust($text-color, $lightness: 15%);
-            }
-        }
-    }
-
     .date-separator {
         display: flex;
         align-items: center;
@@ -339,16 +142,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section id="recordings">
         <div class="content-wrapper">
             <div id="filters">
-                <button class="pill keynote">Keynote</button>
-                <button class="pill public-sector">Public Sector</button>
-                <button class="pill healthcare">Healthcare</button>
-                <button class="pill security-encryption">Security &amp; Encryption</button>
-                <button class="pill beyond-chat">Beyond Chat</button>
-                <button class="pill business">Business with Matrix</button>
-                <button class="pill hands-on">Hands-On</button>
-                <button class="pill education">Matrix in Education</button>
-                <button class="pill privacy-policy-moderation">Privacy, Policy and Moderation</button>
-                <button class="pill bots-bridges">Bots &amp; Bridges</button>
+                <Pill Type="button" slug="keynote" label="Keynote" />
+                <Pill Type="button" slug="public-sector" label="Public Sector" />
+                <Pill Type="button" slug="healthcare" label="Healthcare" />
+                <Pill Type="button" slug="security-encryption" label="Security &amp; Encryption" />
+                <Pill Type="button" slug="beyond-chat" label="Beyond Chat" />
+                <Pill Type="button" slug="business" label="Business with Matrix" />
+                <Pill Type="button" slug="hands-on" label="Hands-On" />
+                <Pill Type="button" slug="education" label="Matrix in Education" />
+                <Pill Type="button" slug="privacy-policy-moderation" label="Privacy, Policy and Moderation" />
+                <Pill Type="button" slug="bots-bridges" label="Bots &amp; Bridges" />
             </div>
             <div class="date-separator">
                 <div class="date">Wednesday 15<sup>th</sup> October</div>

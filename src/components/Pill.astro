@@ -1,0 +1,204 @@
+---
+const { Type, slug, label } = Astro.props;
+---
+
+<style lang="scss">
+    @use "sass:color";
+
+    .pill {
+        line-height: 1.5;
+        display: inline-block;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        padding: 0em .5em;
+
+        &:focus {
+            outline: 1px solid black;
+        }
+    }
+
+    button.pill {
+        cursor: pointer;
+    }
+
+    .pill.keynote {
+        $text-color: #000;
+        $pill-color: #fff;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: -2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.public-sector {
+        $text-color: #000;
+        $pill-color: #0dbd8b;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.healthcare {
+        $text-color: #fff;
+        $pill-color: #1e1b4b;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.security-encryption {
+        $text-color: #000;
+        $pill-color: #f45b69;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.beyond-chat {
+        $text-color: #000;
+        $pill-color: #12dede;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.business {
+        $text-color: #000;
+        $pill-color: #f6ae2d;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.hands-on {
+        $text-color: #000;
+        $pill-color: #ae7fe9;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.education {
+        $text-color: #000;
+        $pill-color: #c2d115;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.privacy-policy-moderation {
+        $text-color: #fff;
+        $pill-color: #003399;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill.bots-bridges {
+        $text-color: #000;
+        $pill-color: #e136f3;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+</style>
+<Type class:list={['pill', slug]}>{ label }</div>
