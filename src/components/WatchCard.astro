@@ -8,7 +8,7 @@ const { talk } = Astro.props;
 const hasVideo = talk.youtube;
 const youtube = talk.youtube;
 const title = talk['Proposal title'];
-const track = talk.Track ? talk.Track.en : false;
+const track = talk.Track ? talk.Track.en : '';
 const summary = talk.Abstract;
 const speakers = talk['Speaker names'];
 const room = talk.Room.en;
@@ -109,7 +109,7 @@ const slides = ["/watch/slides/", talk.slides].join("");
         }
     }
 </style>
-<div class:list={['talk-card', track ? slugify(track) : null]}>
+<div class:list={['talk-card', slugify(track)]}>
     { hasVideo ?
     <a href={youtube}>
         <div class="thumbnail-container">
@@ -122,7 +122,7 @@ const slides = ["/watch/slides/", talk.slides].join("");
                 { speakers.join(", ") }
             </div>
             <div class="talk-pills">
-                <Pill Type="div" label={ track } />
+                {track && <Pill Type="div" label={ track } />}
                 <Pill Type="div" label={ room } />
             </div>
         </div>
@@ -139,7 +139,7 @@ const slides = ["/watch/slides/", talk.slides].join("");
                 { speakers.join(", ") }
             </div>
             <div class="talk-pills">
-                <Pill Type="div" label={ track } />
+                {track && <Pill Type="div" label={ track } />}
                 <Pill Type="div" label={ room } />
             </div>
         </div>
