@@ -5,7 +5,26 @@ import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import raw_talks from '/static/watch/matrix-conf-2025_sessions.json';
-const talks = raw_talks.toSorted((a,b) => new Date(a.Start) - new Date(b.Start))
+const all_talks = raw_talks.toSorted((a:any,b:any) => new Date(a.Start).valueOf() - new Date(b.Start).valueOf());
+var talks = [];
+
+function incrementDate(tomorrow:Date, days:number) {
+    return tomorrow.setDate(tomorrow.getDate() + days);
+}
+
+function formatDate(day:Date) {
+    var dow = '';
+    switch(day.getDay()) {
+        case 4: dow = 'Thursday'; break;
+        case 5: dow = 'Friday'; break;
+        case 6: dow = 'Saturday'; break;
+    }
+    return dow + ' ' + day.getDate();
+}
+
+for (let i = 0; i < 3; i++) {
+    talks.push(all_talks.filter((a:any) => new Date(a.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) && new Date(a.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)));
+}
 ---
 
 <style lang="scss">
@@ -158,36 +177,17 @@ const talks = raw_talks.toSorted((a,b) => new Date(a.Start) - new Date(b.Start))
             </div>
         </div>
         <div class="content-wrapper" id="talks">
+            {talks.map((days_talks) => (
             <div class="date-separator">
-                <div class="date">Thursday 16<sup>th</sup> October</div>
+                <div class="date">{formatDate(new Date(days_talks[0].Start))}<sup>th</sup> October</div>
                 <div class="line"></div>
             </div>
             <div class="talks-grid">
-                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-16T00:00+02:00") && new Date(a.Start) < new Date("2025-10-17T00:00+02:00"))
-                      .map((talk) => (
+                {days_talks.map((talk:any) => (
                     <WatchCard talk={talk} />
                 ))}
             </div>
-            <div class="date-separator">
-                <div class="date">Friday 17<sup>th</sup> October</div>
-                <div class="line"></div>
-            </div>
-            <div class="talks-grid">
-                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-17T00:00+02:00") && new Date(a.Start) < new Date("2025-10-18T00:00+02:00"))
-                      .map((talk) => (
-                    <WatchCard talk={talk} />
-                ))}
-            </div>
-            <div class="date-separator">
-                <div class="date">Saturday 18<sup>th</sup> October</div>
-                <div class="line"></div>
-            </div>
-            <div class="talks-grid">
-                {talks.filter((a) => new Date(a.Start) >= new Date("2025-10-18T00:00+02:00") && new Date(a.Start) < new Date("2025-10-19T00:00+02:00"))
-                      .map((talk) => (
-                    <WatchCard talk={talk} />
-                ))}
-            </div>
+            ))}
         </div>
     </section>
 
