@@ -213,5 +213,23 @@ const slug = slugify(label);
             background-color: color.adjust($pill-color, $lightness: 2.5%);
         }
     }
+
+    .pill.no-video {
+        $text-color: #000;
+        $pill-color: #d64141;
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
 </style>
 <Type class:list={['pill', slug]}>{ label }</div>
