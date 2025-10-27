@@ -22,8 +22,31 @@ function formatDate(day:Date) {
     return dow + ' ' + day.getDate();
 }
 
+const track_order : {[index: string]:number} = Object.freeze({
+    "Keynote": 0,
+    "Public Sector": 1,
+    "Healthcare" :2,
+    "Security & Encryption": 3,
+    "Beyond Chat": 4,
+    "Business with Matrix": 5,
+    "Hands-on": 6,
+    "Matrix in Education": 7,
+    "Privacy, Policy & Moderation": 8,
+    "Bots & Bridges": 9
+});
+function compareTrack(a:any,b:any) {
+    if (a.Track === null) return 1;
+    if (b.Track === null) return -1;
+    console.log(a);
+    return track_order[a.Track.en] - track_order[b.Track.en];
+}
+
 for (let i = 0; i < 3; i++) {
-    talks.push(all_talks.filter((a:any) => new Date(a.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) && new Date(a.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)));
+    talks.push(
+        all_talks.filter((a:any) =>
+            new Date(a.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) &&
+            new Date(a.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)
+        ).toSorted(compareTrack));
 }
 ---
 
@@ -167,13 +190,13 @@ for (let i = 0; i < 3; i++) {
                 <Pill Type="button" label="Keynote" />
                 <Pill Type="button" label="Public Sector" />
                 <Pill Type="button" label="Healthcare" />
-                <Pill Type="button" label="Security &amp; Encryption" />
+                <Pill Type="button" label="Security & Encryption" />
                 <Pill Type="button" label="Beyond Chat" />
                 <Pill Type="button" label="Business with Matrix" />
-                <Pill Type="button" label="Hands-On" />
+                <Pill Type="button" label="Hands-on" />
                 <Pill Type="button" label="Matrix in Education" />
                 <Pill Type="button" label="Privacy, Policy & Moderation" />
-                <Pill Type="button" label="Bots &amp; Bridges" />
+                <Pill Type="button" label="Bots & Bridges" />
             </div>
         </div>
         <div class="content-wrapper" id="talks">
