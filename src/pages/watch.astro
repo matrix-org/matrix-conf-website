@@ -37,7 +37,6 @@ const track_order : {[index: string]:number} = Object.freeze({
 function compareTrack(a:any,b:any) {
     if (a.Track === null) return 1;
     if (b.Track === null) return -1;
-    console.log(a);
     return track_order[a.Track.en] - track_order[b.Track.en];
 }
 
