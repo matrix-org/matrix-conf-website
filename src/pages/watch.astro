@@ -4,7 +4,7 @@ import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import raw_talks from '/static/watch/matrix-conf-2025_sessions.json';
+import raw_talks from '../../static/watch/matrix-conf-2025_sessions.json';
 const all_talks = raw_talks.toSorted((a:any,b:any) => new Date(a.Start).valueOf() - new Date(b.Start).valueOf());
 var talks = [];
 
