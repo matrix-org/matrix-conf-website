@@ -1,0 +1,22 @@
+{
+  "ID": "AS8JHQ",
+  "Proposal title": "Leading the way into CRA compliance: Element’s approach to the incoming regulation",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Privacy, Policy & Moderation"
+  },
+  "Abstract": "The Cyber Resilience Act is a new European regulation that has the main goal to increase European cyber security and resilience, through accountability. A lot has been said about the impacts of the CRA on open source, in particular towards non-profit foundations, but what about organisations - such as Element - that operate complex licensing models with a mix of monetised and non-monetised products?\r\n\r\nIn this talk we endeavour to shine a light on our thinking regarding CRA compliance for our products, as well as implications for the wider ecosystem of vendors and communities building on Matrix. We also introduce our roadmap of communications around the CRA, aimed at those using and building on top of our products.",
+  "Speaker names": [
+    "Denise Almeida",
+    "Amandine Le Pape"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T15:15:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=n-JSbCl0HiA"
+}

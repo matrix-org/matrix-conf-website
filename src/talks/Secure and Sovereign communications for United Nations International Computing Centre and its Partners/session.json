@@ -1,0 +1,21 @@
+{
+  "ID": "WM9WAE",
+  "Proposal title": "Secure and Sovereign communications for United Nations International Computing Centre and its Partners",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Secure communication leveraging the Matrix protocol for UNICC and its partners",
+  "Speaker names": [
+    "Tima Soni"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T15:30:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=7LMxzIlpOuA"
+}

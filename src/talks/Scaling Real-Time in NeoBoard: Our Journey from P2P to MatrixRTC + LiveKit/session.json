@@ -1,0 +1,21 @@
+{
+  "ID": "TM3ASG",
+  "Proposal title": "Scaling Real-Time in NeoBoard: Our Journey from P2P to MatrixRTC + LiveKit",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "[NeoBoard](https://neoboard.io/) is an open source real-time collaborative whiteboard built on the Matrix protocol. It functions both as a widget within chat-focused Matrix clients like Element Web, and as a standalone web app that acts as a lightweight, whiteboard-centric Matrix client\r\n\r\nIn this talk, we’ll share how we migrated NeoBoard’s real-time collaboration feature from a peer-to-peer WebRTC implementation to MatrixRTC with a LiveKit backend, a shift that was key to scaling to hundreds of concurrent users. We’ll cover the challenges we faced, the lessons we learned, and the architectural decisions that made the transition smooth. We’ll also touch on what’s still missing and what’s next for both NeoBoard and MatrixRTC.",
+  "Speaker names": [
+    "Milton Moura"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-18T12:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=uiHG98-viVU"
+}

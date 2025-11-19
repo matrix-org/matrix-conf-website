@@ -1,0 +1,21 @@
+{
+  "ID": "BAKSEA",
+  "Proposal title": "Beyond Olm: About challenges and opportunities in Messaging Layer Security (MLS)",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "[matrix] as an end-to-end encrypted communication standard has its flaws. Flaws in privacy, flaws in complexity. With the standard of Messaging Layer Security (MLS), the [matrix] ecosystem has the opportunity to address old flaws, rethink room state and increase interoperability.\r\n\r\nIn this talk, I will provide a beginner's guide on challenges of [matrix] 3.0.",
+  "Speaker names": [
+    "The one with the braid (she/her)"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T11:20:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=42j65uwUUz4"
+}

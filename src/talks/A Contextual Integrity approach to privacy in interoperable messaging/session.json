@@ -1,0 +1,21 @@
+{
+  "ID": "PEJYHG",
+  "Proposal title": "A Contextual Integrity approach to privacy in interoperable messaging",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Privacy, Policy & Moderation"
+  },
+  "Abstract": "This talk will introduce the Helen Nissenbaum's theory of Contextual Integrity as a framework for understanding privacy in messaging platforms. Contextual Integrity views privacy not as keeping information secret, but as making sure information flows in ways that match people’s expectations in a given context, or in other words, what feels appropriate to share, with whom, and for what purpose. For example, if Alice shares her live location with Bob through a messaging app, she likely expects the app to use her location only to deliver it to Bob. But if the app also uses her location to target ads, she may feel that her privacy was breached. The problem isn’t that the location was shared, but that it was shared in a way that didn’t match the context or her understanding of how the information would be used.\r\nI will explain the theoretical framework with examples of how it can be adapted to identify and explain privacy expectations of particular messaging features, and discuss how it can be applied to interoperable messaging to identify potential privacy concerns.",
+  "Speaker names": [
+    "Carla Griggio"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T12:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=-LDFZ0SfDjk"
+}

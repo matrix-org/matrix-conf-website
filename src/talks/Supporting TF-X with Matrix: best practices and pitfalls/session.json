@@ -1,0 +1,21 @@
+{
+  "ID": "7ZXT8V",
+  "Proposal title": "Supporting TF-X with Matrix: best practices and pitfalls",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "NATO organised a TaskForce-X Baltics event where we very quickly contracted, deployed and integrated telemetry and video streams from uncrewed platforms. This required a lot of coordination and this was done through our on-prem Matrix capability. I would like to share my experience by using Matrix to support this very demanding operational project.",
+  "Speaker names": [
+    "Jeroen Franssen"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T17:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Q0BBLeoRw9A"
+}

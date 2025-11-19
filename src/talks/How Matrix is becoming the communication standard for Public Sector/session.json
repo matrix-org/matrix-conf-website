@@ -1,0 +1,21 @@
+{
+  "ID": "CAUAHD",
+  "Proposal title": "How Matrix is becoming the communication standard for Public Sector",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Matrix was built to become the open communication of the web and serve everyone. But, as the Internet and email did, its network effect started with governments. Today, and as proven by the audience in the room,  most European governments and several others are either using it or looking at implementing it for their communications. This talk will tell the story of how we got there and why.",
+  "Speaker names": [
+    "Amandine Le Pape"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T11:40:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=gHNSIiXyhdM"
+}

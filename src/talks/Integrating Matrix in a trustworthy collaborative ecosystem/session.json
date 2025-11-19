@@ -1,0 +1,22 @@
+{
+  "ID": "A9YW3B",
+  "Proposal title": "Integrating Matrix in a trustworthy collaborative ecosystem",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "At Oodrive, our mission is to offer a secure and sovereign solution to manage our partners' most sensitive data.\r\nBuilding on this foundation, we are developing a secure collaboration platform that fully aligns with these values.\r\n \r\nCollaboration cannot happen without communication, therefore we decided to integrate a secure chat in our product. We chose the Matrix protocol to achieve that goal.\r\nNow that a first version is out and available to our partners, we want to share with the community how we integrated matrix in our product, and the challenges we overcame.\r\nNamely :\r\n - How we provision user accounts in our matrix instance.\r\n - How users authenticate transparently in the chat.\r\n - Make a demonstration to illustrate the seamless integration",
+  "Speaker names": [
+    "Francois HERBRETEAU",
+    "Anthony"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-18T11:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=tQtlgEl5HRM"
+}

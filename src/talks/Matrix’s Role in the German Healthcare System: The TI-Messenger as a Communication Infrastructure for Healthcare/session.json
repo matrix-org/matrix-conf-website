@@ -1,0 +1,21 @@
+{
+  "ID": "QGQX9L",
+  "Proposal title": "Matrix’s Role in the German Healthcare System: The TI-Messenger as a Communication Infrastructure for Healthcare",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "In this presentation, we will examine processes within the German healthcare system and explore the underlying structural challenges that make intersectoral communication so difficult. We will discuss why Matrix is the ideal protocol for the foundation of this infrastructure and explain how we build upon the Matrix specification to meet healthcare-specific requirements.\r\n\r\nSpecial insights will be shared regarding the challenges and lessons learned during the implementation of the TI-Messenger in Germany’s healthcare system. The presentation will outline the different stages of development and highlight specific use cases that demonstrably improve the quality of care.",
+  "Speaker names": [
+    "Marie Ruddeck"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T12:30:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=B9ghNwNjtFA"
+}

@@ -1,0 +1,23 @@
+{
+  "ID": "BQZHAH",
+  "Proposal title": "Element Call: Redefining conferencing for privacy, scale, and sovereignty",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Beyond Chat"
+  },
+  "Abstract": "Element Call, the flagship MatrixRTC application by Element, is shaping the future of secure, federated calling. As the successor to the traditional call system in Element apps, it now powers large-scale, end-to-end encrypted (E2EE) group calls with improved reliability and seamless federation support. This talk follows up on last year’s introduction of Element Call, showcasing a year of rapid innovation — from new media transport mechanisms to enhanced mobile features — all aimed at making secure communication effortless and intuitive.",
+  "Speaker names": [
+    "Florian Heese",
+    "Timo Kandra",
+    "Aaron Thornburgh"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T15:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Gjwz_7G1zdY"
+}

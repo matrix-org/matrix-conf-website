@@ -1,0 +1,21 @@
+{
+  "ID": "8PEMJB",
+  "Proposal title": "The Matrix State of the Union",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "As project lead of Matrix, Matthew gives a snapshot of where the project is at.  Highlights should include:\r\n * Overview of recent high-profile Matrix deployments and uptake\r\n * Overview of the recent major projects to fix state resets and improve decentralisation reliability\r\n * Overview of making Matrix a safer place via improved Trust & Safety work\r\n * Progress on Matrix 2.0 MSCs (Next Gen Auth, Sliding Sync, MatrixRTC) and uptake\r\n * Progress on Olm/Megolm improvements (history sharing, TOFU, invisible crypto, etc)\r\n * Progress on Next-generation encryption work\r\n...and more!",
+  "Speaker names": [
+    "Matthew Hodgson"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T10:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=2y8qtRLgalQ"
+}

@@ -1,0 +1,21 @@
+{
+  "ID": "GEEKMY",
+  "Proposal title": "Luxchat(4gov)",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Presentation of the Luxembourg efforts to establish a sovereign instant messaging ecosystem for the public and private sector for Luxembourg. \r\n\r\nMore details to follow.",
+  "Speaker names": [
+    "Patrick Weber"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T11:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=xeRXFf4GDmw"
+}

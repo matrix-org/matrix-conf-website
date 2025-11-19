@@ -1,0 +1,24 @@
+{
+  "ID": "QTBJP3",
+  "Proposal title": "Schulchat RLP as [matrix]-based school messenger",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Matrix in Education"
+  },
+  "Abstract": "fairkom has developed a [matrix]-based school messenger for the Department of Education of the German state of Rhineland-Palatinate to serve up to half a million users. Schulchat RLP has one code base for all platforms and is available as app on Apple and Google Play Stores.\r\n\r\nWhat makes this solution unique is the deep integration of the identity and user management system from the \"Bildungsportal RLP\", ensuring seamless use for teachers, students, and even parents - from primary to vocational schools.",
+  "Speaker names": [
+    "Lisa Kostrzewa",
+    "Jan Krammer (Janonym)",
+    "Philipp Monz",
+    "Dr. Roland Alton"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T10:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=uHJNldYrVv0"
+}

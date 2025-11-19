@@ -1,0 +1,21 @@
+{
+  "ID": "KHM9ZY",
+  "Proposal title": "NeoBoard S: a whiteboard matrix client offering endless possibilities for real-time collaboration",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Beyond Chat"
+  },
+  "Abstract": "Last year, we introduced NeoToolSuite, Nordeck’s productivity suite of Matrix widgets designed for efficient collaboration and communication.\r\n\r\nThis year, our focus shifts to our flagship product: NeoBoard Standalone. This real-time collaborative whiteboard matrix client has evolved through continuous development and iteration and now it features an immersive infinite canvas that redefines what’s possible for open-source productivity and creative tools.\r\n\r\nJoin us for a tour of NeoBoard’s latest features and share our vision for the future of real-time collaboration, powered by the Matrix protocol.",
+  "Speaker names": [
+    "Robert Gerbauld"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T14:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=FhAkZRF7JWM"
+}

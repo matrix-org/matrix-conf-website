@@ -1,0 +1,18 @@
+{
+  "ID": "AVAL3A",
+  "Proposal title": "E2EE Direct Messaging in Bluesky with Matrix",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Abstract": "See a demo of E2EE encrypted DMs in Bluesky powered by Matrix. \r\n\r\nWe will highlight the simple user experience and other advantages of this approach to adding E2EE to Bluesky.",
+  "Speaker names": [
+    "Ranga Krishnan"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T17:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Xe6lVr2Gucw"
+}

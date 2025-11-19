@@ -1,0 +1,21 @@
+{
+  "ID": "L8LXQU",
+  "Proposal title": "Consolidating Germany’s administrative communication: Towards a joint Matrix-based architecture",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "The German public administration aims to consolidate its disparate solutions for G2C and G2B communications and transition to a unified yet decentralized Matrix-based infrastructure. In this talk we will dive into this new federal infrastructure’s target architecture and explore its key requirements, drivers and architecture decisions – including the crucial choice of Matrix as the E2EE communications layer. We further share key learnings from the accompanying political process and reflect on the challenges ahead in constructing, negotiating and implementing transition pathways to achieve change in the complex brownfield-environment of Germany’s administrative IT.",
+  "Speaker names": [
+    "Dominik Braun"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T14:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=S4iQBWnuSRM"
+}

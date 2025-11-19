@@ -1,0 +1,21 @@
+{
+  "ID": "KCKEYJ",
+  "Proposal title": "How the new Swiss Open Source Law EMOTA strengthens Digital Sovereignty",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Since 2024, the Swiss federal government has been obliged by the new EMOTA law to publish all its software under open source licenses. This new 'Federal Act on the Use of Electronic Means to Conduct Official Tasks' (EMOTA) has had an impact on IT procurement and open source activities in Switzerland. By encouraging the creation of open source communities, the law reduces vendor lock-in and strengthens digital sovereignty.",
+  "Speaker names": [
+    "Matthias Stürmer"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T11:20:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Q7BMA9M2K6Y"
+}
