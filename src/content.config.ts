@@ -6,6 +6,7 @@ const talks = defineCollection({
     schema: z.object({
         ID: z.string(),
         "Proposal title": z.string(),
+        Abstract: z.string(),
         Track: z.object({
             en: z.string()
         }).optional(),

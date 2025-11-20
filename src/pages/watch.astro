@@ -3,9 +3,10 @@ import SponsorsGrid from "../components/SponsorsGrid.astro";
 import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 
-import raw_talks from '../../static/watch/sessions.json';
-const all_talks = raw_talks.toSorted((a:any,b:any) => new Date(a.Start).valueOf() - new Date(b.Start).valueOf());
+const talks_collection = await getCollection("talks");
+const all_talks = talks_collection.toSorted((a,b) => new Date(a.data.Start).valueOf() - new Date(b.data.Start).valueOf());
 var talks = [];
 
 function incrementDate(tomorrow:Date, days:number) {
@@ -35,17 +36,17 @@ const track_order : {[index: string]:number} = Object.freeze({
     "Bots & Bridges": 9
 });
 
-function compareTrack(a:any,b:any) {
-    if (a.Track === null) return 1;
-    if (b.Track === null) return -1;
-    return track_order[a.Track.en] - track_order[b.Track.en];
+function compareTrack(a: CollectionEntry<"talks">,b: CollectionEntry<"talks">) {
+    if (a.data.Track === undefined) return 1;
+    if (b.data.Track === undefined) return -1;
+    return track_order[a.data.Track.en] - track_order[b.data.Track.en];
 }
 
 for (let i = 0; i < 3; i++) {
     talks.push(
-        all_talks.filter((a:any) =>
-            new Date(a.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) &&
-            new Date(a.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)
+        all_talks.filter((a: CollectionEntry<"talks">) =>
+            new Date(a.data.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) &&
+            new Date(a.data.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)
         ).toSorted(compareTrack));
 }
 ---
@@ -152,7 +153,7 @@ for (let i = 0; i < 3; i++) {
         <div class="content-wrapper" id="talks">
             {talks.map((days_talks) => (
             <div class="date-separator">
-                <div class="date">{formatDate(new Date(days_talks[0].Start))}<sup>th</sup> October</div>
+                <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>th</sup> October</div>
                 <div class="line"></div>
             </div>
             <div class="talks-grid">

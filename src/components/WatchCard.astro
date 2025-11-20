@@ -1,18 +1,20 @@
 ---
-import slugify from '@sindresorhus/slugify';
+interface Props {
+    talk: CollectionEntry<"talks">;
+}
 
+import slugify from '@sindresorhus/slugify';
 import Pill from "../components/Pill.astro";
+import type { CollectionEntry } from 'astro:content';
 
 const { talk } = Astro.props;
-const hasVideo = talk.youtube;
-const youtube = talk.youtube;
-const title = talk['Proposal title'];
-const track = talk.Track ? talk.Track.en : '';
-const summary = talk.Abstract;
-const speakers = talk['Speaker names'];
-const room = talk.Room.en;
-const thumb = "/watch/thumbs/" + slugify(title) + ".avif";
-const slides = ["/watch/slides/", talk.slides].join("");
+const youtube = talk.data.youtube;
+const title = talk.data['Proposal title'];
+const track = talk.data.Track ? talk.data.Track.en : '';
+const summary = talk.data.Abstract;
+const speakers = talk.data['Speaker names'];
+const room = talk.data.Room.en;
+const slides = "";
 ---
 
 <style lang="scss">
@@ -109,10 +111,10 @@ const slides = ["/watch/slides/", talk.slides].join("");
     }
 </style>
 <div class:list={['talk-card', slugify(track)]}>
-    { hasVideo ?
+    { youtube ?
     <a href={youtube}>
         <div class="thumbnail-container">
-            <img src={ thumb } alt="">
+            <p>Placeholder for image</p>
         </div>
         <div class="info-container">
             <h2>{ title }</h2>
@@ -129,7 +131,7 @@ const slides = ["/watch/slides/", talk.slides].join("");
     :
     <div>
         <div class="thumbnail-container">
-            <img src={ thumb } alt="">
+            <p>Placeholder for image</p>
         </div>
         <div class="info-container">
             <h2>{ title }</h2>
