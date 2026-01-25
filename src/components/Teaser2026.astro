@@ -1,0 +1,60 @@
+---
+import PrimaryCta from "./PrimaryCta.astro";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        padding: 2rem .5rem;
+        border: 1px solid #636569;
+        flex-grow: 1;
+    }
+
+    .smol {
+        @media (min-width: 800px) {
+            flex-basis: 40%;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+</style>
+<div class="content-wrapper">
+    <div class="items">
+        <div class="item">
+            <h2>Call for Proposals</h2>
+            <p>The Matrix Conference covers a variety of topics, ranging from decentralization, encryption, Matrix internals, safety, sovereignty of digital communication, community, collaboration in the public sector, UX, and much more.</p>
+            <PrimaryCta href="https://cfp.2026.matrix.org/matrix-conf-2026">Submit Talk Proposals</PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Join the Chat</h2>
+            <p>Connect and exchange with other attendees and the organising team.</p>
+            <PrimaryCta href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Become a Sponsor</h2>
+            <p>Step into the spotlight and join us as a valued sponsor of The Matrix Conference 2026.</p>
+            <PrimaryCta href="https://conference.matrix.org/matrix-conference-sponsors-deck-20250506.pdf">Get the Brochure</PrimaryCta>
+        </div>
+    </div>
+</div>
