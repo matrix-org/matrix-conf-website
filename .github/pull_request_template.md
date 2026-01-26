@@ -28,7 +28,8 @@ Please [sign off](https://github.com/matrix-org/matrix-conf-website/blob/main/CO
      - https://github.com/matrix-org/matrix-conf-website/blob/main/README.md
      - https://github.com/matrix-org/matrix-conf-website/blob/main/CONTRIBUTING.md
 
-     The processes for this website are inherited from the matrix.org main website repository.
+     The processes for this website are inherited from the matrix.org main website repository at
+     https://github.com/matrix-org/matrix.org/.
      
      If you have questions at any time, please contact the Events Working Group (about content) at
      https://matrix.to/#/#events-wg:matrix.org
