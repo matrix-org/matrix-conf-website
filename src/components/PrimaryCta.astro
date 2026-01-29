@@ -1,5 +1,16 @@
 ---
-const { href } = Astro.props;
+interface Props {
+    /**
+      * For use in flex column layouts.
+      * For wide layouts:
+      * Shrink button to it's content size.
+      * Align the button to the bottom.
+      */
+    flexBottom: boolean;
+    href: string;
+}
+
+const { href, flexBottom } = Astro.props;
 ---
 
 <style>
@@ -86,7 +97,14 @@ const { href } = Astro.props;
     .bracket-btn:hover::after {
         opacity: 0;
     }
+
+    @media (min-width: 800px) {
+        .bracket-btn.flexBottom {
+            margin-top: auto;
+            width: fit-content;
+        }
+    }
 </style>
-<a href={href} class="bracket-btn">
+<a href={href} class={`bracket-btn ${flexBottom ? ' flexBottom' : ''}`}>
     <span class="label"><slot /></span>
 </a>
