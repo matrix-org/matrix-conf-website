@@ -7,6 +7,8 @@ import slugify from '@sindresorhus/slugify';
 import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import WatchCardContent from "../components/WatchCardContent.astro";
+import { Image } from "astro:assets";
+import LogoNoPattern from "./logo-no-pattern.svg";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -32,14 +34,14 @@ const slides = "";
         }
 
         .thumbnail-container {
-            width: 358px;
-            height: 200px;
+            align-items: center;
+            aspect-ratio: 16 / 9;
             background-color: #000;
+            background-image: url(/pattern.svg);
+            display: flex;
+            justify-content: center;
             overflow: clip;
-
-            img {
-                border-radius: 0;
-            }
+            width: 100%;
         }
 
         .info-container {
@@ -114,7 +116,11 @@ const slides = "";
 <div class:list={['talk-card', slugify(track)]}>
     <WatchCardContent youtube={youtube}>
         <div class="thumbnail-container">
-            <p>Placeholder for image</p>
+            <Image
+                src={LogoNoPattern}
+                class="matrix-conference-logo"
+                alt="Matrix Conference Logo"
+            />
         </div>
         <div class="info-container">
             <h2>{ title }</h2>
