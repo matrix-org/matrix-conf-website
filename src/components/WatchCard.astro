@@ -6,6 +6,7 @@ interface Props {
 import slugify from '@sindresorhus/slugify';
 import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
+import WatchCardContent from "../components/WatchCardContent.astro";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -111,8 +112,7 @@ const slides = "";
     }
 </style>
 <div class:list={['talk-card', slugify(track)]}>
-    { youtube ?
-    <a href={youtube}>
+    <WatchCardContent youtube={youtube}>
         <div class="thumbnail-container">
             <p>Placeholder for image</p>
         </div>
@@ -125,28 +125,10 @@ const slides = "";
             <div class="talk-pills">
                 {track && <Pill Type="div" label={ track } />}
                 <Pill Type="div" label={ room } />
+                {!youtube ? <Pill Type="div" label="No Video" /> : ''}
             </div>
         </div>
-    </a>
-    :
-    <div>
-        <div class="thumbnail-container">
-            <p>Placeholder for image</p>
-        </div>
-        <div class="info-container">
-            <h2>{ title }</h2>
-            <p>{ summary }</p>
-            <div class="speaker">
-                { speakers.join(", ") }
-            </div>
-            <div class="talk-pills">
-                {track && <Pill Type="div" label={ track } />}
-                <Pill Type="div" label={ room } />
-                <Pill Type="div" label="No Video" />
-            </div>
-        </div>
-    </div>
-    }
+    </WatchCardContent>
     <div class="additional-links">
         { slides ?
         <a href={ slides } class="slides">View slides <img src="/watch/slides-icon.svg" alt="" /></a>
