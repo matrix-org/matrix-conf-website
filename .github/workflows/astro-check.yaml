@@ -18,4 +18,4 @@ jobs:
       with:
         version: 10
     - run: pnpm install
-    - run: pnpm astro check
+    - run: pnpm lint
