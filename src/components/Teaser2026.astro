@@ -1,0 +1,80 @@
+---
+import PrimaryCta from "./PrimaryCta.astro";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        border: 1px solid #636569;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 2rem 2rem;
+    }
+
+    .smol {
+        @media (min-width: 800px) {
+            flex-basis: 40%;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+</style>
+<div class="content-wrapper">
+    <div class="items">
+        <div class="item">
+            <h2>Call for Proposals</h2>
+            <div>
+                <p>Whether you want to talk about decentralisation, encryption, Matrix internals, safety, sovereignty of digital communication, community, collaboration in the public sector, UX, or showcase your fun experiments, there is a track for you at Matrix Conf.</p>
+                <p>We welcome proposals from individuals innovating around Matrix, organisations working with Matrix, and everyone contributing to digital sovereignty.</p>
+                <p>We do not welcome marketing talks in the CfP, but have sponsorship opportunities to help promote your product.</p>
+            </div>
+            <PrimaryCta
+                href="https://cfp.2026.matrix.org/matrix-conference-2026/cfp"
+                flexBottom={true}
+            >
+            Submit Talk Proposals
+            </PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Join the Chat</h2>
+            <p>Connect and exchange with other attendees and the organising team.</p>
+            <PrimaryCta
+                href="https://matrix.to/#/#events-wg:matrix.org"
+                flexBottom={true}
+            >
+            #events-wg:matrix.org
+            </PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Become a Sponsor</h2>
+            <p>Step into the spotlight and join us as a valued sponsor of The Matrix Conference 2026. Our updated sponsors brochure is coming in March.</p>
+            <PrimaryCta
+                href="mailto:conference@foundation.matrix.org"
+                flexBottom={true}
+            >
+                Email us
+            </PrimaryCta>
+        </div>
+    </div>
+</div>

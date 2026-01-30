@@ -1,14 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SponsorsGrid from "../components/SponsorsGrid.astro";
-import WhatsNext from "../components/WhatsNext.astro";
-import Conf2024 from "../components/Conf2024.astro";
-import NewHeights from "../components/NewHeights.astro";
-import Talks2024 from "../components/Talks2024.astro";
 import IndexHero from "../components/IndexHero.astro";
-import Strasbourg from "../components/Strasbourg.astro";
-import RoughSchedule from "../components/RoughSchedule.astro";
-import Rooms from "../components/Rooms.astro";
+import Teaser2026 from "../components/Teaser2026.astro";
+import Conf2025 from "../components/Conf2025.astro";
+import WhatsNext from "../components/WhatsNext.astro";
 ---
 
 <style>
@@ -27,28 +22,13 @@ import Rooms from "../components/Rooms.astro";
     <section id="hero">
         <IndexHero />
     </section>
+    <section id="teaser-2026">
+        <Teaser2026 />
+    </section>
+    <section id="matrix-conf-2025">
+        <Conf2025 />
+    </section>
     <section id="whats-next">
         <WhatsNext />
-    </section>
-    <section id="discussion">
-        <Rooms />
-    </section>
-    <section id="matrix-conf-2024">
-        <Conf2024 />
-    </section>
-    <section id="sponsors">
-        <SponsorsGrid />
-    </section>
-    <section id="strasbourg">
-        <Strasbourg />
-    </section>
-    <section id="schedule">
-        <RoughSchedule />
-        <section id="new-heights">
-            <NewHeights />
-        </section>
-        <section id="talks-2024">
-            <Talks2024 />
-        </section>
     </section>
 </BaseLayout>
