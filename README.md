@@ -26,5 +26,5 @@ pnpm run dev
 You can check that there are no errors, warning, or hints with
 
 ```
-pnpm astro check
+pnpm astro check --minimumFailingSeverity=hint
 ```
