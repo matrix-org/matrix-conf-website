@@ -1,0 +1,25 @@
+---
+
+interface Props {
+    youtube: string | undefined;
+}
+
+const { youtube } = Astro.props;
+
+---
+
+<style lang="scss">
+    .watch-card-content {
+        text-decoration: none;
+    }
+</style>
+
+{
+    youtube ?
+    <a class="watch-card-content" href={youtube}>
+        <slot />
+    </a> :
+    <div>
+        <slot />
+    </div>
+}
