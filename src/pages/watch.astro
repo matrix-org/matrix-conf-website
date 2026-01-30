@@ -55,6 +55,7 @@ for (let i = 0; i < 3; i++) {
     section {
         padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
     }
+
     .content-wrapper {
         display: flex;
         flex-direction: column;
@@ -62,24 +63,31 @@ for (let i = 0; i < 3; i++) {
         max-width: var(--max-page-width);
         margin-inline: auto;
     }
+
     .content-wrapper#talks {
         max-width: 1122px;
     }
+
     #hero {
         background-image: url(/grey-repeating-lines.svg);
-        height: 100px;
+        display: block;
+        padding-bottom: 30px;
+        padding-top: 30px;
     }
+
     h1 {
         font-size: 2.5rem;
         line-height: 120%;
         text-align: center;
     }
+
     h2 {
         font-size: 2rem;
         color: var(--fg-color);
         font-size: 2rem;
         line-height: 120%;
     }
+
     a {
         color: var(--link-color);
         text-decoration: none;
