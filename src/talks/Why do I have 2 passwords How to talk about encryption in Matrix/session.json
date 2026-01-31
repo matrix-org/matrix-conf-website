@@ -1,0 +1,21 @@
+{
+  "ID": "7LNZZ3",
+  "Proposal title": "Why do I have 2 passwords? How to talk about encryption in Matrix",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "Most modern software applications give total trust to the service provider. End-to-end encrypted (E2EE) services are different: the service provider is a gateway, and the real trust is with other people.\r\n\r\nThis is unfamiliar, and can make using E2EE confusing. When you add in federation (meaning lots of different service providers) and a diverse set of client apps, trying to make Matrix's encryption understandable is tricky.\r\n\r\nIt would help to have a shared set of words and definitions. In this talk I describe MSC4161, which attempts to establish a shared vocabulary, and then my own thoughts about some metaphors we can use to make these ideas easier to grasp.",
+  "Speaker names": [
+    "Andy Balaam"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T16:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=l3iekSLs3uk"
+}

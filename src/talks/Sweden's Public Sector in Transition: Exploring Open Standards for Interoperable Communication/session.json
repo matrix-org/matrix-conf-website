@@ -1,0 +1,22 @@
+{
+  "ID": "DZBGLP",
+  "Proposal title": "Sweden's Public Sector in Transition: Exploring Open Standards for Interoperable Communication",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "For decades, government agencies have relied on proprietary, siloed communication systems. Today, several Swedish initiatives are exploring new paths forward.\r\n\r\nFirst, we will provide details on the latest developments within SAFOS, a service designed to establish a potential national standard for secure messaging, video conferencing, and real-time collaboration.\r\n\r\nSecond, we will share insights from eSam — a voluntary collaboration between public agencies — where a multi-agency task force is evaluating options for a common, open, and federated protocol for real-time communication. We will discuss our evaluation criteria, the challenges, and the potential of solutions such as Matrix to foster true interoperability, decentralization, and robust security for Sweden's public administration.\r\n\r\nJoin us to learn how Försäkringskassan and eSam are exploring ways to build a future-proof communication infrastructure based on openness and collaboration.",
+  "Speaker names": [
+    "Kenneth Edwall",
+    "Anna Engström"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T11:50:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=dQeZLT0Rai8"
+}

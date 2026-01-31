@@ -1,0 +1,21 @@
+{
+  "ID": "MHZQVK",
+  "Proposal title": "ESS - Element’s distribution for Matrix deployments",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "In this talk we will provide insights on the new Element Server Suite (ESS) editions which provide an Element-supported way to deploy Matrix stacks. \r\n\r\nESS is available in three editions\r\n- [ESS Community](https://github.com/element-hq/ess-helm) - the free Matrix distribution from Element for small-/mid-scale, non-commercial community use cases\r\n- [ESS Pro](https://element.io/server-suite) - the commercial Matrix distribution from Element for professional use\r\n- [ESS TI-M](https://element.io/server-suite/ti-messenger) - a special version of ESS Pro focused on the requirements of TI-Messenger Pro and ePA\r\n\r\nWe will dive deep into each edition, explain how they're meant to be used, shed light on the components they include and discuss which use cases they are tailored to.",
+  "Speaker names": [
+    "Patrick Maier"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T12:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=BIYfFeFxcbc"
+}

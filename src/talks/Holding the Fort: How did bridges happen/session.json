@@ -1,0 +1,21 @@
+{
+  "ID": "D83FKE",
+  "Proposal title": "Holding the Fort: How did bridges happen",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Bots & Bridges"
+  },
+  "Abstract": "Take a trip back through time with me as we learn about how bridges happened. Why did we do it at all? Whose idea was it to hook up the then fledgling matrix.org network to the biggest IRC network? How many databases were shredded in the line of duty?",
+  "Speaker names": [
+    "Half-Shot"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T15:55:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=s5NoM3Sm6HU"
+}

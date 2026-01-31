@@ -1,0 +1,21 @@
+{
+  "ID": "WWAVBQ",
+  "Proposal title": "Matrix French gov deployment: opening a private federation securely",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "The French government has deployed a private Matrix federation for French civil servants called Tchap.\r\n\r\nCurrently this federation has about 300 000 monthly active users and its usage is growing constantly.\r\n\r\nToday our federation is closed and we would like to be able to connect with other public French Matrix nodes (local authorities for instance), and also other European countries.\r\n\r\nWe should implement measures to ensure that the federation remains resilient against potential attacks, both technical (e.g., DDoS, data interception) and organizational (e.g., unauthorized access, insider threats) :\r\n- How can we restrict the servers we wish to communicate with? How can we be sure that we are actually communicating with them? Since TLS can be vulnerable to man-in-the-middle attacks by state actors, we can't rely on it entirely.\r\n- How can we trust the identities of users from external deployments that we don’t control?\r\n- How can we limit the interactions that external users can have with users from our federation?\r\n\r\nWe spent a lot of time thinking about this and now have a plan that looks legit, and that we are currently implementing. I'm sure you want to know more about it, right?\r\n\r\nIn this talk, we will share the approach we’ve taken to address these challenges and we will present the architecture we designed.",
+  "Speaker names": [
+    "Mathieu Velten"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T15:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=4PoUmWadaQ0"
+}

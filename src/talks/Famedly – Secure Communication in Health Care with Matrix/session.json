@@ -1,0 +1,21 @@
+{
+  "ID": "BBXTLT",
+  "Proposal title": "Famedly – Secure Communication in Health Care with Matrix",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "Nobody likes fax machines, yet everyone still uses them – that's the reality in German hospitals. Since 2019, Famedly has been challenging this status quo. With our TI Messenger, built on the Matrix protocol, we've created a secure and decentralized alternative.\r\nLearn how we're using and extending Matrix to modernize communication in the German healthcare system.",
+  "Speaker names": [
+    "Krille (Christian K.)"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T15:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=4kOBkeYRxSU"
+}

@@ -1,0 +1,23 @@
+{
+  "ID": "W9LUVA",
+  "Proposal title": "Element X and Pro Updates",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "We will provide you with the latest updates on Element X mobile apps, as well the plan to sunset our classic Element apps. This includes both the current state, as well as a look into what to expect during the next couple of months and details about specific features like threads and spaces that many people are looking forward to on Element X. In the second part we’ll cover the intent and purpose behind the Element Pro apps - who are these for and why, and as part of it, look into how we’re allowing our customers to publish self-branded apps for a complete sovereign messaging solution.",
+  "Speaker names": [
+    "Aaron Thornburgh",
+    "Andreas",
+    "Doug Earnshaw"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T16:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=_cahXxr8d-4"
+}

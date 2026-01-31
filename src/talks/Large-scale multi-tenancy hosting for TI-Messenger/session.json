@@ -1,0 +1,21 @@
+{
+  "ID": "AETNRS",
+  "Proposal title": "Large-scale multi-tenancy hosting for TI-Messenger",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "In this talk we will introduce Synapse Pro, the Matrix server for professional environments from Element. Synapse Pro is built to support professional Matrix deployments in terms of scalability, efficiency and high availability. It comes in two flavours, Synapse Pro for Small Hosts and Synapse Pro for Large Hosts. The Small Hosts solution introduces multi-tenancy capabilities in order to host plenty of small Matrix servers in a resource-saving and cost-efficient way. The Large Hosts solution enhances Synapse with more efficient implementations of its subsystems and provides auto-scaling as well as high availability capabilities. This talk will give you detailed insights on both solutions and their benefits for Element customers.",
+  "Speaker names": [
+    "Patrick Maier"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T16:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=-k9gyVK8Kdk"
+}

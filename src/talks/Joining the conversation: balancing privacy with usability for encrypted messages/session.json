@@ -1,0 +1,21 @@
+{
+  "ID": "VLF9QQ",
+  "Proposal title": "Joining the conversation: balancing privacy with usability for encrypted messages",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "Being able to read the conversation in a room before you joined is a critical feature for some usecases, but end-to-end encryption makes it tricky to implement.\r\n\r\nIn this technically-focussed talk, we'll cover the challenges behind implementing \"history sharing\", why previous attempts in this area failed, and how we solved those problems with minimal impact on the security or efficiency of the protocol.",
+  "Speaker names": [
+    "Richard van der Hoff"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T15:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=_E4ArQopptM"
+}

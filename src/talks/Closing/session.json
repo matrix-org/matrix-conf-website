@@ -1,0 +1,21 @@
+{
+  "ID": "KAB39N",
+  "Proposal title": "Closing",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "See you next year!",
+  "Speaker names": [
+    "Yan Minagawa"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T17:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=fwjrxtt4ZyA"
+}

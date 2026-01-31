@@ -1,0 +1,21 @@
+{
+  "ID": "XLV7PZ",
+  "Proposal title": "Lessons learned from implementing Native OIDC from scratch",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Are we OIDC yet ? YES ! We are !\r\n\r\nOpenID Connect evolved as the one and only identity standard in the modern web. With MSC3861, the [matrix] ecosystem is finally moving to OIDC as the authentication standard amongst clients and homeservers.\r\n\r\nOut of curiosity, I started implementing a native OIDC implementation from scratch : no OAuth 2.0 library, no Ruma ; just the [matrix] Dart SDK, an HTTP client and the MSC in front of me. This talk will be about the lessons learned.",
+  "Speaker names": [
+    "The one with the braid (she/her)"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T12:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=ZqzVMn_6gKE"
+}

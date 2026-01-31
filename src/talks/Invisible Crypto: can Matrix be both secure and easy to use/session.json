@@ -1,0 +1,21 @@
+{
+  "ID": "BT8WR9",
+  "Proposal title": "Invisible Crypto: can Matrix be both secure and easy to use?",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "The Invisible Crypto initiative intends to make Matrix easier to use by ensuring that encrypted messaging is secure by default, and the user is not bothered by irrelevant information.\r\n\r\nIn this talk we will give a status update, hopefully explaining why crypto needed to become slightly more visible on the journey towards making it disappear.\r\n\r\nWe'll go into some detail about what we've done (and why some of it makes things a little more noisy) and what we plan to do to really get there.",
+  "Speaker names": [
+    "Andy Balaam"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T14:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=lMseffUIZVI"
+}

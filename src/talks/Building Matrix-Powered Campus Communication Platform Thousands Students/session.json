@@ -1,0 +1,21 @@
+{
+  "ID": "MLHCY7",
+  "Proposal title": "Building Matrix-Powered Campus Communication Platform Thousands Students",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Matrix in Education"
+  },
+  "Abstract": "In this talk I will present my journey in developing a decentralized and secure communication platform for a university with thousands students and faculty members. Using Matrix and Element as foundation I tailored the solution to meet academic needs, ensure data privacy and integrate with some systems, bots, widgets etc.\r\n\r\nThe session will cover:\r\n- Why Matrix was chosen over other platforms.\r\n- Technical stack and deployment model.\r\n- Customization of Element and federation decisions.\r\n- Challenges (including authentication, onboarding, moderation and compliance).\r\n- Real-world impact and feedback.\r\n- Future plans including bridging, widgets and improvements.\r\n\r\nThis case study shows how Matrix can empower large academic communities and help other institutions explore privacy-respecting and scalable alternatives to traditional messaging platforms.\r\n\r\nBy the way, it is real story. :)",
+  "Speaker names": [
+    "Vladislav Kalinin"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T10:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=aTCedliWDdc"
+}

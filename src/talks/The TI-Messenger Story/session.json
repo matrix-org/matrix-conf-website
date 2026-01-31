@@ -1,0 +1,21 @@
+{
+  "ID": "YMCDE7",
+  "Proposal title": "The TI-Messenger Story",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "In this talk, we’ll take you through the real-world journey of developing and approving a TI-Messenger - a secure, interoperable messaging application built on top of the Matrix protocol for use within Germany’s healthcare system. What began as am idea soon grew into a tightly regulated, multi-stakeholder project, with high demands on privacy, trust, and compliance.\r\n\r\nThis session is less about features and more about transformation. It’s a case study of how we shaped a Matrix-based messenger to meet the strict security, interoperability, and governance requirements defined by the gematik specification, and how that shaped our development process in return. Unlike general-purpose Matrix clients, the TI-Messenger is deeply constrained by legal frameworks, security audits, and standardized certification making the path from concept to approval full of unique challenges.\r\n\r\nWe’ll reflect on what we learned about applying Matrix in high-trust environments, what we would do differently, and how our experience could inform similar efforts elsewhere. Whether you’re working in the public sector, healthcare, or simply curious how Matrix can scale to more regulated use cases, this talk offers an inside look at what it takes to make Matrix meet mission-critical standards.",
+  "Speaker names": [
+    "Michael Thiele"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T11:50:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=QbMRvefGuI4"
+}

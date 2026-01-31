@@ -1,0 +1,21 @@
+{
+  "ID": "SHDUM3",
+  "Proposal title": "Nationwide Rollout of Matrix-Based Instant Messaging (TI-M) for 74 Million Statutorily Insured Citizens in German Healthcare",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "On July 15, 2025, Germany’s statutory health insurance funds will introduce the Matrix-based instant messaging service TI-M (Telematikinfrastruktur Messenger) into their electronic patient record (ePA) apps. This marks a significant milestone, as Matrix-based messengers will become potentially available to 74 million insured individuals across Germany.\r\n\r\nThis talk will provide an overview of the nationwide rollout, highlighting the technical and organizational challenges faced during the development and operation of TI-M, including interoperability, security, and scalability within the highly regulated healthcare environment. We will present up-to-date usage data and insights on user adoption, reflecting the initial impact and acceptance of TI-M among patients and healthcare professionals.\r\n\r\nFinally, the session will offer an outlook on the future of secure, decentralized communication in the German healthcare system, discussing opportunities for further integration, innovation, and the broader implications for digital health infrastructure.",
+  "Speaker names": [
+    "Jan Kohnert"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T15:40:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=HHxvYgei2_U"
+}

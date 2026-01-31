@@ -1,0 +1,21 @@
+{
+  "ID": "WEASKJ",
+  "Proposal title": "The Element update: Shininess, scalability and sustainability",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "A whistle stop tour of Element’s progress over the last year! Highlights include Element Server Suite Community, the latest on Element X, Spaces, Threads and Element Call. There’s also Element Server Suite Pro, Synapse Pro and the launch of Element Pro; the Element app specifically for the workplace!",
+  "Speaker names": [
+    "Neil Johnson"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T10:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=TZgcdgv2NXk"
+}

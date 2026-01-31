@@ -1,0 +1,20 @@
+{
+  "ID": "ZJLB3Q",
+  "Proposal title": "Tune Your Chat",
+  "Session type": {
+    "de": "Workshop",
+    "en": "Workshop",
+    "fr": "Workshop"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "This workshop is an \"interactive talk\" with an introduction by the host but the wish for attendees to also present their ideas about [matrix] bridges, bots & other integrations.",
+  "Speaker names": [
+    "Kim Brose"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-18T15:15:00+02:00"
+}

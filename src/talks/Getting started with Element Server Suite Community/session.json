@@ -1,0 +1,21 @@
+{
+  "ID": "8N8HZS",
+  "Proposal title": "Getting started with Element Server Suite Community",
+  "Session type": {
+    "de": "Workshop",
+    "en": "Workshop",
+    "fr": "Workshop"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Join us for an introduction to the Element Server Suite Community, the simplest way to deploy a Kubernetes-based Matrix 2.0-ready stack, maintained by Element. \r\n\r\nThis workshop will deploy all the components of the suite: a Synapse homeserver with Matrix Authentication Service enabled, a Matrix RTC backend for calls, and an Element web client. \r\n\r\nYou'll be able to try it on your local laptop using your Docker daemon, or deploy it on a virtual machine with a single-node Kubernetes setup. \r\n\r\nWhether you're new to Kubernetes and Matrix or looking to expand your server capabilities, this session will give you the foundation to get started and experience the latest Matrix features on your own machine.",
+  "Speaker names": [
+    "Gaël Goinvic"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-18T13:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=tApx4md-Cpk"
+}

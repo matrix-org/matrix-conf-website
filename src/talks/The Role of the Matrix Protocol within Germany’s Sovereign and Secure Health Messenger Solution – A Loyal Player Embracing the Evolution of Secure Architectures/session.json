@@ -1,0 +1,21 @@
+{
+  "ID": "CJSBUZ",
+  "Proposal title": "The Role of the Matrix Protocol within Germany’s Sovereign and Secure Health Messenger Solution – A Loyal Player Embracing the Evolution of Secure Architectures",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "Germany’s digital health infrastructure has long been built on the principles of sovereignty, open standards, and interoperability. With the electronic patient record (ePA) and KIM for secure data and document exchange, Germany established a federated ecosystem using standards such as FHIR and OIDC with sectoral identity providers. The recent introduction of the TI-Messenger (TIM) extends this ecosystem to real-time communication — now connecting over 25 million insured citizens through the RISE TI-Messenger, directly integrated into their ePA app (ePA FdV).\r\nMatrix serves here not as the foundation of sovereignty, but as a loyal enabler within an existing sovereign architecture. Operating own Matrix instances (e.g. via the RISE Cloud) ensures data locality and governance under German regulatory control, while federation allows secure inter-institutional communication. This approach balances federated flexibility and controlled trust domains, distinguishing Germany’s model from purely centralized or global platform solutions.\r\nThe talk discusses the integration of Matrix within the sovereign health stack — ePA, sIDP, KIM, TIM, and OIDC — and explores risks and resilience in large-scale federation. It illustrates how Germany’s health communication layer evolves from document exchange to conversational care, preserving sovereignty while embracing interoperable, open technologies.",
+  "Speaker names": [
+    "Univ.Prof. Dipl.-Ing. Dr. Thomas Grechenig"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T17:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=MM3zg2wDX-c"
+}

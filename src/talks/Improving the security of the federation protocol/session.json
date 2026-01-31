@@ -1,0 +1,21 @@
+{
+  "ID": "YK9F38",
+  "Proposal title": "Improving the security of the federation protocol",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "The federation protocol is how Matrix homeservers communicate between each other. In private federations this isn't particularly challenging as the network is trusted but in the public federation this isn't true. This talk dives into what protocol improvements are in the works to make the public federation more secure against Byzantine actors, particularly against \"state resets\": an unintended rollback of room state. We'll explore why this problem is hard, what some of the failure modes are, and how we are working on addressing them.",
+  "Speaker names": [
+    "Kegan Dougal"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T12:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=m_2ZBs_4RbE"
+}

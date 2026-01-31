@@ -1,0 +1,22 @@
+{
+  "ID": "3YMJFP",
+  "Proposal title": "Solving the Fork Dilemma: How We Built a Maintainable Matrix Messenger",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Tammy is a multiplatform Matrix Messenger designed to be redefined by you. Want a different room list layout? Need a messaging interface tailored to a specific use case? Tammy’s extensible architecture makes that not only possible - but easy. In this talk, we’ll showcase how Tammy empowers developers to create radically customized Matrix experiences through its extension system.\r\n\r\nWe’ll walk you through how we’re using Tammy to build Timmy, a TI-Messenger variant tailored for a very specific user group, with a completely different look and feel - all without forking or rewriting the core client.\r\n\r\nExpect a live demo, some under-the-hood insights, and a glimpse into the roadmap: spaces, audio/video, Matrix 2.0 and more. Whether you want a more focused UI, a minimalist mobile mode, or something wildly experimental, Tammy gives you the tools to build it.",
+  "Speaker names": [
+    "Benedict Benken",
+    "Michael Thiele"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-18T10:35:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Jz2ywOcgq5Q"
+}

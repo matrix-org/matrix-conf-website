@@ -1,0 +1,22 @@
+{
+  "ID": "X3KDAQ",
+  "Proposal title": "Eventually Consistent Access Control: Practical Insights on Matrix from Decentralized Systems Theory",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "Access control is the core of any system's security, but usually provided by a single, centralized server. However, access control in a Matrix room is decentralized: every participating server *independently* decides *who* is authorized to send and receive *which* events, without consulting any other server. To the surprise of many, these decisions are still *eventually* consistent even if all but one server is malicious, but seeing *why* requires a new way of thinking about access control. I will explain  the necessary design patterns from decentralized systems science, and show how they can be weaved together for a practical explanation of what Matrix is, and why Matrix can reach its astonishing levels of security and resilience.",
+  "Speaker names": [
+    "Florian Jacob",
+    "Hannes Hartenstein"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-17T11:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=lfQ2SRXd8PY"
+}

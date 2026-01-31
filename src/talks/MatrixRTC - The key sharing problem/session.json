@@ -1,0 +1,21 @@
+{
+  "ID": "QCYBMC",
+  "Proposal title": "MatrixRTC - The key sharing problem",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Why is having large encrypted group calls difficult? How do other providers solve this? The future? Demos!",
+  "Speaker names": [
+    "Jayesh Nirve (td)"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T16:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=PQR-g-UjEEM"
+}

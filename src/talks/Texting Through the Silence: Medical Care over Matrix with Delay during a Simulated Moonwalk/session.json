@@ -1,0 +1,22 @@
+{
+  "ID": "PUUXDL",
+  "Proposal title": "Texting Through the Silence: Medical Care over Matrix with Delay during a Simulated Moonwalk",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Twenty seconds is a long time when someone can’t breathe. At ESA´s LUNA Analog Facility we turned that reality into a design constraint: a moonwalk emergency with voice cut by design, Matrix/Element carrying clinical guidance across a built-in one-way delay. We tested two styles of instant messaging, open free-text versus a tiny, structured grammar, to coordinate assessment, treatment, and evacuation over a delay-tolerant (store-and-forward) network. The first signals are clear: structure lowers cognitive load and keeps decisions moving even when replies arrive “late.” We’ll share what worked, what didn’t, and how the same patterns translate to Earth during hospital IT outages. With publications in progress, this talk focuses on early signals and the method itself, showing how Matrix enabled care under delay and how small changes could improve resilience.",
+  "Speaker names": [
+    "Jan-Lukas Furmanek",
+    "Aileen Rabsahl"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T12:30:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=2stYnXGUm0g"
+}

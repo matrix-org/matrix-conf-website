@@ -1,0 +1,21 @@
+{
+  "ID": "BCLRR3",
+  "Proposal title": "The Matrix SDK No One Talks About",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Trixnity is rapidly emerging as a powerful, flexible, and fully asynchronous SDK for building Matrix applications using Kotlin Multiplatform. What many don't realize: Trixnity is already in widespread use - potentially powering apps usable by over 50 million people. It’s embedded in multiple Matrix-based messengers, though you’d only know it by digging into app license disclosures. This talk shines a light on Trixnity’s hidden but significant role in the Matrix ecosystem and why more developers should pay attention. This session also presents the current state of Trixnity in 2025, highlighting key milestones, recent developments, and its growing adoption in real-world applications.",
+  "Speaker names": [
+    "Benedict Benken"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T16:30:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=CxRsHJ4UFdU"
+}

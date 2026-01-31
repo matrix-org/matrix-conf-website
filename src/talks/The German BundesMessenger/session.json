@@ -1,0 +1,21 @@
+{
+  "ID": "9HKYHA",
+  "Proposal title": "The German BundesMessenger",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "The BundesMessenger is the soverein communication solution for the German government and armed forces. Developed to be robust, secure and interconnected it serves as the basis for collaboration in the public sector. With a sharp focus on user experience, an uncompromised commitment to free and open-source software and state-of-the-art deployment of cloud technologies, it brings a high-quality messenger to firefighters, soldiers and office workers.\r\n\r\nWant to know what makes the BundesMessenger quite a special piece of software? Is it better than fax? And will it shut up after I call it a day? Join the talk to find out!",
+  "Speaker names": [
+    "Kai A. Hiller"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T16:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=zY8qPe6aoxY"
+}

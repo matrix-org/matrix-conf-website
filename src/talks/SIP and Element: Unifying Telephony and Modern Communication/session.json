@@ -1,0 +1,21 @@
+{
+  "ID": "CYXHGK",
+  "Proposal title": "SIP and Element: Unifying Telephony and Modern Communication",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Beyond Chat"
+  },
+  "Abstract": "Our project's main goal was to fill a gap by developing a telephony bridge that natively integrates XiVO enterprise telephony (based on SIP) within the alternative and open-source Matrix/Element ecosystem. Our focus with this bridge is to offer a credible and high-performing alternative to dominant proprietary solutions, such as Teams and its \"Telephony System\" licenses.",
+  "Speaker names": [
+    "Laurent Meiller"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T14:40:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=jyJozQwmP8g"
+}

@@ -1,0 +1,22 @@
+{
+  "ID": "QG8QQU",
+  "Proposal title": "The High Price of Open Source: Building a Business Around Matrix",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Business with Matrix"
+  },
+  "Abstract": "Open Source has never been easy, but doing Open Source in the Matrix ecosystem poses a unique set of challenges. Add the pressure of sustaining a company on top of that, and you quickly find yourself in uncharted, and often uncomfortable, territory. This talk reflects on the reality of maintaining open source projects in the Matrix universe, especially from the perspective of a business. It dives into the tension between openness and exploitation, when others take your work without contributing anything in return, undermining sustainability and motivation.\r\n\r\nThrough real-world experiences and hard-learned lessons, this session will outline the structural and cultural issues that make it harder for corporate contributors to survive in the ecosystem. We'll look at why fair contribution is hard to enforce, how \"Trittbrettfahrer\" (free riders) hurt long-term progress, and what we as a community - maintainers, companies, and individuals - can do to shift the dynamic. Whether it's licensing strategies, community governance, or pushing for upstream responsibility, this talk will explore the imperfect but necessary mechanisms we need to keep Matrix open, but not exploitable.\r\n\r\nThe goal isn't to complain, but to open up a grounded and honest discussion about sustainability, fairness, and the future of open collaboration in Matrix.",
+  "Speaker names": [
+    "Benedict Benken",
+    "Dr. Patrick Alberts"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T17:25:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=NMpgwbKOTbg"
+}

@@ -1,0 +1,21 @@
+{
+  "ID": "DDKP3V",
+  "Proposal title": "How do messaging app users feel about untraceability?",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Privacy, Policy & Moderation"
+  },
+  "Abstract": "Messaging platforms offer to protect user privacy via a variety of features, such as disappearing messages, password-protected chats, and end-to-end encryption (E2EE), which primarily protect message contents. Beyond such features, \"untraceable communication\" tools for instant messaging protect users from network attackers observing transport layer metadata, which can reveal who communicates with whom, when, and how often. However, unlike E2EE, the effectiveness of these tools depends on large anonymity sets, making widespread user adoption critical. This talk presents a research study with 189 users of messaging apps about their perceptions of \"untraceability\" as a concept, as well as their opinions on the widespread availability of tools for untraceability. The study explores their perceptions of  \"untraceability'' from a broad conceptual standpoint; rather than focusing on a particular tool or implementation, we analyze how users reason about what features should be incorporated by two fictitious messaging platforms, Texty and Chatty, to prevent third parties from \"knowing who communicates with whom\". The results point to a critical gap between how users and privacy experts understand untraceability, as well as tensions between users that see untraceability as a protection to individual privacy and users that see it as a threat to online safety and criminal accountability. Beyond untraceability, I discuss how this research is relevant to the design of messaging platforms that promote privacy as a central value.",
+  "Speaker names": [
+    "Carla Griggio"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T13:40:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Iz5VotSGmLg"
+}
