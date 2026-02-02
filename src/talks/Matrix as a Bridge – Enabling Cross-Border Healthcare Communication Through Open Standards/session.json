@@ -1,0 +1,21 @@
+{
+  "ID": "GDWSJR",
+  "Proposal title": "Matrix as a Bridge – Enabling Cross-Border Healthcare Communication Through Open Standards",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "European healthcare communication is at a turning point. Fragmented national systems are reaching their limits, while the need for interoperable, secure, and user-friendly digital spaces across borders continues to grow.\r\nThis talk explores how the open-source Matrix protocol has become a strategic foundation for secure messaging in healthcare — powering derived solutions like TI Messenger and CGM Messenger. Our approach highlights not only the technology itself but also the importance of collaboration with the open-source community, especially through our partnership with Element, to drive innovation, scalability, and trust.\r\nKey themes include deep integration into primary systems, the use of headless clients, and tackling challenges around usability, eID identity models, and technical complexity.\r\nWe argue that while Matrix alone is not the silver bullet for interoperability, it provides the missing bridge between siloed infrastructures and the vision of a unified European Health Space — rooted in open standards and coordinated implementation.",
+  "Speaker names": [
+    "Patrice Zoe Brend'amour"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T14:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=gC6zJp3hI8E"
+}

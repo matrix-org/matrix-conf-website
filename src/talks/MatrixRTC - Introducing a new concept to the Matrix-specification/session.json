@@ -1,0 +1,21 @@
+{
+  "ID": "UQVVRV",
+  "Proposal title": "MatrixRTC - Introducing a new concept to the Matrix-specification",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "In this talk, we will share the newest improvements to MatrixRTC. We'll focus on how the security and encryption architecture has evolved to provide robust, private communications for Matrix users. Additionally, we will show how to integrate Element Call into clients using the Rust or JS-SDK in a matter of minutes. Whether you're building a custom Matrix client or want to know what makes MatrixRTC such a great solution for secure communication, you'll walk away with practical knowledge to bring encrypted calling capabilities to your users and an in-depth understanding about the key distribution for real- time (MatrixRTC) sessions.",
+  "Speaker names": [
+    "Timo Kandra"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T15:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=PQR-g-UjEEM"
+}

@@ -1,0 +1,21 @@
+{
+  "ID": "XTTQ3R",
+  "Proposal title": "From Healthcare to Governments: Building Europe’s Secure Messaging Standard",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Healthcare"
+  },
+  "Abstract": "With the TI-Messenger, built on the Matrix protocol, Famedly has enabled secure and interoperable communication across the German healthcare system, from hospitals to pharmacies. Adoption is growing rapidly, with millions of potential users on the horizon.\r\n\r\nIn this opening talk, we’ll look back at TIM’s journey so far, highlight its impact and adoption, and then take a step beyond healthcare into the government. We’ll also give a glimpse into MLS and how it will strengthen security and interoperability for all Matrix-based applications in the future.",
+  "Speaker names": [
+    "Phillipp Kurtz"
+  ],
+  "Room": {
+    "en": "Alan Turing"
+  },
+  "Start": "2025-10-16T11:20:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=KQmLWLgkW1A"
+}

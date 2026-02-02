@@ -1,0 +1,21 @@
+{
+  "ID": "PTAPZE",
+  "Proposal title": "Portable identites (MSC 2787) and the GDPR right to rectification, a pressing need for server operators",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Privacy, Policy & Moderation"
+  },
+  "Abstract": "Most of the discussions around privacy laws have been focused on the protection of data and condition of processing. But some others rights are starting to be litigated more widley and will soon play a bigger role for IT systems managers. This talk will focus on the GDPR article 16 (right to rectification), and how the current Matrix spec is inadequate for servers operators aiming to let people change their username, since MXID can't be changed (as of this proposal writing in June 2025).\r\n\r\nBased on the ongoing work done by the [Fedora community](https://fedoraproject.org/) on the [Fedora Username Change project](https://communityblog.fedoraproject.org/call-for-volunteers-regarding-the-fedora-username-change-project/), on recent legal cases in Europe, we will see why the adoption of [MSC 2787 (Portable identites)](https://github.com/matrix-org/matrix-spec-proposals/pull/2787) should be more than a nice to have, and how it intersect with questions of privacy and anti-discrimination. The talk will also touch on the topic of SSO configuration and downstream consumers best practice to deal with such changes.",
+  "Speaker names": [
+    "Michael S."
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-18T11:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=GWJMTrcX25I"
+}

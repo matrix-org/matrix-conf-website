@@ -1,0 +1,21 @@
+{
+  "ID": "Z9B878",
+  "Proposal title": "Matrix and MLS - Water, Oil and Mayonnaise",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Security & Encryption"
+  },
+  "Abstract": "MLS and Matrix don't mix well. But why is that and what can we do about it?\r\n\r\nSince I got to touch that area a bit, I'll try to give some answers, but don't expect solutions.\r\n\r\nWe will be looking how MLS and Matrix work internally, how a tree is a DAG but a DAG not a tree and maybe we will have some glorious idea or get frustrated. No promises!",
+  "Speaker names": [
+    "Nico"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-16T12:20:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=CwUauGcZKpI"
+}

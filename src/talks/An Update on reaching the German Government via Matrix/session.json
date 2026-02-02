@@ -1,0 +1,21 @@
+{
+  "ID": "Q3LKTY",
+  "Proposal title": "An Update on reaching the German Government via Matrix",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "With *Beyond Instant Messaging: Matrix in the Public Sector* last year, we presented FITKO and the German Federal Ministry of the Interior joining efforts to pilot a Matrix-based next-generation communication infrastructure for digital government services, with the goal to showcase end-to-end encryption, great usability and machine-readable communication between citizens and public authorities.\r\n\r\nLets take another look at the project, what we have done since and what else there is to come for *reaching the German Government via Matrix*",
+  "Speaker names": [
+    "networkException"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T17:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=QQGcuWlc-3k"
+}

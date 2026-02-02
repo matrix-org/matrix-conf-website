@@ -1,0 +1,21 @@
+{
+  "ID": "7SRHXV",
+  "Proposal title": "No Desk Is an Island: Enabling Cross-Border Workspace Communication",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "As EU member states (co-)develop sovereign workspace solutions for the public sector, the need for seamless communication between these platforms becomes increasingly important. France, Germany, and the Netherlands are among the countries working on such solutions together, with the goal of facilitating cross-border collaboration and data exchange while maintaining security and sovereignty. In collaboration with our French and Dutch partners, we at ZenDiS are developing a framework to enable communication between our openDesk office and collaboration suite and its international equivalents. Our effort aims to facilitate cross-border information sharing and promote a more integrated European digital landscape.",
+  "Speaker names": [
+    "Alexander Smolianitski"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-17T14:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=m3c2tPxFqXE"
+}

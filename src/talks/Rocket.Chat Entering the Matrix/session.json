@@ -1,0 +1,21 @@
+{
+  "ID": "J7YNGR",
+  "Proposal title": "Rocket.Chat: Entering the Matrix",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "In this talk, we trace the journey of evolving Rocket.Chat from a standalone collaboration server into a full-fledged Matrix home-server — all built in TypeScript. We’ll dive into the architecture decisions, the incremental features (federation, room state sync, identity translation, event routing, crypto, and bridging), and the real challenges of combining two paradigms (Rocket.Chat’s internal model + the Matrix spec) in one codebase. You’ll hear about lessons learned: when to build vs reuse, how we manage consistency under asynchronous federation, strategies for performance and rate limits, and how we maintain feature parity while gradually merging homeserver responsibilities. Whether you’re running a chat platform, building a new homeserver, or simply interested in bridging monolithic systems with Matrix, this session will provide deep technical insight and lessons you can bring back to your project.",
+  "Speaker names": [
+    "Gabriel Engel"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T14:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=pOGHhCgjvMc"
+}

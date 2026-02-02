@@ -1,0 +1,23 @@
+{
+  "ID": "SJFXGH",
+  "Proposal title": "Element X Web",
+  "Session type": {
+    "de-formal": "Vortrag",
+    "en": "Talk",
+    "fr": "Talk"
+  },
+  "Track": {
+    "en": "Hands-on"
+  },
+  "Abstract": "Element X is coming to web and desktop! What does that mean? We’re going to make the apps simple, familiar, reliable and fast! Come learn more about the vision we have put together and all the progress we have made so far!",
+  "Speaker names": [
+    "Danielle Kirkwood",
+    "David Langley",
+    "Gaëlle Hunt"
+  ],
+  "Room": {
+    "en": "Lynn Conway"
+  },
+  "Start": "2025-10-17T11:10:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=z0ULOptq2vk"
+}

@@ -1,65 +1,59 @@
 ---
 import SponsorsGrid from "../components/SponsorsGrid.astro";
-import Rooms from "../components/Rooms.astro";
+import WatchCard from "../components/WatchCard.astro";
+import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const talks_collection = await getCollection("talks");
+const all_talks = talks_collection.toSorted((a,b) => new Date(a.data.Start).valueOf() - new Date(b.data.Start).valueOf());
+var talks = [];
+
+function incrementDate(tomorrow:Date, days:number) {
+    return tomorrow.setDate(tomorrow.getDate() + days);
+}
+
+function formatDate(day:Date) {
+    var dow = '';
+    switch(day.getDay()) {
+        case 4: dow = 'Thursday'; break;
+        case 5: dow = 'Friday'; break;
+        case 6: dow = 'Saturday'; break;
+    }
+    return dow + ' ' + day.getDate();
+}
+
+const track_order : {[index: string]:number} = Object.freeze({
+    "Keynote": 0,
+    "Public Sector": 1,
+    "Healthcare" :2,
+    "Security & Encryption": 3,
+    "Beyond Chat": 4,
+    "Business with Matrix": 5,
+    "Hands-on": 6,
+    "Matrix in Education": 7,
+    "Privacy, Policy & Moderation": 8,
+    "Bots & Bridges": 9
+});
+
+function compareTrack(a: CollectionEntry<"talks">,b: CollectionEntry<"talks">) {
+    if (a.data.Track === undefined) return 1;
+    if (b.data.Track === undefined) return -1;
+    return track_order[a.data.Track.en] - track_order[b.data.Track.en];
+}
+
+for (let i = 0; i < 3; i++) {
+    talks.push(
+        all_talks.filter((a: CollectionEntry<"talks">) =>
+            new Date(a.data.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) &&
+            new Date(a.data.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)
+        ).toSorted(compareTrack));
+}
 ---
 
-<style>
-    :root {
-        --bg-color: #000000;
-        --fg-color: #ffffff;
-        --max-page-width: 960px;
-        --link-color: #0999ff;
-        --purple: #ae7fe9;
-        --blue: #75f4f4;
-        --green: #a6ffa1;
-        --yellow: #f6ae2d;
-        --red: #f45b69;
-        --gradient: linear-gradient(
-            340deg,
-            var(--red) 3%,
-            var(--yellow) 25%,
-            var(--green) 48%,
-            var(--blue) 70%,
-            var(--purple) 93%
-        );
-        --text-primary: #fff;
-        --text-secondary: #b8b8b8;
-        --bg-primary: #000;
-        --bg-card: #1a1a1a;
-        --border: #3c3f44;
-        --border-interactive: #636569;
-        --link-text: #0999ff;
-        font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            avenir next,
-            avenir,
-            segoe ui,
-            helvetica neue,
-            Adwaita Sans,
-            Cantarell,
-            Ubuntu,
-            roboto,
-            noto,
-            helvetica,
-            arial,
-            sans-serif;
-    }
-    body {
-        background-color: var(--bg-color);
-        color: var(--fg-color);
-        min-height: 100dvh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        grid-template-columns: 100%;
-        margin: 0;
-    }
+<style lang="scss">
     section {
         padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
-    }
-    section#stream-list {
-        padding-top: 0px;
     }
     .content-wrapper {
         display: flex;
@@ -67,6 +61,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         gap: 1rem;
         max-width: var(--max-page-width);
         margin-inline: auto;
+    }
+    .content-wrapper#talks {
+        max-width: 1122px;
     }
     #hero {
         background-image: url(/grey-repeating-lines.svg);
@@ -87,17 +84,44 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         color: var(--link-color);
         text-decoration: none;
     }
-    .stream-item {
+
+    #filters {
         display: flex;
-        flex-direction: column;
-        gap: 24px;
+        flex-wrap: wrap;
+        gap: .5em;
+        justify-content: center;
     }
-    .stream-detail h2 {
-        margin-bottom: 8px;
+
+    .date-separator {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 48px;
+        margin-bottom: 48px;
+
+        .date {
+            flex: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-secondary)
+        }
+
+        .line {
+            flex: 1;
+            height: 0px;
+            border-top: 2px solid var(--border);
+        }
     }
-    .ccc-player {
-        width: 100%;
-        aspect-ratio: 16/9;
+
+    .talks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        row-gap: 48px;
+        column-gap: 24px;
+    }
+
+    #info {
+        background-image: url(/grey-repeating-lines.svg);
     }
 </style>
 
@@ -111,7 +135,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
     </section>
 
-    <section id="Recordings">
+    <section id="recordings">
+        <div class="content-wrapper">
+            <div id="filters">
+                <Pill Type="button" label="Keynote" />
+                <Pill Type="button" label="Public Sector" />
+                <Pill Type="button" label="Healthcare" />
+                <Pill Type="button" label="Security & Encryption" />
+                <Pill Type="button" label="Beyond Chat" />
+                <Pill Type="button" label="Business with Matrix" />
+                <Pill Type="button" label="Hands-on" />
+                <Pill Type="button" label="Matrix in Education" />
+                <Pill Type="button" label="Privacy, Policy & Moderation" />
+                <Pill Type="button" label="Bots & Bridges" />
+            </div>
+        </div>
+        <div class="content-wrapper" id="talks">
+            {talks.map((days_talks) => (
+            <div class="date-separator">
+                <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>th</sup> October</div>
+                <div class="line"></div>
+            </div>
+            <div class="talks-grid">
+                {days_talks.map((talk:any) => (
+                    <WatchCard talk={talk} />
+                ))}
+            </div>
+            ))}
+        </div>
+    </section>
+
+    <section id="info">
         <div class="content-wrapper">
             <p>
                 The recordings are available on <a
@@ -120,7 +174,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 > or <a
                     href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG"
                     >YouTube</a
-                >. We will update this page soon™ with the talks' slides!
+                >.
+            </p>
+            <p>
+                All videos and slides linked or published here are available under <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/"
+                >CC BY-SA 4.0</a>.
+                Thank you to all community-provided mirrors, including <a
+                    href="https://video.innovationhub-act.org/search?tagsOneOf=matrix-conf-2025"
+                >Innovation Hub Peertube</a>.
+            </p>
+            <p>
+                We will update this page soon™ with the talks' slides!
             </p>
         </div>
     </section>

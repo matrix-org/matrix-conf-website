@@ -1,0 +1,157 @@
+---
+interface Props {
+    talk: CollectionEntry<"talks">;
+}
+
+import slugify from '@sindresorhus/slugify';
+import Pill from "../components/Pill.astro";
+import type { CollectionEntry } from 'astro:content';
+
+const { talk } = Astro.props;
+const youtube = talk.data.youtube;
+const title = talk.data['Proposal title'];
+const track = talk.data.Track ? talk.data.Track.en : '';
+const summary = talk.data.Abstract;
+const speakers = talk.data['Speaker names'];
+const room = talk.data.Room.en;
+const slides = "";
+---
+
+<style lang="scss">
+    @use "sass:color";
+
+    .talk-card {
+        display: flex;
+        border: 1px solid #D2D2D2;
+        overflow: clip;
+        flex-flow: wrap;
+
+        a {
+            text-decoration: none;
+        }
+
+        .thumbnail-container {
+            width: 358px;
+            height: 200px;
+            background-color: #000;
+            overflow: clip;
+
+            img {
+                border-radius: 0;
+            }
+        }
+
+        .info-container {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: var(--color-text);
+
+            h2 {
+                font-size: 1.25rem;
+                line-height: 1.2;
+                margin-block: 0;
+                display: -webkit-inline-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                overflow: clip;
+                height: 3lh;
+            }
+
+            p {
+                line-height: 1.4;
+                margin-block: 0;
+                font-size: 1rem;
+                display: -webkit-inline-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                overflow: clip;
+                height: 3lh;
+            }
+
+            .speaker {
+                font-size: .75rem;
+            }
+
+            .talk-pills {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 2px 10px #dedede;
+        }
+
+        .additional-links {
+
+            div,a {
+                padding: 16px 24px;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--link-color)
+            }
+
+            border-top: 1px solid #D2D2D2;
+            align-self: end;
+            width: 100%;
+
+            &:hover {
+                background-color: color.adjust(#000, $lightness: 15%);
+            }
+        }
+    }
+</style>
+<div class:list={['talk-card', slugify(track)]}>
+    { youtube ?
+    <a href={youtube}>
+        <div class="thumbnail-container">
+            <p>Placeholder for image</p>
+        </div>
+        <div class="info-container">
+            <h2>{ title }</h2>
+            <p>{ summary }</p>
+            <div class="speaker">
+                { speakers.join(", ") }
+            </div>
+            <div class="talk-pills">
+                {track && <Pill Type="div" label={ track } />}
+                <Pill Type="div" label={ room } />
+            </div>
+        </div>
+    </a>
+    :
+    <div>
+        <div class="thumbnail-container">
+            <p>Placeholder for image</p>
+        </div>
+        <div class="info-container">
+            <h2>{ title }</h2>
+            <p>{ summary }</p>
+            <div class="speaker">
+                { speakers.join(", ") }
+            </div>
+            <div class="talk-pills">
+                {track && <Pill Type="div" label={ track } />}
+                <Pill Type="div" label={ room } />
+                <Pill Type="div" label="No Video" />
+            </div>
+        </div>
+    </div>
+    }
+    <div class="additional-links">
+        { slides ?
+        <a href={ slides } class="slides">View slides <img src="/watch/slides-icon.svg" alt="" /></a>
+        :
+        <div>No slides available</div>
+        }
+    </div>
+</div>

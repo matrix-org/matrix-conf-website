@@ -1,0 +1,21 @@
+{
+  "ID": "CL3HJB",
+  "Proposal title": "Opening",
+  "Session type": {
+    "de-formal": "Kurzer Vortrag",
+    "en": "Short Talk",
+    "fr": "Short Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "Welcome",
+  "Speaker names": [
+    "Yan Minagawa"
+  ],
+  "Room": {
+    "en": "Ada Byron"
+  },
+  "Start": "2025-10-16T10:00:00+02:00",
+  "youtube": "https://www.youtube.com/watch?v=Hvdlk3kz4wY"
+}
