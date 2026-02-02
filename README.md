@@ -26,5 +26,8 @@ pnpm run dev
 You can check that there are no errors, warning, or hints with
 
 ```
-pnpm astro check
+pnpm lint
 ```
+
+This repo is configured to use husky and lint-staged to check for errors on each commit.
+You may have to run `pnpm prepare` once to set it up.

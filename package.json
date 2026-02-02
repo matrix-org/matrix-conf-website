@@ -5,8 +5,16 @@
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",
+        "lint": "astro check --minimumFailingSeverity=hint",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "husky": "husky",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "src/**/*.astro": [
+            "astro check --minimumFailingSeverity=hint"
+        ]
     },
     "dependencies": {
         "@astrojs/check": "^0.9.4",
@@ -14,5 +22,9 @@
         "astro": "^5.13.7",
         "sharp": "^0.34.3",
         "typescript": "^5.9.2"
+    },
+    "devDependencies": {
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7"
     }
 }
