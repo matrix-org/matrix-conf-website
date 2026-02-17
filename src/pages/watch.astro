@@ -133,6 +133,16 @@ for (let i = 0; i < 3; i++) {
     }
 </style>
 
+<style is:global>
+    #filters .active {
+        border: 2px solid white;
+    }
+
+    .no-js {
+        display: none !important;
+    }
+</style>
+
 <BaseLayout
     pageTitle="Watch the Conference Recordings"
     description="Follow along the Matrix Conference even if you couldn't make it to Strasbourg"
@@ -144,7 +154,7 @@ for (let i = 0; i < 3; i++) {
     </section>
 
     <section id="recordings">
-        <div class="content-wrapper">
+        <div class="content-wrapper no-js">
             <div id="filters">
                 <Pill Type="button" label="Keynote" />
                 <Pill Type="button" label="Public Sector" />
@@ -202,3 +212,58 @@ for (let i = 0; i < 3; i++) {
         <SponsorsGrid />
     </section>
 </BaseLayout>
+
+<script>
+    // Elements, that require JavaScript to work have the "no-js" class.
+    // This class sets display = none.
+    // In <script> the class is removed, so that the elements show up.
+    const removeNoJs = () => {
+        document.querySelectorAll('.no-js').forEach((element) => {
+            element.classList.remove("no-js")
+        })
+    }
+    removeNoJs();
+
+    // Filter logic
+    const filterPillElements = document.querySelectorAll("#filters .pill")
+    const talkElements = document.querySelectorAll<HTMLElement>("#recordings .talk-card")
+
+    const getActiveTracks = (): string[] => {
+        const activePills = Array.from(filterPillElements)
+            .filter(pill => pill.classList.contains("active"));
+        return activePills.map((pill) => {
+            return Array.from(pill.classList.values())
+                .filter(cls => cls !== "pill" && cls !== "active")[0];
+        })
+    }
+
+    const applyFilters = () => {
+        const activeTracks = getActiveTracks();
+        talkElements.forEach((recordingElement) => {
+            if (
+                // No filter active
+                activeTracks.length === 0
+                // Track class is in active tracks
+                || activeTracks.some(activeTrack => recordingElement.classList.contains(activeTrack))) {
+                recordingElement.style.display = 'flex'
+                return;
+            }
+
+            recordingElement.style.display = 'none';
+        })
+    }
+
+    const handleFilterPillClicked = (event: Event) => {
+        const target = event.currentTarget as HTMLElement;
+        target.classList.toggle("active");
+        applyFilters();
+    }
+
+    const setUpTracksFilter = () => {
+        filterPillElements.forEach((filterPill) => {
+            filterPill.addEventListener("click", handleFilterPillClicked);
+        })
+    }
+
+    setUpTracksFilter();
+</script>
