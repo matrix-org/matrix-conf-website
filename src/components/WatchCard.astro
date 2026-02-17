@@ -13,6 +13,15 @@ import LogoNoPattern from "./logo-no-pattern.svg";
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
 const title = talk.data['Proposal title'];
+
+// pick the ID field you actually have:
+const id = talk.data.ID ?? talk.data.Id ?? talk.data.id;
+
+var heroUrl = LogoNoPattern.src;
+if (talk.data.thumbnail === true) {
+  heroUrl = `/talks/thumbnail_${id}.avif`;
+}
+
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakers = talk.data['Speaker names'];
@@ -116,11 +125,11 @@ const slides = "";
 <div class:list={['talk-card', slugify(track)]}>
     <WatchCardContent youtube={youtube}>
         <div class="thumbnail-container">
-            <Image
-                src={LogoNoPattern}
+            <img
+                src={heroUrl}
                 class="matrix-conference-logo"
                 alt="Matrix Conference Logo"
-            />
+                inferSize            />
         </div>
         <div class="info-container">
             <h2>{ title }</h2>
