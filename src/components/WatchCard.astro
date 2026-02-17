@@ -15,7 +15,7 @@ const youtube = talk.data.youtube;
 const title = talk.data['Proposal title'];
 
 // pick the ID field you actually have:
-const id = talk.data.ID ?? talk.data.Id ?? talk.data.id;
+const id = talk.data.ID;
 
 var heroUrl = LogoNoPattern.src;
 if (talk.data.thumbnail === true) {
