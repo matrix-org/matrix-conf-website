@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 TARGET_DIR="static/talks"
 mkdir -p "$TARGET_DIR"
 
@@ -18,14 +17,8 @@ for dir in src/talks/*; do
     else
       echo "⚠️  no ID found in $session"
     fi
-    # update session.json (atomic)
-    tmp="$(mktemp)"
-    jq --argjson hasThumb true \
-      '.thumbnail = $hasThumb' \
-      "$session" > "$tmp"
-    mv "$tmp" "$session"
 
-  echo "📝 updated $session (thumbnail: true)"
+    echo "📝 updated $session (thumbnail: true)"
   fi
 done
 

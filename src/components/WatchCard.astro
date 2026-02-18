@@ -17,15 +17,8 @@ import LogoNoPattern from "./logo-no-pattern.svg";
 const { lazyThumb, talk } = Astro.props;
 const youtube = talk.data.youtube;
 const title = talk.data['Proposal title'];
-
-// pick the ID field you actually have:
-const id = talk.data.ID;
-
-var heroUrl = LogoNoPattern.src;
-if (talk.data.thumbnail === true) {
-  heroUrl = `/talks/thumbnail_${id}.avif`;
-}
-
+const talkId = talk.data.ID;
+const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(",");
@@ -122,7 +115,7 @@ const room = talk.data.Room.en;
 <div class:list={['talk-card', slugify(track)]}>
     <WatchCardContent youtube={youtube}>
         <Image
-            src={heroUrl}
+            src={thumbnailUrl}
             class="talk-card__thumbnail"
             alt={speakerNames}
             height="900"
