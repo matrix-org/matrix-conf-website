@@ -1,6 +1,10 @@
 ---
 interface Props {
     talk: CollectionEntry<"talks">;
+    /**
+     * True to set loading="lazy" on the talk thumbnail
+     */
+    lazyThumb?: boolean;
 }
 
 import slugify from '@sindresorhus/slugify';
@@ -10,23 +14,16 @@ import WatchCardContent from "../components/WatchCardContent.astro";
 import { Image } from "astro:assets";
 import LogoNoPattern from "./logo-no-pattern.svg";
 
-const { talk } = Astro.props;
+const { lazyThumb, talk } = Astro.props;
 const youtube = talk.data.youtube;
 const title = talk.data['Proposal title'];
-
-// pick the ID field you actually have:
-const id = talk.data.ID;
-
-var heroUrl = LogoNoPattern.src;
-if (talk.data.thumbnail === true) {
-  heroUrl = `/talks/thumbnail_${id}.avif`;
-}
-
+const talkId = talk.data.ID;
+const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
-const speakers = talk.data['Speaker names'];
+const speakerNames = talk.data['Speaker names'].join(",");
 const room = talk.data.Room.en;
-const slides = "";
+
 ---
 
 <style lang="scss">
@@ -40,17 +37,6 @@ const slides = "";
 
         a {
             text-decoration: none;
-        }
-
-        .thumbnail-container {
-            align-items: center;
-            aspect-ratio: 16 / 9;
-            background-color: #000;
-            background-image: url(/pattern.svg);
-            display: flex;
-            justify-content: center;
-            overflow: clip;
-            width: 100%;
         }
 
         .info-container {
@@ -121,20 +107,26 @@ const slides = "";
             }
         }
     }
+
+    .talk-card__thumbnail {
+        aspect-ratio: 16/9;
+    }
 </style>
 <div class:list={['talk-card', slugify(track)]}>
     <WatchCardContent youtube={youtube}>
-        <div class="thumbnail-container">
-            <img
-                src={heroUrl}
-                class="matrix-conference-logo"
-                alt="Matrix Conference Logo" />
-        </div>
+        <Image
+            src={thumbnailUrl}
+            class="talk-card__thumbnail"
+            alt={speakerNames}
+            height="900"
+            width="1600"
+            loading={lazyThumb ? 'lazy' : 'eager'}
+        />
         <div class="info-container">
             <h2>{ title }</h2>
             <p>{ summary }</p>
             <div class="speaker">
-                { speakers.join(", ") }
+                { speakerNames }
             </div>
             <div class="talk-pills">
                 {track && <Pill Type="div" label={ track } />}
