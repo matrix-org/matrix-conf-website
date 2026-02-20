@@ -105,7 +105,7 @@ for (let i = 0; i < 3; i++) {
         align-items: center;
         gap: 12px;
         margin-top: 48px;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
 
         .date {
             flex: none;
@@ -130,6 +130,23 @@ for (let i = 0; i < 3; i++) {
 
     #info {
         background-image: url(/grey-repeating-lines.svg);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .empty-section {
+        color: var(--text-secondary);
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        .empty-section {
+            font-size: 2rem;
+            margin-bottom: 48px;
+        }
     }
 </style>
 
@@ -173,6 +190,9 @@ for (let i = 0; i < 3; i++) {
             <div class="date-separator">
                 <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>th</sup> October</div>
                 <div class="line"></div>
+            </div>
+            <div class="hidden empty-section">
+                There are no talks for this day that match the filters.
             </div>
             <div class="talks-grid">
                 {days_talks.map((talk: any) => (
@@ -225,6 +245,39 @@ for (let i = 0; i < 3; i++) {
     removeNoJs();
 
     // Filter logic
+    type TalkSection = {
+        emptySectionElement: HTMLElement;
+        talksGrid: HTMLElement;
+        talkElements: HTMLElement[];
+    }
+
+    const talksElement = document.getElementById("talks");
+    let talkSections : TalkSection[] = [];
+
+    if (talksElement !== null) {
+        // Find triples of empty section elements, talks grid and the talk elements inside of the grid
+        let emptySectionElement : HTMLElement | null = null;
+
+        Array.from(talksElement.children).forEach((talkElement) => {
+            if (!(talkElement instanceof HTMLElement)) {
+                return;
+            }
+
+            if (talkElement.classList.contains("empty-section")) {
+                emptySectionElement = talkElement;
+            }
+
+            if (talkElement.classList.contains("talks-grid") && emptySectionElement !== null) {
+                talkSections.push({
+                    emptySectionElement,
+                    talksGrid: talkElement,
+                    talkElements: Array.from(talkElement.children).filter((element) => element instanceof HTMLElement),
+                });
+                emptySectionElement = null;
+            }
+        })
+    }
+
     const filterPillElements = document.querySelectorAll("#filters .pill")
     const talkElements = document.querySelectorAll<HTMLElement>("#recordings .talk-card")
 
@@ -250,7 +303,19 @@ for (let i = 0; i < 3; i++) {
             }
 
             recordingElement.style.display = 'none';
-        })
+        });
+
+        // Set element visibilities.
+        // If a day does not have at least one talk then
+        // hide the talks grid and display a placeholder.
+        talkSections.forEach((talkSection) => {
+            const allHidden = talkSection.talkElements.every((talkElement) => {
+                return talkElement.style.display === 'none';
+            });
+
+            talkSection.emptySectionElement.style.display = allHidden ? 'block' : 'none';
+            talkSection.talksGrid.style.display = allHidden ? 'none' : 'grid';
+        });
     }
 
     const handleFilterPillClicked = (event: Event) => {
