@@ -105,7 +105,7 @@ for (let i = 0; i < 3; i++) {
         align-items: center;
         gap: 12px;
         margin-top: 48px;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
 
         .date {
             flex: none;
@@ -137,7 +137,7 @@ for (let i = 0; i < 3; i++) {
     }
 
     .empty-section {
-        color: var(--border);
+        color: var(--text-secondary);
         font-size: 1.25rem;
         text-align: center;
     }
@@ -145,6 +145,7 @@ for (let i = 0; i < 3; i++) {
     @media (min-width: 768px) {
         .empty-section {
             font-size: 2rem;
+            margin-bottom: 48px;
         }
     }
 </style>
