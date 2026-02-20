@@ -16,7 +16,6 @@ const talks = defineCollection({
         }),
         Start: z.string(),
         youtube: z.string().url().optional(),
-        thumbnail: z.boolean().optional(),
 
     })
 });
