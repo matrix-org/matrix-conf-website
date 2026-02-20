@@ -175,8 +175,8 @@ for (let i = 0; i < 3; i++) {
                 <div class="line"></div>
             </div>
             <div class="talks-grid">
-                {days_talks.map((talk: any, index) => (
-                    <WatchCard talk={talk} lazyThumb={index > 5} />
+                {days_talks.map((talk: any) => (
+                    <WatchCard talk={talk} />
                 ))}
             </div>
             ))}

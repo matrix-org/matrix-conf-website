@@ -1,10 +1,6 @@
 ---
 interface Props {
     talk: CollectionEntry<"talks">;
-    /**
-     * True to set loading="lazy" on the talk thumbnail
-     */
-    lazyThumb?: boolean;
 }
 
 import slugify from '@sindresorhus/slugify';
@@ -14,7 +10,7 @@ import WatchCardContent from "../components/WatchCardContent.astro";
 import { Image } from "astro:assets";
 import LogoNoPattern from "./logo-no-pattern.svg";
 
-const { lazyThumb, talk } = Astro.props;
+const { talk } = Astro.props;
 const youtube = talk.data.youtube;
 const title = talk.data['Proposal title'];
 const talkId = talk.data.ID;
@@ -120,7 +116,6 @@ const room = talk.data.Room.en;
             alt={speakerNames}
             height="900"
             width="1600"
-            loading={lazyThumb ? 'lazy' : 'eager'}
         />
         <div class="info-container">
             <h2>{ title }</h2>
