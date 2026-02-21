@@ -18,7 +18,8 @@ const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(",");
 const room = talk.data.Room.en;
-const slides = "";
+const start = talk.data.Start.split('T')[0];
+const slides = talk.data.slides ? `${[start, room, speakerNames, title].join("_")}.pdf` : "";
 
 ---
 
@@ -132,7 +133,7 @@ const slides = "";
     </WatchCardContent>
     <div class="additional-links">
         { slides ?
-        <a href={ slides } class="slides">View slides <img src="/watch/slides-icon.svg" alt="" /></a>
+<a href={ `/slides/slides_${talkId}.pdf` } download={ slides } class="slides"><img src="/watch/slides-icon.svg" aria-hidden="true" />View slides</a>
         :
         <div>Slides not available</div>
         }
