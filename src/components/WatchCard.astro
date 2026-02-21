@@ -8,7 +8,6 @@ import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import WatchCardContent from "../components/WatchCardContent.astro";
 import { Image } from "astro:assets";
-import LogoNoPattern from "./logo-no-pattern.svg";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -19,6 +18,7 @@ const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(",");
 const room = talk.data.Room.en;
+const slides = "";
 
 ---
 
@@ -130,4 +130,11 @@ const room = talk.data.Room.en;
             </div>
         </div>
     </WatchCardContent>
+    <div class="additional-links">
+        { slides ?
+        <a href={ slides } class="slides">View slides <img src="/watch/slides-icon.svg" alt="" /></a>
+        :
+        <div>Slides not available</div>
+        }
+    </div>
 </div>
