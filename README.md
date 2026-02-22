@@ -11,6 +11,18 @@ To discuss maintenance of this site, please come talk to the team in
 
 To discuss the content of this site, as well as The Matrix Conference itself, please find the organising team in [#events-wg:matrix.org](https://matrix.to/#/#events-wg:matrix.org).
 
+## Repo structure
+
+The repo is structured by year.
+
+The canonical domain of The Matrix Conference is conference.matrix.org and
+always contains the latest conference.
+It is deployed from the `main` branch of this repo.
+
+We "archive" earlier conferences to yearly subdomains, i.e. `YYYY.matrix.org`.,
+where the current year is still deployed from `main`.
+Earlier years are tracked by branches following a format of `YYYY`.
+
 ## Building the website
 
 To build the website, ensure `pnpm` is installed on your machine.
