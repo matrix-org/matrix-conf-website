@@ -9,6 +9,8 @@ and that we are interested in reviewing and merging such a contribution.
 To discuss maintenance of this site, please come talk to the team in
 [#matrix.org-website:matrix.org](https://matrix.to/#/#matrix.org-website:matrix.org).
 
+To discuss the content of this site, as well as The Matrix Conference itself, please find the organising team in [#events-wg:matrix.org](https://matrix.to/#/#events-wg:matrix.org).
+
 ## Building the website
 
 To build the website, ensure `pnpm` is installed on your machine.
