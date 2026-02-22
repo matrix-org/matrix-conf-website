@@ -95,8 +95,8 @@
 
             &.primary {
                 padding-inline: clamp(1em, 3dvw, 2em);
-
                 margin-inline-start: var(--header-padding);
+                border: unset;
 
                 @media screen and (max-width: 767px) {
                     margin-inline-start: unset;
@@ -116,8 +116,6 @@
 
                 &.current {
                     color: #000;
-                    border: unset;
-                    margin: 2px;
                     background: #fff;
                 }
             }
