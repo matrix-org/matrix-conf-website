@@ -15,5 +15,6 @@
   },
   "Start": "2025-10-16T17:10:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=Xe6lVr2Gucw",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-82204-e2ee-direct-messaging-in-bluesky-with-matrix"
 }

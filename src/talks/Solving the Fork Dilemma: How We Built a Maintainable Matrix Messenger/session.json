@@ -19,5 +19,6 @@
   },
   "Start": "2025-10-18T10:35:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=Jz2ywOcgq5Q",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-74999-solving-the-fork-dilemma-how-we-built-a-maintainable-matrix-messenger"
 }

@@ -18,5 +18,6 @@
   },
   "Start": "2025-10-17T12:10:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=m_2ZBs_4RbE",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-74569-improving-the-security-of-the-federation-protocol"
 }
