@@ -8,7 +8,6 @@ import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import WatchCardContent from "../components/WatchCardContent.astro";
 import { Image } from "astro:assets";
-import LogoNoPattern from "./logo-no-pattern.svg";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -17,8 +16,10 @@ const talkId = talk.data.ID;
 const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
-const speakerNames = talk.data['Speaker names'].join(",");
+const speakerNames = talk.data['Speaker names'].join(", ");
 const room = talk.data.Room.en;
+const start = talk.data.Start.split('T')[0];
+const slides = talk.data.slides ? `MC25_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
 
 ---
 
@@ -83,7 +84,7 @@ const room = talk.data.Room.en;
 
         .additional-links {
 
-            div,a {
+            p,a {
                 padding: 16px 24px;
             }
 
@@ -130,4 +131,11 @@ const room = talk.data.Room.en;
             </div>
         </div>
     </WatchCardContent>
+    <div class="additional-links">
+        { slides ?
+<a href={ `/slides/slides_${talkId}.pdf` } download={ slides } class="slides"><img src="/watch/slides-icon.svg" aria-hidden="true" />View slides</a>
+        :
+        <p>Slides not available</p>
+        }
+    </div>
 </div>
