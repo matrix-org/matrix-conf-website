@@ -84,7 +84,7 @@ const slides = talk.data.slides ? `${[start, room, speakerNames, title].join("_"
 
         .additional-links {
 
-            div,a {
+            p,a {
                 padding: 16px 24px;
             }
 
@@ -135,7 +135,7 @@ const slides = talk.data.slides ? `${[start, room, speakerNames, title].join("_"
         { slides ?
 <a href={ `/slides/slides_${talkId}.pdf` } download={ slides } class="slides"><img src="/watch/slides-icon.svg" aria-hidden="true" />View slides</a>
         :
-        <div>Slides not available</div>
+        <p>Slides not available</p>
         }
     </div>
 </div>
