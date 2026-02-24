@@ -14,10 +14,11 @@ for dir in src/talks/*; do
         ID=$(jq -r '.ID // empty' "$session")
 
         if [[ -n "$ID" ]]; then
-            magick "$thumb" -resize 1600x900 "$TARGET_DIR/thumbnail_${ID}.avif"
-            echo "✔ copied and resized $dir → $TARGET_DIR/thumbnail_${ID}.avif"
+            target="$TARGET_DIR/thumbnail_${ID}.avif"
+            magick "$thumb" -resize 1600x900 "$target"
+            echo "✔ copied and resized $dir → $target"
         else
-            echo "⚠️  no ID found in $session"
+            echo "⚠️ no ID found in $session"
         fi
     fi
 done
