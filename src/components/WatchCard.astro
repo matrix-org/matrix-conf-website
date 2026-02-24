@@ -19,7 +19,7 @@ const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
 const room = talk.data.Room.en;
 const start = talk.data.Start.split('T')[0];
-const slides = talk.data.slides ? `${[start, room, speakerNames, title].join("_")}.pdf` : "";
+const slides = talk.data.slides ? `MC25_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
 
 ---
 
