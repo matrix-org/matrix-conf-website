@@ -18,5 +18,6 @@
   },
   "Start": "2025-10-17T15:00:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=4PoUmWadaQ0",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-74487-matrix-french-gov-deployment-opening-a-private-federation-securely"
 }

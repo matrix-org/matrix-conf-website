@@ -18,5 +18,6 @@
   },
   "Start": "2025-10-16T14:10:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=S4iQBWnuSRM",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-73699-consolidating-germany-s-administrative-communication-towards-a-joint-matrix-based-architecture"
 }

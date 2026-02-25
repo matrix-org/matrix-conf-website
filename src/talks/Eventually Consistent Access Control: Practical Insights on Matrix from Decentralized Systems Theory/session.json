@@ -19,5 +19,6 @@
   },
   "Start": "2025-10-17T11:10:00+02:00",
   "youtube": "https://www.youtube.com/watch?v=lfQ2SRXd8PY",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conf-2025-72768-eventually-consistent-access-control-practical-insights-on-matrix-from-decentralized-systems-theory"
 }
