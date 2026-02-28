@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import TalksCollage from "../img/Conf2024.png";
+import TalksCollage from "../img/Conf2024.avif";
 ---
 
 <style>
@@ -15,9 +15,10 @@ import TalksCollage from "../img/Conf2024.png";
         gap: 40px;
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 800px) {
         /* Number obtained by manually testing */
         .content-wrapper {
+            gap: 1rem;
             grid-template-columns: 1fr;
         }
 
@@ -43,6 +44,7 @@ import TalksCollage from "../img/Conf2024.png";
 
     p {
         font-size: 1.125rem;
+        margin-block: 1rem;
         color: var(--secondary-color);
     }
 
@@ -58,18 +60,20 @@ import TalksCollage from "../img/Conf2024.png";
 </style>
 <div class="content-wrapper">
     <div class="left-col">
-        <h2>2024 Talks</h2>
-        <p>
-            Catch up on last year’s conference by watching our recorded
-            sessions!
-        </p>
-        <p>
-            Discover what other organisations, communities, and projects within
-            the Matrix community have been working on.
-        </p>
-        <a href="https://2024.matrix.org/watch"
-            >Watch now<img src="/pixel-chevron.svg" alt="" loading="lazy" /></a
-        >
+        <h2>2025 Talks</h2>
+        <div>
+            <p>
+                Catch up on last year’s conference by watching our recorded
+                sessions!
+            </p>
+            <p>
+                Discover what other organisations, communities, and projects within
+                the Matrix community have been working on.
+            </p>
+            <a href="https://2025.matrix.org/watch"
+                >Watch now<img src="/pixel-chevron.svg" alt="" loading="lazy" /></a
+            >
+        </div>
     </div>
     <Image src={TalksCollage} alt="" />
 </div>
