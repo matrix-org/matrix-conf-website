@@ -43,6 +43,7 @@ import TalksCollage from "../img/Conf2024.avif";
 
     p {
         font-size: 1.125rem;
+        margin-block: 1rem;
         color: var(--secondary-color);
     }
 
@@ -59,17 +60,19 @@ import TalksCollage from "../img/Conf2024.avif";
 <div class="content-wrapper">
     <div class="left-col">
         <h2>2025 Talks</h2>
-        <p>
-            Catch up on last year’s conference by watching our recorded
-            sessions!
-        </p>
-        <p>
-            Discover what other organisations, communities, and projects within
-            the Matrix community have been working on.
-        </p>
-        <a href="https://2025.matrix.org/watch"
-            >Watch now<img src="/pixel-chevron.svg" alt="" loading="lazy" /></a
-        >
+        <div>
+            <p>
+                Catch up on last year’s conference by watching our recorded
+                sessions!
+            </p>
+            <p>
+                Discover what other organisations, communities, and projects within
+                the Matrix community have been working on.
+            </p>
+            <a href="https://2025.matrix.org/watch"
+                >Watch now<img src="/pixel-chevron.svg" alt="" loading="lazy" /></a
+            >
+        </div>
     </div>
     <Image src={TalksCollage} alt="" />
 </div>
