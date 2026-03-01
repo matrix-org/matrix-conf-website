@@ -12,6 +12,7 @@ const { talk } = Astro.props;
 const youtube = talk.data.youtube;
 const mediaCccDe = talk.data.mediaCccDe;
 const title = talk.data['Proposal title'];
+const titleSlug = slugify(title);
 const talkId = talk.data.ID;
 const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const track = talk.data.Track ? talk.data.Track.en : '';
@@ -23,6 +24,7 @@ const slides = talk.data.slides ? `MC25_${[start, speakerNames, title].map(seg =
 const hasVideo = !!talk.data.youtube || !!talk.data.mediaCccDe;
 import Voctocat from '../img/voctocat.svg';
 import YouTubeIcon from '../img/YouTube.svg';
+import LinkIcon from '../img/link.svg';
 
 ---
 
@@ -30,10 +32,11 @@ import YouTubeIcon from '../img/YouTube.svg';
     @use "sass:color";
 
     .talk-card {
-        display: flex;
         border: 1px solid #D2D2D2;
-        overflow: clip;
+        display: flex;
         flex-flow: wrap;
+        overflow: clip;
+        position: relative;
 
         a {
             text-decoration: none;
@@ -75,9 +78,10 @@ import YouTubeIcon from '../img/YouTube.svg';
             }
 
             .talk-pills {
+                align-items: center;
                 display: flex;
-                gap: 8px;
                 flex-wrap: wrap;
+                gap: 8px;
             }
         }
 
@@ -131,8 +135,35 @@ import YouTubeIcon from '../img/YouTube.svg';
     .video-links-label {
         margin-right: 8px;
     }
+
+    .permalink {
+        padding-block: 6px;
+        padding-inline: 4px;
+    }
+
+    .permalink-2 {
+        color: black;
+        padding: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .permalink-anchor {
+        position: absolute;
+        top: -100px;
+    }
 </style>
 <div class:list={['talk-card', slugify(track)]}>
+    <a
+        class="permalink-2"
+        href={`#${titleSlug}`}
+        aria-label={`Deep link to ${title}`}
+        title={`Deep link to ${title}`}
+     >
+        <LinkIcon height="16" />
+    </a>
+    <div id={titleSlug} aria-hidden="true" class="permalink-anchor" />
     <div>
         <Image
             src={thumbnailUrl}
@@ -148,8 +179,14 @@ import YouTubeIcon from '../img/YouTube.svg';
                 { speakerNames }
             </div>
             <div class="talk-pills">
+                <!-- <a class="permalink" href="#bla"> -->
+                <!--     <LinkIcon height="16" /> -->
+                <!-- </a> -->
                 {track && <Pill Type="div" label={ track } />}
                 <Pill Type="div" label={ room } />
+                <!-- <a class="permalink" href="#bla"> -->
+                <!--     <LinkIcon height="16" /> -->
+                <!-- </a> -->
             </div>
         </div>
     </div>
