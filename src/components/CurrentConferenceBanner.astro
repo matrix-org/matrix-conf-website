@@ -1,5 +1,7 @@
 ---
 
+import PixelChevron from "../img/pixel-chevron-color-agnostic.svg";
+
 ---
 
 <style>
@@ -28,6 +30,10 @@
         color: #fff;
     }
 
+    .chevron {
+        display: inline;
+    }
+
     @media (min-width: 768px) {
         .current-conference-banner {
             padding: 16px 40px;
@@ -44,6 +50,6 @@
         You're viewing the 2025 conference.
     </div>
     <a class="cta" href="https://conference.matrix.org/">
-        Current conference&nbsp;&gt;
+        Current conference<span aria-hidden="true">&nbsp;<PixelChevron class="chevron" /></span>
     </a>
 </div>
