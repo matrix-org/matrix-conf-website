@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import "../styles/reset.css";
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
+import CurrentConferenceBanner from "../components/CurrentConferenceBanner.astro";
 
 interface Props {
     pageTitle: string;
@@ -97,6 +98,7 @@ const { pageTitle, ogTitle, description } = Astro.props;
     <body>
         <a class="skip-to-main" href="#main-content">Skip to main content</a>
         <Header />
+        <CurrentConferenceBanner />
         <main id="main-content">
             <slot />
         </main>
