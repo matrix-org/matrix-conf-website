@@ -30,6 +30,18 @@ import Talks2025 from "./Talks2025.astro";
         }
     }
 
+    .highlight {
+        border: 1px solid;
+        border-image: linear-gradient(
+            314deg,
+            #f45b69 15.02%,
+            #f6ae2d 32.83%,
+            #a6ffa1 50.64%,
+            #75f4f4 68.44%,
+            #ae7fe9 86.25%
+        ) 30;
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: 700;
@@ -42,7 +54,7 @@ import Talks2025 from "./Talks2025.astro";
 </style>
 <div class="content-wrapper">
     <div class="items">
-        <div class="item">
+        <div class="item highlight">
             <h2>Call for Proposals</h2>
             <div>
                 <p>Whether you want to talk about decentralisation, encryption, Matrix internals, safety, sovereignty of digital communication, community, collaboration in the public sector, UX, or showcase your fun experiments, there is a track for you at Matrix Conf.</p>
