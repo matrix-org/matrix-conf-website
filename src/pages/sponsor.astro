@@ -5,10 +5,11 @@ import TextAndImage from "../components/TextAndImage.astro";
 import WhySponsor from "../components/WhySponsor.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Yan from "../img/Yan.png";
+import PrimaryCta from "../components/PrimaryCta.astro";
 ---
 
 <style>
-    #matrix-conf-2024 {
+    #matrix-conf-2025 {
         background-image: url("/grey-repeating-lines.svg");
     }
 </style>
@@ -19,22 +20,21 @@ import Yan from "../img/Yan.png";
     <section id="shape-the-future">
         <TextAndImage imgSrc={Yan}>
             <h2>Shape the future of communication</h2>
-            <p>Sonsor The Matrix Conference 2025!</p>
+            <p>Sponsor The Matrix Conference 2026!</p>
             <p>
                 This is your chance to be at the forefront of innovation,
                 connect with leaders, and make a lasting impact on the rapidly
                 growing Matrix ecosystem.
             </p>
             <p>
-                <a href="/matrix-conference-sponsors-deck-20250506.pdf"
-                    >Get the brochure</a>
+                <PrimaryCta href="/matrix-conference-sponsors-deck-20250506.pdf">View Sponsoring Options</PrimaryCta>
             </p>
         </TextAndImage>
     </section>
     <section id="why-sponsor">
         <WhySponsor />
     </section>
-    <section id="matrix-conf-2024">
+    <section id="matrix-conf-2025">
         <Conf2025 />
     </section>
     <section id="sponsors">
