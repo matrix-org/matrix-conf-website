@@ -1,7 +1,9 @@
 ---
 import RoughSchedule from "../components/RoughSchedule.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Talks2025 from "../components/Talks2025.astro";
 import PrimaryCta from "../components/PrimaryCta.astro";
+import CfP from "../components/CfP.astro";
 ---
 
 <style>
@@ -15,27 +17,18 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         padding: 20px;
     }
 
+    #talks-2025 {
+        background-image: url("/grey-repeating-lines.svg");
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: 700;
-        margin-block-end: 2rem;
-        text-align: center;
     }
 
     p {
         font-size: 1.125rem;
         margin-block: 1rem;
-    }
-
-    @media (width <= 710px) {
-        #full-schedule {
-            background-color: #fff; /* Needed to keep the schedule legible at small size */
-        }
-    }
-
-    #full-schedule {
-        padding-inline: 0;
-        overflow-x: auto;
     }
 </style>
 <BaseLayout
@@ -56,24 +49,13 @@ import PrimaryCta from "../components/PrimaryCta.astro";
             </p>
         </div>
     </section>
-    <section id="full-schedule">
-        <pretalx-schedule
-            event-url="https://cfp.2025.matrix.org/matrix-conf-2025/"
-            locale="en"
-            format="grid"
-            style="--pretalx-clr-primary: #000000"></pretalx-schedule>
-        <noscript>
-            <div class="pretalx-widget">
-                <div class="pretalx-widget-info-message">
-                    JavaScript is disabled in your browser. To access our
-                    schedule without JavaScript, please <a
-                        target="_blank"
-                        href="https://cfp.2025.matrix.org/matrix-conf-2025/schedule/"
-                        >click here</a
-                    >.
-                </div>
-            </div>
-        </noscript>
+    <section id="cfp">
+        <div class="content-wrapper box">
+            <CfP />
+        </div>
+    </section>
+    <section id="talks-2025">
+        <Talks2025 />
     </section>
     <section id="tickets">
         <div class="content-wrapper box">
