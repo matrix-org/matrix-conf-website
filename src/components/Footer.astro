@@ -5,12 +5,14 @@
 <style>
     .content-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         column-gap: clamp(20px, calc(10vw - 40px), 60px);
         row-gap: 60px;
         max-width: fit-content;
+        margin-top: 1rem;
         margin-inline: auto;
         margin-block-end: 5rem;
+        padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
         padding-inline: 1.5rem;
     }
 
@@ -49,16 +51,14 @@
     }
 </style>
 <div class="content-grid">
-    <!--
     <div class="information">
         <h2>Information</h2>
         <ul>
-            <li><a href="/attend#getting-there">Venue &amp; Travel</a></li>
+            <li><a href="/attend">Venue &amp; Travel</a></li>
             <li><a href="/attend#health-and-safety">Health &amp; Safety</a></li>
             <li><a href="/register">Register</a></li>
         </ul>
     </div>
-    -->
     <div class="contact">
         <h2>Contact</h2>
         <ul>
