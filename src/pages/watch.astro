@@ -8,7 +8,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         --bg-color: #000000;
         --fg-color: #ffffff;
         --max-page-width: 960px;
-        --link-color: #0999ff;
         --purple: #ae7fe9;
         --blue: #75f4f4;
         --green: #a6ffa1;
@@ -54,9 +53,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         grid-template-columns: 100%;
         margin: 0;
     }
-    section {
-        padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
-    }
     section#stream-list {
         padding-top: 0px;
     }
@@ -81,10 +77,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         color: var(--fg-color);
         font-size: 2rem;
         line-height: 120%;
-    }
-    a {
-        color: var(--link-color);
-        text-decoration: none;
     }
     .stream-item {
         display: flex;
