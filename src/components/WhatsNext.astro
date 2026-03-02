@@ -31,28 +31,21 @@ import banner from "../img/WhatsNext.png";
 
     .whats-next-grid .left-col {
         position: relative;
-        border: 2px solid transparent;
-        background-clip: padding-box;
-        padding: 0px;
-        grid-row: 1 / span 3;
-
-        display: grid;
-        grid-template: repeat(2, 1fr) / 1fr;
-    }
-
-    .whats-next-grid .left-col::before {
-        position: absolute;
-        content: "";
-        inset: -2px;
-        z-index: -1;
-        background: linear-gradient(
+        border: 2px solid;
+        border-image: linear-gradient(
             314deg,
             #f45b69 15.02%,
             #f6ae2d 32.83%,
             #a6ffa1 50.64%,
             #75f4f4 68.44%,
             #ae7fe9 86.25%
-        );
+        ) 30;
+        background-clip: padding-box;
+        padding: 0px;
+        grid-row: 1 / span 3;
+
+        display: grid;
+        grid-template: repeat(2, 1fr) / 1fr;
     }
 
     .image-container {
@@ -68,6 +61,7 @@ import banner from "../img/WhatsNext.png";
     }
 
     .item {
+        background-color: var(--bg-color);
         box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
         display: flex;
         flex-direction: column;
