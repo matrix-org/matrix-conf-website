@@ -1,6 +1,5 @@
 ---
 import PrimaryCta from "./PrimaryCta.astro";
-import Talks2025 from "./Talks2025.astro";
 ---
 
 <style>
@@ -69,13 +68,17 @@ import Talks2025 from "./Talks2025.astro";
             </PrimaryCta>
         </div>
         <div class="item smol">
-            <h2>Join the Chat</h2>
-            <p>Connect and exchange with other attendees and the organising team.</p>
+            <h2>Attend</h2>
+            <p>
+                The Conference travels to Scandic Triangeln in Malmö in 2026.
+                Learn all about the venue, how to get there, where to stay,
+                and any partner offers available with your Conference ticket.
+            </p>
             <PrimaryCta
-                href="https://matrix.to/#/#events-wg:matrix.org"
+                href="/attend"
                 flexBottom={true}
             >
-            #events-wg:matrix.org
+            Practical Info
             </PrimaryCta>
         </div>
         <div class="item smol">
@@ -88,6 +91,29 @@ import Talks2025 from "./Talks2025.astro";
                 Email us
             </PrimaryCta>
         </div>
-        <Talks2025 />
+        <div class="item smol">
+            <h2>Volunteer</h2>
+            <p>
+                Team work makes the dream work:
+                Volunteers join the team in making The Matrix Conference into reality.
+                Sign up early and receive a free ticket and TODO.
+            </p>
+            <PrimaryCta
+                href="/volunteer"
+                flexBottom={true}
+            >
+            Learn more
+            </PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Join the Chat</h2>
+            <p>Connect and exchange with other attendees and the organising team.</p>
+            <PrimaryCta
+                href="https://matrix.to/#/#events-wg:matrix.org"
+                flexBottom={true}
+            >
+            #events-wg:matrix.org
+            </PrimaryCta>
+        </div>
     </div>
 </div>
