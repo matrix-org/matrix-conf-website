@@ -1,13 +1,18 @@
 ---
-import Hero from "../components/Hero.astro";
 import RoughSchedule from "../components/RoughSchedule.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PrimaryCta from "../components/PrimaryCta.astro";
 ---
 
 <style>
-    section#schedule {
+    .content-wrapper {
         max-width: var(--max-page-width);
         margin-inline: auto;
+    }
+
+    .box {
+        border: 1px solid #636569;
+        padding: 20px;
     }
 
     h2 {
@@ -37,23 +42,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     pageTitle="Schedule of The Matrix Conference"
     description=" Whether you want to hear how an organization deployed Matrix at scale or learn what the engineers are doing to improve the protocol, The Matrix Conference has a track for you."
 >
-    <Hero
-        title="Get ready for the show!"
-        description="Whether you want to hear how an organization deployed Matrix at scale or learn what the engineers are doing to improve the protocol, The Matrix Conference has a track for you."
-        ctaText="Get Tickets"
-        ctaHref="/register"
-    />
     <section id="schedule">
         <RoughSchedule />
-        <p>
-            Stay tuned by following us on <a href="https://matrix.org/blog/"
-                >the Matrix Blog</a
-            >, our <a href="https://uk.linkedin.com/company/matrix-org"
-                >LinkedIn account</a
-            > or by <a href="https://mastodon.matrix.org/@matrix"
-                >following us on the fediverse</a
-            >!
-        </p>
+        <div class="content-wrapper">
+            <p>
+                Stay tuned by following us on <a href="https://matrix.org/blog/"
+                    >the Matrix Blog</a
+                >, our <a href="https://uk.linkedin.com/company/matrix-org"
+                    >LinkedIn account</a
+                > or by <a href="https://mastodon.matrix.org/@matrix"
+                    >following Matrix.org on the fediverse</a
+                >!
+            </p>
+        </div>
     </section>
     <section id="full-schedule">
         <pretalx-schedule
@@ -73,5 +74,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
             </div>
         </noscript>
+    </section>
+    <section id="tickets">
+        <div class="content-wrapper box">
+            <h2>Tickets</h2>
+            <p>
+                Whether you want to hear how an organization deployed Matrix at scale
+                or learn what the engineers are doing to improve the protocol,
+                The Matrix Conference has a track for you.
+            </p>
+            <PrimaryCta href="/register">Get Tickets</PrimaryCta>
+        </div>
     </section>
 </BaseLayout>
