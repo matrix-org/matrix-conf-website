@@ -1,6 +1,6 @@
 ---
 import PrimaryCta from "./PrimaryCta.astro";
-import Talks2025 from "./Talks2025.astro";
+import CfP from "./CfP.astro";
 ---
 
 <style>
@@ -30,6 +30,18 @@ import Talks2025 from "./Talks2025.astro";
         }
     }
 
+    .highlight {
+        border: 1px solid;
+        border-image: linear-gradient(
+            314deg,
+            #f45b69 15.02%,
+            #f6ae2d 32.83%,
+            #a6ffa1 50.64%,
+            #75f4f4 68.44%,
+            #ae7fe9 86.25%
+        ) 30;
+    }
+
     h2 {
         font-size: 2rem;
         font-weight: 700;
@@ -38,33 +50,25 @@ import Talks2025 from "./Talks2025.astro";
     p {
         font-size: 1.125rem;
         margin-block: 1rem;
-        color: var(--secondary-color);
     }
 </style>
 <div class="content-wrapper">
     <div class="items">
-        <div class="item">
-            <h2>Call for Proposals</h2>
-            <div>
-                <p>Whether you want to talk about decentralisation, encryption, Matrix internals, safety, sovereignty of digital communication, community, collaboration in the public sector, UX, or showcase your fun experiments, there is a track for you at Matrix Conf.</p>
-                <p>We welcome proposals from individuals innovating around Matrix, organisations working with Matrix, and everyone contributing to digital sovereignty.</p>
-                <p>We do not welcome marketing talks in the CfP, but have sponsorship opportunities to help promote your product.</p>
-            </div>
-            <PrimaryCta
-                href="https://cfp.2026.matrix.org/matrix-conference-2026/cfp"
-                flexBottom={true}
-            >
-            Submit Talk Proposals
-            </PrimaryCta>
+        <div class="item highlight">
+            <CfP />
         </div>
         <div class="item smol">
-            <h2>Join the Chat</h2>
-            <p>Connect and exchange with other attendees and the organising team.</p>
+            <h2>Facts</h2>
+            <p>
+                The Conference travels to Scandic Triangeln in Malmö in 2026.
+                Learn all about the venue, how to get there, where to stay,
+                and any partner offers available with your Conference ticket.
+            </p>
             <PrimaryCta
-                href="https://matrix.to/#/#events-wg:matrix.org"
+                href="/facts"
                 flexBottom={true}
             >
-            #events-wg:matrix.org
+            Practical Info
             </PrimaryCta>
         </div>
         <div class="item smol">
@@ -77,6 +81,29 @@ import Talks2025 from "./Talks2025.astro";
                 Email us
             </PrimaryCta>
         </div>
-        <Talks2025 />
+        <div class="item smol">
+            <h2>Volunteer</h2>
+            <p>
+                Team work makes the dream work:
+                Volunteers join the team in making The Matrix Conference into reality.
+                Sign up early and receive a free ticket and TODO.
+            </p>
+            <PrimaryCta
+                href="/volunteer"
+                flexBottom={true}
+            >
+            Learn more
+            </PrimaryCta>
+        </div>
+        <div class="item smol">
+            <h2>Join the Chat</h2>
+            <p>Connect and exchange with other attendees and the organising team.</p>
+            <PrimaryCta
+                href="https://matrix.to/#/#events-wg:matrix.org"
+                flexBottom={true}
+            >
+            #events-wg:matrix.org
+            </PrimaryCta>
+        </div>
     </div>
 </div>

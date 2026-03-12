@@ -1,56 +1,130 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import TextAndImage from "../components/TextAndImage.astro";
-import GroupPicture from "../img/GroupPicture.jpg";
-import VenueRainbow from "../img/VenueRainbow.png";
-import HealthSafetyShort from "../components/HealthSafetyShort.astro";
 import Tickets from "../components/Tickets.astro";
 ---
 
-<style></style>
+<style>
+    #early-bird {
+        background-color: #1a1a1a;
+    }
+
+    #tickets {
+        background-image: url("/grey-repeating-lines.svg");
+    }
+
+    .items {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .smol {
+        @media (min-width: 800px) {
+            flex-basis: 40%;
+        }
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-block-start: 1em;
+    }
+
+    p b {
+        color: var(--text-primary);
+    }
+</style>
 <BaseLayout
     pageTitle="Register for The Matrix Conference"
-    description="Join us for The Matrix Conference this October. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+    description="Join us for The Matrix Conference this October. The four day conference will take place in Malmö, Sweden. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
 >
-    <Hero
-        title="Get your tickets now"
-        description="Join us for The Matrix Conference this October. The four day conference will take place in Strasbourg, France. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
-        ctaText="Get Tickets"
-        ctaHref="#tickets"
-    />
 
-    <section id="meet">
-        <TextAndImage imgSrc={GroupPicture}>
-            <h2>We're looking forward to meeting you!</h2>
-            <p>
-                The Matrix Conference is a great place for developers,
-                architects, sysadmins, community leaders from the public and
-                private sector, as well as students and anyone interested in
-                open, secure, decentralised communication.
-            </p>
-        </TextAndImage>
+    <section id="types">
+        <div class="items">
+            <div class="item">
+                <h2>A Match For Everyone</h2>
+                <p>
+                    The Matrix Conference is where the whole ecosystem meets.
+                    Everyone brings something different to the table,
+                    this is reflected in our ticket types.
+                </p>
+                <p>
+                    If you make a living from Matrix or attending in
+                    a professional capacity, the <b>Business Ticket</b> is for you.
+<!--
+                    If you are deploying Matrix in an academic environment,
+                    or doing research on the protocol, please prefer the <b>Academic Ticket</b>.
+-->
+                    If you are developing or using Matrix primarily
+                    as a hobbie, grab a <b>Community Ticket</b>!
+                </p>
+                <p>
+                    If you cannot afford the intended ticket option,
+                    consider <a href="/volunteer"
+                        >donating your time</a
+                    > to The Matrix Conference in exchange for a free ticket.
+                </p>
+            </div>
+        </div>
     </section>
-    <section id="venue">
-        <TextAndImage imgSrc={VenueRainbow} reverse>
-            <h2>Venue</h2>
-            <p>
-                The Matrix Conference will happen at Kaleidoscoop in Strasbourg,
-                France.
-            </p>
-            <p>
-                The venue is wheelchair accessible, and can be easily joined by
-                public transport.
-            </p>
-            <p>
-                <a href="/attend#getting-there" class="bold-white"
-                    >How to get there</a
-                >
-            </p>
-        </TextAndImage>
+    <section id="early-bird">
+        <div class="items">
+            <div class="item">
+                <h2>The Early Bird Saves on Merch!</h2>
+                <p>
+                    And Tickets!
+                </p>
+                <p>
+                    Our Early Bird offer allows those who decide early
+                    to save up to 20% on the ticket price and is also the
+                    <b>only way to reserve your Conference merch</b>!
+                </p>
+                <p>
+                    The production timeline of physical items means that we
+                    can only take preorders until the end of the Early Bird
+                    sale.
+                    TODO: timeline
+                    A limited stock of the same items will additionally
+                    be available for sale on site.
+                </p>
+            </div>
+        </div>
     </section>
-    <section id="health-and-safety">
-        <HealthSafetyShort />
+    <section>
+        <div class="items">
+            <div class="item smol">
+                <h2>Foundation member?</h2>
+                <p>
+                    If you are an Individual, Ecosystem, Associate, Silver, Gold, or
+                    Platinum <a href="https://matrix.org/foundation/members/"
+                        >member of The Matrix Foundation</a
+                    >, please email us to get your free Member Ticket voucher at <a
+                        href="mailto:conference@foundation.matrix.org?subject=MC26%20Member%20Ticket"
+                        >conference@foundation.matrix.org</a
+                    >.
+                </p>
+            </div>
+            <div class="item smol">
+                <h2>Availability</h2>
+                <p>
+                    Tickets are available until the venue capacity is reached.
+                    You can view the details in the next step
+                    after adding a ticket to your cart, before checkout.
+                </p>
+            </div>
+        </div>
     </section>
     <section id="tickets">
         <Tickets />

@@ -1,5 +1,4 @@
 ---
-import Hero from "../components/Hero.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
@@ -13,20 +12,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     ul {
         font-size: 1.125rem;
         margin-block: 1em;
-    }
-
-    p a {
-        color: var(--link-color);
+        color: var(--secondary-color);
     }
 </style>
 <BaseLayout
     pageTitle="Volunteer for The Matrix Conference"
     description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
 >
-    <Hero
-        title="Volunteer for The Matrix Conference"
-        description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
-    />
     <section id="volunteer">
         <p>We are looking for help in these areas:</p>
         <ul>

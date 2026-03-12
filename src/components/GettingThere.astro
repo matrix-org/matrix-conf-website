@@ -1,7 +1,6 @@
 ---
 import {Image} from "astro:assets";
-import Kaleidoscoop from "../img/Kaleidoscoop.png";
-import Map from "../img/Map.png";
+import Map from "../img/Map.avif";
 ---
 
 <style>
@@ -99,6 +98,7 @@ import Map from "../img/Map.png";
 
     .map-grid img {
         grid-column: 1 / -1;
+        box-shadow: 0 0 0 1px #636569;
     }
 
     .map-grid a {
@@ -111,23 +111,6 @@ import Map from "../img/Map.png";
 <div class="content-wrapper">
     <h2>Getting there</h2>
     <div class="grid">
-        <div class="item">
-            <h3>The Venue</h3>
-            <p>
-                The Matrix Conference 2025 will take place at <a
-                    href="https://kaleidos.coop">Kaleidoscoop</a
-                >, 5 Rue de la Coopérative, in Strasbourg, France.
-            </p>
-            <p>
-                We warmly recommend staying in the city center near tram line D
-                or bus line 2 to both enjoy the conference and to socialize with
-                attendees in the evening!
-            </p>
-        </div>
-        <div class="item">
-            <Image src={Kaleidoscoop} alt="" />
-        </div>
-
         <div class="item">
             <div class="map-grid">
                 <Image src={Map} alt="" />

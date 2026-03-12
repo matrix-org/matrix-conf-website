@@ -11,9 +11,12 @@ section {
     padding: clamp(2.5rem, 10vw, 5rem) 1.5rem;
 }
 
+p {
+    color: var(--secondary-color);
+}
+
 a {
     color: var(--fg-color);
-    text-decoration: none;
 
     &:hover {
         text-decoration: underline;
