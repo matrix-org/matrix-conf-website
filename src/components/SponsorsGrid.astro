@@ -22,6 +22,7 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         border: 1px solid #636569;
         gap: 1px;
+        background-color: var(--bg-color);
     }
 
     .sponsors-grid > a {
@@ -38,7 +39,7 @@
         }
     }
 
-    #element {
+    .anchor {
         gap: 20px;
         background-color: #1a1a1a;
         grid-column: 1 / span 3;
@@ -96,7 +97,12 @@
 <div class="content-wrapper">
     <h2>Sponsors</h2>
     <div class="sponsors-grid">
-        <a id="element" href="https://element.io" target="_blank">
+        <a
+            id="element"
+            class="anchor sponsor"
+            href="https://element.io"
+            target="_blank"
+        >
             <img src="/sponsors/element.svg" alt="Element" />
             <div class="description">
                 <p class="main-sentence">
@@ -118,7 +124,7 @@
         </a>
         <a
             id="famedly"
-            class="champion"
+            class="champion sponsor"
             href="https://famedly.de"
             target="_blank"
         >
@@ -130,66 +136,6 @@
                     decentralized medical collaboration platform.
                 </p>
             </div>
-        </a>
-        <a
-            id="rocketchat"
-            class="champion"
-            href="https://rocket.chat"
-            target="_blank"
-        >
-            <img src="/sponsors/rocket.chat.svg" alt="Rocket Chat" />
-            <div class="description">
-                <p>
-                    Rocket Chat unifies messaging, voice, video, critical apps,
-                    and AI into a single, secure, interoprable and sovereign
-                    platform.
-                </p>
-            </div>
-        </a>
-        <a
-            id="connect2x"
-            class="champion"
-            href="https://connect2x.de"
-            target="_blank"
-        >
-            <img src="/sponsors/connect2x.svg" alt="Connect2x" />
-            <div class="description">
-                <p>
-                    connect2x develops advanced Matrix clients tailored for the
-                    German healthcare sector, based on their powerful,
-                    extensible SDK.
-                </p>
-            </div>
-        </a>
-        <a
-            id="automattic"
-            class="champion"
-            href="https://automattic.com/"
-            target="_blank"
-        >
-            <img src="/sponsors/automattic.svg" alt="Automattic" />
-            <div class="description">
-                <p>
-                    Automattic tries to make the web a better place. Building
-                    software for freedom.
-                </p>
-            </div>
-        </a>
-        <a
-            id="ercom"
-            class="sustaining"
-            href="https://cds.thalesgroup.com/en/ercom"
-            target="_blank"
-        >
-            <img src="/sponsors/ercom.svg" alt="Ercom" />
-        </a>
-        <a
-            id="futurewei"
-            class="sustaining"
-            href="https://www.futurewei.com/"
-            target="_blank"
-        >
-            <img src="/sponsors/futurewei.svg" alt="Futurewei Technologies" />
         </a>
     </div>
 </div>
