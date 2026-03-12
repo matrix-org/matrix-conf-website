@@ -11,6 +11,11 @@ import Buffet from "../img/Buffet.png";
     #getting-there, #health-and-safety {
         background-color: #1a1a1a;
     }
+
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
 </style>
 <BaseLayout
     pageTitle="Useful Facts"
@@ -31,6 +36,21 @@ import Buffet from "../img/Buffet.png";
             </p>
         </TextAndImage>
     </section>
+
+    <section id="online">
+        <div class="content-wrapper">
+            <h2>Online Experience</h2>
+            <p>
+                Matrix has a worldwide community of users, professionals, and hackers.
+                We are excited to continue our tradition of running a hybrid conference, aiming to live stream and record all talks, and a real online participatory experience through Matrix chat rooms.
+                You can find the previous year's recordings in our archive at <a href="https://2025.matrix.org/watch">2025.matrix.org</a>.
+            </p>
+            <p>
+                If you would like to attend, but cannot financially afford to travel, please <a href="mailto:conference@foundation.matrix.org">reach out to us</a> to see if and how we can support you.
+            </p>
+        </div>
+    </section>
+
 
     <section id="getting-there">
         <GettingThere />
