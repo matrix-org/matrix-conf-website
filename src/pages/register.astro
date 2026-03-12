@@ -4,6 +4,10 @@ import Tickets from "../components/Tickets.astro";
 ---
 
 <style>
+    #early-bird {
+        background-color: #1a1a1a;
+    }
+
     #tickets {
         background-image: url("/grey-repeating-lines.svg");
     }
@@ -29,6 +33,10 @@ import Tickets from "../components/Tickets.astro";
         }
     }
 
+    h2 {
+        font-size: 2rem;
+    }
+
     p {
         font-size: 1.125rem;
         margin-block-start: 1em;
@@ -43,9 +51,9 @@ import Tickets from "../components/Tickets.astro";
     description="Join us for The Matrix Conference this October. The four day conference will take place in Malmö, Sweden. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
 >
 
-    <section>
+    <section id="types">
         <div class="items">
-            <div class="item" id="types">
+            <div class="item">
                 <h2>A Match For Everyone</h2>
                 <p>
                     The Matrix Conference is where the whole ecosystem meets.
@@ -69,7 +77,11 @@ import Tickets from "../components/Tickets.astro";
                     > to The Matrix Conference in exchange for a free ticket.
                 </p>
             </div>
-            <div class="item" id="early-bird">
+        </div>
+    </section>
+    <section id="early-bird">
+        <div class="items">
+            <div class="item">
                 <h2>The Early Bird Saves on Merch!</h2>
                 <p>
                     And Tickets!
@@ -88,6 +100,10 @@ import Tickets from "../components/Tickets.astro";
                     be available for sale on site.
                 </p>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="items">
             <div class="item smol">
                 <h2>Foundation member?</h2>
                 <p>
