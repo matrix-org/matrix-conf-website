@@ -7,10 +7,11 @@ import Footer from "../components/Footer.astro";
 interface Props {
     pageTitle: string;
     description: string;
+    colorstripe?: boolean;
     ogTitle?: string;
 }
 
-const { pageTitle, ogTitle, description } = Astro.props;
+const { pageTitle, ogTitle, description, colorstripe } = Astro.props;
 ---
 
 <style>
@@ -37,6 +38,18 @@ const { pageTitle, ogTitle, description } = Astro.props;
     .skip-to-main:focus {
         transform: translateX(0);
     }
+
+    .color-stripe {
+        --pattern-size: 5;
+        --display-height: 32px;
+        background: url("/pattern-2h.svg");
+        background-repeat: repeat-x;
+        background-position: top left;
+        background-size: calc(var(--pattern-size) * var(--display-height));
+        height: var(--display-height);
+        width: 100%;
+    }
+
 </style>
 <html lang="en">
     <head>
@@ -97,6 +110,7 @@ const { pageTitle, ogTitle, description } = Astro.props;
     <body>
         <a class="skip-to-main" href="#main-content">Skip to main content</a>
         <Header />
+        { colorstripe!==false && <div class="color-stripe"></div> }
         <main id="main-content">
             <slot />
         </main>
