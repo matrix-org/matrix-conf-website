@@ -1,17 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
-import Catering from "../img/volunteering/JeromeCoquelin-MatrixHD-75.avif"
 import EnjoyConference from "../img/volunteering/JeromeCoquelin-MatrixHD-115.avif"
 import Hoodie from "../img/volunteering/JeromeCoquelin-MatrixHD-122.avif"
-import HeraldA from "../img/volunteering/JeromeCoquelin-MatrixHD-62.avif"
 import HeraldB from "../img/volunteering/JeromeCoquelin-MatrixHD-110.avif"
-import VideoCamera from "../img/volunteering/JeromeCoquelin-MatrixHD-49.avif"
-import VideoMixer from "../img/volunteering/JeromeCoquelin-MatrixHD-21.avif"
 import Welcome from "../img/volunteering/JeromeCoquelin-MatrixHD-3.avif"
+import TextAndImage from "../components/TextAndImage.astro";
+
 ---
 
 <style>
+    section:nth-child(even) {
+        background-color: #1a1a1a;
+    }
+
     section#volunteer {
         max-width: var(--max-page-width);
         margin-inline: auto;
@@ -22,57 +23,61 @@ import Welcome from "../img/volunteering/JeromeCoquelin-MatrixHD-3.avif"
         font-size: 1.125rem;
         margin-block: 1em;
         color: var(--secondary-color);
-    }
 </style>
 <BaseLayout
     pageTitle="Volunteer for The Matrix Conference"
     description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
 >
-    <section id="volunteer">
-        <h2>Join Our Volunteer Team!</h2>
-        <p>Help make this conference unforgettable, join the Volunteer Team! As a volunteer you can partake in:</p>
+    <section>
+        <TextAndImage imgSrc={Welcome}>
+            <h2>Join Our Volunteer Team!</h2>
+            <p>
+                Help make this conference unforgettable, join the Volunteer Team!
+            </p>
+            <p>
+                The more volunteers we have, the lighter the workload for everyone. Join us and be part of something special!
+            </p>
+        </TextAndImage>
+    </section>
 
-        <ul>
-            <li>Installing the equipment before the conference</li>
-            <li>Welcoming attendees, scanning tickets, and handing out badges during the event</li>
-            <Image src={Welcome} alt="Volunteers welcoming attendees" style="max-width: 300px; margin: 10px 0;" />
-            <li>Introducing speakers on stage</li>
-            <Image src={HeraldA} alt="Volunteer herald" style="max-width: 300px; margin: 10px 0;" />
-            <Image src={HeraldB} alt="Volunteer herald" style="max-width: 300px; margin: 10px 0;" />
-            <li>Handing out pre-ordered merch and selling merch</li>
-            <li>Supporting the video recording team</li>
-            <Image src={VideoMixer} alt="Volunteers assisting the video team" style="max-width: 300px; margin: 10px 0;" />
-            <Image src={VideoCamera} alt="Volunteers working with video equipment" style="max-width: 300px; margin: 10px 0;" />
-            <li>Helping people with accessibility needs navigate the conference</li>
-            <li>Putting the equipment away after the conference</li>
-        </ul>
+    <section>
+        <TextAndImage imgSrc={HeraldB} reverse={true}>
+            <h2>You can help with this</h2>
+            <ul>
+                <li>Installing the equipment before the conference</li>
+                <li>Welcoming attendees, scanning tickets, and handing out badges during the event</li>
+                <li>Introducing speakers on stage</li>
+                <li>Handing out pre-ordered merch and selling merch</li>
+                <li>Supporting the video recording team</li>
+                <li>Helping people with accessibility needs navigate the conference</li>
+                <li>Putting the equipment away after the conference</li>
+            </ul>
+        </TextAndImage>
+    </section>
 
-        <h3>Why Volunteer?</h3>
-        <p>As a volunteer, you’ll receive:</p>
-        <ul>
-            <li>A free ticket to the conference</li>
-            <li>A limited edition zipper hoodie to show off your support</li>
-            <Image src={Hoodie} alt="Stylish volunteer hoodie" style="max-width: 300px; margin: 10px 0;" />
-            <li>We will keep you going!</li>
-            <Image src={Catering} alt="Catering for volunteers" style="max-width: 300px; margin: 10px 0;" />
-            <li>Plenty of time to enjoy the conference yourself!</li>
-            <Image src={EnjoyConference} alt="Volunteers enjoying the conference" style="max-width: 300px; margin: 10px 0;" />
-        </ul>
+    <section>
+        <TextAndImage imgSrc={Hoodie}>
+            <h2>Volunteering benefits</h2>
+            <p>As a volunteer, you'll get:</p>
+            <ul>
+                <li>A free ticket to the conference</li>
+                <li>A limited edition zipper hoodie to show off your support</li>
+                <li>We will keep you going!</li>
+                <li>Plenty of time to enjoy the conference yourself!</li>
+            </ul>
+        </TextAndImage>
+    </section>
 
-        <p>
-            The more volunteers we have, the lighter the workload for everyone. Join us and be part of something special!
-        </p>
-
-        <h3>Interested?</h3>
-        <p>
-            You can register yourself for volunteer shifts at our <a href="https://volunteer.matrix-community.events">Volunteering-Management tool</a>
-        </p>
-        <p>
-            Reach out to the Events Working Group at
-            <a href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</a>
-            or email the conference organizers at
-            <a href="mailto:conference@foundation.matrix.org?subject=Volunteering%20for%20the%20Conference">conference@foundation.matrix.org</a>.
-        </p>
-
+    <section>
+        <TextAndImage imgSrc={EnjoyConference} reverse={true}>
+            <h2>Interested?</h2>
+            <p>
+                You can register yourself for volunteer shifts at our <a href="https://volunteer.matrix-community.events">Volunteering-Management tool</a>
+            </p>
+            <p>
+                Reach out to the Events Working Group at <a href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</a>
+                or email the conference organizers at <a href="mailto:conference@foundation.matrix.org?subject=Volunteering%20for%20the%20Conference">conference@foundation.matrix.org</a>.
+            </p>
+        </TextAndImage>
     </section>
 </BaseLayout>
