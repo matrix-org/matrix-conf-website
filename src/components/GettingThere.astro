@@ -34,24 +34,66 @@ import Map from "../img/Map.avif";
         margin-block-start: 0.5rem;
     }
 
-    .tram-D {
+    .train-P {
         padding: 0.1em 0.5em;
         color: #fff;
-        background-color: #009933;
+        background-color: #716CB8;
         border-radius: 4px;
     }
 
-    .ter {
+    .train-O {
         padding: 0.1em 0.5em;
         color: #fff;
-        background-color: #0060a1;
+        background-color: #706C6A;
+        border-radius: 4px;
+    }
+
+    .bus-1 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #79A340;
         border-radius: 4px;
     }
 
     .bus-2 {
         padding: 0.1em 0.5em;
         color: #fff;
-        background-color: #e10d19;
+        background-color: #249ECF;
+        border-radius: 4px;
+    }
+
+    .bus-6 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #079EA5;
+        border-radius: 4px;
+    }
+
+    .bus-7 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #3A308C;
+        border-radius: 4px;
+    }
+
+    .bus-8 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #E46DA6;
+        border-radius: 4px;
+    }
+
+    .bus-11 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #86582E;
+        border-radius: 4px;
+    }
+
+    .bus-15 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #AB7A27;
         border-radius: 4px;
     }
 
@@ -125,33 +167,36 @@ import Map from "../img/Map.avif";
         </div>
         <div class="item">
             <h3>Public Transportation</h3>
-            <ul>
-                <li>
-                    Tram Line <span class="tram-D">D</span> - Get off at "Port du Rhin" or "Starcoop"
-                </li>
-                <li>
-                    Bus Line <span class="bus-2">2</span> - Get off at "Capitainerie"
-                </li>
-            </ul>
             <p>
-                You can book a ticket for public transport using the CTS App.
+                Malmö has an excellent public transport system, including buses and trains.
+                The conference venue is a 3 minutes walk from the <b>Triangeln</b> train station and bus stop.
+                It is serviced by trains of the Swedish <span class="train-P">Pågatåg</span> network,
+                the <span class="train-O">Öresundståg</span> network connecting Malmö and Copenhagen,
+                and bus lines <span class="bus-1">1</span>, <span class="bus-2">2</span>, <span class="bus-6">6</span>, <span class="bus-7">7</span>, <span class="bus-8">8</span>, <span class="bus-11">11</span>, <span class="bus-15">15</span>.
+                A public transport map of the city is <a
+                    href="https://www.skanetrafiken.se/globalassets/kartor/linjekartor/malmo_linjenatskarta.pdf">
+                    available as PDF</a>.
+            </p>
+            <p>
+                The Skånetrafiken app is the best way to buy tickets and navigate the city.
+                Bicycles and electric scooters are also popular for shorter distances.
                 The app is available in English.
             </p>
             <div class="apps-row">
                 <a
-                    href="https://apps.apple.com/fr/app/cts-transports-strasbourg/id1241895758"
+                    href="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en"
                     ><img
                         src="/download-app-store.svg"
-                        alt="Download CTS on the Apple App Store."
+                        alt="Download Skånetrafiken on the Apple App Store."
                         width="180"
                         height="60"
                     /></a
                 >
                 <a
-                    href="https://play.google.com/store/apps/details?id=fr.cts.strasbourg.ugo"
+                    href="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington"
                     ><img
                         src="/download-google-play.svg"
-                        alt="Download CTS on the Google Play Store."
+                        alt="Download Skånetrafiken on the Google Play Store."
                         width="200"
                         height="60"
                     /></a
@@ -162,24 +207,13 @@ import Map from "../img/Map.avif";
         <div class="item">
             <h3>By Train</h3>
             <p>
-                The venue is located right at the border between Strasbourg (FR) and
-                Kehl (DE). Depending on whether you are arriving from France or from Germany,
-                you can either book a ticket to the French station <b>Strasbourg</b> or
-                the German station <b>Kehl</b>.
-            </p>
-            <p>
-                Attendees arriving via France are advised to book a ticket to <a
-                href="https://www.sncf-connect.com/en-en/home/search/od?destinationLabel=Strasbourg&destinationId=RESARAIL_STA_8721202"
-                target="_blank">Strasbourg</a>. The railway station is located in the city
-                centre and the venue can be reached using the Tramway Line
-                <span class="tram-D">D</span> or Bus Line <span class="bus-2">2</span>.
-            </p>
-            <p>
-                Attendees looking for a travel option without compulsory reservation when arriving via Germany can
-                alternatively book a ticket to <b>Kehl</b>. The railway station is located
-                on the opposite side of the Rhine river. The venue is a 20 minutes walk from
-                Kehl and can alternatively be reached using the Tramway Line
-                <span class="tram-D">D</span>.
+                The venue is located right in the city center of Malmö, about 3 minutes from the central station.
+                We recommend traveling by train if you can, as the most sustainable and environmentally friendly way to travel.
+                Riding a train also gives you th opportunity to meet other conference attendees,
+                whether you coordinated ahead of time via <a
+                    href="https://matrix.to/#/#events-wg:matrix.org">
+                    chat
+                </a> or recognise each other by the Matrix stickers on your laptops while on the train.
             </p>
             <div class="apps-row">
                 <a
@@ -204,16 +238,14 @@ import Map from "../img/Map.avif";
         <div class="item">
             <h3>By Plane</h3>
             <p>
-                Strasbourg's Airport (SXB) is another option for attendees
-                coming from farther. The <span class="ter">TER</span> train from <a
-                href="https://www.sncf-connect.com/en-en/home/search?userInput=From+Entzheim+Airport+to+Strasbourg&destinationId=RESARAIL_STA_8721452"
-                target="_blank">Entzheim Aéroport</a> railway station connects to Strasbourg's city
-                center in about 10 min. A taxi ride will get you there in about 20 min.
+                Malmö has an international airport (MMX), but flights tend to be less frequent and more expensive.
+                An often better alternative is to fly to Copenhagen (CPH), Denmark, and take the train to Malmö.
             </p>
             <p>
-                From the major international airports in Paris (CDG) and Frankfurt (FRA)
-                you can conveniently reach the venue by a 2 hours train ride. Check the "By Train"
-                section for advice!
+                The most common and efficient way to reach Malmö from Copenhagen is by train.
+                Trains depart from Copenhagen Central Station (København H) every 20 minutes, with a travel time of about 35 minutes to Malmö Central Station.
+                You can also take a direct train from Copenhagen Airport, which is convenient if you’re flying in.
+                Remember to bring your passport, as border checks are conducted.
             </p>
         </div>
     </div>
