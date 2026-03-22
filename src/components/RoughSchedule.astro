@@ -17,9 +17,18 @@
 
     .schedule-grid {
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        border: 1px solid #636569;
-        gap: 1px;
+        grid-template-columns: 1fr 3fr;
+        border-left: 1px solid #636569;
+        border-right: 1px solid #636569;
+        border-bottom: 1px solid #636569;
+    }
+
+    .schedule-grid:has(+ .highlight) {
+        border-bottom: 0;
+    }
+
+    .schedule-grid:first-of-type {
+        border-top: 1px solid #636569;
     }
 
     @media (max-width: 700px) {
@@ -30,13 +39,32 @@
 
     .schedule-grid > * {
         padding: 1rem;
-        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .highlight {
+        border: 1px solid;
+        border-image: linear-gradient(
+            314deg,
+            #f45b69 15.02%,
+            #f6ae2d 32.83%,
+            #a6ffa1 50.64%,
+            #75f4f4 68.44%,
+            #ae7fe9 86.25%
+        ) 30;
     }
 
     .day {
         display: flex;
         flex-direction: column;
         justify-content: start;
+        border-right: 1px solid #636569;
+    }
+
+    @media (max-width: 700px) {
+        .day {
+            border-right: 0;
+            border-bottom: 1px solid #636569;
+        }
     }
 
     .day .date {
@@ -71,7 +99,9 @@
                 and a rough agenda. Attendees arriving during the afternoon can join at any time!
             </p>
         </div>
+    </div>
 
+    <div class="schedule-grid">
         <div class="day">
             <div class="date">Tuesday 20th</div>
             <div class="time">18:00 - 23:00</div>
@@ -84,7 +114,9 @@
             <p>There will be vegetarian and vegan options.</p>
 <p>Please see our <a href="/sponsor">sponsoring packages</a> for sponsoring the Welcome Party.<p>
         </div>
+    </div>
 
+    <div class="schedule-grid highlight">
         <div class="day">
             <div class="date">Wednesday 21st - Thursday 22nd</div>
             <div class="time">10:00 - 18:00</div>
@@ -98,7 +130,9 @@
                 There will be an all-day buffet included in the ticket price, including breakfast in the morning and lunch around noon, as well as coffee and cold drinks.
             </p>
         </div>
+    </div>
 
+    <div class="schedule-grid">
         <div class="day">
             <div class="date">Friday 23rd</div>
             <div class="time">12:00 - 18:00</div>
