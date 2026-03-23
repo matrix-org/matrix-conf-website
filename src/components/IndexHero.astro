@@ -1,12 +1,16 @@
 ---
 import PrimaryCta from "./PrimaryCta.astro";
-import LogoPattern from "./logo-pattern.svg";
-import LogoNoPattern from "./logo-no-pattern.svg";
+import Logo from "./logo.svg";
 import { Image } from "astro:assets";
 ---
 
 <style>
     .content-wrapper {
+        --pattern-height: 64px;
+        --hero-columns: 2;
+        --logo-width-base: var(--max-page-width);
+        --pattern-cell-size: calc(var(--logo-width-base) / (var(--hero-columns) * 10));
+
         padding: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -16,12 +20,23 @@ import { Image } from "astro:assets";
         display: grid;
         place-content: center end;
         background: url("/pattern-2h.svg");
-        background-size: contain;
-        background-position: center right;
+
+        background-repeat: repeat;
+        background-position: top right;
+        background-size: calc(var(--logo-width-base)/(var(--hero-columns)*2));
+        min-height: round(up, calc(8*var(--pattern-cell-size)), calc(48px*2)); /* height of the logo plus 1 row of pattern around it */
+        height: round(up, 100%, calc(48px*2));
     }
 
-    .small-size {
-        display: none;
+    .logo-wrapper {
+        place-items: center end;
+        margin-block: var(--pattern-cell-size);
+        padding-inline-end: clamp(0px,10vw,var(--pattern-cell-size));
+    }
+
+    .logo-bg {
+        background-color: #000;
+        max-width: calc(8*var(--pattern-cell-size));
     }
 
     h1 {
@@ -36,7 +51,7 @@ import { Image } from "astro:assets";
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        padding: 60px;
+        padding: var(--pattern-cell-size);
     }
 
     .right-half p {
@@ -49,19 +64,20 @@ import { Image } from "astro:assets";
             grid-template-columns: 1fr;
         }
 
-        .full-size {
-            display: none;
+        .logo-wrapper {
+            padding-inline-end: 0;
         }
 
-        .small-size {
-            display: block;
-            margin-block: 46px;
+        .logo {
+            width: calc(4*var(--pattern-cell-size));
         }
 
         .left-half {
             place-content: center;
             background-image: url("/pattern.svg");
-            background-position: center;
+            background-position: calc(50% - 24px);
+            min-height: unset;
+            height: unset;
         }
 
         .right-half {
@@ -71,10 +87,11 @@ import { Image } from "astro:assets";
 </style>
 <div class="content-wrapper">
     <div class="left-half">
-        <div class="before"></div>
-        <Image src={LogoPattern} class="full-size" alt="" />
-        <Image src={LogoNoPattern} class="small-size" alt="" />
-        <div class="after"></div>
+        <div class="logo-wrapper">
+            <div class="logo-bg">
+                <Image src={Logo} class="logo" alt="" />
+            </div>
+        </div>
     </div>
     <div class="right-half">
         <h1>
