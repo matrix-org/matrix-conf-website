@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import IndexHero from "../components/IndexHero.astro";
 import Teaser2026 from "../components/Teaser2026.astro";
 import Conf2025 from "../components/Conf2025.astro";
+import Talks2025 from "../components/Talks2025.astro";
+import RoughSchedule from "../components/RoughSchedule.astro";
 import WhatsNext from "../components/WhatsNext.astro";
 ---
 
@@ -11,13 +13,14 @@ import WhatsNext from "../components/WhatsNext.astro";
         padding: 0;
     }
 
-    #matrix-conf-2025 {
+    #matrix-conf-2025, #whats-next {
         background-image: url("/grey-repeating-lines.svg");
     }
 </style>
 <BaseLayout
     pageTitle="The Matrix Conference"
     description="Come along to see the latest and greatest progress in the Matrix world! From huge government deployments to the latest innovations, hang out with your peers to share the best learning, insights, projects and tips!"
+    colorstripe={false}
 >
     <section id="hero">
         <IndexHero />
@@ -27,6 +30,10 @@ import WhatsNext from "../components/WhatsNext.astro";
     </section>
     <section id="matrix-conf-2025">
         <Conf2025 />
+        <Talks2025 />
+    </section>
+    <section id="schedule">
+        <RoughSchedule />
     </section>
     <section id="whats-next">
         <WhatsNext />

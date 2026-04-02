@@ -1,81 +1,73 @@
 ---
-import Hero from "../components/Hero.astro";
 import RoughSchedule from "../components/RoughSchedule.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Talks2025 from "../components/Talks2025.astro";
+import CfP from "../components/CfP.astro";
 ---
 
 <style>
-    section#schedule {
+    .content-wrapper {
         max-width: var(--max-page-width);
         margin-inline: auto;
+    }
+
+    .box {
+        border: 1px solid #636569;
+        padding: 20px;
+        background-color: var(--bg-color);
+    }
+
+    section:nth-child(even) {
+        background-image: url("/grey-repeating-lines.svg");
     }
 
     h2 {
         font-size: 2rem;
         font-weight: 700;
-        margin-block-end: 2rem;
-        text-align: center;
     }
 
     p {
         font-size: 1.125rem;
         margin-block: 1rem;
     }
-
-    p a {
-        color: var(--link-color);
-    }
-
-    @media (width <= 710px) {
-        #full-schedule {
-            background-color: #fff; /* Needed to keep the schedule legible at small size */
-        }
-    }
-
-    #full-schedule {
-        padding-inline: 0;
-        overflow-x: auto;
-    }
 </style>
 <BaseLayout
     pageTitle="Schedule of The Matrix Conference"
     description=" Whether you want to hear how an organization deployed Matrix at scale or learn what the engineers are doing to improve the protocol, The Matrix Conference has a track for you."
 >
-    <Hero
-        title="Get ready for the show!"
-        description="Whether you want to hear how an organization deployed Matrix at scale or learn what the engineers are doing to improve the protocol, The Matrix Conference has a track for you."
-        ctaText="Get Tickets"
-        ctaHref="/register"
-    />
     <section id="schedule">
         <RoughSchedule />
-        <p>
-            Stay tuned by following us on <a href="https://matrix.org/blog/"
-                >the Matrix Blog</a
-            >, our <a href="https://uk.linkedin.com/company/matrix-org"
-                >LinkedIn account</a
-            > or by <a href="https://mastodon.matrix.org/@matrix"
-                >following us on the fediverse</a
-            >!
-        </p>
+        <div class="content-wrapper">
+            <p>
+                Stay tuned by following us on <a href="https://matrix.org/blog/"
+                    >the Matrix Blog</a
+                >, our <a href="https://uk.linkedin.com/company/matrix-org"
+                    >LinkedIn account</a
+                > or by <a href="https://mastodon.matrix.org/@matrix"
+                    >following Matrix.org on the fediverse</a
+                >!
+            </p>
+        </div>
     </section>
-    <section id="full-schedule">
-        <pretalx-schedule
-            event-url="https://cfp.2025.matrix.org/matrix-conf-2025/"
-            locale="en"
-            format="grid"
-            style="--pretalx-clr-primary: #000000"></pretalx-schedule>
-        <noscript>
-            <div class="pretalx-widget">
-                <div class="pretalx-widget-info-message">
-                    JavaScript is disabled in your browser. To access our
-                    schedule without JavaScript, please <a
-                        target="_blank"
-                        href="https://cfp.2025.matrix.org/matrix-conf-2025/schedule/"
-                        >click here</a
-                    >.
-                </div>
-            </div>
-        </noscript>
+    <section id="cfp">
+        <div class="content-wrapper box">
+            <CfP />
+        </div>
     </section>
+    <section id="talks-2025">
+        <Talks2025 />
+    </section>
+    <!-- TODO: reenable
+    <section id="tickets">
+        <div class="content-wrapper box">
+            <h2>Tickets</h2>
+            <p>
+                Whether you want to hear how an organization deployed Matrix at scale
+                or learn what the engineers are doing to improve the protocol,
+                The Matrix Conference has a track for you.
+            </p>
+            <PrimaryCta href="/register">Get Tickets</PrimaryCta>
+        </div>
+    </section>
+    -->
 </BaseLayout>

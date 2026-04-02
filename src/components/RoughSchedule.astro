@@ -3,7 +3,7 @@
 ---
 
 <style>
-    #schedule {
+    .content-wrapper {
         max-width: var(--max-page-width);
         margin-inline: auto;
     }
@@ -17,9 +17,18 @@
 
     .schedule-grid {
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        border: 1px solid #636569;
-        gap: 1px;
+        grid-template-columns: 1fr 3fr;
+        border-left: 1px solid #636569;
+        border-right: 1px solid #636569;
+        border-bottom: 1px solid #636569;
+    }
+
+    .schedule-grid:has(+ .highlight) {
+        border-bottom: 0;
+    }
+
+    .schedule-grid:first-of-type {
+        border-top: 1px solid #636569;
     }
 
     @media (max-width: 700px) {
@@ -30,13 +39,32 @@
 
     .schedule-grid > * {
         padding: 1rem;
-        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .highlight {
+        border: 1px solid;
+        border-image: linear-gradient(
+            314deg,
+            #f45b69 15.02%,
+            #f6ae2d 32.83%,
+            #a6ffa1 50.64%,
+            #75f4f4 68.44%,
+            #ae7fe9 86.25%
+        ) 30;
     }
 
     .day {
         display: flex;
         flex-direction: column;
         justify-content: start;
+        border-right: 1px solid #636569;
+    }
+
+    @media (max-width: 700px) {
+        .day {
+            border-right: 0;
+            border-bottom: 1px solid #636569;
+        }
     }
 
     .day .date {
@@ -51,62 +79,79 @@
     p {
         margin-block: 0.5em;
     }
-
-    a {
-        color: var(--link-color);
-    }
 </style>
-<div id="schedule">
+<div class="content-wrapper">
     <h2>Schedule</h2>
 
     <div class="schedule-grid">
         <div class="day">
-            <span class="date">Wednesday 15</span>
+            <span class="date">Tuesday 20th</span>
             <span class="time">13:00 - 18:00</span>
         </div>
         <div class="events">
-            <h3>Barcamp / Unconference</h3>
+            <h3>Networking Event</h3>
             <p>
-                A self-organised and open gathering at the venue to get to know the participants,
-                the community, and shared areas of interest.
+                A first afternoon to check-in and join an informal event to network your peers around thematic tables.
+                Facilitators will help break the ice and get the conversation going.
             </p>
             <p>
                 We start with a common kick-off session where we form the first clusters
                 and a rough agenda. Attendees arriving during the afternoon can join at any time!
+                While this is not a core day of the conference,
+                we strongly recommend attending to get a chance to meet people who use, work on, or purchase Matrix software and services.
             </p>
         </div>
+    </div>
 
+    <div class="schedule-grid">
         <div class="day">
-            <div class="date">Wednesday 15</div>
+            <div class="date">Tuesday 20th</div>
             <div class="time">18:00 - 23:00</div>
         </div>
         <div class="events">
-            <h3>Welcome party</h3>
+            <h3>Welcome Party</h3>
             <p>
-                Joins us in the city center of Strasbourg in the bar <a
-                    href="https://www.lemeteor.fr/">Le Météor</a
-                > to enjoy local beers and the famous Flammekueche thanks to our
-                sponsors <a href="https://element.io">Element</a> and <a
-                    href="https://rocket.chat">Rocket.Chat</a
-                >!
+                Joins us in the city center of Malmö to kick off the Conference with a bang!
             </p>
-            <p>Le Météor has vegetarian and vegan options.</p>
+            <p>There will be vegetarian and vegan options.</p>
+<p>Please see our <a href="/sponsor">sponsoring packages</a> for sponsoring the Welcome Party.<p>
         </div>
+    </div>
 
+    <div class="schedule-grid highlight">
         <div class="day">
-            <div class="date">Thursday 16 - Saturday 18</div>
+            <div class="date">Wednesday 21st - Thursday 22nd</div>
             <div class="time">10:00 - 18:00</div>
         </div>
         <div class="events">
             <h3>Conference Days</h3>
             <p>
-                The detailed schedule of the conference is available <a
-                    href="/schedule#full-schedule">on the web</a> and can also
-                be imported to compatible schedule reader apps such as <a
-                    href="https://wilmer.gaa.st/main.php/giggity.html"
-                    target="_blank">giggity</a> using <a
-                href="https://cfp.2025.matrix.org/matrix-conf-2025/schedule/export/schedule.xml"
-                target="_blank"><code>https://cfp.2025.matrix.org/matrix-conf-2025/schedule/export/schedule.xml</code></a>.
+                The detailed schedule of the conference will be available in July.
+            </p>
+            <p>
+                There will be an all-day buffet included in the ticket price,
+                including sandwiches for breakfast in the morning,
+                lunch around noon,
+                and pastries in the afternoon,
+                as well as coffee, tea and cold drinks.
+            </p>
+        </div>
+    </div>
+
+    <div class="schedule-grid">
+        <div class="day">
+            <div class="date">Friday 23rd</div>
+            <div class="time">12:00 - 18:00</div>
+        </div>
+        <div class="events">
+            <h3>Community Hackathon</h3>
+            <p>
+                Join us at for a day of collaborating on Matrix projects
+                and putting all the ideas we just had into action!
+            </p>
+            <p>
+                The venue for the hackathon will be announced soon and
+                will be reachable within at most one hour by public transport from the main conference venue.
             </p>
         </div>
     </div>
