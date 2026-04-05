@@ -32,7 +32,9 @@ import LinkIcon from '../img/link.svg';
     @use "sass:color";
 
     .talk-card {
-        border: 1px solid #D2D2D2;
+        --border-color: #d2d2d2;
+
+        border: 1px solid var(--border-color);
         display: flex;
         flex-flow: wrap;
         overflow: clip;
@@ -87,7 +89,7 @@ import LinkIcon from '../img/link.svg';
 
         .additional-links {
             align-self: end;
-            border-top: 1px solid #D2D2D2;
+            border-top: 1px solid var(--border-color);
             width: 100%;
 
             > p, > a {
@@ -95,7 +97,7 @@ import LinkIcon from '../img/link.svg';
             }
 
             > *:not(:last-child) {
-                border-bottom: 1px solid #D2D2D2;
+                border-bottom: 1px solid var(--border-color);
             }
 
             a {
@@ -142,10 +144,13 @@ import LinkIcon from '../img/link.svg';
     }
 
     .permalink-2 {
-        color: black;
-        padding: 4px;
-        position: absolute;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        border-right: 1px solid var(--border-color);
+        color: var(--fg-color);
         left: 0;
+        padding: 10px;
+        position: absolute;
         top: 0;
     }
 
