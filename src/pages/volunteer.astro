@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EnjoyConference from "../img/volunteering/JeromeCoquelin-MatrixHD-115.avif"
+import Hoodie from "../img/volunteering/JeromeCoquelin-MatrixHD-122.avif"
+import HeraldB from "../img/volunteering/JeromeCoquelin-MatrixHD-110.avif"
+import Welcome from "../img/volunteering/JeromeCoquelin-MatrixHD-3.avif"
+import TextAndImage from "../components/TextAndImage.astro";
+
+---
+
+<style>
+    section:nth-child(even) {
+        background-color: #1a1a1a;
+    }
+
+    section#volunteer {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    p,
+    ul {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+</style>
+<BaseLayout
+    pageTitle="Volunteer for The Matrix Conference"
+    description="To keep the ticket price accessible for everyone and provide the best experience as possible, we need volunteers to lend a hand!"
+>
+    <section>
+        <TextAndImage imgSrc={Welcome}>
+            <h2>Join Our Team!</h2>
+            <p>
+                Help make this conference unforgettable, join the Volunteer Team!
+            </p>
+            <p>
+                Much like Matrix is a collaborative project, so is running The Matrix Conference.
+                Join a well-established team of volunteers and be part of something special!
+            </p>
+        </TextAndImage>
+    </section>
+
+    <section>
+        <TextAndImage imgSrc={HeraldB} reverse={true}>
+            <h2>Where You Can Lend a Hand</h2>
+            <ul>
+                <li>Installing the equipment before the conference</li>
+                <li>Welcoming attendees, scanning tickets, and handing out badges during the event</li>
+                <li>Introducing speakers on stage</li>
+                <li>Handing out pre-ordered merch and selling merch</li>
+                <li>Supporting the video recording team by operating cameras and other equipment</li>
+                <li>Helping people with accessibility needs navigate the conference</li>
+                <li>Putting the equipment away after the conference</li>
+            </ul>
+        </TextAndImage>
+    </section>
+
+    <section>
+        <TextAndImage imgSrc={Hoodie}>
+            <h2>Volunteering Is Rewarding!</h2>
+            <p>As a volunteer, you'll get:</p>
+            <ul>
+                <li>A free ticket to the conference</li>
+                <li>A limited edition zipper hoodie to show off your support</li>
+                <li>Lots of insights behind the scenes of the Conference</li>
+                <li>Direct contact with speakers, attendees, the team and other volunteers</li>
+                <li>An opportunity to learn how to use professional equipment</li>
+                <li>With a commitment of 2h per shift and per day, you will still have plenty of time to enjoy the conference yourself!</li>
+            </ul>
+        </TextAndImage>
+    </section>
+
+    <section>
+        <TextAndImage imgSrc={EnjoyConference} reverse={true}>
+            <h2>Interested?</h2>
+<!--
+            <p>
+                You can register yourself for volunteer shifts at our <a href="TODO">shift management tool</a>.
+            </p>
+-->
+            <p>
+                Reach out to the Events Working Group at <a href="https://matrix.to/#/#events-wg:matrix.org">#events-wg:matrix.org</a>
+                or email the conference organisers at <a href="mailto:conference@foundation.matrix.org?subject=Volunteering%20for%20the%20Conference">conference@foundation.matrix.org</a>.
+            </p>
+        </TextAndImage>
+    </section>
+</BaseLayout>
