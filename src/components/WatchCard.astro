@@ -36,8 +36,7 @@ import LinkIcon from '../img/link.svg';
 
         border: 1px solid var(--border-color);
         display: flex;
-        flex-flow: wrap;
-        overflow: clip;
+        flex-direction: column;
         position: relative;
 
         a {
@@ -45,6 +44,7 @@ import LinkIcon from '../img/link.svg';
         }
 
         .info-container {
+            background-color: var(--bg-primary);
             padding: 24px;
             display: flex;
             flex-direction: column;
@@ -89,6 +89,7 @@ import LinkIcon from '../img/link.svg';
 
         .additional-links {
             align-self: end;
+            background-color: var(--bg-primary);
             border-top: 1px solid var(--border-color);
             width: 100%;
 
@@ -111,6 +112,26 @@ import LinkIcon from '../img/link.svg';
                 background-color: color.adjust(#000, $lightness: 15%);
             }
         }
+    }
+
+    .card-content {
+        background-color: var(--bg-primary);
+        flex-grow: 1;
+    }
+
+    /* Add a spezi gradient border around the active card */
+    .talk-card.active {
+        border: 1px solid transparent;
+    }
+    .talk-card.active::before {
+        background: var(--gradient);
+        content: "";
+        height: calc(100% + 2px);
+        left: -1px;
+        position: absolute;
+        top: -1px;
+        width: calc(100% + 2px);
+        z-index: -1;
     }
 
     .talk-card__thumbnail {
@@ -169,7 +190,7 @@ import LinkIcon from '../img/link.svg';
         <LinkIcon height="16" />
     </a>
     <div id={titleSlug} aria-hidden="true" class="permalink-anchor" />
-    <div>
+    <div class="card-content">
         <Image
             src={thumbnailUrl}
             class="talk-card__thumbnail"
@@ -244,3 +265,70 @@ import LinkIcon from '../img/link.svg';
         }
     </div>
 </div>
+
+<script>
+    /**
+     * Remove all "active" classes from talk cards.
+     */
+    const deHighlightActiveTalks = () => {
+        const activeTalkCards = document.querySelectorAll('.talk-card.active');
+        activeTalkCards.forEach((activeTalkCard) => {
+            activeTalkCard.classList.remove('active');
+        })
+    }
+
+    /**
+     * Add the "active" class to the talk card with the same ID from the URL hash.
+     */
+    const highlightActiveTalk = (url: URL) => {
+        const idFromUrl = url.hash.substring(1);
+
+        if (idFromUrl === "") {
+            return;
+        }
+
+        const anchor = document.getElementById(idFromUrl);
+
+        if (anchor === null) {
+            return;
+        }
+
+        const talkCard = anchor.closest('.talk-card');
+
+        if (talkCard === null) {
+            return;
+        }
+
+        talkCard.classList.add('active');
+    }
+
+    /**
+     * Update the highlighted talk.
+     */
+    const onNavigationChange = (url: URL) => {
+        deHighlightActiveTalks();
+        highlightActiveTalk(url);
+    }
+
+    const setUpOnNavigationChangeListener = () => {
+        // @ts-expect-error
+        if (navigation === undefined) {
+            // navigation API unavailable
+            return;
+        }
+
+        // @ts-expect-error
+        navigation.addEventListener("navigate", (event: NavigateEvent) => {
+            if (event.hashChange === false) {
+                return;
+            }
+
+            const targetUrl = new URL(event.destination.url);
+            onNavigationChange(targetUrl);
+        });
+    }
+
+    const initialUrl = new URL(window.location.href);
+    highlightActiveTalk(initialUrl);
+    setUpOnNavigationChangeListener();
+</script>
