@@ -160,11 +160,6 @@ import LinkIcon from '../img/link.svg';
     }
 
     .permalink {
-        padding-block: 6px;
-        padding-inline: 4px;
-    }
-
-    .permalink-2 {
         background-color: var(--bg-color);
         border-bottom: 1px solid var(--border-color);
         border-right: 1px solid var(--border-color);
@@ -182,7 +177,7 @@ import LinkIcon from '../img/link.svg';
 </style>
 <div class:list={['talk-card', slugify(track)]}>
     <a
-        class="permalink-2"
+        class="permalink"
         href={`#${titleSlug}`}
         aria-label={`Deep link to ${title}`}
         title={`Deep link to ${title}`}
@@ -205,14 +200,8 @@ import LinkIcon from '../img/link.svg';
                 { speakerNames }
             </div>
             <div class="talk-pills">
-                <!-- <a class="permalink" href="#bla"> -->
-                <!--     <LinkIcon height="16" /> -->
-                <!-- </a> -->
                 {track && <Pill Type="div" label={ track } />}
                 <Pill Type="div" label={ room } />
-                <!-- <a class="permalink" href="#bla"> -->
-                <!--     <LinkIcon height="16" /> -->
-                <!-- </a> -->
             </div>
         </div>
     </div>
