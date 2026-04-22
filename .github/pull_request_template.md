@@ -18,7 +18,7 @@
 
 ### Signoff
 
-Please [sign off](https://github.com/matrix-org/matrix-conf-website/blob/main/CONTRIBUTING.md) your individual commits or whole pull request.
+Please [sign off](https://github.com/matrix-org/matrix-conf-website/blob/main/CONTRIBUTING.md) your individual commits.
 
 
 
