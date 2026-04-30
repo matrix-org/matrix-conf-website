@@ -1,7 +1,7 @@
 name: PR Bot
 
 on:
-  pull_request_target:  # unblock read/write repository permission, even when it is triggered from a public fork - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
+  pull_request_target:  # zizmor: ignore[dangerous-triggers] -- unblock read/write repository permission, even when it is triggered from a public fork - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#permissions
     types: [opened, reopened, ready_for_review]  # https://docs.github.com/en/webhooks/webhook-events-and-payloads?actionType=ready_for_review#pull_request
 
 jobs:
@@ -21,6 +21,8 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         run: |
           cmd="gh pr -R ${{ github.repository }}"
+          is_bot="$($cmd view $PR_NUMBER --json 'author' | jq '.author.is_bot')"
+          if [ $is_bot = "true" ]; then exit 0; fi
           if ! $cmd view $PR_NUMBER --json 'body' | grep -q "Description"; then
             $cmd ready $PR_NUMBER --undo  # mark as draft
             $cmd edit $PR_NUMBER --add-label 'missing-template'
