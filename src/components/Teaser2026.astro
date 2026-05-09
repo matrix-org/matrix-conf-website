@@ -24,6 +24,20 @@ import CfP from "./CfP.astro";
         padding: 1rem;
     }
 
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    @media (min-width: 800px) {
+        .actions {
+            flex-direction: row;
+            margin-top: auto;
+            width: fit-content;
+        }
+    }
+
     .smol {
         @media (min-width: 800px) {
             flex-basis: 40%;
@@ -64,12 +78,20 @@ import CfP from "./CfP.astro";
                 Learn all about the venue, how to get there, where to stay,
                 and any partner offers available with your #MatrixConf ticket.
             </p>
-            <PrimaryCta
-                href="/attend"
-                flexBottom={true}
-            >
-            Practical Info
-            </PrimaryCta>
+            <div class="actions">
+                <PrimaryCta
+                    href="/attend"
+                    flexBottom={true}
+                >
+                    Practical Info
+                </PrimaryCta>
+                <PrimaryCta
+                    href="/register"
+                    flexBottom={true}
+                >
+                    Tickets
+                </PrimaryCta>
+            </div>
         </div>
         <div class="item smol">
             <h2>Become a Sponsor</h2>
