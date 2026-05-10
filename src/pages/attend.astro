@@ -1,10 +1,14 @@
 ---
 import GettingThere from "../components/GettingThere.astro";
 import HealthSafetyPolicy from "../components/HealthSafetyPolicy.astro";
+import PrimaryCta from "../components/PrimaryCta.astro";
 import TextAndImage from "../components/TextAndImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Venue from "../img/Scandic.avif";
 import Buffet from "../img/Buffet.png";
+
+const pageTitle = "Useful Facts";
+const pageDescription = "Join us for The Matrix Conference from 20th to 23rd October, 2026. The four day conference will take place in Malmö, Sweden. Talks will be streamed live and virtual attendees will be able to ask speakers questions.";
 ---
 
 <style>
@@ -32,6 +36,10 @@ import Buffet from "../img/Buffet.png";
         flex-grow: 1;
     }
 
+    .actions {
+        margin-top: 1rem;
+    }
+
     .smol {
         @media (min-width: 800px) {
             flex-basis: 40%;
@@ -39,9 +47,26 @@ import Buffet from "../img/Buffet.png";
     }
 </style>
 <BaseLayout
-    pageTitle="Useful Facts"
-    description="Join us for The Matrix Conference from 20th to 23rd October, 2026. The four day conference will take place in Malmö, Sweden. Talks will be streamed live and virtual attendees will be able to ask speakers questions."
+    pageTitle={ pageTitle }
+    description={ pageDescription }
 >
+    <section id="overview">
+        <div class="content-wrapper">
+            <h2>{ pageTitle }</h2>
+            <p>
+                { pageDescription }
+            </p>
+            <div class="actions">
+                <PrimaryCta
+                    href="/register"
+                    flexBottom={true}
+                >
+                    Get Your Tickets
+                </PrimaryCta>
+            </div>
+        </div>
+    </section>
+
     <section id="venue">
         <TextAndImage imgSrc={Venue}>
             <h2>The Venue</h2>
