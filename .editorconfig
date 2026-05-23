@@ -12,5 +12,5 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 
 # GitHub workflows
-[*.yml]
+[*.ya?ml]
 indent_size = 2
