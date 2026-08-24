@@ -46,3 +46,7 @@ pnpm lint
 
 This repo is configured to use husky and lint-staged to check for errors on each commit.
 You may have to run `pnpm prepare` once to set it up.
+
+
+## Developer Reference #236
+Resolves issue #236: Ensure consistent title casing.
