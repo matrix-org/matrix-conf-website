@@ -3,8 +3,6 @@ import PrimaryCta from "../components/PrimaryCta.astro";
 import TextAndImage from "../components/TextAndImage.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import GettingThere from "../components/GettingThereHackathon.astro";
-
 import Fosdem from "../img/Fosdem.avif";
 import Fosdem2 from "../img/Fosdem2.avif";
 
@@ -78,17 +76,35 @@ const pageDescription = "Join us for a hackathon on 23 October 2026. In collabor
     	<TextAndImage imgSrc={ Fosdem } reverse={ true }>
     		<h2>Shape the Future of Matrix</h2>
     		<p>
-    				There are many activities to take part in during the hackathon, including:
-      	</p>
-         <ul>
+    			There are many activities to take part in during the hackathon, including:
+      	    </p>
+             <ul>
          		<li>Participating in sprints organised by the Decentralisation, Website & Content, or 
          		Events Working Groups</li>
-            <li>Adding or improving a feature in a client, bot, bridge, or server</li>
-            <li>Developing a proposal for a Matrix Spec Change</li>
-        </ul>
+                <li>Adding or improving a feature in a client, bot, bridge, or server</li>
+                <li>Developing a proposal for a Matrix Spec Change</li>
+            </ul>
     	</TextAndImage>
     </section>
     <section id="getting-there">
-        <GettingThere />
+        <div class="items">
+            <div class="item">
+                <h2>Getting There</h2>
+                <p>
+                    The hackathon marks the end of the conference and takes place in Copenhagen, Denmark, following
+                    the main conference in Malmö, Sweden. Travelling between the two locations is straightforward.
+                </p>
+                <p>
+                	You can either take the regional train from Malmö to Ørestad and transfer to bus 8A, getting off
+                    at Sluseholmen St, or take the regional train to Copenhagen Central Station (København H) and continue
+                    by metro on line M4 to Sluseholmen St.
+                </p>
+                <p>
+                	Public transport tickets can be purchased easily through the
+                    <a href="https://www.rejsekort.dk/da/rejsekort_app">Rejsekort app</a>, while Aalborg University’s
+                    <a href="https://www.en.its.aau.dk/app/aau-map">map app</a> helps you navigate the campus and surrounding area.
+            	</p>
+            </div>
+        </div>
     </section>
 </BaseLayout>
