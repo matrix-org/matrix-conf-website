@@ -1,0 +1,94 @@
+---
+import PrimaryCta from "../components/PrimaryCta.astro";
+import TextAndImage from "../components/TextAndImage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import GettingThere from "../components/GettingThereHackathon.astro";
+
+import Fosdem from "../img/Fosdem.avif";
+import Fosdem2 from "../img/Fosdem2.avif";
+
+const pageTitle = "Attend the hackathon"
+const pageDescription = "Join us for a hackathon on 23 October 2026. In collaboration with Dr Carla Griggio and the mInt Research Lab on User-Centered Messaging Interoperability at the Department of Computer Science, Aalborg University, the hackathon will take place in Copenhagen, Denmark."
+---
+
+<style>
+    section:nth-child(even) {
+        background-color: #1a1a1a;
+    }
+
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .items {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .actions {
+        margin-top: 1rem;
+    }
+
+    p,
+    ul {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+</style>
+<BaseLayout
+	pageTitle={ pageTitle }
+	description={ pageDescription }
+>
+    <section id="overview">
+    	<TextAndImage imgSrc={ Fosdem2 }>
+    		<h2>Collaborate With Others</h2>
+    		<p>
+    				Join us for a hackathon on 23 October 2026. In collaboration with Dr Carla Griggio and the
+    				mInt Research Lab on User-Centered Messaging Interoperability at the Department of
+    				Computer Science, <a href="https://www.en.aau.dk/copenhagen">Aalborg University</a>, the 
+    				hackathon will take place in Copenhagen, Denmark.
+    		</p>
+    		<p>
+    				Don't forget to grab your ticket!
+  			</p>
+    		<div class="actions">
+      		<PrimaryCta
+      			href="/register"
+      			flexBottom={ true }
+      		>
+      			Get Your Ticket
+      		</PrimaryCta>
+        </div>
+    	</TextAndImage>
+    </section>
+    <section>
+    	<TextAndImage imgSrc={ Fosdem } reverse={ true }>
+    		<h2>Shape the Future of Matrix</h2>
+    		<p>
+    				There are many activities to take part in during the hackathon, including:
+      	</p>
+         <ul>
+         		<li>Participating in sprints organised by the Decentralisation, Website & Content, or 
+         		Events Working Groups</li>
+            <li>Adding or improving a feature in a client, bot, bridge, or server</li>
+            <li>Developing a proposal for a Matrix Spec Change</li>
+        </ul>
+    	</TextAndImage>
+    </section>
+    <section id="getting-there">
+        <GettingThere />
+    </section>
+</BaseLayout>
