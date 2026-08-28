@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Venue from "../img/AAUKoebenhavn.avif";
+import TrainO from "./TrainO.astro";
 import AppStoreButtons from "./AppStoreButtons.astro";
 ---
 
@@ -77,13 +78,6 @@ import AppStoreButtons from "./AppStoreButtons.astro";
         background-color: #0099b9;
         border-radius: 4px;
     }
-
-    .train-O {
-        padding: 0.1em 0.5em;
-        color: #fff;
-        background-color: #706c6a;
-        border-radius: 4px;
-    }
 </style>
 <div class="content-wrapper">
     <h2>Getting There</h2>
@@ -106,9 +100,9 @@ import AppStoreButtons from "./AppStoreButtons.astro";
             </p>
             <p>
                 Travelling between the two locations is straightforward. You can either take a train on the
-                <span class="train-O">Öresundståg</span> network from Malmö to Ørestad and transfer to bus
+                <TrainO /> network from Malmö to Ørestad and transfer to bus
                 <span class="bus-8a">8A</span>, getting off at Sluseholmen St, or continue on the
-                <span class="train-O">Öresundståg</span> network to Copenhagen Central Station (København H) and then
+                <TrainO /> network to Copenhagen Central Station (København H) and then
                 take metro line <span class="metro-4">M4</span> to Sluseholmen St.
             </p>
             <p>
