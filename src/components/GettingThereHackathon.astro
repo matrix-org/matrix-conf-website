@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Venue from "../img/AAUKoebenhavn.avif";
+import AppStoreButtons from "./AppStoreButtons.astro";
 ---
 
 <style>
@@ -129,24 +130,12 @@ import Venue from "../img/AAUKoebenhavn.avif";
                 Public transport tickets can be purchased easily through the Skånetrafiken app. The app is available in
                 English.
             </p>
-            <div class="apps-row">
-                <a href="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en">
-                    <img
-                        src="/download-app-store.svg"
-                        alt="Download Skånetrafiken on the Apple App Store."
-                        width="180"
-                        height="60"
-                    />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington">
-                    <img
-                        src="/download-google-play.svg"
-                        alt="Download Skånetrafiken on the Google Play Store."
-                        width="200"
-                        height="60"
-                    />
-                </a>
-            </div>
+            <AppStoreButtons
+                appStoreUrl="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en"
+                appStoreAlt="Download Skånetrafiken on the Apple App Store."
+                googlePlayUrl="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington"
+                googlePlayAlt="Download Skånetrafiken on the Google Play Store."
+            />
         </div>
         <div class="item">
             <h3>Finding Your Way Around</h3>
@@ -155,24 +144,12 @@ import Venue from "../img/AAUKoebenhavn.avif";
                 <a href="https://www.en.its.aau.dk/app/aau-map">map app</a> will help you navigate the campus and
                 surrounding area. The app is available in English.
             </p>
-            <div class="apps-row">
-                <a href="https://apps.apple.com/dk/app/aau-map/id1170416623?l=en">
-                    <img
-                        src="/download-app-store.svg"
-                        alt="Download AAU Map on the Apple App Store."
-                        width="180"
-                        height="60"
-                    />
-                </a>
-                <a href="https://play.google.com/store/apps/details?id=com.mapsindoors.aau">
-                    <img
-                        src="/download-google-play.svg"
-                        alt="Download AAU Map on the Google Play Store."
-                        width="200"
-                        height="60"
-                    />
-                </a>
-            </div>
+            <AppStoreButtons
+                appStoreUrl="https://apps.apple.com/dk/app/aau-map/id1170416623?l=en"
+                appStoreAlt="Download AAU Map from the Apple App Store."
+                googlePlayUrl="https://play.google.com/store/apps/details?id=com.mapsindoors.aau"
+                googlePlayAlt="Download AAU Map from the Google Play Store."
+            />
         </div>
     </div>
 </div>
