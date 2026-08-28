@@ -1,0 +1,134 @@
+---
+import { Image } from "astro:assets";
+import Venue from "../img/AAUKoebenhavn.avif";
+import TrainO from "./TrainO.astro";
+import AppStoreButtons from "./AppStoreButtons.astro";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    h2 {
+        margin-block-end: 1rem;
+    }
+
+    h3 {
+        margin-block-end: 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    p:first-of-type {
+        margin-block-start: 0.5rem;
+    }
+
+    ul {
+        list-style: none;
+        padding-inline-start: 0;
+        margin-block-start: 0.3rem;
+    }
+
+    li {
+        font-size: 1.125rem;
+        color: var(--secondary-color);
+    }
+
+    .map-grid {
+        display: grid;
+        grid-template: repeat(2, auto) / 1fr 1fr;
+        gap: 1px;
+    }
+
+    .map-grid img {
+        grid-column: 1 / -1;
+        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .map-grid a {
+        padding: 1em;
+        display: grid;
+        place-content: center;
+        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .bus-8a {
+     	padding: 0.1em 0.5em;
+        color: #fff;
+		background-color: #cf970d;
+		border-radius: 4px;
+    }
+
+    .metro-4 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #0099b9;
+        border-radius: 4px;
+    }
+</style>
+<div class="content-wrapper">
+    <h2>Getting There</h2>
+    <div class="grid">
+        <div class="item">
+            <div class="map-grid">
+                <Image src={ Venue } alt="" />
+                <a href="https://maps.app.goo.gl/bfAYfrKsEQbiXFZ87">Google Maps</a>
+                <a href="https://www.openstreetmap.org/directions?to=55.6504856%2C12.5428797#map=15/55.65130/12.53958&layers=S">
+                  OpenStreet Map
+                </a>
+            </div>
+            <p>The address is: A. C. Meyers Vænge 15, 2450 København, Denmark (Rooms 3.084A and 3.084B)</p>
+        </div>
+        <div class="item">
+            <h3>Public Transportation</h3>
+            <p>
+                The hackathon marks the end of the conference and takes place at Aalborg University in Copenhagen,
+                Denmark, following the main conference in Malmö, Sweden.
+            </p>
+            <p>
+                Travelling between the two locations is straightforward. You can either take a train on the
+                <TrainO /> network from Malmö to Ørestad and transfer to bus
+                <span class="bus-8a">8A</span>, getting off at Sluseholmen St, or continue on the
+                <TrainO /> network to Copenhagen Central Station (København H) and then
+                take metro line <span class="metro-4">M4</span> to Sluseholmen St.
+            </p>
+            <p>
+                Public transport tickets can be purchased easily through the Skånetrafiken app. The app is available in
+                English.
+            </p>
+            <AppStoreButtons
+                appStoreUrl="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en"
+                appStoreAlt="Download Skånetrafiken on the Apple App Store."
+                googlePlayUrl="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington"
+                googlePlayAlt="Download Skånetrafiken on the Google Play Store."
+            />
+        </div>
+        <div class="item">
+            <h3>Finding Your Way Around</h3>
+            <p>
+                Whilst at the venue, Aalborg University’s
+                <a href="https://www.en.its.aau.dk/app/aau-map">map app</a> will help you navigate the campus and
+                surrounding area. The app is available in English.
+            </p>
+            <AppStoreButtons
+                appStoreUrl="https://apps.apple.com/dk/app/aau-map/id1170416623?l=en"
+                appStoreAlt="Download AAU Map on the Apple App Store."
+                googlePlayUrl="https://play.google.com/store/apps/details?id=com.mapsindoors.aau"
+                googlePlayAlt="Download AAU Map on the Google Play Store."
+            />
+        </div>
+    </div>
+</div>

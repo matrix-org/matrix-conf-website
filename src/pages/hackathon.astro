@@ -1,0 +1,143 @@
+---
+import PrimaryCta from "../components/PrimaryCta.astro";
+import TextAndImage from "../components/TextAndImage.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import GettingThere from "../components/GettingThereHackathon.astro";
+
+import Fosdem from "../img/Fosdem.avif";
+import Fosdem2 from "../img/Fosdem2.avif";
+
+const pageTitle = "Attend The Hackathon"
+const pageDescription = "Join us for a hackathon on 23rd October, 2026. In collaboration with Dr Carla Griggio and the mInt Research Lab on User-Centered Messaging Interoperability at the Department of Computer Science, Aalborg University, the hackathon will take place in Copenhagen, Denmark."
+---
+
+<style>
+    section:nth-child(even) {
+        background-color: #1a1a1a;
+    }
+
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .items {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .actions {
+        margin-top: 1rem;
+    }
+
+    p,
+    ul {
+        font-size: 1.125rem;
+        margin-block: 1em;
+        color: var(--secondary-color);
+    }
+
+    .bus-8a {
+     	padding: 0.1em 0.5em;
+        color: #fff;
+		background-color: #cf970d;
+		border-radius: 4px;
+    }
+
+    .metro-4 {
+        padding: 0.1em 0.5em;
+        color: #fff;
+        background-color: #0099b9;
+        border-radius: 4px;
+    }
+
+    .apps-row {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .apps-row img {
+        margin-block: 2rem;
+        border-radius: 0;
+        transition: transform 0.05s ease-in;
+    }
+
+    .apps-row img:hover {
+        transform: scale(1.1);
+    }
+</style>
+<BaseLayout
+	pageTitle={ pageTitle }
+	description={ pageDescription }
+>
+    <section id="overview">
+    	<TextAndImage imgSrc={ Fosdem2 }>
+    		<h2>Collaborate With Others</h2>
+    		<p>
+    			Join us for a hackathon on 23rd October, 2026. In collaboration with Dr Carla Griggio and the
+                mInt Research Lab on User-Centered Messaging Interoperability at the Department of
+    			Computer Science, <a href="https://www.en.aau.dk/copenhagen">Aalborg University</a>, the 
+    			hackathon will take place in Copenhagen, Denmark.
+    		</p>
+    		<p>
+    			Don't forget to grab your ticket!
+  			</p>
+    		<div class="actions">
+      		<PrimaryCta
+      			href="/register"
+      			flexBottom={ true }
+      		>
+      			Get Your Ticket
+      		</PrimaryCta>
+        </div>
+    	</TextAndImage>
+    </section>
+    <section>
+    	<TextAndImage imgSrc={ Fosdem } reverse={ true }>
+    		<h2>Shape the Future of Matrix</h2>
+    		<p>
+    			There are many activities to take part in during the hackathon, including:
+      	    </p>
+             <ul>
+         		<li>Participating in sprints organised by the Decentralisation, Website & Content, or 
+         		Events <a href="https://matrix.org/foundation/working-groups/">Working Groups</a></li>
+                <li>Adding or improving a feature in a client, bot, bridge, or server</li>
+                <li>Developing a proposal for a Matrix Spec Change</li>
+            </ul>
+    	</TextAndImage>
+    </section>
+    <section id="getting-there">
+        <GettingThere />
+    </section>
+    <section id="good-to-know">
+        <div class="items">
+            <div class="item">
+                <h2>Good To Know</h2>
+                <p>
+                	Denmark is part of the Schengen Area, so it is easy to travel there from many European countries, including Sweden.
+                    Please also note that Denmark uses the Danish krone (DKK), not the euro, as its currency.
+                </p>
+                <p>
+                	Refreshments at the hackathon will cater to a range of dietary needs and preferences, including vegetarian, vegan
+                    and gluten-free options.
+                </p>
+                <p>
+                    Please note that the health and safety policies, as well as the accessibility information, that apply to the
+                    main conference also apply to the hackathon. Please see the
+                    <a href="/attend/#health-and-safety">relevant information</a> for more details.
+                </p>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

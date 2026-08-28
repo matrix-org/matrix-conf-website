@@ -1,6 +1,8 @@
 ---
 import {Image} from "astro:assets";
 import Map from "../img/Map.avif";
+import TrainO from "./TrainO.astro";
+import AppStoreButtons from "./AppStoreButtons.astro";
 ---
 
 <style>
@@ -38,13 +40,6 @@ import Map from "../img/Map.avif";
         padding: 0.1em 0.5em;
         color: #fff;
         background-color: #716CB8;
-        border-radius: 4px;
-    }
-
-    .train-O {
-        padding: 0.1em 0.5em;
-        color: #fff;
-        background-color: #706C6A;
         border-radius: 4px;
     }
 
@@ -175,7 +170,7 @@ import Map from "../img/Map.avif";
                 Malmö has an excellent public transport system, including buses and trains.
                 The conference venue is a three-minute walk from the <b>Triangeln</b> train station and bus stop.
                 It is serviced by trains of the Swedish <span class="train-P">Pågatåg</span> network,
-                the <span class="train-O">Öresundståg</span> network connecting Malmö and Copenhagen,
+                the <TrainO /> network connecting Malmö and Copenhagen,
                 and bus lines <span class="bus-1">1</span>, <span class="bus-2">2</span>, <span class="bus-6">6</span>, <span class="bus-7">7</span>, <span class="bus-8">8</span>, <span class="bus-11">11</span>, <span class="bus-15">15</span>.
                 A public transport map of the city is <a
                     href="https://www.skanetrafiken.se/globalassets/kartor/linjekartor/malmo_linjenatskarta.pdf">
@@ -186,26 +181,12 @@ import Map from "../img/Map.avif";
                 Bicycles and electric scooters are also popular for shorter distances.
                 The app is available in English.
             </p>
-            <div class="apps-row">
-                <a
-                    href="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en"
-                    ><img
-                        src="/download-app-store.svg"
-                        alt="Download Skånetrafiken on the Apple App Store."
-                        width="180"
-                        height="60"
-                    /></a
-                >
-                <a
-                    href="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington"
-                    ><img
-                        src="/download-google-play.svg"
-                        alt="Download Skånetrafiken on the Google Play Store."
-                        width="200"
-                        height="60"
-                    /></a
-                >
-            </div>
+            <AppStoreButtons
+                appStoreUrl="https://apps.apple.com/en/app/sk%C3%A5netrafiken/id1180539331?l=en"
+                appStoreAlt="Download Skånetrafiken on the Apple App Store."
+                googlePlayUrl="https://play.google.com/store/apps/details?id=se.skanetrafiken.washington"
+                googlePlayAlt="Download Skånetrafiken on the Google Play Store."
+            />
         </div>
 
         <div class="item">
