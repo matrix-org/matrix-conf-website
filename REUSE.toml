@@ -1,0 +1,28 @@
+version = 1
+
+# For files or folders that can not be annotated via comment headers, add them here
+
+[[annotations]]
+path = "package.json"
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "The Matrix.org Foundation C.I.C."
+
+[[annotations]]
+path = "pnpm-lock.yaml"
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "The Matrix.org Foundation C.I.C."
+
+[[annotations]]
+path = "pnpm-workspace.yaml"
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "The Matrix.org Foundation C.I.C."
+
+[[annotations]]
+path = ".vscode"
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "The Matrix.org Foundation C.I.C."
+
+[[annotations]]
+path = "tsconfig.json"
+SPDX-License-Identifier = "Apache-2.0"
+SPDX-FileCopyrightText = "The Matrix.org Foundation C.I.C."
