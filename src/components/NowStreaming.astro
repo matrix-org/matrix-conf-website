@@ -1,5 +1,6 @@
 ---
 // "Now streaming" / "Up next" for one room, from the live pretalx schedule.
+import "../styles/schedule.css"; // track pill styles
 interface Props { room: number; }
 const { room } = Astro.props;
 ---
@@ -8,6 +9,7 @@ const { room } = Astro.props;
     .now { border-inline-start: 4px solid var(--link-color); padding-inline-start: 1rem; min-height: 3.5rem; }
     .label { color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
     .label.live { color: var(--link-color); font-weight: 700; }
+    .now .pill { margin-top: 0.5rem; }
     .then { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #3c3f44; font-size: 0.875rem; }
     .then .label { margin-inline-end: 0.5rem; color: var(--link-color); font-weight: 700; }
     .now a { color: var(--fg-color); text-decoration: none; }
@@ -17,7 +19,7 @@ const { room } = Astro.props;
 </style>
 <div class="now" data-room={room} aria-live="polite"></div>
 <script>
-    import { loadSchedule, esc, fmt } from "../scripts/schedule";
+    import { loadSchedule, esc, fmt, pill } from "../scripts/schedule";
 
     async function update() {
         const rooms = await loadSchedule().catch(() => undefined);
@@ -33,7 +35,7 @@ const { room } = Astro.props;
             el.innerHTML = s
                 ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
                    <div class="title"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></div>
-                   <div class="who">${esc(s.who)}${s.who ? " · " : ""}${f.time.format(s.start)}–${f.time.format(s.end)}</div>${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${f.time.format(next.start)}</span></div>` : ""}`
+                   <div class="who">${esc(s.who)}${s.who ? " · " : ""}${f.time.format(s.start)}–${f.time.format(s.end)}</div>${pill(s.track) && `<div>${pill(s.track)}</div>`}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${f.time.format(next.start)}</span></div>` : ""}`
                 : `<div class="label">Nothing scheduled</div>`;
         });
     }
