@@ -1,0 +1,37 @@
+---
+// "Now streaming" / "Up next" for one room, from the live pretalx schedule.
+interface Props { room: number; }
+const { room } = Astro.props;
+---
+
+<style is:global>
+    .now { border-inline-start: 4px solid var(--link-color); padding-inline-start: 1rem; min-height: 3.5rem; }
+    .label { color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
+    .title { font-weight: 700; }
+    .who { color: var(--secondary-color); font-size: 0.875rem; }
+</style>
+<div class="now" data-room={room} aria-live="polite"></div>
+<script>
+    import { loadSchedule, esc, fmt } from "../scripts/schedule";
+
+    async function update() {
+        const rooms = await loadSchedule().catch(() => undefined);
+        if (!rooms) return;
+        const now = Date.now();
+        document.querySelectorAll<HTMLElement>(".now[data-room]").forEach((el) => {
+            const r = rooms.get(Number(el.dataset.room));
+            if (!r) return;
+            const live = r.sessions.find((s) => +s.start <= now && now < +s.end);
+            const next = r.sessions.find((s) => +s.start > now);
+            const s = live ?? next;
+            const f = fmt(r.tz);
+            el.innerHTML = s
+                ? `<div class="label">${live ? "Now streaming" : "Up next"}</div>
+                   <div class="title">${esc(s.title)}</div>
+                   <div class="who">${esc(s.who)}${s.who ? " · " : ""}${f.time.format(s.start)}–${f.time.format(s.end)}${live && next ? ` · then: ${esc(next.title)}` : ""}</div>`
+                : `<div class="label">Nothing scheduled</div>`;
+        });
+    }
+    update();
+    setInterval(update, 60_000);
+</script>
