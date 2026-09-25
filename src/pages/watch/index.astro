@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import StreamNav from "../../components/StreamNav.astro";
 import ChatLinks from "../../components/ChatLinks.astro";
 import NowStreaming from "../../components/NowStreaming.astro";
 import SponsorsGrid from "../../components/SponsorsGrid.astro";
@@ -27,6 +28,7 @@ import { streams, cccStream, matrixTo } from "../../data/streams";
     <section id="streams">
         <div class="content-wrapper">
             <h1>Watch</h1>
+            <StreamNav />
             <div class="cards">
                 {streams.map((s) => (
                     <div class="card">
