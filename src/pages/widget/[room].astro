@@ -1,0 +1,42 @@
+---
+// Schedule of one room for embedding as a widget, e.g. in that room's Matrix chat:
+//   /devtools -> /addwidget https://conference.matrix.org/widget/sofya
+import WidgetLayout from "../../layouts/WidgetLayout.astro";
+import ScheduleList from "../../components/ScheduleList.astro";
+import { pretalxSchedulePage } from "../../data/pretalx";
+import { widgetRooms } from "../../data/widget-rooms";
+
+export function getStaticPaths() {
+    return widgetRooms.map((name) => ({ params: { room: name.toLowerCase() }, props: { name } }));
+}
+const { name } = Astro.props;
+---
+
+<style>
+    h1 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+    p { margin: 0 0 1rem; font-size: 0.875rem; }
+</style>
+<style is:global>
+    /* The day stays visible while scrolling through its talks; each day replaces the previous one. */
+    .schedule-list .date-separator { position: sticky; top: 0; z-index: 2; margin-block: 0; padding-block: 0.75rem; background: var(--bg-color); }
+    .schedule-list .session, .schedule-list .now-line { scroll-margin-top: 4rem; }
+</style>
+<WidgetLayout pageTitle={`${name} schedule – The Matrix Conference`}>
+    <h1>{name} schedule</h1>
+    <p><a href={pretalxSchedulePage} target="_blank" rel="noopener noreferrer">Full schedule</a></p>
+    <ScheduleList room={name} />
+</WidgetLayout>
+
+<script>
+    // Bring what is on now (or next) into view once, when the list has rendered.
+    const list = document.querySelector(".schedule-list")!;
+    const scrollToNow = () => {
+        const hit = list.querySelector(".session.live, .now-line, .badge.next"); // live talk, else the gap we are in, else the next talk
+        const target = hit?.classList.contains("now-line") ? hit : hit?.closest(".session");
+        if (!target) return false;
+        target.scrollIntoView({ block: "center" });
+        return true;
+    };
+    const watcher = new MutationObserver(() => scrollToNow() && watcher.disconnect());
+    watcher.observe(list, { childList: true });
+</script>

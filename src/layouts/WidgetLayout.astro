@@ -1,0 +1,28 @@
+---
+// Bare page for embedding in other apps (e.g. an Element widget): no navigation, header or footer.
+import "../styles/reset.css";
+import "../styles/global.css";
+
+interface Props { pageTitle: string; }
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    body { background-color: var(--bg-color); color: var(--fg-color); }
+    main { padding: 1rem; }
+</style>
