@@ -6,7 +6,8 @@ const { room } = Astro.props;
 ---
 
 <style is:global>
-    .now { border-inline-start: 4px solid var(--link-color); padding-inline-start: 1rem; min-height: 3.5rem; }
+    .now { position: relative; padding-inline-start: 1rem; min-height: 3.5rem; }
+    .now::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px; background: var(--track, #636569); }
     .label { color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
     .label.live { color: var(--link-color); font-weight: 700; }
     .now .pill { margin-top: 0.5rem; }
@@ -19,7 +20,7 @@ const { room } = Astro.props;
 </style>
 <div class="now" data-room={room} aria-live="polite"></div>
 <script>
-    import { loadSchedule, esc, fmt, pill } from "../scripts/schedule";
+    import { loadSchedule, esc, fmt, pill, trackColors } from "../scripts/schedule";
 
     async function update() {
         const rooms = await loadSchedule().catch(() => undefined);
@@ -32,6 +33,7 @@ const { room } = Astro.props;
             const next = r.sessions.find((s) => +s.start > now);
             const s = live ?? next;
             const f = fmt(r.tz);
+            el.style.setProperty("--track", s?.track ? trackColors(s.track).bg : "#636569");
             el.innerHTML = s
                 ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
                    <div class="title"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></div>
