@@ -42,8 +42,8 @@ const { stream } = Astro.props;
             </nav>
             <ChatLinks chat={stream.chat} />
             <NowStreaming room={stream.pretalxRoom} />
-            <StreamPlayer room={stream.pretalxRoom} src={`${cccEmbed(stream.slug)}/hls/native/no-autoplay`} title={`${stream.name} livestream`} />
-            <a class="ccc" href={cccStream(stream.slug)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" width="24" height="24" />Open on media.ccc.de</a>
+            <StreamPlayer room={stream.pretalxRoom} src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`} title={`${stream.name} livestream`} />
+            <a class="ccc" href={cccStream(stream.ccc)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" width="24" height="24" />Open on media.ccc.de</a>
             <ScheduleList room={stream.pretalxRoom} />
         </div>
     </section>
