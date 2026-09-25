@@ -1,0 +1,25 @@
+---
+// Live schedule of all rooms as a calendar per day: rooms side by side, tiles as tall as the talks are long.
+import "../styles/schedule.css";
+import "../styles/schedule-calendar.css";
+
+interface Props {
+    /** Sessions without a pretalx page (breaks, hackathon, parties): title keyword -> link. */
+    links?: Record<string, string>;
+}
+const { links = {} } = Astro.props;
+---
+
+<div class="schedule-list" role="region" aria-label="Conference schedule" data-links={JSON.stringify(links)}></div>
+<script>
+    import { mountSchedule } from "../scripts/schedule-mount";
+    import { scheduleDays } from "../scripts/schedule-days";
+    import { calendarHtml } from "../scripts/schedule-calendar";
+    import { initRoomHints } from "../scripts/schedule-hints";
+
+    mountSchedule(
+        (all) => [...all.values()].sort((a, b) => a.order - b.order),
+        (rooms, links, now) => scheduleDays(rooms).map((day) => day.heading + calendarHtml(rooms, day, now, links)).join(""),
+    );
+    initRoomHints();
+</script>
