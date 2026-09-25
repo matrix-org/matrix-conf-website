@@ -34,7 +34,7 @@ import { streams, cccStream, matrixTo } from "../../data/streams";
                         <div class="info"><NowStreaming room={s.pretalxRoom} /></div>
                         <div class="row"><a href={`/watch/${s.slug}`}><img src="/watch/play.svg" alt="" />Watch &amp; full schedule</a></div>
                         <div class="row"><a href={matrixTo(s.chat)} target="_blank" rel="noopener noreferrer"><img src="/watch/matrix.svg" alt="" />Join the chat</a></div>
-                        <div class="row"><a href={cccStream(s.slug)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" />Open on media.ccc.de</a></div>
+                        <div class="row"><a href={cccStream(s.ccc)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" />Open on media.ccc.de</a></div>
                     </div>
                 ))}
             </div>
