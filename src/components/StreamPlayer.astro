@@ -1,5 +1,6 @@
 ---
 // Placeholder until the room has a session on (from the pretalx schedule), then the CCC player.
+import PrimaryCta from "./PrimaryCta.astro";
 interface Props { room: number; src: string; title: string; }
 const { room, src, title } = Astro.props;
 ---
@@ -11,8 +12,6 @@ const { room, src, title } = Astro.props;
     .placeholder h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
     .placeholder p { margin: 0; }
     .placeholder p + p { margin-top: 1rem; }
-    .placeholder button { font: inherit; color: var(--link-color); background: none; border: 1px solid var(--link-color); padding: 0.5rem 1rem; cursor: pointer; }
-    .placeholder button:hover { background-color: #262626; }
     :global(iframe.player) { display: block; }
     @media (max-width: 600px) {
         .placeholder { padding: 0.75rem; }
@@ -24,7 +23,7 @@ const { room, src, title } = Astro.props;
     <div>
         <h2>Nothing is streaming right now</h2>
         <p>The player appears here when the next talk in this room starts.</p>
-        <p><button type="button">Show the player anyway</button></p>
+        <p><PrimaryCta>Show the player anyway</PrimaryCta></p>
     </div>
 </div>
 <noscript><iframe class="player" src={src} title={title} allowfullscreen></iframe></noscript>
