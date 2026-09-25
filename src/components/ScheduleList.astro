@@ -1,0 +1,24 @@
+---
+// Live schedule of one room (`room` = pretalx room id or room name), day after day.
+import "../styles/schedule.css";
+
+interface Props { room: number | string; }
+const { room } = Astro.props;
+---
+
+<div class="schedule-list" role="region" aria-label="Room schedule" data-room={room}></div>
+<script>
+    import { mountSchedule } from "../scripts/schedule-mount";
+    import { scheduleDays } from "../scripts/schedule-days";
+    import { sessionTiles } from "../scripts/schedule-tiles";
+
+    mountSchedule(
+        // The room is given by id or by name (case-insensitive).
+        (all, el) => {
+            const wanted = el.dataset.room ?? "";
+            const room = all.get(Number(wanted)) ?? [...all.values()].find((r) => r.name.toLowerCase() === wanted.toLowerCase());
+            return room ? [room] : [];
+        },
+        ([room], _links, now) => scheduleDays([room]).map((day) => day.heading + sessionTiles(room, day.of(room), now, {})).join(""),
+    );
+</script>
