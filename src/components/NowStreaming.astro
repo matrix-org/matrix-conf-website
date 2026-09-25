@@ -16,11 +16,12 @@ const { room } = Astro.props;
     .now a { color: var(--fg-color); text-decoration: none; }
     .now a:hover { text-decoration: underline; }
     .title { font-weight: 700; }
-    .who { color: var(--secondary-color); font-size: 0.875rem; }
+    .when, .who { color: var(--secondary-color); font-size: 0.875rem; }
+    .now .who { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem; }
 </style>
 <div class="now" data-room={room} aria-live="polite"></div>
 <script>
-    import { loadSchedule, esc, fmt, pill, trackColors } from "../scripts/schedule";
+    import { loadSchedule, esc, fmt, pill, speakersHtml, trackColors } from "../scripts/schedule";
 
     async function update() {
         const rooms = await loadSchedule().catch(() => undefined);
@@ -37,7 +38,7 @@ const { room } = Astro.props;
             el.innerHTML = s
                 ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
                    <div class="title"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></div>
-                   <div class="who">${esc(s.who)}${s.who ? " · " : ""}${f.time.format(s.start)}–${f.time.format(s.end)}</div>${pill(s.track) && `<div>${pill(s.track)}</div>`}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${f.time.format(next.start)}</span></div>` : ""}`
+                   <div class="when">${f.time.format(s.start)}–${f.time.format(s.end)}</div>${speakersHtml(s)}${pill(s.track) && `<div>${pill(s.track)}</div>`}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${f.time.format(next.start)}</span></div>` : ""}`
                 : `<div class="label">Nothing scheduled</div>`;
         });
     }
