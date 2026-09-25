@@ -8,9 +8,11 @@ const items = [{ href: "/watch", name: "All streams", active: !current }, ...str
 
 <style>
     nav { display: flex; flex-wrap: wrap; justify-content: center; }
-    a { padding: 0.75rem 1.5rem; border: 1px solid #636569; margin-inline-start: -1px; color: var(--fg-color); font-weight: 700; text-decoration: none; }
+    a { position: relative; padding: 0.75rem 1.5rem; border: 1px solid #636569; margin-inline-start: -1px; color: var(--fg-color); font-weight: 700; text-decoration: none; }
     a:hover { background-color: #262626; }
-    a[aria-current="page"] { background-color: #1a1a1a; box-shadow: inset 0 -3px 0 var(--link-color); }
+    a[aria-current="page"] { background-color: #1a1a1a; }
+    /* Current place gets the rainbow highlight; link blue is for places you can go to. */
+    a[aria-current="page"]::after { content: ""; position: absolute; inset-inline: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, #f45b69 5%, #f6ae2d 30%, #a6ffa1 50%, #75f4f4 70%, #ae7fe9 95%); }
     @media (max-width: 600px) {
         nav { display: grid; grid-template-columns: 1fr 1fr; }
         a { margin-inline-start: 0; margin-block-start: -1px; text-align: center; }
