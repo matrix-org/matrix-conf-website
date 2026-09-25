@@ -1,0 +1,75 @@
+---
+// Live schedule of one room (`room` = pretalx room id or room name), day after day.
+import "../styles/schedule.css";
+import { pretalxSchedulePage } from "../data/pretalx";
+
+interface Props {
+    /** Room to show, as its pretalx room id or its room name (matched case-insensitively). */
+    room: number | string;
+}
+const { room } = Astro.props;
+---
+
+<div
+    class="schedule-list"
+    role="region"
+    aria-label="Room schedule"
+    data-room={room}
+></div>
+<noscript>
+    <p>
+        This schedule needs JavaScript to load. You can also see it on
+        <a href={pretalxSchedulePage} target="_blank" rel="noopener noreferrer">
+            the CfP site
+        </a>
+        .
+    </p>
+</noscript>
+<script>
+    import { mountSchedule } from "../scripts/schedule-mount";
+    import { scheduleDays } from "../scripts/schedule-days";
+    import { sessionTiles } from "../scripts/schedule-tiles";
+    import type { Room } from "../scripts/schedule";
+
+    /**
+     * Picks the room this element shows, by pretalx room id or by name (matched case-insensitively).
+     *
+     * @param all Every room known to the loaded schedule, keyed by pretalx room id.
+     * @param element The `.schedule-list` element being rendered; its `data-room` attribute names the room.
+     * @returns The room to show, as a single-element array, or an empty array if it was not found.
+     */
+    function pickRoom(all: Map<number, Room>, element: HTMLElement): Room[] {
+        const wanted = element.dataset.room ?? "";
+        const room =
+            all.get(Number(wanted)) ??
+            [...all.values()].find(
+                (candidate) =>
+                    candidate.name.toLowerCase() === wanted.toLowerCase(),
+            );
+        return room ? [room] : [];
+    }
+
+    /**
+     * Renders the picked room's whole schedule, day after day.
+     *
+     * @param rooms The room picked by {@link pickRoom}, as a single-element array.
+     * @param _links Unused: a single room's talks all link to their own pretalx page.
+     * @param now Time to render as "now", as milliseconds since the epoch.
+     * @returns HTML for every day that has sessions in the room.
+     */
+    function buildRoomDays(
+        [room]: Room[],
+        _links: Record<string, string>,
+        now: number,
+    ): string {
+        return scheduleDays([room])
+            .map(
+                (day) =>
+                    day.heading +
+                    sessionTiles(room, day.sessionsOfRoom(room), now, {}),
+            )
+            .join("");
+    }
+
+    mountSchedule(pickRoom, buildRoomDays);
+</script>
