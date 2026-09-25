@@ -1,0 +1,43 @@
+/* Shared by everything that renders pretalx sessions (schedule page, watch page, widgets).
+   CSS variables have fallbacks so this also works on pages without global.css. */
+:root {
+    /* The site's rainbow highlight (--gradient from PrimaryCta); literal fallback for pages without it */
+    --rainbow: var(--gradient, linear-gradient(340deg, #f45b69 3%, #f6ae2d 25%, #a6ffa1 48%, #75f4f4 70%, #ae7fe9 93%));
+}
+
+.pill { display: inline-block; line-height: 1.5; border: 2px solid transparent; border-radius: 2px; padding: 0 0.5em; font-size: 1rem; }
+
+.schedule-list .date-separator { display: flex; align-items: center; gap: 12px; margin-block: 32px 16px; scroll-margin-top: 6rem; }
+.schedule-list .date-separator .date { margin: 0; flex: none; font-size: 1.25rem; font-weight: 700; color: var(--secondary-color, #b8b8b8); }
+.schedule-list .date-separator .line { flex: 1; border-top: 2px solid var(--border, #3c3f44); }
+
+.schedule-list .session { display: grid; grid-template-columns: 7rem 1fr; gap: 0.25rem 1.5rem; padding: 1rem 1.5rem; border: 1px solid var(--border-interactive, #636569); margin-bottom: -1px; background: var(--bg-primary, #000); }
+.schedule-list .session:hover { background-color: #262626; }
+.schedule-list .session.past { opacity: 0.7; } /* keeps text above 4.5:1 */
+.schedule-list .session.live { position: relative; background: var(--bg-card, #1a1a1a); }
+.schedule-list .session.live::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px; background: var(--rainbow); }
+.schedule-list .session.break { padding-block: 0.5rem; background: var(--bg-card, #1a1a1a); color: var(--text-primary, #fff) }
+.schedule-list .session.break:hover { background-color: var(--bg-card, #1a1a1a); }
+.schedule-list a.session.break:hover { background-color: #262626; }
+.schedule-list a.session { color: var(--text-primary, #fff); text-decoration: none; }
+.schedule-list .session time { color: var(--secondary-color, #b8b8b8); font-variant-numeric: tabular-nums; }
+.schedule-list .session strong { font-size: 1.125rem; }
+.schedule-list .session .who { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem; font-size: 0.875rem; color: var(--secondary-color, #b8b8b8); }
+.schedule-list .session .pill { margin-top: 0.5rem; }
+
+.schedule-list .badge { display: inline-block; margin-inline-start: 0.5rem; padding: 0 0.5rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; vertical-align: middle; background: var(--link-color, #0999ff); color: var(--bg-primary, #000); }
+.schedule-list .badge.next { background: transparent; color: var(--link-color, #0999ff); border: 1px solid var(--link-color, #0999ff); }
+.schedule-list .now-line { display: flex; align-items: center; gap: 12px; margin-block: 0.75rem; color: var(--link-color, #0999ff); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; }
+.schedule-list .now-line::after { content: ""; flex: 1; border-top: 2px solid var(--link-color, #0999ff); }
+
+@media (max-width: 600px) { .schedule-list .session { grid-template-columns: 1fr; } }
+
+.schedule-list a.session:focus-visible { outline: 2px solid var(--link-color, #0999ff); outline-offset: -4px; position: relative; z-index: 3; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.avatars { display: flex; flex: none; }
+.avatar { flex: none; width: 24px; height: 24px; box-sizing: border-box; border: 2px solid var(--bg-primary, #000); border-radius: 50%; object-fit: cover; background: var(--bg-card, #1a1a1a); }
+.avatar + .avatar { margin-inline-start: -8px; }
+.avatar.more { display: grid; place-content: center; font-size: 0.6875rem; font-weight: 700; color: var(--text-primary, #fff); }
+.names { min-width: 0; }
+.schedule-list .norec { display: inline-block; margin-inline-start: 0.5rem; vertical-align: middle; color: var(--secondary-color, #b8b8b8); }
+.schedule-list .norec svg { display: block; width: 1.125rem; height: 1.125rem; }
