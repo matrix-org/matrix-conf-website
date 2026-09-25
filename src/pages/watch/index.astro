@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import RoomName from "../../components/RoomName.astro";
 import StreamNav from "../../components/StreamNav.astro";
 import ChatLinks from "../../components/ChatLinks.astro";
 import NowStreaming from "../../components/NowStreaming.astro";
@@ -9,7 +10,7 @@ import { streams, cccStream, matrixTo } from "../../data/streams";
 
 <style>
     .content-wrapper { display: flex; flex-direction: column; gap: 1.5rem; max-width: var(--max-page-width); margin-inline: auto; }
-    h1 { font-size: 2rem; font-weight: 700; text-align: center; margin-block-end: 1.5rem; }
+    h1 { font-size: 2rem; font-weight: 700; text-align: center; margin: 0; }
     .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
     .card { border: 1px solid #636569; display: flex; flex-direction: column; background: #000; }
     .card .banner { aspect-ratio: 16 / 9; display: grid; place-content: center; background: url(/grey-repeating-lines.svg) center / cover; text-decoration: none; }
@@ -32,7 +33,7 @@ import { streams, cccStream, matrixTo } from "../../data/streams";
             <div class="cards">
                 {streams.map((s) => (
                     <div class="card">
-                        <a class="banner" href={`/watch/${s.slug}`} aria-label={`Watch ${s.name}`}><h2>{s.name}</h2></a>
+                        <a class="banner" href={`/watch/${s.slug}`} aria-label={`Watch ${s.name}`}><h2><RoomName name={s.name} /></h2></a>
                         <div class="info"><NowStreaming room={s.pretalxRoom} /></div>
                         <div class="row"><a href={`/watch/${s.slug}`}><img src="/watch/play.svg" alt="" />Watch &amp; full schedule</a></div>
                         <div class="row"><a href={matrixTo(s.chat)} target="_blank" rel="noopener noreferrer"><img src="/watch/matrix.svg" alt="" />Join the chat</a></div>

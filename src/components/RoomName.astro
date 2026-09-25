@@ -1,0 +1,15 @@
+---
+// Room name with a door icon, so the human names read as rooms. Screen readers still get "room".
+interface Props { name: string; }
+const { name } = Astro.props;
+---
+
+<style>
+    .room { display: inline-flex; align-items: center; gap: 0.5em; }
+    svg { flex: none; width: 0.9em; height: 0.9em; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+<span class="room">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17M3 21h18"/><circle cx="15" cy="12.5" r="1" fill="currentColor"/></svg>
+    {name}<span class="sr"> room</span>
+</span>
