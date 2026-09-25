@@ -17,6 +17,27 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         background-color: var(--bg-color);
     }
 
+    .items {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .smol {
+        @media (min-width: 800px) {
+            flex-basis: 40%;
+        }
+    }
+
     section:nth-child(even) {
         background-image: url("/grey-repeating-lines.svg");
     }
@@ -50,6 +71,9 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         </div>
     </section>
     <section id="full-schedule">
+        <div class="content-wrapper">
+            <p>Looking for a more detailed schedule? Check out the <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">full schedule</a>.</p>
+        </div>
         <pretalx-schedule
             event-url="https://cfp.2026.matrix.org/matrix-conference-2026/"
             locale="en"
@@ -67,6 +91,29 @@ import PrimaryCta from "../components/PrimaryCta.astro";
                 </div>
             </div>
         </noscript>
+    </section>
+    <section>
+        <div class="items">
+            <div class="item smol">
+                <h2 id="giggity">Giggity</h2>
+                <p>
+                    If you are an Android user, we recommend using <a href="https://wilmer.gaa.st/main.php/giggity.html">Giggity</a>
+                    to explore the many talks, workshops, and events that make up the Conference.
+                    Already use Giggity? You can add the Conference schedule by using the following URL:
+                    <a href="https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml">
+                    <code>https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml</code></a>.
+                </p>
+            </div>
+            <div class="item smol">
+                <h2 id="other-applications">Other Applications</h2>
+                <p>
+                    If you don’t use Giggity, don’t worry. You can still explore the many talks, workshops, and events that make up the Conference.
+                    Simply browse the Pretalx schedule, which lets you link directly to individual talks and provides data links for schedule apps.
+                    You can view the Pretalx schedule here:
+                    <code><a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">https://cfp.2026.matrix.org/matrix-conference-2026/schedule/</a></code>.
+                </p>
+            </div>
+        </div>
     </section>
     <section id="talks-2025">
         <Talks2025 />
