@@ -3,6 +3,7 @@ import RoughSchedule from "../components/RoughSchedule.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Talks2025 from "../components/Talks2025.astro";
 import PrimaryCta from "../components/PrimaryCta.astro";
+import ScheduleCalendar from "../components/ScheduleCalendar.astro";
 ---
 
 <style>
@@ -11,14 +12,46 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         margin-inline: auto;
     }
 
+    .content-wrapper.wide {
+        max-width: 1122px;
+    }
+
     .box {
         border: 1px solid #636569;
         padding: 20px;
         background-color: var(--bg-color);
     }
 
+    .items {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .item {
+        min-width: 0;
+        overflow-wrap: anywhere; /* the long export URLs must not widen the page */
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    @media (min-width: 800px) {
+        .smol {
+            flex-basis: 40%;
+        }
+    }
+
     section:nth-child(even) {
         background-image: url("/grey-repeating-lines.svg");
+    }
+
+    /* the session tiles need a plain background, unlike the old pretalx widget */
+    #full-schedule {
+        background-image: none;
     }
 
     h2 {
@@ -50,11 +83,12 @@ import PrimaryCta from "../components/PrimaryCta.astro";
         </div>
     </section>
     <section id="full-schedule">
-        <pretalx-schedule
-            event-url="https://cfp.2026.matrix.org/matrix-conference-2026/"
-            locale="en"
-            format="grid"
-            style="--pretalx-clr-primary: #000000"></pretalx-schedule>
+        <div class="content-wrapper wide">
+            <h2 class="sr-only">Full schedule</h2>
+            <p>Looking for a more detailed schedule? Check out the <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">full schedule</a>.</p>
+            <p>All times are local time in Malmö (Europe/Stockholm).</p>
+            <ScheduleCalendar links={{ Hackathon: "/hackathon", "Welcome Party": "https://babelmalmo.se/" }} />
+        </div>
         <noscript>
             <div class="pretalx-widget">
                 <div class="pretalx-widget-info-message">
@@ -67,6 +101,29 @@ import PrimaryCta from "../components/PrimaryCta.astro";
                 </div>
             </div>
         </noscript>
+    </section>
+    <section>
+        <div class="items">
+            <div class="item smol">
+                <h2 id="giggity">Giggity</h2>
+                <p>
+                    If you are an Android user, we recommend using <a href="https://wilmer.gaa.st/main.php/giggity.html">Giggity</a>
+                    to explore the many talks, workshops, and events that make up the Conference.
+                    Already use Giggity? You can add the Conference schedule by using the following URL:
+                    <a href="https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml">
+                    <code>https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml</code></a>.
+                </p>
+            </div>
+            <div class="item smol">
+                <h2 id="other-applications">Other Applications</h2>
+                <p>
+                    If you don’t use Giggity, don’t worry. You can still explore the many talks, workshops, and events that make up the Conference.
+                    Simply browse the Pretalx schedule, which lets you link directly to individual talks and provides data links for schedule apps.
+                    You can view the Pretalx schedule here:
+                    <code><a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">https://cfp.2026.matrix.org/matrix-conference-2026/schedule/</a></code>.
+                </p>
+            </div>
+        </div>
     </section>
     <section id="talks-2025">
         <Talks2025 />

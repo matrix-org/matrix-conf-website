@@ -1,0 +1,47 @@
+/* All-rooms view: a calendar. One grid row per minute, so tiles line up by start time and are as tall as the talk is
+   long, but never shorter than their content (ScheduleList sets the row sizes and placement inline). */
+.schedule-list .room-grid { display: grid; column-gap: 12px; }
+.schedule-list .room-col { display: contents; }
+/* Sticky header: the day (left) and room names on a full-width band behind the room names, with an edge, so it reads as a header */
+.schedule-list .room-grid .grid-head { grid-column: 1 / -1; grid-row: 1; position: sticky; top: 6rem; z-index: 2; background: var(--bg-primary, #000); border-bottom: 1px solid var(--border-interactive, #636569); box-shadow: 0 8px 8px -8px rgb(0 0 0 / 0.8); }
+.schedule-list .room-grid .head-day { grid-column: 1; grid-row: 1; position: sticky; top: 6rem; z-index: 3; padding-block: 0.5rem; color: var(--secondary-color, #b8b8b8); font-size: 0.8125rem; font-weight: 700; line-height: 1.25; }
+.schedule-list .room-grid .room-head { grid-row: 1; position: sticky; top: 6rem; z-index: 3; display: flex; align-items: center; gap: 0.5rem; padding-block: 0.75rem; }
+.schedule-list .room-grid h4 { margin: 0; font-size: 1.125rem; font-weight: 700; }
+/* "Where is this room?" disclosure (native <details>, keyboard and screen reader friendly) */
+.schedule-list .room-info summary { display: grid; place-content: center; width: 1.5rem; height: 1.5rem; cursor: pointer; list-style: none; color: var(--secondary-color, #b8b8b8); }
+.schedule-list .room-info summary::-webkit-details-marker { display: none; }
+.schedule-list .room-info summary:hover { color: var(--text-primary, #fff); }
+.schedule-list .room-info summary:focus-visible { outline: 2px solid var(--link-color, #0999ff); outline-offset: 2px; }
+.schedule-list .room-info summary svg { width: 1.25rem; height: 1.25rem; }
+.schedule-list .room-info p { position: absolute; top: 100%; inset-inline-start: 0; width: min(20rem, 80vw); margin: 0; padding: 0.75rem 1rem; background: var(--bg-card, #1a1a1a); border: 1px solid var(--border-interactive, #636569); font-size: 0.875rem; font-weight: 400; line-height: 1.4; }
+.schedule-list .room-grid .axis { grid-column: 1; grid-row-end: span 1; border-top: 1px solid var(--border, #3c3f44); color: var(--secondary-color, #b8b8b8); font-size: 0.75rem; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.schedule-list .room-grid .axis.hour { border-top-color: var(--border-interactive, #636569); color: var(--text-primary, #fff); font-size: 0.875rem; font-weight: 700; }
+.schedule-list .room-grid .session { grid-template-columns: 1fr; margin: 0; }
+@media (min-width: 1000px) {
+    /* Tiles are as tall as the talk is long, so keep them compact and clip the rest (full title on hover). */
+    .schedule-list .room-grid .session { padding: 0.375rem 0.75rem; gap: 0; }
+    .schedule-list .room-grid .session > div { min-width: 0; }
+    .schedule-list .room-grid .session strong { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; font-size: 1rem; line-height: 1.25; }
+    .schedule-list .room-grid .session time { font-size: 0.8125rem; }
+    .schedule-list .room-grid .session .who { margin-top: 0.125rem; min-width: 0; font-size: 0.8125rem; }
+    .schedule-list .room-grid .session .names { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .schedule-list .room-grid .session .pill { margin-top: 0.25rem; font-size: 0.8125rem; line-height: 1.35; }
+    .schedule-list .room-grid .session { align-content: start; position: relative; }
+    .schedule-list .room-grid .badge { position: absolute; top: 0.375rem; inset-inline-end: 0.5rem; margin: 0; font-size: 0.6875rem; line-height: 1.4; }
+    .schedule-list .room-grid .session.break { padding-block: 0.25rem; }
+            /* Short breaks: one line, "time title". */
+    .schedule-list .room-grid .session.xs { display: flex; align-items: center; gap: 0.5rem; padding-block: 0; }
+    .schedule-list .room-grid .session.xs .pill, .schedule-list .room-grid .session.xs .who, .schedule-list .room-grid .session.xs .badge { display: none; }
+    .schedule-list .room-grid .session.xs time { flex: none; font-size: 0.75rem; }
+    .schedule-list .room-grid .session.xs > div, .schedule-list .room-grid .session.xs strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 0.8125rem; line-height: 1.2; }
+}
+/* Small screens: no calendar, rooms one after another (DOM order is room by room). */
+@media (max-width: 999px) {
+    .schedule-list .room-grid { display: block !important; }
+    .schedule-list .room-grid .room-head { position: static; flex-wrap: wrap; margin-top: 1.5rem; }
+    .schedule-list .room-info[open] { flex-basis: 100%; }
+    .schedule-list .room-info p { position: static; width: auto; margin-top: 0.5rem; }
+    .schedule-list .room-grid .axis, .schedule-list .room-grid .head-day, .schedule-list .room-grid .grid-head { display: none; }
+    .schedule-list .room-grid .session { margin-top: -1px; }
+}
+
