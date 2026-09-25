@@ -1,0 +1,47 @@
+---
+// "Now streaming" / "Up next" for one room, from the live pretalx schedule.
+import "../styles/schedule.css"; // track pill styles
+interface Props { room: number; }
+const { room } = Astro.props;
+---
+
+<style is:global>
+    .now { position: relative; padding-inline-start: 1rem; min-height: 3.5rem; }
+    .now::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px; background: var(--track, #636569); }
+    .label { color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
+    .label.live { color: var(--link-color); font-weight: 700; }
+    .now .pill { margin-top: 0.5rem; }
+    .then { margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid #3c3f44; font-size: 0.875rem; }
+    .then .label { margin-inline-end: 0.5rem; color: var(--link-color); font-weight: 700; }
+    .now a { color: var(--fg-color); text-decoration: none; }
+    .now a:hover { text-decoration: underline; }
+    .title { font-weight: 700; }
+    .when, .who { color: var(--secondary-color); font-size: 0.875rem; }
+    .now .who { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem; }
+</style>
+<div class="now" data-room={room} aria-live="polite"></div>
+<script>
+    import { loadSchedule, esc, fmt, pill, speakersHtml, trackColors } from "../scripts/schedule";
+
+    async function update() {
+        const rooms = await loadSchedule().catch(() => undefined);
+        if (!rooms) return;
+        const now = Date.now();
+        document.querySelectorAll<HTMLElement>(".now[data-room]").forEach((el) => {
+            const r = rooms.get(Number(el.dataset.room));
+            if (!r) return;
+            const live = r.sessions.find((s) => +s.start <= now && now < +s.end);
+            const next = r.sessions.find((s) => +s.start > now);
+            const s = live ?? next;
+            const f = fmt(r.tz);
+            el.style.setProperty("--track", s?.track ? trackColors(s.track).bg : "#636569");
+            el.innerHTML = s
+                ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
+                   <div class="title"><a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a></div>
+                   <div class="when">${f.time.format(s.start)}–${f.time.format(s.end)}</div>${speakersHtml(s)}${pill(s.track) && `<div>${pill(s.track)}</div>`}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${f.time.format(next.start)}</span></div>` : ""}`
+                : `<div class="label">Nothing scheduled</div>`;
+        });
+    }
+    update();
+    setInterval(update, 60_000);
+</script>

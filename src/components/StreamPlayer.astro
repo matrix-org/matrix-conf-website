@@ -1,0 +1,63 @@
+---
+// Placeholder until the room has a session on (from the pretalx schedule), then the CCC player.
+import PrimaryCta from "./PrimaryCta.astro";
+interface Props { room: number; src: string; title: string; }
+const { room, src, title } = Astro.props;
+---
+
+<style>
+    :global(.player) { aspect-ratio: 16 / 9; width: 100%; border: 1px solid #636569; background: #000; }
+    .placeholder { display: grid; place-content: center; background: url("/grey-repeating-lines.svg"); text-align: center; padding: 1.5rem; }
+    .placeholder div { background: #000; padding: 1.5rem 2rem; }
+    .placeholder h2 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+    .placeholder p { margin: 0; }
+    .placeholder p + p { margin-top: 1rem; }
+    :global(iframe.player) { display: block; }
+    @media (max-width: 600px) {
+        .placeholder { padding: 0.75rem; }
+        .placeholder div { padding: 1rem; }
+        .placeholder h2 { font-size: 1.125rem; }
+    }
+</style>
+<div class="player placeholder" data-room={room} data-src={src} data-title={title}>
+    <div>
+        <h2>Nothing is streaming right now</h2>
+        <p>The player appears here when the next talk in this room starts.</p>
+        <p><PrimaryCta>Show the player anyway</PrimaryCta></p>
+    </div>
+</div>
+<noscript><iframe class="player" src={src} title={title} allowfullscreen></iframe></noscript>
+<script>
+    import { loadSchedule, fmt } from "../scripts/schedule";
+
+    // Fail open: the placeholder is only shown when the schedule positively says nothing is on.
+    const LEAD = 60 * 60_000; // before the first talk of a day
+    const LAG = 30 * 60_000; // after the last talk of a day
+    const el = document.querySelector<HTMLElement>(".player.placeholder[data-src]")!;
+
+    function mount() {
+        const f = document.createElement("iframe");
+        f.className = "player";
+        f.src = el.dataset.src!;
+        f.title = el.dataset.title!;
+        f.allowFullscreen = true;
+        el.replaceWith(f);
+        clearInterval(timer);
+    }
+    async function check() {
+        const room = (await loadSchedule().catch(() => undefined))?.get(Number(el.dataset.room));
+        if (!room?.sessions.length) return mount(); // schedule unreachable, or room unknown to it
+        const now = Date.now();
+        // Whole conference day per room, so gaps (breaks, late/early talks) don't hide the stream.
+        const day = fmt(room.tz).day;
+        const span = new Map<string, [number, number]>();
+        for (const s of room.sessions) {
+            const k = day.format(s.start), [a, b] = span.get(k) ?? [Infinity, -Infinity];
+            span.set(k, [Math.min(a, +s.start), Math.max(b, +s.end)]);
+        }
+        if ([...span.values()].some(([a, b]) => now >= a - LEAD && now < b + LAG)) mount();
+    }
+    el.querySelector("button")!.addEventListener("click", mount);
+    const timer = setInterval(check, 60_000);
+    check();
+</script>

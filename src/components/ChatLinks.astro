@@ -1,0 +1,27 @@
+---
+import { space, matrixTo } from "../data/streams";
+interface Props { chat?: string; label?: string; }
+const { chat, label = "Join this room's chat" } = Astro.props;
+const cells = [
+    ...(chat ? [{ label, alias: chat, icon: "matrix" }] : []),
+    { label: "Join the Matrix space", alias: space, icon: "matrix" },
+];
+---
+
+<style>
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); }
+    .cell { padding: 20px; transition: background-color 0.15s; background-color: var(--bg-color); box-shadow: 0 0 0 1px #636569; }
+    .cell:hover { background-color: #262626; }
+    a:hover { text-decoration: underline; }
+    img { flex: none; }
+    h3 { margin: 0 0 0.5rem; color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
+    a { overflow-wrap: anywhere; display: flex; align-items: center; gap: 12px; color: var(--link-color); text-decoration: none; }
+</style>
+<div class="grid">
+    {cells.map((c) => (
+        <div class="cell">
+            <h3>{c.label}</h3>
+            <a href={matrixTo(c.alias)} target="_blank" rel="noopener noreferrer"><img src={`/watch/${c.icon}.svg`} alt="" width="24" height="24" />{c.alias}</a>
+        </div>
+    ))}
+</div>

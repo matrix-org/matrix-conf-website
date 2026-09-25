@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RoomName from "../../components/RoomName.astro";
+import StreamNav from "../../components/StreamNav.astro";
+import ChatLinks from "../../components/ChatLinks.astro";
+import NowStreaming from "../../components/NowStreaming.astro";
+import StreamPlayer from "../../components/StreamPlayer.astro";
+import ScheduleList from "../../components/ScheduleList.astro";
+import SponsorsGrid from "../../components/SponsorsGrid.astro";
+import { streams, cccEmbed, cccStream } from "../../data/streams";
+
+export function getStaticPaths() {
+    return streams.map((s) => ({ params: { room: s.slug }, props: { stream: s } }));
+}
+const { stream } = Astro.props;
+---
+
+<style>
+    .content-wrapper { display: flex; flex-direction: column; gap: 1rem; max-width: var(--max-page-width); margin-inline: auto; }
+    h1 { font-size: 2rem; font-weight: 700; text-align: center; margin: 0 0 0.5rem; } /* + 1rem gap = same 1.5rem to the picker as on /watch */
+    a { color: var(--link-color); text-decoration: none; }
+    a.ccc { display: flex; align-items: center; gap: 12px; }
+    a.ccc:hover { text-decoration: underline; }
+</style>
+<BaseLayout
+    pageTitle={`Watch ${stream.name} live – The Matrix Conference`}
+    description={`Livestream of the ${stream.name} room at The Matrix Conference 2026.`}
+>
+    <section id="stream">
+        <div class="content-wrapper">
+            <h1><RoomName name={stream.name} /></h1>
+            <StreamNav current={stream.slug} />
+            <ChatLinks chat={stream.chat} />
+            <NowStreaming room={stream.pretalxRoom} />
+            <StreamPlayer room={stream.pretalxRoom} src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`} title={`${stream.name} livestream`} />
+            <a class="ccc" href={cccStream(stream.ccc)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" width="24" height="24" />Open on media.ccc.de</a>
+            <ScheduleList room={stream.pretalxRoom} />
+        </div>
+    </section>
+    <section id="sponsors"><SponsorsGrid /></section>
+</BaseLayout>
