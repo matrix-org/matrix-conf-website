@@ -7,10 +7,12 @@ interface Props {
       * Align the button to the bottom.
       */
     flexBottom?: boolean;
-    href: string;
+    /** Without `href` this renders a <button> (for actions rather than navigation). */
+    href?: string;
 }
 
 const { href, flexBottom } = Astro.props;
+const Tag = href ? "a" : "button";
 ---
 
 <style>
@@ -55,6 +57,11 @@ const { href, flexBottom } = Astro.props;
         color: white;
         z-index: 100;
         text-decoration: none;
+        /* <button> variant: drop the browser's native button frame so it matches the link */
+        appearance: none;
+        border: 0 none;
+        margin: 0;
+        outline-offset: 3px;
     }
 
     /* Make text layer above ::before */
@@ -105,6 +112,6 @@ const { href, flexBottom } = Astro.props;
         }
     }
 </style>
-<a href={href} class={`bracket-btn ${flexBottom ? ' flexBottom' : ''}`}>
+<Tag href={href} type={href ? undefined : "button"} class={`bracket-btn ${flexBottom ? ' flexBottom' : ''}`}>
     <span class="label"><slot /></span>
-</a>
+</Tag>
