@@ -3,7 +3,10 @@
 import "../styles/reset.css";
 import "../styles/global.css";
 
-interface Props { pageTitle: string; }
+interface Props {
+    /** Document `<title>`, shown in the browser tab of whatever embeds this page. */
+    pageTitle: string;
+}
 const { pageTitle } = Astro.props;
 ---
 
@@ -23,6 +26,11 @@ const { pageTitle } = Astro.props;
 </html>
 
 <style is:global>
-    body { background-color: var(--bg-color); color: var(--fg-color); }
-    main { padding: 1rem; }
+    body {
+        background-color: var(--bg-color);
+        color: var(--fg-color);
+    }
+    main {
+        padding: 1rem;
+    }
 </style>
