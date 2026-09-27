@@ -85,19 +85,33 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
     <section id="full-schedule">
         <div class="content-wrapper wide">
             <h2 class="sr-only">Full schedule</h2>
-            <p>Looking for a more detailed schedule? Check out the <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">full schedule</a>.</p>
+            <p>
+                Looking for a more detailed schedule? Check out the{" "}
+                <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">
+                    full schedule
+                </a>
+                .
+            </p>
             <p>All times are local time in Malmö (Europe/Stockholm).</p>
-            <ScheduleCalendar links={{ Hackathon: "/hackathon", "Welcome Party": "https://babelmalmo.se/" }} />
+            <ScheduleCalendar
+                links={{
+                    Hackathon: "/hackathon",
+                    "Welcome Party": "https://babelmalmo.se/",
+                }}
+            />
         </div>
         <noscript>
             <div class="pretalx-widget">
                 <div class="pretalx-widget-info-message">
                     JavaScript is disabled in your browser. To access our
-                    schedule without JavaScript, please <a
+                    schedule without JavaScript, please{" "}
+                    <a
                         target="_blank"
                         href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/"
-                        >click here</a
-                    >.
+                    >
+                        click here
+                    </a>
+                    .
                 </div>
             </div>
         </noscript>
@@ -107,20 +121,36 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
             <div class="item smol">
                 <h2 id="giggity">Giggity</h2>
                 <p>
-                    If you are an Android user, we recommend using <a href="https://wilmer.gaa.st/main.php/giggity.html">Giggity</a>
-                    to explore the many talks, workshops, and events that make up the Conference.
-                    Already use Giggity? You can add the Conference schedule by using the following URL:
+                    If you are an Android user, we recommend using{" "}
+                    <a href="https://wilmer.gaa.st/main.php/giggity.html">
+                        Giggity
+                    </a>
+                    to explore the many talks, workshops, and events that make
+                    up the Conference. Already use Giggity? You can add the
+                    Conference schedule by using the following URL:
                     <a href="https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml">
-                    <code>https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml</code></a>.
+                        <code>
+                            https://ggt.gaa.st/#url=https://cfp.2026.matrix.org/matrix-conference-2026/schedule/export/schedule.xml
+                        </code>
+                    </a>
+                    .
                 </p>
             </div>
             <div class="item smol">
                 <h2 id="other-applications">Other Applications</h2>
                 <p>
-                    If you don’t use Giggity, don’t worry. You can still explore the many talks, workshops, and events that make up the Conference.
-                    Simply browse the Pretalx schedule, which lets you link directly to individual talks and provides data links for schedule apps.
-                    You can view the Pretalx schedule here:
-                    <code><a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">https://cfp.2026.matrix.org/matrix-conference-2026/schedule/</a></code>.
+                    If you don’t use Giggity, don’t worry. You can still explore
+                    the many talks, workshops, and events that make up the
+                    Conference. Simply browse the Pretalx schedule, which lets
+                    you link directly to individual talks and provides data
+                    links for schedule apps. You can view the Pretalx schedule
+                    here:
+                    <code>
+                        <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">
+                            https://cfp.2026.matrix.org/matrix-conference-2026/schedule/
+                        </a>
+                    </code>
+                    .
                 </p>
             </div>
         </div>
@@ -132,9 +162,9 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
         <div class="content-wrapper box">
             <h2>Tickets</h2>
             <p>
-                Whether you want to hear how an organization deployed Matrix at scale
-                or learn what the engineers are doing to improve the protocol,
-                The Matrix Conference has a track for you.
+                Whether you want to hear how an organization deployed Matrix at
+                scale or learn what the engineers are doing to improve the
+                protocol, The Matrix Conference has a track for you.
             </p>
             <PrimaryCta href="/register">Get Tickets</PrimaryCta>
         </div>
