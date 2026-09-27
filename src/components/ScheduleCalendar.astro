@@ -10,16 +10,49 @@ interface Props {
 const { links = {} } = Astro.props;
 ---
 
-<div class="schedule-list" role="region" aria-label="Conference schedule" data-links={JSON.stringify(links)}></div>
+<div
+    class="schedule-list"
+    role="region"
+    aria-label="Conference schedule"
+    data-links={JSON.stringify(links)}
+></div>
 <script>
     import { mountSchedule } from "../scripts/schedule-mount";
     import { scheduleDays } from "../scripts/schedule-days";
     import { calendarHtml } from "../scripts/schedule-calendar";
     import { initRoomHints } from "../scripts/schedule-hints";
+    import type { Room } from "../scripts/schedule";
 
-    mountSchedule(
-        (all) => [...all.values()].sort((a, b) => a.order - b.order),
-        (rooms, links, now) => scheduleDays(rooms).map((day) => day.heading + calendarHtml(rooms, day, now, links)).join(""),
-    );
+    /**
+     * Picks every room, in pretalx's display order.
+     *
+     * @param all Every room known to the loaded schedule, keyed by pretalx room id.
+     * @returns All rooms, sorted by {@link Room.order}.
+     */
+    function pickAllRooms(all: Map<number, Room>): Room[] {
+        return [...all.values()].sort(
+            (roomA, roomB) => roomA.order - roomB.order,
+        );
+    }
+
+    /**
+     * Renders every room's schedule as a calendar, day by day.
+     *
+     * @param rooms Rooms picked by {@link pickAllRooms}.
+     * @param links Map from a title keyword to a URL, passed through to {@link calendarHtml}.
+     * @param now Time to render as "now", as milliseconds since the epoch.
+     * @returns HTML for every day that has sessions in any room.
+     */
+    function buildCalendarDays(
+        rooms: Room[],
+        links: Record<string, string>,
+        now: number,
+    ): string {
+        return scheduleDays(rooms)
+            .map((day) => day.heading + calendarHtml(rooms, day, now, links))
+            .join("");
+    }
+
+    mountSchedule(pickAllRooms, buildCalendarDays);
     initRoomHints();
 </script>

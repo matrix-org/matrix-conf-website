@@ -13,41 +13,72 @@ const INFO_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 /** The visible time range of a day, in whole half hours. */
 type Span = { from: number; to: number };
 
+/**
+ * The time range `sessions` spans, rounded outward to whole half hours.
+ *
+ * @param sessions Sessions to span, e.g. everything on one day.
+ * @returns The earliest start and the latest end, each rounded to a half hour.
+ */
 function daySpan(sessions: Session[]): Span {
     return {
-        from: Math.floor(Math.min(...sessions.map((x) => +x.start)) / HALF_HOUR) * HALF_HOUR,
-        to: Math.ceil(Math.max(...sessions.map((x) => +x.end)) / HALF_HOUR) * HALF_HOUR,
+        from:
+            Math.floor(
+                Math.min(...sessions.map((session) => +session.start)) /
+                    HALF_HOUR,
+            ) * HALF_HOUR,
+        to:
+            Math.ceil(
+                Math.max(...sessions.map((session) => +session.end)) /
+                    HALF_HOUR,
+            ) * HALF_HOUR,
     };
 }
 
 // One grid row per minute; row 1 holds the room names.
-const rowOf = (t: number, { from }: Span) => Math.round((t - from) / 60_000) + 2;
+const rowOf = (time: number, { from }: Span) =>
+    Math.round((time - from) / 60_000) + 2;
 
-/** The time labels on the left, one per half hour. */
-function timeAxis(span: Span, tz: string): string {
-    const time = fmt(tz).time;
+/**
+ * The time labels on the left, one per half hour.
+ *
+ * @param span Time range to label.
+ * @param timezone IANA time zone to format the labels in.
+ * @returns HTML for the axis, positioned with inline grid-row styles.
+ */
+function timeAxis(span: Span, timezone: string): string {
+    const time = fmt(timezone).time;
     let axis = "";
-    for (let t = span.from; t < span.to; t += HALF_HOUR) {
-        const label = time.format(t);
-        axis += `<div class="axis${label.endsWith(":00") ? " hour" : ""}" aria-hidden="true" style="grid-row:${rowOf(t, span)}/${rowOf(t + HALF_HOUR, span)}">${label}</div>`;
+    for (let instant = span.from; instant < span.to; instant += HALF_HOUR) {
+        const label = time.format(instant);
+        axis += `<div class="axis${label.endsWith(":00") ? " hour" : ""}" aria-hidden="true" style="grid-row:${rowOf(instant, span)}/${rowOf(instant + HALF_HOUR, span)}">${label}</div>`;
     }
     return axis;
 }
 
 /** Height in px of every minute of the day. Minutes where no room has a talk (breaks only) are squeezed. */
 function minuteHeights(sessions: Session[], span: Span): number[] {
-    const talks = sessions.filter((x) => !x.isBreak);
+    const talks = sessions.filter((session) => !session.isBreak);
     const heights: number[] = [];
-    for (let t = span.from; t < span.to; t += 60_000) heights.push(talks.some((x) => +x.start <= t && t < +x.end) ? MINUTE : IDLE_MINUTE);
+    for (let instant = span.from; instant < span.to; instant += 60_000)
+        heights.push(
+            talks.some(
+                (talk) => +talk.start <= instant && instant < +talk.end,
+            )
+                ? MINUTE
+                : IDLE_MINUTE,
+        );
     return heights;
 }
 
 /** `grid-template-rows` for the minutes, run-length encoded. */
 function rowTracks(heights: number[]): string {
     const runs: string[] = [];
-    for (let i = 0, n = 0; i < heights.length; i++) {
-        n++;
-        if (heights[i + 1] !== heights[i]) { runs.push(`repeat(${n},minmax(${heights[i]}px,auto))`); n = 0; }
+    for (let index = 0, runLength = 0; index < heights.length; index++) {
+        runLength++;
+        if (heights[index + 1] !== heights[index]) {
+            runs.push(`repeat(${runLength},minmax(${heights[index]}px,auto))`);
+            runLength = 0;
+        }
     }
     return runs.join(" ");
 }
@@ -60,29 +91,60 @@ function roomHead(room: Room, column: number, id: string): string {
     return `<div class="room-head" style="grid-column:${column}"><h4 id="${id}">${esc(room.name)}</h4>${info}</div>`;
 }
 
-/** The whole calendar of one day: a column per room that has sessions on it. */
-export function calendarHtml(rooms: Room[], day: Day, now: number, links: Record<string, string>): string {
-    const cols = rooms.filter((r) => day.of(r).length);
-    const sessions = cols.flatMap(day.of);
+/**
+ * The whole calendar of one day: a column per room that has sessions on it.
+ *
+ * @param rooms Every room to consider; only those with sessions on `day` get a column.
+ * @param day Day to render, from {@link scheduleDays}.
+ * @param now Time to render as "now", as milliseconds since the epoch.
+ * @param links Map from a title keyword to a URL, passed through to {@link sessionTiles}.
+ * @returns HTML for the day's calendar grid.
+ */
+export function calendarHtml(
+    rooms: Room[],
+    day: Day,
+    now: number,
+    links: Record<string, string>,
+): string {
+    const columns = rooms.filter((room) => day.sessionsOfRoom(room).length);
+    const sessions = columns.flatMap((room) => day.sessionsOfRoom(room));
     const span = daySpan(sessions);
-    const tz = cols[0].tz;
-    const weekday = new Intl.DateTimeFormat("en-GB", { weekday: "short", timeZone: tz });
-    const dayMonth = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: tz });
+    const timezone = columns[0].timezone;
+    const weekday = new Intl.DateTimeFormat("en-GB", {
+        weekday: "short",
+        timeZone: timezone,
+    });
+    const dayMonth = new Intl.DateTimeFormat("en-GB", {
+        day: "numeric",
+        month: "short",
+        timeZone: timezone,
+    });
     const heights = minuteHeights(sessions, span);
-    const offsets = heights.reduce((acc, h) => (acc.push(acc[acc.length - 1] + h), acc), [0]); // px offset of each minute
+    const offsets = heights.reduce(
+        (offset, height) => (
+            offset.push(offset[offset.length - 1] + height), offset
+        ),
+        [0],
+    ); // px offset of each minute
 
-    const columns = cols.map((room, c) => {
+    const roomColumns = columns.map((room, index) => {
+        const column = index + 2;
         // Where a tile goes, and whether it is a short break (drawn as a single line).
-        const place = (x: Session) => {
-            const px = offsets[rowOf(+x.end, span) - 2] - offsets[rowOf(+x.start, span) - 2]; // rendered height of this tile
-            return { style: `grid-column:${c + 2};grid-row:${rowOf(+x.start, span)}/${rowOf(+x.end, span)}`, size: x.isBreak && px <= 45 ? "xs" : "" };
+        const place = (session: Session) => {
+            const height =
+                offsets[rowOf(+session.end, span) - 2] -
+                offsets[rowOf(+session.start, span) - 2]; // rendered height of this tile
+            return {
+                style: `grid-column:${column};grid-row:${rowOf(+session.start, span)}/${rowOf(+session.end, span)}`,
+                size: session.isBreak && height <= 45 ? "xs" : "",
+            };
         };
-        const id = `room-${day.id}-${c}`;
+        const id = `room-${day.id}-${index}`;
         // The wrapper adds no box (display: contents) but names the room for screen readers.
-        return `<div class="room-col" role="group" aria-labelledby="${id}">${roomHead(room, c + 2, id)}${sessionTiles(room, day.of(room), now, links, place)}</div>`;
+        return `<div class="room-col" role="group" aria-labelledby="${id}">${roomHead(room, column, id)}${sessionTiles(room, day.sessionsOfRoom(room), now, links, place)}</div>`;
     });
 
-    const tracks = `grid-template-columns:4rem repeat(${cols.length},minmax(0,1fr));grid-template-rows:auto ${rowTracks(heights)}`;
+    const tracks = `grid-template-columns:4rem repeat(${columns.length},minmax(0,1fr));grid-template-rows:auto ${rowTracks(heights)}`;
     const corner = `<div class="grid-head" aria-hidden="true"></div><div class="head-day" aria-hidden="true">${weekday.format(span.from)}<br>${dayMonth.format(span.from)}</div>`;
-    return `<div class="room-grid" style="${tracks}">${corner}${timeAxis(span, tz)}${columns.join("")}</div>`;
+    return `<div class="room-grid" style="${tracks}">${corner}${timeAxis(span, timezone)}${roomColumns.join("")}</div>`;
 }
