@@ -1,5 +1,214 @@
 /* All-rooms view: a calendar. One grid row per minute, so tiles line up by start time and are as tall as the talk is
    long, but never shorter than their content (ScheduleList sets the row sizes and placement inline). */
+.schedule-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-block: 2rem;
+}
+.schedule-controls[hidden] {
+    display: none;
+}
+.schedule-dates {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.schedule-dates a,
+.schedule-back,
+.filter-button,
+.filter-actions button {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-interactive, #636569);
+    border-radius: 2px;
+    background: var(--bg-primary, #000);
+    color: var(--text-primary, #fff);
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.schedule-dates a:hover,
+.schedule-back:hover,
+.filter-button:hover,
+.filter-actions button:hover {
+    background: var(--bg-card, #262626);
+}
+.schedule-dates a:focus-visible,
+.schedule-back:focus-visible,
+.filter-button:focus-visible,
+.filter-actions button:focus-visible,
+.schedule-filter input[type="search"]:focus-visible,
+.cancel-filters:focus-visible {
+    outline: 2px solid var(--link-color, #0999ff);
+    outline-offset: 2px;
+}
+.schedule-back {
+    position: sticky;
+    bottom: 1rem;
+    z-index: 4;
+    display: block;
+    width: fit-content;
+    margin-block-start: 1rem;
+    margin-inline-start: auto;
+}
+.schedule-back[hidden] {
+    display: none;
+}
+.schedule-filter {
+    width: min(72rem, calc(100% - 2rem));
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: clamp(1rem, 3vw, 2rem);
+    overflow: auto;
+    border: 1px solid var(--border-interactive, #636569);
+    background: var(--bg-primary, #000);
+    color: var(--text-primary, #fff);
+}
+.schedule-filter::backdrop {
+    background: rgb(0 0 0 / 0.75);
+}
+.schedule-filter form {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+}
+.filter-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.schedule-filter h2 {
+    margin: 0;
+}
+.cancel-filters {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border: 0;
+    background: transparent;
+    color: var(--secondary-color, #b8b8b8);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.cancel-filters:hover {
+    color: var(--fg-color, #fff);
+}
+.filter-search label,
+.schedule-filter legend {
+    display: block;
+    margin-block-end: 0.5rem;
+    color: var(--secondary-color, #b8b8b8);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.schedule-filter input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-interactive, #636569);
+    background: var(--bg-card, #1a1a1a);
+    color: inherit;
+    font: inherit;
+}
+.schedule-filter fieldset {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+.schedule-filter fieldset p {
+    margin-block: 0 0.75rem;
+    font-size: 0.875rem;
+}
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.filter-options label {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+.filter-options label span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.875rem;
+    border: 1px solid var(--border-interactive, #636569);
+    border-radius: 2px;
+    background: var(--bg-primary, #000);
+    color: var(--fg-color, #fff);
+    line-height: 1.3;
+}
+.filter-options input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+.filter-options label:hover span {
+    border-color: var(--fg-color, #fff);
+}
+.filter-options input:checked + span {
+    outline: 2px solid var(--link-color, #0999ff);
+    outline-offset: 2px;
+}
+.filter-options input:checked + span::after {
+    content: "✓";
+    font-weight: 700;
+}
+.filter-options input:focus-visible + span {
+    outline: 2px solid var(--link-color, #0999ff);
+    outline-offset: 3px;
+}
+.filter-options .track-option span {
+    border-color: transparent;
+}
+.filter-options .pill {
+    font-size: inherit;
+    overflow-wrap: anywhere;
+}
+.filter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding-block-start: 1rem;
+    border-top: 1px solid var(--border-interactive, #636569);
+}
+.filter-actions button[type="submit"] {
+    flex: 1;
+    border-color: var(--link-color, #0999ff);
+    background: var(--link-color, #0999ff);
+    color: var(--bg-color, #000);
+    font-weight: 700;
+}
+.filter-button.active {
+    border-color: var(--link-color, #0999ff);
+}
+@media (max-width: 600px) {
+    .schedule-filter {
+        width: calc(100% - 1rem);
+        max-height: calc(100dvh - 1rem);
+    }
+    .filter-actions button[type="submit"] {
+        flex-basis: 100%;
+    }
+}
+.schedule-empty {
+    padding: 1.5rem;
+    background: var(--bg-primary, #000);
+}
+.schedule-list {
+    padding: 1rem;
+    border: 1px solid var(--border-interactive, #636569);
+    background: var(--bg-color, #000);
+}
 .schedule-list .room-grid {
     display: grid;
     column-gap: 12px;

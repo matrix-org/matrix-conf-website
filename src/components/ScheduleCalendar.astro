@@ -2,6 +2,7 @@
 // Live schedule of all rooms as a calendar per day: rooms side by side, tiles as tall as the talks are long.
 import "../styles/schedule.css";
 import "../styles/schedule-calendar.css";
+import { pretalxSchedulePage } from "../data/pretalx";
 
 interface Props {
     /** Sessions without a pretalx page (breaks, hackathon, parties): title keyword -> link. */
@@ -10,49 +11,288 @@ interface Props {
 const { links = {} } = Astro.props;
 ---
 
+<div class="schedule-controls" hidden>
+    <nav
+        id="schedule-dates"
+        class="schedule-dates"
+        aria-label="Jump to date"
+    ></nav>
+    <button
+        class="filter-button"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="schedule-filter"
+    >
+        Filter schedule
+    </button>
+</div>
+<dialog
+    id="schedule-filter"
+    class="schedule-filter"
+    aria-labelledby="schedule-filter-title"
+>
+    <form method="dialog">
+        <div class="filter-heading">
+            <h2 id="schedule-filter-title">Filters</h2>
+            <button
+                type="button"
+                class="cancel-filters"
+                aria-label="Close filters"
+            >
+                ×
+            </button>
+        </div>
+        <fieldset class="filter-tracks">
+            <legend>Tracks</legend>
+            <p>Leave all unchecked to show every track and break.</p>
+            <div class="filter-options"></div>
+        </fieldset>
+        <fieldset class="filter-rooms">
+            <legend>Rooms</legend>
+            <p>Leave all unchecked to show every room.</p>
+            <div class="filter-options"></div>
+        </fieldset>
+        <fieldset class="filter-recording">
+            <legend>Recording</legend>
+            <div class="filter-options">
+                <label>
+                    <input type="checkbox" name="notRecorded" />
+                    <span>Not recorded</span>
+                </label>
+            </div>
+        </fieldset>
+        <div class="filter-search">
+            <label for="schedule-search">Search sessions and speakers</label>
+            <input id="schedule-search" name="search" type="search" />
+        </div>
+        <div class="filter-actions">
+            <button type="button" class="clear-filters">
+                Clear filters
+            </button>
+            <button type="submit">Show results</button>
+        </div>
+    </form>
+</dialog>
+<p class="sr-only" role="status" id="schedule-filter-status"></p>
 <div
     class="schedule-list"
     role="region"
     aria-label="Conference schedule"
     data-links={JSON.stringify(links)}
-></div>
+>
+    <p>
+        <a href={pretalxSchedulePage}>Open the full schedule on the CfP site</a>
+    </p>
+</div>
+<a class="schedule-back" href="#full-schedule-start" hidden>
+    ↑ Back to top
+</a>
 <script>
-    import { mountSchedule } from "../scripts/schedule-mount";
+    import {
+        loadSchedule,
+        trackColors,
+        type Room,
+        type Track,
+    } from "../scripts/schedule";
     import { scheduleDays } from "../scripts/schedule-days";
     import { calendarHtml } from "../scripts/schedule-calendar";
     import { initRoomHints } from "../scripts/schedule-hints";
-    import type { Room } from "../scripts/schedule";
 
-    /**
-     * Picks every room, in pretalx's display order.
-     *
-     * @param all Every room known to the loaded schedule, keyed by pretalx room id.
-     * @returns All rooms, sorted by {@link Room.order}.
-     */
-    function pickAllRooms(all: Map<number, Room>): Room[] {
-        return [...all.values()].sort(
-            (roomA, roomB) => roomA.order - roomB.order,
+    const calendar = document.querySelector<HTMLElement>(".schedule-list")!;
+    const controls = document.querySelector<HTMLElement>(".schedule-controls")!;
+    const dates = controls.querySelector<HTMLElement>(".schedule-dates")!;
+    const filterButton =
+        controls.querySelector<HTMLButtonElement>(".filter-button")!;
+    const dialog =
+        document.querySelector<HTMLDialogElement>(".schedule-filter")!;
+    const form = dialog.querySelector<HTMLFormElement>("form")!;
+    const roomOptions = dialog.querySelector<HTMLElement>(
+        ".filter-rooms .filter-options",
+    )!;
+    const trackOptions = dialog.querySelector<HTMLElement>(
+        ".filter-tracks .filter-options",
+    )!;
+    const search = form.elements.namedItem("search") as HTMLInputElement;
+    const notRecordedInput = form.elements.namedItem(
+        "notRecorded",
+    ) as HTMLInputElement;
+    const status = document.querySelector<HTMLElement>(
+        "#schedule-filter-status",
+    )!;
+    const back = document.querySelector<HTMLElement>(".schedule-back")!;
+    const links: Record<string, string> = JSON.parse(
+        calendar.dataset.links ?? "{}",
+    );
+    let allRooms: Room[] = [];
+    let selectedRooms = new Set<string>();
+    let selectedTracks = new Set<string>();
+    let notRecorded = false;
+    let query = "";
+
+    function addOptions(container: HTMLElement, names: string[], type: string) {
+        for (const name of names) {
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            input.type = "checkbox";
+            input.name = type;
+            input.value = name;
+            const text = document.createElement("span");
+            text.textContent = name;
+            label.append(input, text);
+            container.append(label);
+        }
+    }
+
+    function addTracks(tracks: Track[]) {
+        for (const track of tracks) {
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            const name = document.createElement("span");
+            const colors = trackColors(track);
+            input.type = "checkbox";
+            input.name = "track";
+            input.value = track.name;
+            name.className = "pill";
+            name.textContent = track.name;
+            label.className = "track-option";
+            name.style.backgroundColor = colors.background;
+            name.style.color = colors.foreground;
+            label.append(input, name);
+            trackOptions.append(label);
+        }
+    }
+
+    function render(announce = false) {
+        const rooms = allRooms
+            .filter(
+                (room) => !selectedRooms.size || selectedRooms.has(room.name),
+            )
+            .map((room) => ({
+                ...room,
+                items: room.items.filter((session) => {
+                    if (
+                        selectedTracks.size &&
+                        (!session.track ||
+                            !selectedTracks.has(session.track.name))
+                    )
+                        return false;
+                    if (notRecorded && (session.isBreak || session.recorded))
+                        return false;
+                    const haystack = `${session.title} ${session.speakers.map((speaker) => speaker.name).join(" ")}`;
+                    return haystack.toLocaleLowerCase().includes(query);
+                }),
+            }))
+            .filter((room) => room.items.length);
+        const days = rooms.length ? scheduleDays(rooms) : [];
+        const html = days.length
+            ? days
+                  .map(
+                      (day) =>
+                          day.heading +
+                          calendarHtml(rooms, day, Date.now(), links),
+                  )
+                  .join("")
+            : '<p class="schedule-empty">No sessions match these filters.</p>';
+        if (
+            html !== calendar.dataset.html &&
+            !calendar.contains(document.activeElement)
+        ) {
+            calendar.innerHTML = html;
+            calendar.dataset.html = html;
+        }
+        if (dates.dataset.days !== days.map((day) => day.id).join(",")) {
+            dates.replaceChildren();
+            for (const day of days) {
+                const link = document.createElement("a");
+                link.href = `#${day.id}`;
+                link.textContent = day.label;
+                dates.append(link);
+            }
+            dates.dataset.days = days.map((day) => day.id).join(",");
+        }
+        const active = Boolean(
+            selectedRooms.size || selectedTracks.size || notRecorded || query,
         );
+        filterButton.textContent = active
+            ? "Filter schedule (active)"
+            : "Filter schedule";
+        filterButton.classList.toggle("active", active);
+        if (announce) {
+            const count = rooms.reduce(
+                (total, room) => total + room.items.length,
+                0,
+            );
+            status.textContent = `Showing ${count} sessions on ${days.length} ${days.length === 1 ? "date" : "dates"}.`;
+        }
     }
 
-    /**
-     * Renders every room's schedule as a calendar, day by day.
-     *
-     * @param rooms Rooms picked by {@link pickAllRooms}.
-     * @param links Map from a title keyword to a URL, passed through to {@link calendarHtml}.
-     * @param now Time to render as "now", as milliseconds since the epoch.
-     * @returns HTML for every day that has sessions in any room.
-     */
-    function buildCalendarDays(
-        rooms: Room[],
-        links: Record<string, string>,
-        now: number,
-    ): string {
-        return scheduleDays(rooms)
-            .map((day) => day.heading + calendarHtml(rooms, day, now, links))
-            .join("");
-    }
+    filterButton.addEventListener("click", () => {
+        search.value = query;
+        notRecordedInput.checked = notRecorded;
+        form.querySelectorAll<HTMLInputElement>('input[name="room"]').forEach(
+            (input) => {
+                input.checked = selectedRooms.has(input.value);
+            },
+        );
+        form.querySelectorAll<HTMLInputElement>('input[name="track"]').forEach(
+            (input) => {
+                input.checked = selectedTracks.has(input.value);
+            },
+        );
+        dialog.showModal();
+    });
+    form.addEventListener("submit", () => {
+        const data = new FormData(form);
+        selectedRooms = new Set(data.getAll("room").map(String));
+        selectedTracks = new Set(data.getAll("track").map(String));
+        notRecorded = data.has("notRecorded");
+        query = search.value.trim().toLocaleLowerCase();
+        render(true);
+    });
+    form.querySelector(".cancel-filters")?.addEventListener("click", () =>
+        dialog.close(),
+    );
+    form.querySelector(".clear-filters")?.addEventListener("click", () => {
+        form.reset();
+        selectedRooms.clear();
+        selectedTracks.clear();
+        notRecorded = false;
+        query = "";
+        dialog.close();
+        render(true);
+    });
 
-    mountSchedule(pickAllRooms, buildCalendarDays);
+    loadSchedule()
+        .then((all) => {
+            allRooms = [...all.values()].sort((a, b) => a.order - b.order);
+            const tracks = new Map<string, Track>();
+            allRooms.forEach((room) =>
+                room.items.forEach((session) => {
+                    if (session.track)
+                        tracks.set(session.track.name, session.track);
+                }),
+            );
+            addOptions(
+                roomOptions,
+                allRooms.map((room) => room.name),
+                "room",
+            );
+            addTracks(
+                [...tracks.values()].sort((a, b) =>
+                    a.name.localeCompare(b.name),
+                ),
+            );
+            controls.hidden = false;
+            back.hidden = false;
+            render();
+            if (/^#\d{4}-\d{2}-\d{2}$/.test(location.hash)) {
+                // Direct date links load before the fetched headings exist.
+                document
+                    .getElementById(location.hash.slice(1))
+                    ?.scrollIntoView();
+            }
+            setInterval(render, 60_000);
+        })
+        .catch(() => undefined);
     initRoomHints();
 </script>

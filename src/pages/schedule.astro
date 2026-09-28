@@ -13,7 +13,18 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
     }
 
     .content-wrapper.wide {
-        max-width: 1122px;
+        max-width: 1600px;
+    }
+
+    .schedule-intro {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        margin-block-end: 2rem;
+    }
+
+    #full-schedule-start,
+    #full-schedule {
+        scroll-margin-block-start: 6rem;
     }
 
     .box {
@@ -49,11 +60,6 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
         background-image: url("/grey-repeating-lines.svg");
     }
 
-    /* the session tiles need a plain background, unlike the old pretalx widget */
-    #full-schedule {
-        background-image: none;
-    }
-
     h2 {
         font-size: 2rem;
         font-weight: 700;
@@ -72,27 +78,32 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
         <RoughSchedule />
         <div class="content-wrapper">
             <p>
-                Stay tuned by following us on <a href="https://matrix.org/blog/"
-                    >the Matrix Blog</a
-                >, our <a href="https://uk.linkedin.com/company/matrix-org"
-                    >LinkedIn account</a
-                > or by <a href="https://mastodon.matrix.org/@matrix"
-                    >following Matrix.org on the fediverse</a
-                >!
+                Stay tuned by following us on{" "}
+                <a href="https://matrix.org/blog/">the Matrix Blog</a>, our{" "}
+                <a href="https://uk.linkedin.com/company/matrix-org">
+                    LinkedIn account
+                </a>{" "}
+                or by{" "}
+                <a href="https://mastodon.matrix.org/@matrix">
+                    following Matrix.org on the fediverse
+                </a>
+                !
             </p>
         </div>
     </section>
-    <section id="full-schedule">
-        <div class="content-wrapper wide">
+    <section id="full-schedule-start">
+        <div id="full-schedule" class="content-wrapper wide">
             <h2 class="sr-only">Full schedule</h2>
-            <p>
-                Looking for a more detailed schedule? Check out the{" "}
-                <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">
-                    full schedule
-                </a>
-                .
-            </p>
-            <p>All times are local time in Malmö (Europe/Stockholm).</p>
+            <div class="schedule-intro box">
+                <p>
+                    Looking for a more detailed schedule? Check out the{" "}
+                    <a href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/">
+                        full schedule
+                    </a>
+                    .
+                </p>
+                <p>All times are local time in Malmö (Europe/Stockholm).</p>
+            </div>
             <ScheduleCalendar
                 links={{
                     Hackathon: "/hackathon",
@@ -100,21 +111,6 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
                 }}
             />
         </div>
-        <noscript>
-            <div class="pretalx-widget">
-                <div class="pretalx-widget-info-message">
-                    JavaScript is disabled in your browser. To access our
-                    schedule without JavaScript, please{" "}
-                    <a
-                        target="_blank"
-                        href="https://cfp.2026.matrix.org/matrix-conference-2026/schedule/"
-                    >
-                        click here
-                    </a>
-                    .
-                </div>
-            </div>
-        </noscript>
     </section>
     <section>
         <div class="items">
