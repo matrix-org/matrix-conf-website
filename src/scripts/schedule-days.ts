@@ -4,6 +4,8 @@ import { fmt, type Room, type Session } from "./schedule";
 export type Day = {
     /** ISO date (in the event's time zone), also the anchor id of the heading. */
     id: string;
+    /** Date label shown in the heading and navigation. */
+    label: string;
     /** The date heading, ready to be put in front of the day's sessions. */
     heading: string;
     /**
@@ -42,7 +44,8 @@ export function scheduleDays(rooms: Room[]): Day[] {
                 (session) => isoDate.format(session.start) === id,
             );
         const firstSessionOfDay = rooms.flatMap(sessionsOfRoom)[0];
-        const heading = `<div class="date-separator" id="${id}"><h3 class="date">${label.format(firstSessionOfDay.start)}</h3><div class="line" aria-hidden="true"></div></div>`;
-        return { id, heading, sessionsOfRoom };
+        const dateLabel = label.format(firstSessionOfDay.start);
+        const heading = `<div class="date-separator" id="${id}"><h3 class="date">${dateLabel}</h3><div class="line" aria-hidden="true"></div></div>`;
+        return { id, label: dateLabel, heading, sessionsOfRoom };
     });
 }
