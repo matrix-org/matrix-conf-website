@@ -16,10 +16,10 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
         max-width: 2400px;
     }
 
-    .schedule-intro {
-        max-width: var(--max-page-width);
-        margin-inline: auto;
-        margin-block-end: 2rem;
+    .schedule-note {
+        margin-block: 0 1rem;
+        color: var(--secondary-color);
+        font-size: 0.875rem;
     }
 
     #full-schedule-start,
@@ -94,9 +94,9 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
     <section id="full-schedule-start">
         <div id="full-schedule" class="content-wrapper wide">
             <h2 class="sr-only">Full schedule</h2>
-            <div class="schedule-intro box">
-                <p>All times are local time in Malmö (Europe/Stockholm).</p>
-            </div>
+            <p class="schedule-note">
+                All times are local time in Malmö (Europe/Stockholm).
+            </p>
             <ScheduleCalendar
                 links={{
                     Hackathon: "/hackathon",
