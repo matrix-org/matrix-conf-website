@@ -78,6 +78,9 @@
 .schedule-list .session:last-child {
     margin-bottom: 0;
 }
+.schedule-list .session:not(.break) {
+    z-index: 1;
+}
 .schedule-list .session:hover {
     background-color: #262626;
 }
