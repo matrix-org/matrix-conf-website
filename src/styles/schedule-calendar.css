@@ -310,6 +310,9 @@
     font-size: 0.875rem;
     font-weight: 700;
 }
+.schedule-list .room-grid .head-day + .axis {
+    border-top-color: transparent;
+}
 /* Tiles overlap the one above by their border width so touching borders merge into one line. */
 .schedule-list .room-grid .session {
     grid-template-columns: 1fr;
