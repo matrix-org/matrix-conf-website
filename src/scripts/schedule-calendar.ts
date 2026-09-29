@@ -7,6 +7,8 @@ const HALF_HOUR = 30 * 60_000;
 // tile needs more space in grow (equally in every column), so nothing is clipped and start times stay aligned.
 const MINUTE = 5;
 const IDLE_MINUTE = 2; // px per minute where only breaks run, so lunch doesn't eat the page
+const IDLE_MAX = 120; // px a stretch with the same breaks running is squeezed to at most, however long it lasts
+const MIN_LABEL_HEIGHT = 24; // px a time label needs; squeezed stretches show one label instead of one per half hour
 
 const INFO_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01" stroke-linecap="round"/></svg>`;
 
@@ -39,32 +41,62 @@ const rowOf = (time: number, { from }: Span) =>
     Math.round((time - from) / 60_000) + 2;
 
 /**
- * The time labels on the left, one per half hour.
+ * The time labels on the left, one per half hour. Where minutes are squeezed to less than a label's height, one
+ * label covers as many half hours as it takes to fit.
  *
  * @param span Time range to label.
  * @param timezone IANA time zone to format the labels in.
+ * @param offsets Px offset of the start of each minute of `span`, plus one for the end of the last.
  * @returns HTML for the axis, positioned with inline grid-row styles.
  */
-function timeAxis(span: Span, timezone: string): string {
+function timeAxis(span: Span, timezone: string, offsets: number[]): string {
     const time = fmt(timezone).time;
+    const offsetAt = (instant: number) =>
+        offsets[Math.round((instant - span.from) / 60_000)];
     let axis = "";
-    for (let instant = span.from; instant < span.to; instant += HALF_HOUR) {
+    for (let instant = span.from; instant < span.to;) {
+        let end = instant + HALF_HOUR;
+        while (
+            end < span.to &&
+            offsetAt(end) - offsetAt(instant) < MIN_LABEL_HEIGHT
+        )
+            end += HALF_HOUR;
         const label = time.format(instant);
-        axis += `<div class="axis${label.endsWith(":00") ? " hour" : ""}" aria-hidden="true" style="grid-row:${rowOf(instant, span)}/${rowOf(instant + HALF_HOUR, span)}">${label}</div>`;
+        axis += `<div class="axis${label.endsWith(":00") ? " hour" : ""}" aria-hidden="true" style="grid-row:${rowOf(instant, span)}/${rowOf(end, span)}">${label}</div>`;
+        instant = end;
     }
     return axis;
 }
 
-/** Height in px of every minute of the day. Minutes where no room has a talk (breaks only) are squeezed. */
+/**
+ * Height in px of every minute of the day. Minutes where no room has a talk (breaks only) are squeezed, and a
+ * stretch where the same sessions keep running is squeezed to at most {@link IDLE_MAX} in total.
+ */
 function minuteHeights(sessions: Session[], span: Span): number[] {
     const talks = sessions.filter((session) => !session.isBreak);
+    const boundaries = [
+        ...new Set(
+            sessions.flatMap((session) => [+session.start, +session.end]),
+        ),
+    ].sort((a, b) => a - b);
     const heights: number[] = [];
-    for (let instant = span.from; instant < span.to; instant += 60_000)
-        heights.push(
+    for (let instant = span.from; instant < span.to; instant += 60_000) {
+        if (
             talks.some((talk) => +talk.start <= instant && instant < +talk.end)
-                ? MINUTE
-                : IDLE_MINUTE,
+        ) {
+            heights.push(MINUTE);
+            continue;
+        }
+        const stretchStart =
+            boundaries.findLast((time) => time <= instant) ?? span.from;
+        const stretchEnd = boundaries.find((time) => time > instant) ?? span.to;
+        heights.push(
+            Math.min(
+                IDLE_MINUTE,
+                IDLE_MAX / ((stretchEnd - stretchStart) / 60_000),
+            ),
         );
+    }
     return heights;
 }
 
@@ -145,5 +177,5 @@ export function calendarHtml(
 
     const tracks = `grid-template-columns:4rem repeat(${columns.length},minmax(0,1fr));grid-template-rows:auto ${rowTracks(heights)}`;
     const corner = `<div class="grid-head" aria-hidden="true"></div><div class="head-day" aria-hidden="true">${weekday.format(span.from)}<br>${dayMonth.format(span.from)}</div>`;
-    return `<div class="room-grid" style="${tracks}">${corner}${timeAxis(span, timezone)}${roomColumns.join("")}</div>`;
+    return `<div class="room-grid" style="${tracks}">${corner}${timeAxis(span, timezone, offsets)}${roomColumns.join("")}</div>`;
 }
