@@ -306,9 +306,10 @@
     font-size: 0.875rem;
     font-weight: 700;
 }
+/* Tiles overlap the one above by their border width so touching borders merge into one line. */
 .schedule-list .room-grid .session {
     grid-template-columns: 1fr;
-    margin: 0;
+    margin: -1px 0 0;
 }
 @media (min-width: 1000px) {
     /* Tiles are as tall as the talk is long, so keep them compact and clip the rest (full title on hover). */
@@ -409,8 +410,5 @@
     .schedule-list .room-grid .head-day,
     .schedule-list .room-grid .grid-head {
         display: none;
-    }
-    .schedule-list .room-grid .session {
-        margin-top: -1px;
     }
 }
