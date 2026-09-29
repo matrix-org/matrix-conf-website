@@ -2,7 +2,7 @@ import { pretalxSchedule, pretalxTalkBase } from "../data/pretalx";
 
 /** A pretalx track: a category a session can belong to, shown as a coloured pill. */
 export type Track = {
-    /** Track name, e.g. "Keynote". A long "… sponsored by …" suffix is stripped where the name is displayed. */
+    /** Track name, e.g. "Keynote". */
     name: string;
     /** Track colour as a `#rrggbb` hex string, as pretalx has it. */
     color: string;
@@ -151,8 +151,7 @@ export function loadSchedule(): Promise<Map<number, Room>> {
             }
             rooms.forEach((room) =>
                 room.items.sort(
-                    (sessionA, sessionB) =>
-                        +sessionA.start - +sessionB.start,
+                    (sessionA, sessionB) => +sessionA.start - +sessionB.start,
                 ),
             );
             return rooms;
@@ -230,9 +229,7 @@ export function trackColors(track: Track): TrackColors {
 export function pill(track?: Track): string {
     if (!track) return "";
     const { background, foreground } = trackColors(track);
-    // "Public Sector sponsored by Element" is too long for a pill (and the /watch cards); keep the full name as tooltip.
-    const short = track.name.replace(/\s+sponsored by\s.*$/i, "");
-    return `<span class="pill" title="${esc(track.name)}" style="background-color:${background};color:${foreground}">${esc(short)}</span>`;
+    return `<span class="pill" style="background-color:${background};color:${foreground}">${esc(track.name)}</span>`;
 }
 
 /**
