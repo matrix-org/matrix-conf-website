@@ -52,6 +52,12 @@
     margin-bottom: -1px;
     background: var(--bg-primary, #000);
 }
+/* Tiles overlap their neighbour by their border width so the borders merge. The last tile before a date heading (or
+   at the end of the list) has no neighbour to overlap, so it keeps its own bottom border. */
+.schedule-list .session:has(+ .date-separator),
+.schedule-list .session:last-child {
+    margin-bottom: 0;
+}
 .schedule-list .session:hover {
     background-color: #262626;
 }
