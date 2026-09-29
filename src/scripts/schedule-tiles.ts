@@ -1,7 +1,7 @@
 import {
     esc,
     fmt,
-    pill,
+    trackColors,
     speakersHtml,
     talksOf,
     type Room,
@@ -75,7 +75,9 @@ function talkTile(
     { session, className, style, time }: Tile,
     badge: string,
 ): string {
-    const track = session.track ? `<div>${pill(session.track)}</div>` : "";
+    const track = session.track
+        ? `<span class="track">${esc(session.track.name)}</span>`
+        : "";
     return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${speakersHtml(session)}${track}</div></a>`;
 }
 
@@ -106,10 +108,16 @@ export function sessionTiles(
     return items
         .map((session) => {
             const placement = place?.(session);
+            const declarations = [
+                placement?.style,
+                session.track && `--track:${trackColors(session.track).text}`,
+            ]
+                .filter(Boolean)
+                .join(";");
             const tile: Tile = {
                 session,
                 className: `session${isLive(session, now) ? " live" : +session.end <= now ? " past" : ""}${placement ? " " + placement.size : ""}`,
-                style: placement ? ` style="${placement.style}"` : "",
+                style: declarations ? ` style="${declarations}"` : "",
                 time: `<time datetime="${new Date(session.start).toISOString()}">${formatter.time.format(session.start)}–${formatter.time.format(session.end)}</time>`,
             };
             const marker =

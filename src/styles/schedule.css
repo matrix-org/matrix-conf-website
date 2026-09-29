@@ -35,8 +35,8 @@
 .schedule-list .date-separator {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-block: 32px 16px;
+    gap: var(--space-medium);
+    margin-block: var(--space-section) var(--space-medium);
     scroll-margin-top: 6rem;
 }
 .schedule-list .date-separator .date {
@@ -53,14 +53,19 @@
 
 .schedule-list {
     --session-line: 1.5rem;
+    --space-tight: 0.25rem;
+    --space-small: 0.5rem;
+    --space-medium: 1rem;
+    --space-large: 1.5rem;
+    --space-section: 2rem;
 }
 .schedule-list .session {
     position: relative;
     display: grid;
     grid-template-columns: 7rem 1fr;
-    gap: 0.25rem 1.5rem;
-    padding: 1rem 1.5rem;
-    border: 1px solid var(--border-interactive, #636569);
+    gap: var(--space-tight) var(--space-large);
+    padding: var(--space-medium) var(--space-large);
+    border: 1px solid var(--track, var(--border-interactive, #636569));
     margin-bottom: -1px;
     background: var(--bg-primary, #000);
 }
@@ -88,7 +93,7 @@
     background: var(--rainbow);
 }
 .schedule-list .session.break {
-    padding-block: 0.5rem;
+    padding-block: var(--space-small);
     background: var(--bg-card, #1a1a1a);
     color: var(--text-primary, #fff);
 }
@@ -103,7 +108,7 @@
     text-decoration: none;
 }
 .schedule-list .session time {
-    color: var(--secondary-color, #b8b8b8);
+    color: var(--text-primary, #fff);
     font-variant-numeric: tabular-nums;
     line-height: var(--session-line);
 }
@@ -113,13 +118,17 @@
 .schedule-list .session .who {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
+    gap: var(--space-small);
+    margin-top: var(--space-tight);
     font-size: 0.875rem;
     color: var(--secondary-color, #b8b8b8);
 }
-.schedule-list .session .pill {
-    margin-top: 0.5rem;
+.schedule-list .session .track {
+    display: block;
+    margin-top: var(--space-small);
+    color: var(--track);
+    font-size: 0.875rem;
+    font-weight: 700;
 }
 
 .schedule-list .badge {
@@ -128,9 +137,9 @@
     grid-column: -2;
     justify-self: end;
     align-self: start;
-    inset-inline-end: 1rem;
+    inset-inline-end: var(--space-medium);
     margin-block-start: calc((var(--session-line) - 1lh - 2px) / 2);
-    padding: 0 0.5rem;
+    padding: 0 var(--space-small);
     border: 1px solid transparent;
     font-size: 0.75rem;
     font-weight: 700;
@@ -140,7 +149,8 @@
 }
 .schedule-list .badge.next {
     background:
-        linear-gradient(var(--bg-primary, #000), var(--bg-primary, #000)) padding-box,
+        linear-gradient(var(--bg-primary, #000), var(--bg-primary, #000))
+            padding-box,
         var(--rainbow-inline) border-box;
     color: var(--text-primary, #fff);
 }
@@ -152,8 +162,8 @@
 .schedule-list .now-line {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-block: 0.75rem;
+    gap: var(--space-medium);
+    margin-block: var(--space-small);
     color: var(--text-primary, #fff);
     font-size: 0.875rem;
     font-weight: 700;
@@ -215,7 +225,7 @@
 .schedule-list .norec {
     float: inline-end;
     margin-block-start: 0.25rem;
-    margin-inline-start: 0.5rem;
+    margin-inline-start: var(--space-small);
     color: var(--secondary-color, #b8b8b8);
 }
 .schedule-list .norec svg {

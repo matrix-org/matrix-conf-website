@@ -189,35 +189,62 @@ export const fmt = (tz: string) => ({
     }),
 });
 
-/** Background and foreground colours to render a track pill in. */
+/** Colours to render a track in. */
 export type TrackColors = {
     /** Pill background colour, as a CSS colour value. */
     background: string;
     /** Pill text colour, as a CSS colour value. */
     foreground: string;
+    /** Track colour lightened until it reads as text and as a border on the black page. */
+    text: string;
 };
 
-/**
- * Picks readable pill colours for a track.
- *
- * Uses the track colour as pretalx has it, except near-black colours (e.g. Keynote), which are inverted to
- * white so the pill still shows on the black page.
- *
- * @param track Track to colour a pill for.
- * @returns The background and foreground colours to use.
- */
-export function trackColors(track: Track): TrackColors {
+/** Text on tiles is dimmed to 70% for past sessions; this luminance keeps it above 4.5:1 contrast then. */
+const MIN_TEXT_LUMINANCE = 0.4;
+
+/** WCAG relative luminance of a `#rrggbb` colour. */
+function luminanceOf(color: string): number {
     const [red, green, blue] = [1, 3, 5]
-        .map((i) => parseInt(track.color.slice(i, i + 2), 16) / 255)
+        .map((i) => parseInt(color.slice(i, i + 2), 16) / 255)
         .map((channel) =>
             channel <= 0.03928
                 ? channel / 12.92
                 : ((channel + 0.055) / 1.055) ** 2.4,
         );
-    const luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue; // WCAG relative luminance
+    return 0.2126 * red + 0.7152 * green + 0.0722 * blue;
+}
+
+/** Lightens a `#rrggbb` colour towards white until it reaches {@link MIN_TEXT_LUMINANCE}. */
+function readableOnBlack(color: string): string {
+    for (let lighten = 0; lighten < 1; lighten += 0.05) {
+        const channels = [1, 3, 5].map((i) =>
+            Math.round(
+                parseInt(color.slice(i, i + 2), 16) * (1 - lighten) +
+                    255 * lighten,
+            )
+                .toString(16)
+                .padStart(2, "0"),
+        );
+        const candidate = `#${channels.join("")}`;
+        if (luminanceOf(candidate) >= MIN_TEXT_LUMINANCE) return candidate;
+    }
+    return "#fff";
+}
+
+/**
+ * Picks readable colours for a track.
+ *
+ * The pill uses the track colour as pretalx has it, except near-black colours (e.g. Keynote), which are inverted to
+ * white so the pill still shows on the black page.
+ *
+ * @param track Track to pick colours for.
+ * @returns The pill background and foreground colours and a colour for text on black.
+ */
+export function trackColors(track: Track): TrackColors {
+    const luminance = luminanceOf(track.color);
     const background = luminance < 0.01 ? "#fff" : track.color;
     const foreground = luminance < 0.01 || luminance > 0.179 ? "#000" : "#fff";
-    return { background, foreground };
+    return { background, foreground, text: readableOnBlack(track.color) };
 }
 
 /**
