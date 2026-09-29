@@ -341,11 +341,6 @@
         min-width: 0;
         font-size: 0.8125rem;
     }
-    .schedule-list .room-grid .session .names {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
     .schedule-list .room-grid .session .pill {
         margin-top: 0.25rem;
         font-size: 0.8125rem;
