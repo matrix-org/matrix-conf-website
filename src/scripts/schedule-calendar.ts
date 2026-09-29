@@ -5,7 +5,7 @@ import { sessionTiles } from "./schedule-tiles";
 const HALF_HOUR = 30 * 60_000;
 // Calendar scale: a tile is at least this many px per minute, but never smaller than its content. Rows that a
 // tile needs more space in grow (equally in every column), so nothing is clipped and start times stay aligned.
-const MINUTE = 10;
+const MINUTE = 5;
 const IDLE_MINUTE = 2; // px per minute where only breaks run, so lunch doesn't eat the page
 
 const INFO_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 11v6M12 7.5v.01" stroke-linecap="round"/></svg>`;
@@ -61,9 +61,7 @@ function minuteHeights(sessions: Session[], span: Span): number[] {
     const heights: number[] = [];
     for (let instant = span.from; instant < span.to; instant += 60_000)
         heights.push(
-            talks.some(
-                (talk) => +talk.start <= instant && instant < +talk.end,
-            )
+            talks.some((talk) => +talk.start <= instant && instant < +talk.end)
                 ? MINUTE
                 : IDLE_MINUTE,
         );
@@ -122,7 +120,8 @@ export function calendarHtml(
     const heights = minuteHeights(sessions, span);
     const offsets = heights.reduce(
         (offset, height) => (
-            offset.push(offset[offset.length - 1] + height), offset
+            offset.push(offset[offset.length - 1] + height),
+            offset
         ),
         [0],
     ); // px offset of each minute
