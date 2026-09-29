@@ -86,6 +86,17 @@ const { room } = Astro.props;
         trackColors,
     } from "../scripts/schedule";
 
+    const relative = new Intl.RelativeTimeFormat("en");
+
+    /** "in 25 minutes", "in 3 hours" or "in 2 days", whichever unit fits the time left until `start`. */
+    function startsIn(start: Date, now: number): string {
+        const minutes = Math.max(1, Math.round((+start - now) / 60_000));
+        if (minutes < 60) return relative.format(minutes, "minute");
+        const hours = Math.round(minutes / 60);
+        if (hours < 24) return relative.format(hours, "hour");
+        return relative.format(Math.round(hours / 24), "day");
+    }
+
     async function update() {
         const rooms = await loadSchedule().catch(() => undefined);
         if (!rooms) return;
@@ -110,7 +121,7 @@ const { room } = Astro.props;
                 element.innerHTML = talk
                     ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
                    <div class="title"><a href="${talk.url}" target="_blank" rel="noopener noreferrer">${esc(talk.title)}</a></div>
-                   <div class="when">${formatter.time.format(talk.start)}–${formatter.time.format(talk.end)}</div>${speakersHtml(talk)}${talk.track ? `<span class="track">${esc(talk.track.name)}</span>` : ""}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${formatter.time.format(next.start)}</span></div>` : ""}`
+                   <div class="when">${formatter.time.format(talk.start)}–${formatter.time.format(talk.end)}</div>${speakersHtml(talk)}${talk.track ? `<span class="track">${esc(talk.track.name)}</span>` : ""}${live && next ? `<div class="then"><span class="label">${startsIn(next.start, now)}</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${formatter.time.format(next.start)}</span></div>` : ""}`
                     : `<div class="label">Nothing scheduled</div>`;
             });
     }
