@@ -39,6 +39,9 @@
     margin-block: var(--space-section) var(--space-medium);
     scroll-margin-top: 6rem;
 }
+.schedule-list .date-separator:first-child {
+    margin-block-start: 0;
+}
 .schedule-list .date-separator .date {
     margin: 0;
     flex: none;
