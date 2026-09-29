@@ -1,6 +1,6 @@
 ---
 // "Now streaming" / "Up next" for one room, from the live pretalx schedule.
-import "../styles/schedule.css"; // track pill styles
+import "../styles/schedule.css"; // avatar and speaker styles
 interface Props {
     /** Pretalx room id to show the current or next talk of. */
     room: number;
@@ -22,6 +22,9 @@ const { room } = Astro.props;
         width: 4px;
         background: var(--track, #636569);
     }
+    .now[data-keynote]::before {
+        background: var(--rainbow);
+    }
     .label {
         color: var(--secondary-color);
         font-size: 0.875rem;
@@ -31,8 +34,12 @@ const { room } = Astro.props;
         color: var(--link-color);
         font-weight: 700;
     }
-    .now .pill {
+    .now .track {
+        display: block;
         margin-top: 0.5rem;
+        color: var(--track);
+        font-size: 0.875rem;
+        font-weight: 700;
     }
     .then {
         margin-top: 0.5rem;
@@ -62,7 +69,7 @@ const { room } = Astro.props;
     }
     .now .who {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.5rem;
         margin-top: 0.25rem;
     }
@@ -73,7 +80,7 @@ const { room } = Astro.props;
         loadSchedule,
         esc,
         fmt,
-        pill,
+        isKeynote,
         speakersHtml,
         talksOf,
         trackColors,
@@ -97,14 +104,13 @@ const { room } = Astro.props;
                 const formatter = fmt(room.timezone);
                 element.style.setProperty(
                     "--track",
-                    talk?.track
-                        ? trackColors(talk.track).background
-                        : "#636569",
+                    talk?.track ? trackColors(talk.track).text : "#636569",
                 );
+                element.toggleAttribute("data-keynote", !!talk && isKeynote(talk));
                 element.innerHTML = talk
                     ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
                    <div class="title"><a href="${talk.url}" target="_blank" rel="noopener noreferrer">${esc(talk.title)}</a></div>
-                   <div class="when">${formatter.time.format(talk.start)}–${formatter.time.format(talk.end)}</div>${speakersHtml(talk)}${pill(talk.track) && `<div>${pill(talk.track)}</div>`}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${formatter.time.format(next.start)}</span></div>` : ""}`
+                   <div class="when">${formatter.time.format(talk.start)}–${formatter.time.format(talk.end)}</div>${speakersHtml(talk)}${talk.track ? `<span class="track">${esc(talk.track.name)}</span>` : ""}${live && next ? `<div class="then"><span class="label">Then</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${formatter.time.format(next.start)}</span></div>` : ""}`
                     : `<div class="label">Nothing scheduled</div>`;
             });
     }
