@@ -116,7 +116,7 @@ export function sessionTiles(
                 .join(";");
             const tile: Tile = {
                 session,
-                className: `session${isLive(session, now) ? " live" : +session.end <= now ? " past" : ""}${placement ? " " + placement.size : ""}`,
+                className: `session${session.track?.name.toLowerCase() === "keynote" ? " keynote" : ""}${isLive(session, now) ? " live" : +session.end <= now ? " past" : ""}${placement ? " " + placement.size : ""}`,
                 style: declarations ? ` style="${declarations}"` : "",
                 time: `<time datetime="${new Date(session.start).toISOString()}">${formatter.time.format(session.start)}–${formatter.time.format(session.end)}</time>`,
             };

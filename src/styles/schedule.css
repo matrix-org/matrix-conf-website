@@ -81,6 +81,9 @@
 .schedule-list .session:not(.break) {
     z-index: 1;
 }
+.schedule-list .session.keynote {
+    border-image: var(--rainbow) 1;
+}
 .schedule-list .session:hover {
     background-color: #262626;
 }
