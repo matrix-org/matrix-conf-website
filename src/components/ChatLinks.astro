@@ -1,27 +1,93 @@
 ---
 import { space, matrixTo } from "../data/streams";
-interface Props { chat?: string; label?: string; }
-const { chat, label = "Join this room's chat" } = Astro.props;
+interface Props {
+    chat?: string;
+    /** URL of the stream on media.ccc.de, shown as a third link when given. */
+    ccc?: string;
+    label?: string;
+}
+const { chat, ccc, label = "Join this room's chat" } = Astro.props;
 const cells = [
-    ...(chat ? [{ label, alias: chat, icon: "matrix" }] : []),
-    { label: "Join the Matrix space", alias: space, icon: "matrix" },
+    ...(chat
+        ? [{ label, text: chat, href: matrixTo(chat), icon: "matrix" }]
+        : []),
+    {
+        label: "Join the Matrix space",
+        text: space,
+        href: matrixTo(space),
+        icon: "matrix",
+    },
+    ...(ccc
+        ? [
+              {
+                  label: "Watch on media.ccc.de",
+                  text: "Open the stream directly",
+                  href: ccc,
+                  icon: "voctocat",
+              },
+          ]
+        : []),
 ];
 ---
 
 <style>
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); }
-    .cell { padding: 20px; transition: background-color 0.15s; background-color: var(--bg-color); box-shadow: 0 0 0 1px #636569; }
-    .cell:hover { background-color: #262626; }
-    a:hover { text-decoration: underline; }
-    img { flex: none; }
-    h3 { margin: 0 0 0.5rem; color: var(--secondary-color); font-size: 0.875rem; text-transform: uppercase; }
-    a { overflow-wrap: anywhere; display: flex; align-items: center; gap: 12px; color: var(--link-color); text-decoration: none; }
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 1px 1px 0;
+    }
+    .cell {
+        flex: 1 1 18rem;
+        box-sizing: border-box;
+        margin: 0 -1px -1px 0;
+        padding: 20px;
+        border: 1px solid #636569;
+        background-color: var(--bg-color);
+        color: var(--link-color);
+        text-decoration: none;
+    }
+    .cell:hover {
+        background-color: #262626;
+    }
+    .label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--secondary-color);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+    .alias {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        overflow-wrap: anywhere;
+    }
+    img {
+        flex: none;
+    }
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
 </style>
 <div class="grid">
     {cells.map((c) => (
-        <div class="cell">
-            <h3>{c.label}</h3>
-            <a href={matrixTo(c.alias)} target="_blank" rel="noopener noreferrer"><img src={`/watch/${c.icon}.svg`} alt="" width="24" height="24" />{c.alias}</a>
-        </div>
+        <a class="cell" href={c.href} target="_blank" rel="noopener noreferrer">
+            <span class="label">{c.label}</span>
+            <span class="alias">
+                <img
+                    src={`/watch/${c.icon}.svg`}
+                    alt=""
+                    width="24"
+                    height="24"
+                />
+                {c.text}
+                <span class="sr-only"> (opens in a new tab)</span>
+            </span>
+        </a>
     ))}
 </div>

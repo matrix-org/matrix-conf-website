@@ -10,17 +10,33 @@ import SponsorsGrid from "../../components/SponsorsGrid.astro";
 import { streams, cccEmbed, cccStream } from "../../data/streams";
 
 export function getStaticPaths() {
-    return streams.map((s) => ({ params: { room: s.slug }, props: { stream: s } }));
+    return streams.map((s) => ({
+        params: { room: s.slug },
+        props: { stream: s },
+    }));
 }
 const { stream } = Astro.props;
 ---
 
 <style>
-    .content-wrapper { display: flex; flex-direction: column; gap: 1rem; max-width: var(--max-page-width); margin-inline: auto; }
-    h1 { font-size: 2rem; font-weight: 700; text-align: center; margin: 0 0 0.5rem; } /* + 1rem gap = same 1.5rem to the picker as on /watch */
-    a { color: var(--link-color); text-decoration: none; }
-    a.ccc { display: flex; align-items: center; gap: 12px; }
-    a.ccc:hover { text-decoration: underline; }
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 0.5rem;
+    } /* + 1rem gap = same 1.5rem to the picker as on /watch */
+    .panel {
+        padding: 20px;
+        border: 1px solid #636569;
+        background-color: var(--bg-color);
+    }
 </style>
 <BaseLayout
     pageTitle={`Watch ${stream.name} live – The Matrix Conference`}
@@ -28,14 +44,23 @@ const { stream } = Astro.props;
 >
     <section id="stream">
         <div class="content-wrapper">
-            <h1><RoomName name={stream.name} /></h1>
+            <h1>
+                <RoomName name={stream.name} />
+            </h1>
             <StreamNav current={stream.slug} />
-            <ChatLinks chat={stream.chat} />
-            <NowStreaming room={stream.pretalxRoom} />
-            <StreamPlayer room={stream.pretalxRoom} src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`} title={`${stream.name} livestream`} />
-            <a class="ccc" href={cccStream(stream.ccc)} target="_blank" rel="noopener noreferrer"><img src="/watch/voctocat.svg" alt="" width="24" height="24" />Open on media.ccc.de</a>
+            <div class="panel">
+                <NowStreaming room={stream.pretalxRoom} />
+            </div>
+            <StreamPlayer
+                room={stream.pretalxRoom}
+                src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`}
+                title={`${stream.name} livestream`}
+            />
+            <ChatLinks chat={stream.chat} ccc={cccStream(stream.ccc)} />
             <ScheduleList room={stream.pretalxRoom} />
         </div>
     </section>
-    <section id="sponsors"><SponsorsGrid /></section>
+    <section id="sponsors">
+        <SponsorsGrid />
+    </section>
 </BaseLayout>
