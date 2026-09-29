@@ -283,10 +283,14 @@
     top: 100%;
     inset-inline-start: 0;
     width: min(20rem, 80vw);
-    margin: 0;
-    padding: 0.75rem 1rem;
-    background: var(--bg-card, #1a1a1a);
-    border: 1px solid var(--border-interactive, #636569);
+    margin: var(--space-tight) 0 0;
+    padding: var(--space-small) var(--space-medium);
+    border: 1px solid transparent;
+    background:
+        linear-gradient(var(--bg-card, #1a1a1a), var(--bg-card, #1a1a1a))
+            padding-box,
+        var(--rainbow-inline) border-box;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.6);
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.4;
@@ -394,17 +398,14 @@
         display: block !important;
     }
     .schedule-list .room-grid .room-head {
-        position: static;
-        flex-wrap: wrap;
+        position: relative;
+        top: auto;
+        z-index: 1;
         margin-top: 1.5rem;
     }
-    .schedule-list .room-info[open] {
-        flex-basis: 100%;
-    }
     .schedule-list .room-info p {
-        position: static;
+        inset-inline-end: 0;
         width: auto;
-        margin-top: 0.5rem;
     }
     .schedule-list .room-grid .axis,
     .schedule-list .room-grid .head-day,
