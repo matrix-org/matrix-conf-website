@@ -116,8 +116,9 @@
     font-size: 1.125rem;
 }
 .schedule-list .session .who {
+    --avatar-size: 1.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-small);
     margin-top: var(--space-tight);
     font-size: 0.875rem;
@@ -201,8 +202,8 @@
 }
 .avatar {
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: var(--avatar-size, 1.5rem);
+    height: var(--avatar-size, 1.5rem);
     box-sizing: border-box;
     border: 2px solid var(--bg-primary, #000);
     border-radius: 50%;
@@ -221,6 +222,7 @@
 }
 .names {
     min-width: 0;
+    line-height: var(--avatar-size, 1.5rem);
 }
 .schedule-list .norec {
     float: inline-end;
