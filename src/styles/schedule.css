@@ -203,9 +203,9 @@
     min-width: 0;
 }
 .schedule-list .norec {
-    display: inline-block;
+    float: inline-end;
+    margin-block-start: 0.25rem;
     margin-inline-start: 0.5rem;
-    vertical-align: middle;
     color: var(--secondary-color, #b8b8b8);
 }
 .schedule-list .norec svg {

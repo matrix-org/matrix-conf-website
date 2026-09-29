@@ -76,7 +76,7 @@ function talkTile(
     badge: string,
 ): string {
     const track = session.track ? `<div>${pill(session.track)}</div>` : "";
-    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div><strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${session.recorded ? "" : NO_RECORD}${speakersHtml(session)}${track}</div></a>`;
+    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${speakersHtml(session)}${track}</div></a>`;
 }
 
 /**
