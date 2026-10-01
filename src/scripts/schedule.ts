@@ -1,6 +1,6 @@
 import { pretalxSchedule, pretalxTalkBase } from "../data/pretalx";
 
-/** A pretalx track: a category a session can belong to, shown as a coloured pill. */
+/** A pretalx track: a category a session can belong to and the colour it is shown in. */
 export type Track = {
     /** Track name, e.g. "Keynote". */
     name: string;
@@ -201,10 +201,6 @@ export const fmt = (tz: string) => ({
 
 /** Colours to render a track in. */
 export type TrackColors = {
-    /** Pill background colour, as a CSS colour value. */
-    background: string;
-    /** Pill text colour, as a CSS colour value. */
-    foreground: string;
     /** Track colour lightened until it reads as text and as a border on the black page. */
     text: string;
 };
@@ -244,29 +240,11 @@ function readableOnBlack(color: string): string {
 /**
  * Picks readable colours for a track.
  *
- * The pill uses the track colour as pretalx has it, except near-black colours (e.g. Keynote), which are inverted to
- * white so the pill still shows on the black page.
- *
  * @param track Track to pick colours for.
- * @returns The pill background and foreground colours and a colour for text on black.
+ * @returns The track colour, lightened if needed so it reads as text and as a border on the black page.
  */
 export function trackColors(track: Track): TrackColors {
-    const luminance = luminanceOf(track.color);
-    const background = luminance < 0.01 ? "#fff" : track.color;
-    const foreground = luminance < 0.01 || luminance > 0.179 ? "#000" : "#fff";
-    return { background, foreground, text: readableOnBlack(track.color) };
-}
-
-/**
- * Renders a track as a coloured pill, in the style used on the 2025 watch page.
- *
- * @param track Track to render, or undefined for no pill.
- * @returns The pill's HTML, or an empty string if `track` is undefined.
- */
-export function pill(track?: Track): string {
-    if (!track) return "";
-    const { background, foreground } = trackColors(track);
-    return `<span class="pill" style="background-color:${background};color:${foreground}">${esc(track.name)}</span>`;
+    return { text: readableOnBlack(track.color) };
 }
 
 /**
