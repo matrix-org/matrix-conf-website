@@ -123,12 +123,20 @@ import PrimaryCta from "./PrimaryCta.astro";
         <div class="item smol">
             <h2>Join the Chat</h2>
             <p>Connect and exchange with other attendees and the organising team.</p>
-            <PrimaryCta
-                href="https://matrix.to/#/#events-wg:matrix.org"
-                flexBottom={true}
-            >
-            #events-wg:matrix.org
-            </PrimaryCta>
+            <div class="actions">
+                <PrimaryCta
+                    href="https://matrix.to/#/%23conference-2026%3Amatrix.org"
+                    flexBottom={true}
+                >
+                #conference-2026:matrix.org
+                </PrimaryCta>
+                <PrimaryCta
+                    href="https://matrix.to/#/%23general-mc26%3Amatrix.org"
+                    flexBottom={true}
+                >
+                #general-mc26:matrix.org
+                </PrimaryCta>
+            </div>
         </div>
     </div>
 </div>
