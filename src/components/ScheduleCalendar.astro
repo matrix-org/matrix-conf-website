@@ -152,11 +152,9 @@ const { links = {} } = Astro.props;
             input.type = "checkbox";
             input.name = "track";
             input.value = track.name;
-            name.className = "pill";
             name.textContent = track.name;
             label.className = "track-option";
-            name.style.backgroundColor = colors.background;
-            name.style.color = colors.foreground;
+            label.style.setProperty("--track", colors.text);
             label.append(input, name);
             trackOptions.append(label);
         }
