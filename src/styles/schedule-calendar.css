@@ -167,10 +167,9 @@
     outline-offset: 3px;
 }
 .filter-options .track-option span {
-    border-color: transparent;
-}
-.filter-options .pill {
-    font-size: inherit;
+    border-color: var(--track);
+    color: var(--track);
+    font-weight: 700;
     overflow-wrap: anywhere;
 }
 .filter-actions {
