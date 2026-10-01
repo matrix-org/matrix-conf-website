@@ -64,6 +64,16 @@ export function talksOf(room: Room): Session[] {
     return room.items.filter((session) => !session.isBreak);
 }
 
+/**
+ * Whether `session` is a keynote, which the schedule highlights with a rainbow.
+ *
+ * @param session Session to check.
+ * @returns True if the session's track is named "Keynote".
+ */
+export function isKeynote(session: Session): boolean {
+    return session.track?.name.toLowerCase() === "keynote";
+}
+
 /** The room fields as pretalx has them, before the session lists are attached. */
 type RoomInfo = {
     /** Room name, e.g. "Sofya". */
