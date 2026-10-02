@@ -1,0 +1,150 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import RoomName from "../../components/RoomName.astro";
+import StreamNav from "../../components/StreamNav.astro";
+import ChatLinks from "../../components/ChatLinks.astro";
+import NowStreaming from "../../components/NowStreaming.astro";
+import StreamPlayer from "../../components/StreamPlayer.astro";
+import ScheduleList from "../../components/ScheduleList.astro";
+import SponsorsGrid from "../../components/SponsorsGrid.astro";
+import { streams, cccEmbed, cccStream } from "../../data/streams";
+
+export function getStaticPaths() {
+    return streams.map((s) => ({
+        params: { room: s.slug },
+        props: { stream: s },
+    }));
+}
+const { stream } = Astro.props;
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 0.5rem;
+    } /* + 1rem gap = same 1.5rem to the picker as on /watch */
+    .panel {
+        padding: 20px;
+        border: 1px solid #636569;
+        background-color: var(--bg-color);
+    }
+    .stage {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .watch {
+        display: grid;
+        gap: 1rem;
+    }
+    @media (min-width: 1200px) {
+        .content-wrapper {
+            max-width: 1600px;
+        }
+        .watch {
+            grid-template-columns: minmax(0, 2fr) minmax(22rem, 1fr);
+        }
+        .agenda {
+            --fade-size: 2.5rem;
+            position: relative;
+            min-height: 24rem;
+        }
+        .agenda :global(.schedule-list) {
+            position: absolute;
+            inset: 0;
+            overflow-y: auto;
+            scrollbar-color: #636569 var(--bg-color);
+            mask-image: linear-gradient(
+                to bottom,
+                transparent,
+                #000 min(var(--scroll-top, 0px), var(--fade-size)),
+                #000
+                    calc(
+                        100% - min(var(--scroll-bottom, 0px), var(--fade-size))
+                    ),
+                transparent
+            );
+        }
+        .agenda :global(.schedule-list .session) {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<BaseLayout
+    pageTitle={`Watch ${stream.name} live – The Matrix Conference`}
+    description={`Livestream of the ${stream.name} room at The Matrix Conference 2026.`}
+>
+    <section id="stream">
+        <div class="content-wrapper">
+            <h1>
+                <RoomName name={stream.name} />
+            </h1>
+            <StreamNav current={stream.slug} />
+            <div class="watch">
+                <div class="stage">
+                    <div class="panel">
+                        <NowStreaming room={stream.pretalxRoom} />
+                    </div>
+                    <StreamPlayer
+                        room={stream.pretalxRoom}
+                        src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`}
+                        title={`${stream.name} livestream`}
+                    />
+                    <ChatLinks chat={stream.chat} ccc={cccStream(stream.ccc)} />
+                </div>
+                <div class="agenda">
+                    <ScheduleList room={stream.pretalxRoom} />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sponsors">
+        <SponsorsGrid />
+    </section>
+</BaseLayout>
+<script>
+    // The schedule scrolls in its own box next to the stream on wide screens. Start it at the current talk and
+    // tell the CSS how far it is scrolled, so its edges fade only while there is more to scroll to.
+    const list = document.querySelector<HTMLElement>(".agenda .schedule-list");
+    let started = false;
+    const update = () => {
+        if (!list) return;
+        list.style.setProperty("--scroll-top", `${list.scrollTop}px`);
+        list.style.setProperty(
+            "--scroll-bottom",
+            `${list.scrollHeight - list.clientHeight - list.scrollTop}px`,
+        );
+    };
+    const scrollToCurrent = () => {
+        const marker = list?.querySelector<HTMLElement>(
+            ".session.live, .now-line, .session:has(.badge.next)",
+        );
+        if (!list || !marker || list.scrollHeight <= list.clientHeight) return;
+        list.scrollTop =
+            marker.getBoundingClientRect().top -
+            list.getBoundingClientRect().top +
+            list.scrollTop;
+    };
+    if (list) {
+        list.addEventListener("scroll", update, { passive: true });
+        new ResizeObserver(update).observe(list);
+        new MutationObserver(() => {
+            if (!started && list.querySelector(".session")) {
+                started = true;
+                scrollToCurrent();
+            }
+            update();
+        }).observe(list, { childList: true });
+        scrollToCurrent();
+        update();
+    }
+</script>

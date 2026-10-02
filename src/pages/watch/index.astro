@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StreamNav from "../../components/StreamNav.astro";
+import StreamOverview from "../../components/StreamOverview.astro";
+import SponsorsGrid from "../../components/SponsorsGrid.astro";
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+    }
+</style>
+<BaseLayout
+    pageTitle="Watch The Matrix Conference Live"
+    description="Follow The Matrix Conference 2026 live from anywhere: one livestream per room, plus a Matrix chat room for each."
+>
+    <section id="streams">
+        <div class="content-wrapper">
+            <h1>Watch</h1>
+            <StreamNav />
+            <StreamOverview />
+        </div>
+    </section>
+    <section id="sponsors">
+        <SponsorsGrid />
+    </section>
+</BaseLayout>
