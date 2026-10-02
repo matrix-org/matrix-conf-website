@@ -41,6 +41,8 @@ type Tile = {
     style: string;
     /** Rendered `<time>` element for the session's start and end. */
     time: string;
+    /** Screen reader only name of the room, or an empty string when the room is already clear from the page. */
+    room: string;
 };
 
 /**
@@ -51,7 +53,7 @@ type Tile = {
  * @returns HTML for the break tile.
  */
 function breakTile(
-    { session, className, style, time }: Tile,
+    { session, className, style, time, room }: Tile,
     links: Record<string, string>,
 ): string {
     // Breaks have no pretalx page; the page that renders them can link some by keyword (hackathon, party).
@@ -59,10 +61,10 @@ function breakTile(
         session.title.toLowerCase().includes(keyword.toLowerCase()),
     );
     if (!key)
-        return `<div class="${className} break"${style}>${time}<div>${esc(session.title)}</div></div>`;
+        return `<div class="${className} break"${style}>${time}<div>${esc(session.title)}${room}</div></div>`;
     const external = /^https?:/.test(links[key]);
     const attrs = external ? ` target="_blank" rel="noopener noreferrer"` : "";
-    return `<a class="${className} break"${style} href="${esc(links[key])}"${attrs}>${time}<div>${esc(session.title)}${external ? NEW_TAB_HINT : ""}</div></a>`;
+    return `<a class="${className} break"${style} href="${esc(links[key])}"${attrs}>${time}<div>${esc(session.title)}${external ? NEW_TAB_HINT : ""}${room}</div></a>`;
 }
 
 /**
@@ -73,18 +75,19 @@ function breakTile(
  * @returns HTML for the talk tile.
  */
 function talkTile(
-    { session, className, style, time }: Tile,
+    { session, className, style, time, room }: Tile,
     badge: string,
 ): string {
     const track = session.track
         ? `<span class="track">${esc(session.track.name)}</span>`
         : "";
-    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${speakersHtml(session)}${track}</div></a>`;
+    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${room}${speakersHtml(session)}${track}</div></a>`;
 }
 
 /**
  * Tiles for `items` (a subset of `room.items`, e.g. one day). Next/Now markers are relative to the whole room.
- * With `place` (calendar view) tiles get their grid position and no Now marker.
+ * With `place` (calendar view) tiles get their grid position and no Now marker, and name their room for screen
+ * readers, since there the room is only visible as a column heading.
  *
  * @param room Room the sessions belong to.
  * @param items Sessions to render, in the order they should appear.
@@ -119,6 +122,9 @@ export function sessionTiles(
                 session,
                 className: `session${isKeynote(session) ? " keynote" : ""}${isLive(session, now) ? " live" : +session.end <= now ? " past" : ""}${placement ? " " + placement.size : ""}`,
                 style: declarations ? ` style="${declarations}"` : "",
+                room: place
+                    ? `<span class="sr-only"> Room: ${esc(room.name)}.</span>`
+                    : "",
                 time: `<time datetime="${new Date(session.start).toISOString()}">${formatter.time.format(session.start)}–${formatter.time.format(session.end)}</time>`,
             };
             const marker =
