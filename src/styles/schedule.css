@@ -47,6 +47,7 @@
 
 .schedule-list {
     --session-line: 1.5rem;
+    --tile-border: 1px;
     --space-tight: 0.25rem;
     --space-small: 0.5rem;
     --space-medium: 1rem;
@@ -59,8 +60,9 @@
     grid-template-columns: 7rem 1fr;
     gap: var(--space-tight) var(--space-large);
     padding: var(--space-medium) var(--space-large);
-    border: 1px solid var(--track, var(--border-interactive, #636569));
-    margin-bottom: -1px;
+    border: var(--tile-border) solid
+        var(--track, var(--border-interactive, #636569));
+    margin-bottom: calc(-1 * var(--tile-border));
     background: var(--bg-primary, #000);
 }
 /* Tiles overlap their neighbour by their border width so the borders merge. The last tile before a date heading (or
