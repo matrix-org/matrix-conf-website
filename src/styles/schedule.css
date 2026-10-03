@@ -73,10 +73,10 @@
     z-index: 1;
 }
 .schedule-list .session.keynote {
-    border-image: var(--rainbow) 1;
+    border-image: var(--rainbow-border, var(--rainbow)) 1;
 }
 .schedule-list .session:hover {
-    background-color: #262626;
+    background-color: var(--bg-hover, #262626);
 }
 .schedule-list .session.past {
     opacity: 0.7;
@@ -101,7 +101,7 @@
     background-color: var(--bg-card, #1a1a1a);
 }
 .schedule-list a.session.break:hover {
-    background-color: #262626;
+    background-color: var(--bg-hover, #262626);
 }
 .schedule-list a.session {
     color: var(--text-primary, #fff);
@@ -146,7 +146,7 @@
     font-weight: 700;
     text-transform: uppercase;
     background: var(--rainbow-inline);
-    color: var(--bg-primary, #000);
+    color: #000;
 }
 .schedule-list .badge.next {
     background:
