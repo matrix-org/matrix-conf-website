@@ -203,7 +203,12 @@ export const fmt = (tz: string) => ({
 export type TrackColors = {
     /** Track colour lightened until it reads as text and as a border on the black page. */
     text: string;
+    /** Track colour darkened, keeping its hue, until it reads as text and as a border on a white page. */
+    light: string;
 };
+
+/** Contrast against white that {@link readableOnWhite} aims for. Keeps WCAG AA (4.5) on a light grey card too. */
+const MIN_CONTRAST_ON_WHITE = 5.1;
 
 /** Text on tiles is dimmed to 70% for past sessions; this luminance keeps it above 4.5:1 contrast then. */
 const MIN_TEXT_LUMINANCE = 0.4;
@@ -237,14 +242,50 @@ function readableOnBlack(color: string): string {
     return "#fff";
 }
 
+/** Darkens a `#rrggbb` colour, keeping its hue and saturation, until it reaches {@link MIN_CONTRAST_ON_WHITE} on white. */
+function readableOnWhite(color: string): string {
+    const [red, green, blue] = [1, 3, 5].map(
+        (i) => parseInt(color.slice(i, i + 2), 16) / 255,
+    );
+    const max = Math.max(red, green, blue);
+    const min = Math.min(red, green, blue);
+    const chroma = max - min;
+    let hue = 0;
+    if (chroma) {
+        if (max === red) hue = ((green - blue) / chroma + 6) % 6;
+        else if (max === green) hue = (blue - red) / chroma + 2;
+        else hue = (red - green) / chroma + 4;
+    }
+    const saturation = chroma ? chroma / (1 - Math.abs(max + min - 1)) : 0;
+    for (let lightness = (max + min) / 2; lightness > 0; lightness -= 0.01) {
+        const amount = saturation * (1 - Math.abs(2 * lightness - 1));
+        const channel = (offset: number) => {
+            const k = (offset + hue * 2) % 12;
+            const value =
+                lightness -
+                (amount / 2) * Math.max(-1, Math.min(k - 3, 9 - k, 1));
+            return Math.round(value * 255)
+                .toString(16)
+                .padStart(2, "0");
+        };
+        const candidate = `#${channel(0)}${channel(8)}${channel(4)}`;
+        if (1.05 / (luminanceOf(candidate) + 0.05) >= MIN_CONTRAST_ON_WHITE)
+            return candidate;
+    }
+    return "#000";
+}
+
 /**
  * Picks readable colours for a track.
  *
  * @param track Track to pick colours for.
- * @returns The track colour, lightened if needed so it reads as text and as a border on the black page.
+ * @returns The track colour for a black page and for a white page, each adjusted so it reads as text and as a border.
  */
 export function trackColors(track: Track): TrackColors {
-    return { text: readableOnBlack(track.color) };
+    return {
+        text: readableOnBlack(track.color),
+        light: readableOnWhite(track.color),
+    };
 }
 
 /**

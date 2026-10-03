@@ -114,7 +114,8 @@ export function sessionTiles(
             const placement = place?.(session);
             const declarations = [
                 placement?.style,
-                session.track && `--track:${trackColors(session.track).text}`,
+                session.track &&
+                    `--track:${trackColors(session.track).text};--track-light:${trackColors(session.track).light}`,
             ]
                 .filter(Boolean)
                 .join(";");
