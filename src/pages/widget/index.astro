@@ -1,0 +1,17 @@
+---
+import WidgetLayout from "../../layouts/WidgetLayout.astro";
+import { widgetRooms } from "../../data/widget-rooms";
+
+const origin = Astro.site?.origin ?? "";
+---
+
+<WidgetLayout pageTitle="Schedule widgets – The Matrix Conference">
+    <h1>Schedule widgets</h1>
+    <p>
+        A live schedule for one room, made to be shown next to a room's chat. In Element, run
+        <code>/addwidget &lt;URL&gt;</code> in that room with one of these:
+    </p>
+    <ul>
+        {widgetRooms.map((name) => <li><a href={`/widget/${name.toLowerCase()}`}><code>{origin}/widget/{name.toLowerCase()}</code></a></li>)}
+    </ul>
+</WidgetLayout>

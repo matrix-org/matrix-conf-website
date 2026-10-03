@@ -1,0 +1,83 @@
+---
+// Bare page for embedding in other apps (e.g. an Element widget): no navigation, header or footer.
+import "../styles/reset.css";
+import "../styles/global.css";
+
+interface Props {
+    /** Document `<title>`, shown in the browser tab of whatever embeds this page. */
+    pageTitle: string;
+}
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="noindex" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        color-scheme: dark light;
+    }
+    body {
+        background-color: var(--bg-color);
+        color: var(--fg-color);
+    }
+    main {
+        padding: 1rem;
+    }
+    /* Light mode: light page colours, thicker tile borders and track colours made for white. */
+    @media (prefers-color-scheme: light) {
+        :root {
+            --bg-color: #fff;
+            --fg-color: #000;
+            --secondary-color: #33363b;
+            --link-color: #0467dd;
+            --bg-primary: #fff;
+            --text-primary: #000;
+            --bg-card: #f2f3f5;
+            --bg-hover: #e6e8eb;
+            --border: #cfd3d9;
+            --border-interactive: #868e99;
+            --rainbow-border: linear-gradient(
+                340deg,
+                #c9283b 3%,
+                #b86e00 25%,
+                #2b8a3e 48%,
+                #00868f 70%,
+                #6b3fc4 93%
+            );
+        }
+        main .schedule-list {
+            --tile-border: 2px;
+        }
+        main .schedule-list .session {
+            border-color: var(--track-light, var(--border-interactive));
+        }
+        main .schedule-list .session .track {
+            color: var(--track-light);
+        }
+        main .schedule-list .session.past {
+            --track-light-past: color-mix(
+                in oklab,
+                var(--track-light),
+                black 30%
+            );
+            border-color: var(--track-light-past, var(--border-interactive));
+            opacity: 0.85;
+        }
+        main .schedule-list .session.past .track {
+            color: var(--track-light-past);
+        }
+    }
+</style>
