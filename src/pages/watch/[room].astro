@@ -6,7 +6,6 @@ import ChatLinks from "../../components/ChatLinks.astro";
 import NowStreaming from "../../components/NowStreaming.astro";
 import StreamPlayer from "../../components/StreamPlayer.astro";
 import ScheduleList from "../../components/ScheduleList.astro";
-import SponsorsGrid from "../../components/SponsorsGrid.astro";
 import { streams, cccEmbed, cccStream } from "../../data/streams";
 
 export function getStaticPaths() {
@@ -106,9 +105,6 @@ const { stream } = Astro.props;
                 </div>
             </div>
         </div>
-    </section>
-    <section id="sponsors">
-        <SponsorsGrid />
     </section>
 </BaseLayout>
 <script>
