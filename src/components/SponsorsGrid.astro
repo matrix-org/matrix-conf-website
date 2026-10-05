@@ -19,7 +19,7 @@
 
 	.sponsors-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
         grid-template-areas: "anchor-1 anchor-1 anchor-1 anchor-1"
         					 "champion-1 champion-2 champion-3 become-sponsor"
@@ -92,7 +92,7 @@
 
     @media (max-width: 625px) {
 		.sponsors-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
             grid-template-areas: "anchor-1 anchor-1"
             					 "champion-1 champion-2"
