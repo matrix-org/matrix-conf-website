@@ -111,10 +111,41 @@ const pageDescription = "Join us for a hackathon on 23rd October, 2026. In colla
              <ul>
          		<li>Participating in sprints organised by the Decentralisation, Website & Content, or 
          		Events <a href="https://matrix.org/foundation/working-groups/">Working Groups</a></li>
+                <li>Taking part in the <a href="#challenge">challenge</a> set by the Department of Computer Science at Aalborg University</li>
                 <li>Adding or improving a feature in a client, bot, bridge, or server</li>
                 <li>Developing a proposal for a Matrix Spec Change</li>
             </ul>
     	</TextAndImage>
+    </section>
+    <section id="challenge">
+        <div class="content-wrapper">
+            <h2>Not Sure What to Work On?</h2>
+            <p>
+                The Department of Computer Science at Aalborg University has set a challenge to make differences in data handling more visible in Matrix.
+                Why not try to come up with a solution?
+            </p>
+            <h3>The Problem</h3>
+            <p>
+                <a href="https://matrix.org/ecosystem/bridges/">Bridges</a> let Matrix users talk with people on Telegram, Slack, Discord, and other platforms, which greatly extends Matrix's reach. When a message
+                crosses a bridge, it enters a system with different rules: it may be stored on the other platform's servers, kept longer than your own server's
+                retention policy allows, or be visible to people and services you didn't expect. Matrix already offers some hints that a room is bridged, such as
+                bridge information in room settings and recognizable bridged user accounts, but these mostly tell you that a bridge exists, not what it means for
+                your messages, and they are easy to miss. Different Matrix clients may also do different things with a message once it is decrypted, such as sending
+                a voice message to a third-party service for transcription, and the sender has no way of knowing. 
+            </p>
+            <h3>The Challenge</h3>
+            <p>
+                How could Matrix conversations let people know when the conditions governing their messages change? Explore this from the user interface side, the protocol side, or both!
+            </p>
+            <p>
+                <strong>User Interface:</strong> How should this appear to users? For example, as a notice when a bridged participant joins, a marker on a profile, a label on individual messages, or a warning before sending.
+                Sketches, mockups, a proof of concept in an existing client, or a draft protocol proposal are all welcome. 
+            </p>
+            <p>
+                <strong>Protocol:</strong> What would bridges and clients need to declare about how they handle messages (for example encryption, retention and deletion, and who else can access the content),
+                and how could that be expressed as an extension to Matrix?
+            </p>
+        </div>
     </section>
     <section id="getting-there">
         <GettingThere />
