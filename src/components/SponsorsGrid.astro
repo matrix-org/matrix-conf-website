@@ -15,88 +15,106 @@
         color: var(--secondary-color);
         font-size: 0.875rem;
         text-transform: uppercase;
-    }
+	}
 
-    .sponsors-grid {
+	.sponsors-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "anchor-1 anchor-1 anchor-1 anchor-1"
+        					 "champion-1 champion-2 champion-3 become-sponsor"
+        					 "sustaining-1 sustaining-2 sustaining-3 become-sponsor";
         border: 1px solid #636569;
         gap: 1px;
         background-color: var(--bg-color);
-    }
 
-    .sponsors-grid > a {
-        display: grid;
-        padding: 20px;
-        gap: 4px;
-        box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
-        font-size: 1.125rem;
-        text-decoration: none;
-
-
-        &:hover {
+        & > a {
+            display: grid;
+            padding: 20px;
+            gap: 4px;
+            box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
+            font-size: 1.125rem;
             text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
-    }
+	}
 
-    .anchor {
-        gap: 20px;
-        background-color: #1a1a1a;
-        grid-column: 1 / span 3;
-    }
+	.sponsor {
+		&.anchor {
+	        gap: 20px;
+            background-color: #1a1a1a;
 
-    #ercom {
-        grid-column: 1 / span 2;
-    }
+        	.description .main-sentence {
+            	font-weight: 700;
+            	margin-block-end: 0.5rem;
+        	}
+    	}
 
-    #futurewei {
-        grid-column: 3 / span 2;
-    }
+		&.champion {
+            align-content: start;
+    
+			.description {
+				p { font-size: 0.9rem; }
+			}
+		}
 
-    @media (max-width: 625px) {
-        /* Number obtained by manually testing */
-        .sponsors-grid {
-            grid-template-columns: 1fr;
+		&.sustaining {
+			place-content: center;
+		}
+
+        &.champion, &.sustaining {
+			& > img {
+				height: 33px;
+			}
         }
+	}
 
-        #element,
-        #ercom,
-        #futurewei {
-            grid-column: 1 / span 1;
-        }
-    }
+	#element { grid-area: anchor-1; }
+	#famedly { grid-area: champion-1; }
+	#connect2x { grid-area: champion-2; }
+    #rocketchat { grid-area: champion-3; }
+    #ercom { grid-area: sustaining-1; }
+    #dinum { grid-area: sustaining-2; }
+    #nordeck { grid-area: sustaining-3; }
 
-    #element .description .main-sentence {
-        font-weight: 700;
-        margin-block-end: 0.5rem;
-    }
-
-    .champion .description p {
-        font-size: 0.9rem;
-    }
-
-    .sustaining {
-        place-content: center;
-
-        img {
-            max-height: 33px;
-        }
-    }
     #become-sponsor {
         font-weight: 700;
         place-content: center;
         background-image: url("/grey-repeating-lines.svg");
         padding-inline: 10px;
-    }
+        grid-area: become-sponsor;
+	}
 
     .inner-line img {
         display: inline-block;
         margin-inline-start: 0.1rem;
     }
+
+    @media (max-width: 625px) {
+		.sponsors-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas: "anchor-1 anchor-1"
+            					 "champion-1 champion-2"
+            					 "champion-3 become-sponsor"
+            					 "sustaining-1 sustaining-1"
+                                 "sustaining-2 sustaining-2"
+            					 "sustaining-3 sustaining-3";
+		}
+    }
 </style>
 <div class="content-wrapper">
     <h2>Sponsors</h2>
     <div class="sponsors-grid">
+        <a id="become-sponsor" href="/sponsor">
+            <span class="inner-line">
+                Become a sponsor
+                <img src="/pixel-chevron.svg" alt="" />
+            </span>
+        </a>
         <a
             id="element"
             class="anchor sponsor"
@@ -116,16 +134,10 @@
                 </p>
             </div>
         </a>
-        <a id="become-sponsor" href="/sponsor">
-            <span class="inner-line">
-                Become a sponsor
-                <img src="/pixel-chevron.svg" alt="" />
-            </span>
-        </a>
         <a
             id="famedly"
             class="champion sponsor"
-            href="https://famedly.de"
+            href="https://www.famedly.com"
             target="_blank"
         >
             <img src="/sponsors/famedly.svg" alt="Famedly" />
@@ -136,6 +148,60 @@
                     decentralized medical collaboration platform.
                 </p>
             </div>
+        </a>
+        <a
+            id="connect2x"
+            class="champion sponsor"
+            href="https://connect2x.de"
+            target="_blank"
+        >
+            <img src="/sponsors/connect2x.png" alt="Connect2x" />
+            <div class="description">
+                <p>
+					connect2x develops advanced Matrix clients tailored for the
+                    German healthcare sector, based on their powerful,
+                    extensible SDK.
+                </p>
+            </div>
+        </a>
+        <a
+            id="rocketchat"
+            class="champion sponsor"
+            href="https://www.rocket.chat"
+            target="_blank"
+        >
+            <img src="/sponsors/rocket.chat.svg" alt="Rocket.Chat" />
+            <div class="description">
+                <p>
+                    Rocket Chat unifies messaging, voice, video, critical apps,
+                    and AI into a single, secure, interoprable and sovereign
+                    platform.
+                </p>
+            </div>
+        </a>
+        <a
+            id="ercom"
+            class="sustaining sponsor"
+            href="https://ercom.com"
+            target="_blank"
+        >
+            <img src="/sponsors/ercom.svg" alt="Ercom" />
+        </a>
+        <a
+            id="dinum"
+            class="sustaining sponsor"
+            href="https://www.numerique.gouv.fr"
+            target="_blank"
+        >
+            <img src="/sponsors/dinum.svg" alt="DINUM" />
+        </a>
+        <a
+            id="nordeck"
+            class="sustaining sponsor"
+            href="https://nordeck.net"
+            target="_blank"
+        >
+            <img src="/sponsors/nordeck.svg" alt="Nordeck" />
         </a>
     </div>
 </div>
