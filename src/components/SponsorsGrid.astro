@@ -52,6 +52,7 @@
             	margin-block-end: 0.5rem;
         	}
     	}
+
 		&.champion {
 			.description {
 				p { font-size: 0.9rem; }
@@ -60,11 +61,13 @@
 
 		&.sustaining {
 			place-content: center;
+		}
 
+        &.champion, &.sustaining {
 			& > img {
 				height: 33px;
 			}
-		}
+        }
 	}
 
 	#element { grid-area: anchor-1; }
