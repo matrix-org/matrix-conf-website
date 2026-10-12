@@ -1,0 +1,130 @@
+---
+// "Now streaming" / "Up next" for one room, from the live pretalx schedule.
+import "../styles/schedule.css"; // avatar and speaker styles
+interface Props {
+    /** Pretalx room id to show the current or next talk of. */
+    room: number;
+}
+const { room } = Astro.props;
+---
+
+<style is:global>
+    .now {
+        position: relative;
+        padding-inline-start: 1rem;
+        min-height: 3.5rem;
+    }
+    .now::before {
+        content: "";
+        position: absolute;
+        inset-block: 0;
+        inset-inline-start: 0;
+        width: 4px;
+        background: var(--track, #636569);
+    }
+    .now[data-keynote]::before {
+        background: var(--rainbow);
+    }
+    .label {
+        color: var(--secondary-color);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+    }
+    .label.live {
+        color: var(--link-color);
+        font-weight: 700;
+    }
+    .now .track {
+        display: block;
+        margin-top: 0.5rem;
+        color: var(--track);
+        font-size: 0.875rem;
+        font-weight: 700;
+    }
+    .then {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #3c3f44;
+        font-size: 0.875rem;
+    }
+    .then .label {
+        margin-inline-end: 0.5rem;
+        color: var(--link-color);
+        font-weight: 700;
+    }
+    .now a {
+        color: var(--fg-color);
+        text-decoration: none;
+    }
+    .now a:hover {
+        text-decoration: underline;
+    }
+    .title {
+        font-weight: 700;
+    }
+    .when,
+    .who {
+        color: var(--secondary-color);
+        font-size: 0.875rem;
+    }
+    .now .who {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+    }
+</style>
+<div class="now" data-room={room} aria-live="polite"></div>
+<script>
+    import {
+        loadSchedule,
+        esc,
+        fmt,
+        isKeynote,
+        speakersHtml,
+        talksOf,
+        trackColors,
+    } from "../scripts/schedule";
+
+    const relative = new Intl.RelativeTimeFormat("en");
+
+    /** "in 25 minutes", "in 3 hours" or "in 2 days", whichever unit fits the time left until `start`. */
+    function startsIn(start: Date, now: number): string {
+        const minutes = Math.max(1, Math.round((+start - now) / 60_000));
+        if (minutes < 60) return relative.format(minutes, "minute");
+        const hours = Math.round(minutes / 60);
+        if (hours < 24) return relative.format(hours, "hour");
+        return relative.format(Math.round(hours / 24), "day");
+    }
+
+    async function update() {
+        const rooms = await loadSchedule().catch(() => undefined);
+        if (!rooms) return;
+        const now = Date.now();
+        document
+            .querySelectorAll<HTMLElement>(".now[data-room]")
+            .forEach((element) => {
+                const room = rooms.get(Number(element.dataset.room));
+                if (!room) return;
+                const talks = talksOf(room);
+                const live = talks.find(
+                    (talk) => +talk.start <= now && now < +talk.end,
+                );
+                const next = talks.find((talk) => +talk.start > now);
+                const talk = live ?? next;
+                const formatter = fmt(room.timezone);
+                element.style.setProperty(
+                    "--track",
+                    talk?.track ? trackColors(talk.track).text : "#636569",
+                );
+                element.toggleAttribute("data-keynote", !!talk && isKeynote(talk));
+                element.innerHTML = talk
+                    ? `<div class="label${live ? " live" : ""}">${live ? "Now streaming" : "Up next"}</div>
+                   <div class="title"><a href="${talk.url}" target="_blank" rel="noopener noreferrer">${esc(talk.title)}</a></div>
+                   <div class="when">${formatter.time.format(talk.start)}–${formatter.time.format(talk.end)}</div>${speakersHtml(talk)}${talk.track ? `<span class="track">${esc(talk.track.name)}</span>` : ""}${live && next ? `<div class="then"><span class="label">${startsIn(next.start, now)}</span> <a href="${next.url}" target="_blank" rel="noopener noreferrer">${esc(next.title)}</a> <span class="who">· ${formatter.time.format(next.start)}</span></div>` : ""}`
+                    : `<div class="label">Nothing scheduled</div>`;
+            });
+    }
+    update();
+    setInterval(update, 60_000);
+</script>
