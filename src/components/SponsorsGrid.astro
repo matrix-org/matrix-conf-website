@@ -111,6 +111,39 @@
             					 "sustaining-3 sustaining-3";
 		}
     }
+
+	.supporters-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "supporter-1";
+        border: 1px solid #636569;
+        gap: 1px;
+        background-color: var(--bg-color);
+
+        > a {
+            display: grid;
+            padding: 20px;
+            gap: 4px;
+            box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
+            font-size: 1.125rem;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+	}
+
+	#its-foss { grid-area: supporter-1; }
+
+	.supporter {
+		place-content: center;
+
+		img {
+			height: 33px;
+		}
+	}
 </style>
 <div class="content-wrapper">
     <h2>Sponsors</h2>
@@ -208,6 +241,17 @@
             target="_blank"
         >
             <img src="/sponsors/nordeck.svg" alt="Nordeck" />
+        </a>
+    </div>
+    <h2>Media Supporters</h2>
+    <div class="supporters-grid">
+        <a
+            id="its-foss"
+            class="supporter"
+            href="https://itsfoss.com"
+            target="_blank"
+        >
+            <img src="/supporters/itsfoss.webp" alt="It's FOSS" />
         </a>
     </div>
 </div>
