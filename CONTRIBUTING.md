@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 The Matrix.org Foundation C.I.C.
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Contributing to conference.matrix.org
 
 Thank you for taking the time to contribute to Matrix!
