@@ -17,22 +17,21 @@
         text-transform: uppercase;
 	}
 
-	.sponsors-grid {
+    .grid {
+    	--small-logo: 33px;
+    	--border-colour: #636569;
+    	--border-width: 1px;
+
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        grid-template-areas: "anchor-1 anchor-1 anchor-1 anchor-1"
-        					 "champion-1 champion-2 champion-3 become-sponsor"
-        					 "sustaining-1 sustaining-2 sustaining-3 become-sponsor";
-        border: 1px solid #636569;
-        gap: 1px;
+        border: var(--border-width) solid var(--border-colour);
+        gap: var(--border-width);
         background-color: var(--bg-color);
 
         > a {
             display: grid;
             padding: 20px;
             gap: 4px;
-            box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
+            box-shadow: 0 0 0 var(--border-width) var(--border-colour); /* box-shadow is used to achieve a border-collapse effect within the grid */
             font-size: 1.125rem;
             text-decoration: none;
 
@@ -40,7 +39,32 @@
                 text-decoration: none;
             }
         }
-	}
+
+        &.sponsors {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            grid-template-areas: "anchor-1 anchor-1 anchor-1 anchor-1"
+            					 "champion-1 champion-2 champion-3 become-sponsor"
+            					 "sustaining-1 sustaining-2 sustaining-3 become-sponsor";
+
+			@media (width <= 625px) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                grid-template-areas: "anchor-1 anchor-1"
+                					 "champion-1 champion-2"
+                					 "champion-3 become-sponsor"
+                					 "sustaining-1 sustaining-1"
+                                     "sustaining-2 sustaining-2"
+                					 "sustaining-3 sustaining-3";
+			}
+	    }
+
+        &.supporters {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "supporter-1";
+	    }
+    }
 
 	.sponsor {
 		&.anchor {
@@ -66,10 +90,23 @@
 		}
 
         &.champion, &.sustaining {
-			img {
-				height: 33px;
-			}
+			img { height: var(--small-logo); }
         }
+	}
+
+    .inner-line {
+    	text-align: center;
+
+        img {
+            display: inline-block;
+            margin-inline-start: 0.1rem;
+        }
+    }
+
+	.supporter {
+		place-content: center;
+
+		img { height: var(--small-logo); }
 	}
 
 	#element { grid-area: anchor-1; }
@@ -80,41 +117,19 @@
     #dinum { grid-area: sustaining-2; }
     #nordeck { grid-area: sustaining-3; }
 
+    #its-foss { grid-area: supporter-1; }
+
     #become-sponsor {
         font-weight: 700;
         place-content: center;
         background-image: url("/grey-repeating-lines.svg");
         padding-inline: 10px;
         grid-area: become-sponsor;
-
-        .inner-line {
-            text-align: center;
-        }
 	}
-
-    .inner-line {
-        img {
-            display: inline-block;
-            margin-inline-start: 0.1rem;
-        }
-    }
-
-    @media (max-width: 625px) {
-		.sponsors-grid {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: auto;
-            grid-template-areas: "anchor-1 anchor-1"
-            					 "champion-1 champion-2"
-            					 "champion-3 become-sponsor"
-            					 "sustaining-1 sustaining-1"
-                                 "sustaining-2 sustaining-2"
-            					 "sustaining-3 sustaining-3";
-		}
-    }
 </style>
 <div class="content-wrapper">
     <h2>Sponsors</h2>
-    <div class="sponsors-grid">
+    <div class="grid sponsors">
         <a id="become-sponsor" href="/sponsor">
             <span class="inner-line">
                 Become a sponsor
@@ -208,6 +223,17 @@
             target="_blank"
         >
             <img src="/sponsors/nordeck.svg" alt="Nordeck" />
+        </a>
+    </div>
+    <h2>Media Supporters</h2>
+    <div class="grid supporters">
+        <a
+            id="its-foss"
+            class="supporter"
+            href="https://itsfoss.com"
+            target="_blank"
+        >
+            <img src="/supporters/itsfoss.webp" alt="It's FOSS" />
         </a>
     </div>
 </div>
