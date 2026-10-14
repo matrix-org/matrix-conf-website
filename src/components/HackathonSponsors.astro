@@ -1,0 +1,79 @@
+---
+---
+
+<style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    h2 {
+        color: var(--secondary-color);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+	}
+
+    .grid {
+    	--small-logo: 33px;
+    	--border-colour: #636569;
+    	--border-width: 1px;
+
+        display: grid;
+        border: var(--border-width) solid var(--border-colour);
+        gap: var(--border-width);
+        background-color: var(--bg-color);
+
+        > a {
+            display: grid;
+            padding: 20px;
+            gap: 4px;
+            box-shadow: 0 0 0 var(--border-width) var(--border-colour); /* box-shadow is used to achieve a border-collapse effect within the grid */
+            font-size: 1.125rem;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.sponsors {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+
+            @media (width <= 625px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+	.sponsor {
+		place-content: center;
+
+		img { height: var(--small-logo); }
+	}
+</style>
+
+<div class="content-wrapper">
+	<h2>Hackathon Sponsors</h2>
+	<div class="grid sponsors">
+        <a
+            id="Aalborg University"
+            class="sponsor"
+            href="https://www.en.aau.dk"
+            target="_blank"
+        >
+            <img src="/sponsors/aalborg-university.svg" alt="Aalborg University" />
+        </a>
+        <a
+            id="Futurewei"
+            class="sponsor"
+            href="https://www.futurewei.com"
+            target="_blank"
+        >
+            <img src="/sponsors/futurewei.svg" alt="Futurewei" />
+        </a>
+	</div>
+</div>
