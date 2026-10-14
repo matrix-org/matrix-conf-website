@@ -16,19 +16,21 @@
         text-transform: uppercase;
 	}
 
-	.sponsor-grid {
+    .grid {
+    	--small-logo: 33px;
+    	--border-colour: #636569;
+    	--border-width: 1px;
+
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        border: 1px solid #636569;
-        gap: 1px;
+        border: var(--border-width) solid var(--border-colour);
+        gap: var(--border-width);
         background-color: var(--bg-color);
 
         > a {
             display: grid;
             padding: 20px;
             gap: 4px;
-            box-shadow: 0 0 0 1px #636569; /* box-shadow is used to achieve a border-collapse effect within the grid */
+            box-shadow: 0 0 0 var(--border-width) var(--border-colour); /* box-shadow is used to achieve a border-collapse effect within the grid */
             font-size: 1.125rem;
             text-decoration: none;
 
@@ -36,26 +38,27 @@
                 text-decoration: none;
             }
         }
-	}
+
+        &.sponsors {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+
+            @media (width <= 625px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
 
 	.sponsor {
 		place-content: center;
 
-		img {
-			height: 33px;
-		}
+		img { height: var(--small-logo); }
 	}
-
-    @media (max-width: 625px) {
-		.sponsor-grid {
-            grid-template-columns: 1fr;
-		}
-    }
 </style>
 
 <div class="content-wrapper">
 	<h2>Sponsors</h2>
-	<div class="sponsor-grid">
+	<div class="grid sponsors">
         <a
             id="Aalborg University"
             class="sponsor"
