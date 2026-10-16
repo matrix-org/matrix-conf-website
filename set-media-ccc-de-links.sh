@@ -7,7 +7,7 @@
 set -euo pipefail
 
 # Download data from media.ccc.de
-curl -o matrix-conf-2025.json https://media.ccc.de/public/conferences/matrix-conf-2025
+curl -o matrix-conf-2026.json https://media.ccc.de/public/conferences/matrix-conf-2026
 
 TARGET_DIR="static/talks"
 mkdir -p "$TARGET_DIR"
@@ -20,7 +20,7 @@ for dir in src/talks/*; do
     fi
 
     ID=$(jq -r '.ID // empty' "$session")
-    FRONTEND_LINK=$(jq -r ".events[] | select(.link | contains(\"${ID}\")) | .frontend_link" matrix-conf-2025.json )
+    FRONTEND_LINK=$(jq -r ".events[] | select(.link | contains(\"${ID}\")) | .frontend_link" matrix-conf-2026.json )
 
     echo "${ID} ${FRONTEND_LINK}"
     if [[ -z $FRONTEND_LINK ]]; then
