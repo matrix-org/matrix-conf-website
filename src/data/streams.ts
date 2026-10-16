@@ -2,6 +2,12 @@
 // TODO(before conf): confirm the `ccc` slugs against streaming.media.ccc.de.
 export const CCC_CONFERENCE = "matrix-conf-2026";
 
+/**
+ * What /watch shows. "stream" is the livestream overview with a page per room, "vod" is the list of
+ * recordings and no room pages. The recordings are always available at /vod.
+ */
+export const watchMode: "stream" | "vod" = "stream";
+
 export const streams = [
     {
         slug: "sofya",
