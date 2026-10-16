@@ -7,6 +7,7 @@ import Talks2025 from "../components/Talks2025.astro";
 import RoughSchedule from "../components/RoughSchedule.astro";
 import WhatsNext from "../components/WhatsNext.astro";
 import SponsorsGrid from "../components/SponsorsGrid.astro";
+import StreamOverview from "../components/StreamOverview.astro";
 ---
 
 <style>
@@ -17,6 +18,21 @@ import SponsorsGrid from "../components/SponsorsGrid.astro";
     #matrix-conf-2025, #whats-next {
         background-image: url("/grey-repeating-lines.svg");
     }
+
+	.content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+    }
 </style>
 <BaseLayout
     pageTitle="The Matrix Conference"
@@ -26,6 +42,12 @@ import SponsorsGrid from "../components/SponsorsGrid.astro";
     <section id="hero">
         <IndexHero />
     </section>
+    <section id="watch-the-livestreams">
+        <div class="content-wrapper">
+        	<h2>Watch The Livestreams</h2>
+        	<StreamOverview />
+        </div>
+   	</section>
     <section id="teaser-2026">
         <Teaser2026 />
     </section>
