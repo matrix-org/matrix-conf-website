@@ -4,6 +4,7 @@ interface Props {
 }
 
 import slugify from '@sindresorhus/slugify';
+import { slidesFilename, talkSlug } from '../data/talks';
 import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import { Image } from "astro:assets";
@@ -12,15 +13,14 @@ const { talk } = Astro.props;
 const youtube = talk.data.youtube;
 const mediaCccDe = talk.data.mediaCccDe;
 const title = talk.data['Proposal title'];
-const titleSlug = slugify(title);
+const titleSlug = talkSlug(talk);
 const talkId = talk.data.ID;
 const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
 const room = talk.data.Room.en;
-const start = talk.data.Start.split('T')[0];
-const slides = talk.data.slides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
+const slides = slidesFilename(talk);
 const hasVideo = !!talk.data.youtube || !!talk.data.mediaCccDe;
 import Voctocat from '../img/voctocat.svg';
 import YouTubeIcon from '../img/YouTube.svg';
@@ -50,6 +50,10 @@ import LinkIcon from '../img/link.svg';
             flex-direction: column;
             gap: 12px;
             color: var(--color-text);
+
+            h2 a {
+                color: inherit;
+            }
 
             h2 {
                 font-size: 1.25rem;
@@ -194,7 +198,7 @@ import LinkIcon from '../img/link.svg';
             width="1600"
         />
         <div class="info-container">
-            <h2>{ title }</h2>
+            <h2><a href={`/vod/${titleSlug}`}>{ title }</a></h2>
             <p>{ summary }</p>
             <div class="speaker">
                 { speakerNames }
