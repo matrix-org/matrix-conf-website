@@ -2,6 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StreamNav from "../../components/StreamNav.astro";
 import StreamOverview from "../../components/StreamOverview.astro";
+import VodTalks from "../../components/VodTalks.astro";
+import { watchMode } from "../../data/streams";
+
+const vod = watchMode === "vod";
 ---
 
 <style>
@@ -20,14 +24,20 @@ import StreamOverview from "../../components/StreamOverview.astro";
     }
 </style>
 <BaseLayout
-    pageTitle="Watch The Matrix Conference Live"
-    description="Follow The Matrix Conference 2026 live from anywhere: one livestream per room, plus a Matrix chat room for each."
+    pageTitle={vod ? "Watch the Conference Recordings" : "Watch The Matrix Conference Live"}
+    description={vod
+        ? "Follow along the Matrix Conference even if you couldn't make it to Malmö"
+        : "Follow The Matrix Conference 2026 live from anywhere: one livestream per room, plus a Matrix chat room for each."}
 >
-    <section id="streams">
-        <div class="content-wrapper">
-            <h1>Watch</h1>
-            <StreamNav />
-            <StreamOverview />
-        </div>
-    </section>
+    {vod ? (
+        <VodTalks />
+    ) : (
+        <section id="streams">
+            <div class="content-wrapper">
+                <h1>Watch</h1>
+                <StreamNav />
+                <StreamOverview />
+            </div>
+        </section>
+    )}
 </BaseLayout>
