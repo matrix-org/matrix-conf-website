@@ -11,11 +11,22 @@
 .schedule-controls[hidden] {
     display: none;
 }
+
+.filter-button {
+    flex-grow: 1;
+}
+
 .schedule-dates {
     display: flex;
-    flex-wrap: wrap;
     gap: 0.5rem;
+    width: 100%;
 }
+
+.schedule-dates a {
+    flex-grow: 1;
+    text-align: center;
+}
+
 .schedule-dates a,
 .schedule-back,
 .filter-button,
@@ -392,5 +403,19 @@
     .schedule-list .room-grid .head-day,
     .schedule-list .room-grid .grid-head {
         display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .filter-button {
+        flex-grow: 0;
+    }
+
+    .schedule-dates {
+        width: auto;
+    }
+
+    .schedule-dates a {
+        flex-grow: 0;
     }
 }
