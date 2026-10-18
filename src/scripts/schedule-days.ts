@@ -6,6 +6,10 @@ export type Day = {
     id: string;
     /** Date label shown in the heading and navigation. */
     label: string;
+    /**
+     * Short date label shown in the heading and navigation.
+     */
+    labelShort: string;
     /** The date heading, ready to be put in front of the day's sessions. */
     heading: string;
     /**
@@ -29,7 +33,7 @@ export type Day = {
  */
 export function scheduleDays(rooms: Room[]): Day[] {
     const timeZone = rooms[0].timezone;
-    const label = fmt(timeZone).day;
+    const labels = fmt(timeZone);
     const isoDate = new Intl.DateTimeFormat("sv-SE", { timeZone }); // sv-SE formats as YYYY-MM-DD
     const ids = [
         ...new Set(
@@ -44,8 +48,14 @@ export function scheduleDays(rooms: Room[]): Day[] {
                 (session) => isoDate.format(session.start) === id,
             );
         const firstSessionOfDay = rooms.flatMap(sessionsOfRoom)[0];
-        const dateLabel = label.format(firstSessionOfDay.start);
+        const dateLabel = labels.day.format(firstSessionOfDay.start);
         const heading = `<div class="date-separator" id="${id}"><h3 class="date">${dateLabel}</h3><div class="line" aria-hidden="true"></div></div>`;
-        return { id, label: dateLabel, heading, sessionsOfRoom };
+        return {
+            id,
+            label: dateLabel,
+            labelShort: labels.dayShort.format(firstSessionOfDay.start),
+            heading,
+            sessionsOfRoom
+        };
     });
 }

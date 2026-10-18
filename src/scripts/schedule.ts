@@ -197,6 +197,11 @@ export const fmt = (tz: string) => ({
         month: "long",
         timeZone: tz,
     }),
+    dayShort: new Intl.DateTimeFormat("en-GB", {
+        weekday: "short",
+        day: "numeric",
+        timeZone: tz,
+    }),
 });
 
 /** Colours to render a track in. */

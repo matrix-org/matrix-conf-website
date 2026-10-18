@@ -203,7 +203,7 @@ const { links = {} } = Astro.props;
             for (const day of days) {
                 const link = document.createElement("a");
                 link.href = `#${day.id}`;
-                link.textContent = day.label;
+                link.textContent = day.labelShort;
                 dates.append(link);
             }
             dates.dataset.days = days.map((day) => day.id).join(",");
