@@ -23,3 +23,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# downloaded by scripts/set-media-ccc-de-links.sh
+matrix-conf-2026.json

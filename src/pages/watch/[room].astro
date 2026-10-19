@@ -6,9 +6,10 @@ import ChatLinks from "../../components/ChatLinks.astro";
 import NowStreaming from "../../components/NowStreaming.astro";
 import StreamPlayer from "../../components/StreamPlayer.astro";
 import ScheduleList from "../../components/ScheduleList.astro";
-import { streams, cccEmbed, cccStream } from "../../data/streams";
+import { streams, cccEmbed, cccStream, watchMode } from "../../data/streams";
 
 export function getStaticPaths() {
+    if (watchMode === "vod") return [];
     return streams.map((s) => ({
         params: { room: s.slug },
         props: { stream: s },

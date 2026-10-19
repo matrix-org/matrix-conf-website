@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import StreamNav from "../../components/StreamNav.astro";
 import StreamOverview from "../../components/StreamOverview.astro";
+import VodPage from "../../components/VodPage.astro";
+import { watchMode } from "../../data/streams";
 ---
 
 <style>
@@ -19,6 +21,7 @@ import StreamOverview from "../../components/StreamOverview.astro";
         margin: 0;
     }
 </style>
+{watchMode === "vod" ? <VodPage /> : (
 <BaseLayout
     pageTitle="Watch The Matrix Conference Live"
     description="Follow The Matrix Conference 2026 live from anywhere: one livestream per room, plus a Matrix chat room for each."
@@ -31,3 +34,4 @@ import StreamOverview from "../../components/StreamOverview.astro";
         </div>
     </section>
 </BaseLayout>
+)}

@@ -16,24 +16,31 @@ function incrementDate(tomorrow:Date, days:number) {
 function formatDate(day:Date) {
     var dow = '';
     switch(day.getDay()) {
+        case 2: dow = 'Tuesday'; break;
+        case 3: dow = 'Wednesday'; break;
         case 4: dow = 'Thursday'; break;
         case 5: dow = 'Friday'; break;
-        case 6: dow = 'Saturday'; break;
     }
     return dow + ' ' + day.getDate();
+}
+
+function ordinalSuffix(date:number) {
+    return ({ 1: 'st', 2: 'nd', 3: 'rd' } as {[index: number]: string})[date % 10] ?? 'th';
 }
 
 const track_order : {[index: string]:number} = Object.freeze({
     "Keynote": 0,
     "Public Sector": 1,
-    "Healthcare" :2,
-    "Security & Encryption": 3,
-    "Beyond Chat": 4,
-    "Business with Matrix": 5,
-    "Hands-on": 6,
-    "Matrix in Education": 7,
-    "Privacy, Policy & Moderation": 8,
-    "Bots & Bridges": 9
+    "Public Sector sponsored by Element": 2,
+    "Healthcare sponsored by CGM": 3,
+    "Cryptography": 4,
+    "Matrix Inside": 5,
+    "In Practice": 6,
+    "Digital Sovereignty": 7,
+    "Growing a Network": 8,
+    "Next Gen Spec": 9,
+    "Foundation": 10,
+    "Lightning Talks": 11
 });
 
 function compareTrack(a: CollectionEntry<"talks">,b: CollectionEntry<"talks">) {
@@ -42,12 +49,12 @@ function compareTrack(a: CollectionEntry<"talks">,b: CollectionEntry<"talks">) {
     return track_order[a.data.Track.en] - track_order[b.data.Track.en];
 }
 
-for (let i = 0; i < 3; i++) {
-    talks.push(
-        all_talks.filter((a: CollectionEntry<"talks">) =>
-            new Date(a.data.Start).valueOf() >= incrementDate(new Date("2025-10-16T00:00+02:00"),i) &&
-            new Date(a.data.Start).valueOf() < incrementDate(new Date("2025-10-17T00:00+02:00"),i)
-        ).toSorted(compareTrack));
+for (let i = 0; i < 4; i++) {
+    const day = all_talks.filter((a: CollectionEntry<"talks">) =>
+        new Date(a.data.Start).valueOf() >= incrementDate(new Date("2026-10-20T00:00+02:00"),i) &&
+        new Date(a.data.Start).valueOf() < incrementDate(new Date("2026-10-22T00:00+02:00"),i)
+    ).toSorted(compareTrack);
+    if (day.length > 0) talks.push(day);
 }
 ---
 
@@ -66,13 +73,6 @@ for (let i = 0; i < 3; i++) {
 
     .content-wrapper#talks {
         max-width: 1122px;
-    }
-
-    #hero {
-        background-image: url(/grey-repeating-lines.svg);
-        display: block;
-        padding-bottom: 30px;
-        padding-top: 30px;
     }
 
     h1 {
@@ -162,7 +162,7 @@ for (let i = 0; i < 3; i++) {
 
 <BaseLayout
     pageTitle="Watch the Conference Recordings"
-    description="Follow along the Matrix Conference even if you couldn't make it to Strasbourg"
+    description="Follow along the Matrix Conference even if you couldn't make it to Malmö"
 >
     <section id="hero">
         <div class="content-wrapper">
@@ -171,24 +171,31 @@ for (let i = 0; i < 3; i++) {
     </section>
 
     <section id="recordings">
+        {talks.length === 0 ? (
+        <div class="content-wrapper">
+            <p class="empty-section">The recordings will be available here soon.</p>
+        </div>
+        ) : (<>
         <div class="content-wrapper no-js">
             <div id="filters">
                 <Pill Type="button" label="Keynote" />
                 <Pill Type="button" label="Public Sector" />
-                <Pill Type="button" label="Healthcare" />
-                <Pill Type="button" label="Security & Encryption" />
-                <Pill Type="button" label="Beyond Chat" />
-                <Pill Type="button" label="Business with Matrix" />
-                <Pill Type="button" label="Hands-on" />
-                <Pill Type="button" label="Matrix in Education" />
-                <Pill Type="button" label="Privacy, Policy & Moderation" />
-                <Pill Type="button" label="Bots & Bridges" />
+                <Pill Type="button" label="Public Sector sponsored by Element" />
+                <Pill Type="button" label="Healthcare sponsored by CGM" />
+                <Pill Type="button" label="Cryptography" />
+                <Pill Type="button" label="Matrix Inside" />
+                <Pill Type="button" label="In Practice" />
+                <Pill Type="button" label="Digital Sovereignty" />
+                <Pill Type="button" label="Growing a Network" />
+                <Pill Type="button" label="Next Gen Spec" />
+                <Pill Type="button" label="Foundation" />
+                <Pill Type="button" label="Lightning Talks" />
             </div>
         </div>
         <div class="content-wrapper" id="talks">
             {talks.map((days_talks) => (
             <div class="date-separator">
-                <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>th</sup> October</div>
+                <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>{ordinalSuffix(new Date(days_talks[0].data.Start).getDate())}</sup> October</div>
                 <div class="line"></div>
             </div>
             <div class="hidden empty-section">
@@ -201,18 +208,17 @@ for (let i = 0; i < 3; i++) {
             </div>
             ))}
         </div>
+        </>)}
     </section>
 
     <section id="info">
         <div class="content-wrapper">
             <p>
                 All recordings are available on <a
-                    href="https://media.ccc.de/c/matrix-conf-2025"
-                    >media.ccc.de</a
-                > and <a
-                    href="https://www.youtube.com/playlist?list=PLl5dnxRMP1hUgnYEbpEsEEhIqY_KlO3NG"
-                    >YouTube</a
-                >.
+                    href="https://media.ccc.de/c/matrix-conf-2026"
+                    >media.ccc.de</a> and <a
+                    href="https://www.youtube.com/playlist?list=PLFDUAtPqCX98"
+                    >YouTube</a>.
             </p>
             <p>
                 All videos and slides linked or published here are available under <a

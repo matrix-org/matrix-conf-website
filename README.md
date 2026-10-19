@@ -46,3 +46,16 @@ pnpm lint
 
 This repo is configured to use husky and lint-staged to check for errors on each commit.
 You may have to run `pnpm prepare` once to set it up.
+
+## Recordings page
+
+The recordings page is `src/components/VodPage.astro`. It is built from `src/talks/<title>/session.json`. Run the scripts from the repository root.
+
+To fill it with the talks:
+
+- Export the schedule from [pretalx](https://pretalx.com/orga/event/matrix-conference-2026/schedule/export/#tab-custom) as JSON with the fields proposal title, session type, track, abstract, speaker names, room and start.
+- Save the file as `static/watch/sessions.json`.
+- Run `./scripts/split-sessions.sh` to create one `src/talks/<title>/session.json` per session. It needs `jq`.
+- Optional: put a `thumbnail.avif` and a `slides.pdf` into a talk's directory, then run `./scripts/copy-thumbs.sh` (needs `magick`) and `./scripts/copy-slides.sh`.
+- Once the videos are on media.ccc.de, run `./scripts/set-media-ccc-de-links.sh` to add the links to the sessions.
+- To show the page on `/watch`, set `watchMode` to `"vod"` in `src/data/streams.ts`.

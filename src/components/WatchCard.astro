@@ -7,6 +7,7 @@ import slugify from '@sindresorhus/slugify';
 import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import { Image } from "astro:assets";
+import { existsSync } from "node:fs";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -15,12 +16,13 @@ const title = talk.data['Proposal title'];
 const titleSlug = slugify(title);
 const talkId = talk.data.ID;
 const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
+const hasThumbnail = existsSync(`static${thumbnailUrl}`);
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
 const room = talk.data.Room.en;
 const start = talk.data.Start.split('T')[0];
-const slides = talk.data.slides ? `MC25_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
+const slides = talk.data.slides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
 const hasVideo = !!talk.data.youtube || !!talk.data.mediaCccDe;
 import Voctocat from '../img/voctocat.svg';
 import YouTubeIcon from '../img/YouTube.svg';
@@ -138,6 +140,26 @@ import LinkIcon from '../img/link.svg';
         aspect-ratio: 16/9;
     }
 
+    /* Same look as the placeholder of the stream player. the pattern has black margins at its edges, so it is covered once instead of repeated. */
+    .talk-card__thumbnail-placeholder {
+        display: grid;
+        place-content: center;
+        background: url("/grey-repeating-lines.svg") center / cover no-repeat;
+    }
+
+    .talk-card__thumbnail-placeholder div {
+        background: #000;
+        padding: 1.5rem 2rem;
+    }
+
+    .talk-card__thumbnail-placeholder span {
+        display: block;
+        inline-size: 2.5rem;
+        block-size: 2.5rem;
+        background-color: var(--text-secondary, #b8b8b8);
+        mask: url("/no-thumbnail.svg") center / contain no-repeat;
+    }
+
     .video-links {
         align-items: center;
         display: flex;
@@ -186,6 +208,7 @@ import LinkIcon from '../img/link.svg';
     </a>
     <div id={titleSlug} aria-hidden="true" class="permalink-anchor" />
     <div class="card-content">
+        {hasThumbnail ? (
         <Image
             src={thumbnailUrl}
             class="talk-card__thumbnail"
@@ -193,6 +216,11 @@ import LinkIcon from '../img/link.svg';
             height="900"
             width="1600"
         />
+        ) : (
+        <div class="talk-card__thumbnail talk-card__thumbnail-placeholder">
+            <div><span role="img" aria-label="No thumbnail"></span></div>
+        </div>
+        )}
         <div class="info-container">
             <h2>{ title }</h2>
             <p>{ summary }</p>
