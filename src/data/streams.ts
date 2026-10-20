@@ -30,6 +30,8 @@ export type Stream = (typeof streams)[number];
 
 export const space = "#conference-2026:matrix.org";
 
+export const generalRoom = "#general-mc26:matrix.org";
+
 export const matrixTo = (alias: string) =>
     `https://matrix.to/#/${encodeURIComponent(alias)}`;
 export const cccStream = (slug: string) =>
