@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+import TalksCollage from "../img/Conf2024.avif";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+        box-shadow: 0 0 0 1px #636569;
+        background-color: var(--bg-color);
+        padding: 20px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (max-width: 800px) {
+        /* Number obtained by manually testing */
+        .content-wrapper {
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        .left-col {
+            grid-row: 2;
+        }
+
+        img {
+            grid-row: 1;
+        }
+    }
+
+    .left-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-block: 1rem;
+    }
+
+    a {
+        font-size: 1.125rem;
+        font-weight: 700;
+
+        img {
+            display: inline-block;
+            margin-inline-start: 0.4rem;
+        }
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="left-col">
+        <h2>We're live!</h2>
+        <div>
+            <p>
+            	Come watch the many talks at this year’s conference.
+            </p>
+            <p>
+                Discover what other organisations, communities, and projects within
+                the Matrix community have been working on.
+            </p>
+            <a href="/watch">
+            	Watch now <img src="/pixel-chevron.svg" alt="" loading="lazy" />
+            </a>
+        </div>
+    </div>
+    <Image src={ TalksCollage } alt="" />
+</div>

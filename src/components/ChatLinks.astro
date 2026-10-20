@@ -1,5 +1,5 @@
 ---
-import { space, matrixTo } from "../data/streams";
+import { space, generalRoom, matrixTo } from "../data/streams";
 interface Props {
     chat?: string;
     /** URL of the stream on media.ccc.de, shown as a third link when given. */
@@ -15,6 +15,12 @@ const cells = [
         label: "Join the Matrix space",
         text: space,
         href: matrixTo(space),
+        icon: "matrix",
+    },
+    {
+        label: "Join the Matrix room",
+        text: generalRoom,
+        href: matrixTo(generalRoom),
         icon: "matrix",
     },
     ...(ccc
