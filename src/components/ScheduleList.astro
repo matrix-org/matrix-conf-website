@@ -7,18 +7,13 @@ import RoomSchedule from "./schedule/RoomSchedule";
 interface Props {
     /** Room to show, as its pretalx room id or its room name (matched case-insensitively). */
     room: number | string;
+    /** "list" if the schedule scrolls in its own box, "page" if the page scrolls; what is on now is brought into view. */
+    scroll?: "list" | "page";
 }
-const { room } = Astro.props;
+const { room, scroll } = Astro.props;
 ---
 
-<div
-    class="schedule-list"
-    role="region"
-    aria-label="Room schedule"
-    data-room={room}
->
-    <RoomSchedule client:only="preact" room={room} />
-</div>
+<RoomSchedule client:only="preact" room={room} scroll={scroll} />
 <noscript>
     <p>
         This schedule needs JavaScript to load. You can also see it on
