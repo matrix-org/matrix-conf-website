@@ -9,9 +9,11 @@ interface Props {
     flexBottom?: boolean;
     /** Without `href` this renders a <button> (for actions rather than navigation). */
     href?: string;
+    /** Marks the link to the page being viewed: the label gets the rainbow underline of the navbar. */
+    current?: boolean;
 }
 
-const { href, flexBottom } = Astro.props;
+const { href, flexBottom, current } = Astro.props;
 const Tag = href ? "a" : "button";
 ---
 
@@ -97,6 +99,15 @@ const Tag = href ? "a" : "button";
         opacity: 1;
     }
 
+    .bracket-btn[aria-current="page"] .label::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: -0.25rem;
+        height: 3px;
+        background: linear-gradient(270deg, #f45b69 5%, #f6ae2d 30%, #a6ffa1 50%, #75f4f4 70%, #ae7fe9 95%);
+    }
+
     /* Hover effect */
     .bracket-btn:hover .label {
         color: var(--text-secondary);
@@ -112,6 +123,6 @@ const Tag = href ? "a" : "button";
         }
     }
 </style>
-<Tag href={href} type={href ? undefined : "button"} class={`bracket-btn ${flexBottom ? ' flexBottom' : ''}`}>
+<Tag href={href} type={href ? undefined : "button"} aria-current={current ? "page" : undefined} class={`bracket-btn ${flexBottom ? ' flexBottom' : ''}`}>
     <span class="label"><slot /></span>
 </Tag>

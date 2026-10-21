@@ -119,7 +119,7 @@ const current = (href: string) =>
         <li><a href="/hackathon" aria-current={current("/hackathon")}>Hackathon</a></li>
         <li><a href="/volunteer" aria-current={current("/volunteer")}>Volunteer</a></li>
         <li><a href="/register" aria-current={current("/register")}>Tickets</a></li>
-        <li><PrimaryCta href="/watch">Watch</PrimaryCta></li>
+        <li><PrimaryCta href="/watch" current={current("/watch") === "page"}>Watch</PrimaryCta></li>
     </ul>
 
     <button id="menu-button" title="Menu button">
