@@ -93,7 +93,9 @@ import ScheduleCalendar from "../components/ScheduleCalendar.astro";
         <div id="full-schedule" class="content-wrapper wide">
             <h2 class="sr-only">Full schedule</h2>
             <p class="schedule-note">
-                All times are local time in Malmö (Europe/Stockholm).
+                All times are local time in Malmö (Europe/Stockholm).<span
+                    id="schedule-local-zone"
+                    hidden></span>
             </p>
             <ScheduleCalendar
                 links={{

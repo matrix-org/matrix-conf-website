@@ -31,6 +31,29 @@ export const isLive = (session: Session, now: number) =>
 const NO_RECORD = `<span class="norec" role="img" aria-label="Not recorded or streamed" title="Not recorded or streamed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l6-3.5v11L15 14M3 6h9a3 3 0 0 1 3 3v6M3 6v10a2 2 0 0 0 2 2h8"/><path d="M2 2l20 20"/></svg></span>`;
 const NEW_TAB_HINT = `<span class="sr-only"> (opens in a new tab)</span>`;
 
+/**
+ * The session's time in the viewer's time zone, for remote attendees.
+ *
+ * @param session Session to format.
+ * @param event Formatters for the time zone of the event.
+ * @param local Formatters for the viewer's time zone.
+ * @returns A `<span>` with the local time, or an empty string when it reads the same as the event's time.
+ */
+function localTime(
+    session: Session,
+    event: ReturnType<typeof fmt>,
+    local: ReturnType<typeof fmt>,
+): string {
+    const start = local.time.format(session.start);
+    if (start === event.time.format(session.start)) return "";
+    const nextDay =
+        local.dayShort.format(session.start) !==
+        event.dayShort.format(session.start)
+            ? ` (${local.dayShort.format(session.start)})`
+            : "";
+    return `<span class="local" title="Your local time">${start}–${local.time.format(session.end)}${nextDay} your time</span>`;
+}
+
 /** The parts a break tile and a talk tile are built from, computed once per session. */
 type Tile = {
     /** Session the tile represents. */
@@ -104,6 +127,7 @@ export function sessionTiles(
     place?: (session: Session) => Placement,
 ): string {
     const formatter = fmt(room.timezone);
+    const local = fmt(undefined);
     const next = talksOf(room).find((session) => +session.start > now);
     const upcoming = room.items.find((session) => +session.start > now); // the Now marker goes right before this, break or talk
     const showNow =
@@ -126,7 +150,7 @@ export function sessionTiles(
                 room: place
                     ? `<span class="sr-only"> Room: ${esc(room.name)}.</span>`
                     : "",
-                time: `<time datetime="${new Date(session.start).toISOString()}">${formatter.time.format(session.start)}–${formatter.time.format(session.end)}</time>`,
+                time: `<time datetime="${new Date(session.start).toISOString()}">${formatter.time.format(session.start)}–${formatter.time.format(session.end)}${localTime(session, formatter, local)}</time>`,
             };
             const marker =
                 !place && session === upcoming && showNow

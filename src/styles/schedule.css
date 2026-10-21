@@ -114,6 +114,11 @@
     font-variant-numeric: tabular-nums;
     line-height: var(--session-line);
 }
+.schedule-list .session time .local {
+    display: block;
+    color: var(--secondary-color);
+    font-size: 0.8125em;
+}
 .schedule-list .session strong {
     font-size: 1.125rem;
 }

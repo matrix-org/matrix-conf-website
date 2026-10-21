@@ -182,10 +182,10 @@ export const esc = (text: string) =>
 /**
  * Time and day formatters for a given time zone.
  *
- * @param tz IANA time zone, e.g. "Europe/Stockholm".
+ * @param tz IANA time zone, e.g. "Europe/Stockholm". Defaults to the viewer's time zone.
  * @returns `time`, an "HH:mm" formatter, and `day`, a "Weekday, D Month" formatter.
  */
-export const fmt = (tz: string) => ({
+export const fmt = (tz?: string) => ({
     time: new Intl.DateTimeFormat("en-GB", {
         hour: "2-digit",
         minute: "2-digit",
