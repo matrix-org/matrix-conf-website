@@ -61,5 +61,5 @@ const { name } = Astro.props;
     const watcher = new MutationObserver(
         () => scrollToNow() && watcher.disconnect(),
     );
-    watcher.observe(list, { childList: true });
+    watcher.observe(list, { childList: true, subtree: true });
 </script>

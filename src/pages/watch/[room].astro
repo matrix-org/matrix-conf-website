@@ -140,7 +140,7 @@ const { stream } = Astro.props;
                 scrollToCurrent();
             }
             update();
-        }).observe(list, { childList: true });
+        }).observe(list, { childList: true, subtree: true });
         scrollToCurrent();
         update();
     }
