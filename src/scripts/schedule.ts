@@ -1,4 +1,5 @@
 import { pretalxSchedule, pretalxTalkBase } from "../data/pretalx";
+import { cccRecordings } from "../data/streams";
 
 /** A pretalx track: a category a session can belong to and the colour it is shown in. */
 export type Track = {
@@ -26,6 +27,8 @@ export type Session = {
     speakers: Speaker[];
     /** Track the talk belongs to, if any. Always undefined for a break. */
     track?: Track;
+    /** URL of the recording on media.ccc.de, once it is released. */
+    recording?: string;
     /** URL of the pretalx talk page. Empty for a break, which has no page. */
     url: string;
     /** Talk title, or the break's name (e.g. "Coffee Break"). */
@@ -96,11 +99,28 @@ let cache: Promise<Map<number, Room>> | undefined;
  * @returns A map from pretalx room id to that room's sessions.
  */
 export function loadSchedule(): Promise<Map<number, Room>> {
-    cache ??= fetch(pretalxSchedule, { signal: AbortSignal.timeout(8000) }) // a hung request must not hide the content
-        .then((response) =>
-            response.ok ? response.json() : Promise.reject(response.status),
-        )
-        .then((data) => {
+    cache ??= Promise.all([
+        fetch(pretalxSchedule, { signal: AbortSignal.timeout(8000) }) // a hung request must not hide the content
+            .then((response) =>
+                response.ok ? response.json() : Promise.reject(response.status),
+            ),
+        // media.ccc.de lists a talk's pretalx page as `link`. Without it the schedule just shows no recordings.
+        fetch(cccRecordings, { signal: AbortSignal.timeout(8000) })
+            .then((response) => response.json())
+            .then(
+                (data) =>
+                    new Map<string, string>(
+                        data.events.map(
+                            (event: { link: string; frontend_link: string }) => [
+                                event.link,
+                                event.frontend_link,
+                            ],
+                        ),
+                    ),
+            )
+            .catch(() => new Map<string, string>()),
+    ])
+        .then(([data, released]) => {
             const tracks = new Map<number, Track>(
                 data.tracks.map((track: any) => [
                     track.id,
@@ -151,6 +171,7 @@ export function loadSchedule(): Promise<Map<number, Room>> {
                               .map((code: string) => people.get(code))
                               .filter(Boolean),
                     track: tracks.get(talk.track),
+                    recording: released.get(`${pretalxTalkBase}${talk.code}/`),
                     url: `${pretalxTalkBase}${talk.code}/`,
                     title: isBreak ? talk.title.en : talk.title,
                     start: new Date(talk.start),

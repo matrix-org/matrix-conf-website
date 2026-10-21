@@ -232,6 +232,15 @@
     margin-inline-start: var(--space-small);
     color: var(--secondary-color, #b8b8b8);
 }
+.schedule-list .rec {
+    float: inline-end;
+    inline-size: 18px;
+    block-size: 18px;
+    background-color: var(--secondary-color, #b8b8b8);
+    mask: url("/recording.svg") center / contain no-repeat;
+    margin-block-start: 0.25rem;
+    margin-inline-start: var(--space-small);
+}
 .schedule-list .norec svg {
     display: block;
     width: 1.125rem;

@@ -29,6 +29,8 @@ export const isLive = (session: Session, now: number) =>
 
 // Small crossed-out camera for talks that are not recorded or streamed.
 const NO_RECORD = `<span class="norec" role="img" aria-label="Not recorded or streamed" title="Not recorded or streamed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l6-3.5v11L15 14M3 6h9a3 3 0 0 1 3 3v6M3 6v10a2 2 0 0 0 2 2h8"/><path d="M2 2l20 20"/></svg></span>`;
+// Small play button for talks whose recording is on media.ccc.de.
+const RECORDING = `<span class="rec" role="img" aria-label="Recording available" title="Recording available on media.ccc.de"></span>`;
 const NEW_TAB_HINT = `<span class="sr-only"> (opens in a new tab)</span>`;
 
 /** The parts a break tile and a talk tile are built from, computed once per session. */
@@ -81,7 +83,7 @@ function talkTile(
     const track = session.track
         ? `<span class="track">${esc(session.track.name)}</span>`
         : "";
-    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${room}${speakersHtml(session)}${track}</div></a>`;
+    return `<a class="${className}"${style} href="${session.url}" target="_blank" rel="noopener noreferrer">${time}${badge}<div>${session.recorded ? "" : NO_RECORD}${session.recording ? RECORDING : ""}<strong>${esc(session.title)}</strong>${NEW_TAB_HINT}${room}${speakersHtml(session)}${track}</div></a>`;
 }
 
 /**

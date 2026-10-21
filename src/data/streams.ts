@@ -2,6 +2,9 @@
 // TODO(before conf): confirm the `ccc` slugs against streaming.media.ccc.de.
 export const CCC_CONFERENCE = "matrix-conf-2026";
 
+/** media.ccc.de API listing of the released recordings. */
+export const cccRecordings = `https://media.ccc.de/public/conferences/${CCC_CONFERENCE}`;
+
 export const streams = [
     {
         slug: "sofya",
