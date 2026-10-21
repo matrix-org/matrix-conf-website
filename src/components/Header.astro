@@ -1,6 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import PrimaryCta from "./PrimaryCta.astro";
+
+// The entry of the current section, including its subpages (/watch/sofya highlights /watch).
+const { pathname } = Astro.url;
+const current = (href: string) =>
+    (href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`))
+        ? "page"
+        : undefined;
 ---
 
 <style>
@@ -18,6 +25,11 @@ import PrimaryCta from "./PrimaryCta.astro";
 
     a {
         text-decoration: none;
+    }
+
+    a[aria-current="page"] {
+        padding-block-end: 0.25rem;
+        background: linear-gradient(270deg, #f45b69 5%, #f6ae2d 30%, #a6ffa1 50%, #75f4f4 70%, #ae7fe9 95%) bottom / 100% 3px no-repeat;
     }
 
     ul {
@@ -99,15 +111,15 @@ import PrimaryCta from "./PrimaryCta.astro";
         <img src="/conference-logo-horizontal.svg" alt="Home Page" />
     </a>
     <ul id="sections">
-        <li class="home"><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/attend">Attend</a></li>
-        <li><a href="/sponsor">Sponsor</a></li>
-        <li><a href="/schedule">Schedule</a></li>
-        <li><a href="/hackathon">Hackathon</a></li>
-        <li><a href="/volunteer">Volunteer</a></li>
-        <li><a href="/register">Tickets</a></li>
-        <li><PrimaryCta href="/watch">Watch</PrimaryCta></li>
+        <li class="home"><a href="/" aria-current={current("/")}>Home</a></li>
+        <li><a href="/about" aria-current={current("/about")}>About</a></li>
+        <li><a href="/attend" aria-current={current("/attend")}>Attend</a></li>
+        <li><a href="/sponsor" aria-current={current("/sponsor")}>Sponsor</a></li>
+        <li><a href="/schedule" aria-current={current("/schedule")}>Schedule</a></li>
+        <li><a href="/hackathon" aria-current={current("/hackathon")}>Hackathon</a></li>
+        <li><a href="/volunteer" aria-current={current("/volunteer")}>Volunteer</a></li>
+        <li><a href="/register" aria-current={current("/register")}>Tickets</a></li>
+        <li><PrimaryCta href="/watch" current={current("/watch") === "page"}>Watch</PrimaryCta></li>
     </ul>
 
     <button id="menu-button" title="Menu button">
