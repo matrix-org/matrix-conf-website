@@ -192,15 +192,6 @@ export function loadSchedule(): Promise<Map<number, Room>> {
 }
 
 /**
- * Escapes text for use inside HTML.
- *
- * @param text Plain text to escape.
- * @returns `text` with `& < > " '` replaced by their numeric character references.
- */
-export const esc = (text: string) =>
-    text.replace(/[&<>"']/g, (char) => `&#${char.charCodeAt(0)};`);
-
-/**
  * Time and day formatters for a given time zone.
  *
  * @param tz IANA time zone, e.g. "Europe/Stockholm". Defaults to the viewer's time zone.
@@ -312,28 +303,4 @@ export function trackColors(track: Track): TrackColors {
         text: readableOnBlack(track.color),
         light: readableOnWhite(track.color),
     };
-}
-
-/**
- * Renders a session's speakers as overlapping avatars, for those who have one, followed by their names.
- *
- * @param session Session to render the speakers of.
- * @returns HTML for the speakers, or an empty string if the session has none.
- */
-export function speakersHtml(session: Session): string {
-    if (!session.speakers.length) return "";
-    const faces = session.speakers.filter((speaker) => speaker.avatar);
-    const shown = faces
-        .slice(0, 4)
-        .map(
-            (speaker) =>
-                `<img class="avatar" src="${esc(speaker.avatar!)}" alt="" width="24" height="24" loading="lazy">`,
-        )
-        .join("");
-    const more =
-        faces.length > 4
-            ? `<span class="avatar more">+${faces.length - 4}</span>`
-            : "";
-    const names = session.speakers.map((speaker) => speaker.name).join(", ");
-    return `<span class="who">${faces.length ? `<span class="avatars">${shown}${more}</span>` : ""}<span class="names">${esc(names)}</span></span>`;
 }
