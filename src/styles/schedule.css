@@ -237,7 +237,7 @@
     inline-size: 18px;
     block-size: 18px;
     background-color: var(--secondary-color, #b8b8b8);
-    mask: url("/recording.svg") center / contain no-repeat;
+    mask: url("/film.svg") center / contain no-repeat;
     margin-block-start: 0.25rem;
     margin-inline-start: var(--space-small);
 }
