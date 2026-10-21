@@ -89,6 +89,7 @@ const { links = {} } = Astro.props;
 </a>
 <script>
     import {
+        fmt,
         loadSchedule,
         trackColors,
         type Room,
@@ -120,6 +121,7 @@ const { links = {} } = Astro.props;
         "#schedule-filter-status",
     )!;
     const back = document.querySelector<HTMLElement>(".schedule-back")!;
+    const localZone = document.getElementById("schedule-local-zone");
     const links: Record<string, string> = JSON.parse(
         calendar.dataset.links ?? "{}",
     );
@@ -280,6 +282,17 @@ const { links = {} } = Astro.props;
                     a.name.localeCompare(b.name),
                 ),
             );
+            const viewerZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const first = allRooms[0]?.items[0]?.start;
+            if (localZone && first) {
+                const sameTime =
+                    fmt(viewerZone).time.format(first) ===
+                    fmt(allRooms[0].timezone).time.format(first);
+                localZone.textContent = sameTime
+                    ? ` Your time zone (${viewerZone}) shows the same times.`
+                    : ` Your time zone (${viewerZone}) is shown below each session.`;
+                localZone.hidden = false;
+            }
             controls.hidden = false;
             back.hidden = false;
             render();

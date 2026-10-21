@@ -370,6 +370,9 @@
     .schedule-list .room-grid .session.xs .badge {
         display: none;
     }
+    .schedule-list .room-grid .session.xs time .local {
+        display: none;
+    }
     .schedule-list .room-grid .session.xs time {
         flex: none;
         font-size: 0.75rem;
