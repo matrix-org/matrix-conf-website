@@ -45,12 +45,49 @@ const { stream } = Astro.props;
         display: grid;
         gap: 1rem;
     }
+    .player-frame {
+        position: relative;
+        scroll-margin-block-start: 6rem; /* below the sticky header */
+    }
+    .cinema-toggle {
+        display: none;
+    }
     @media (min-width: 1200px) {
         .content-wrapper {
             max-width: 1600px;
         }
         .watch {
             grid-template-columns: minmax(0, 2fr) minmax(22rem, 1fr);
+        }
+        .cinema-toggle {
+            display: grid;
+            place-items: center;
+            position: absolute;
+            inset: 0.75rem 0.75rem auto auto;
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            border: 1px solid #636569;
+            background: rgb(0 0 0 / 0.7);
+            color: var(--fg-color);
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.2s;
+        }
+        .cinema-toggle:hover,
+        .cinema-toggle:focus-visible,
+        .cinema-toggle[aria-pressed="true"] {
+            background-color: #262626;
+        }
+        /* Cinema mode: the stream takes the full width like the panels around it and the schedule moves below. */
+        .watch:has(.cinema-toggle[aria-pressed="true"]) {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .watch:has(.cinema-toggle[aria-pressed="true"]) .stage :global(.player) {
+            max-height: calc(100dvh - 7rem); /* fits under the header; the video letterboxes */
+        }
+        .watch:has(.cinema-toggle[aria-pressed="true"]) .agenda {
+            min-height: 32rem;
         }
         .agenda {
             --fade-size: 2.5rem;
@@ -77,6 +114,25 @@ const { stream } = Astro.props;
             grid-template-columns: 1fr;
         }
     }
+    /* Only the stage and the schedule move: the sticky header stays put and the rest is not cross-faded. With
+       reduced motion nothing is named, so the layout just switches. */
+    @media (min-width: 1200px) {
+        :global(::view-transition-old(root)),
+        :global(::view-transition-new(root)) {
+            animation: none;
+        }
+    }
+    @media (min-width: 1200px) and (prefers-reduced-motion: no-preference) {
+        .stage {
+            view-transition-name: stage;
+        }
+        .agenda {
+            view-transition-name: agenda;
+        }
+        :global(body > nav) {
+            view-transition-name: header;
+        }
+    }
 </style>
 <BaseLayout
     pageTitle={`Watch ${stream.name} live – The Matrix Conference`}
@@ -93,11 +149,22 @@ const { stream } = Astro.props;
                     <div class="panel">
                         <NowStreaming room={stream.pretalxRoom} />
                     </div>
-                    <StreamPlayer
-                        room={stream.pretalxRoom}
-                        src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`}
-                        title={`${stream.name} livestream`}
-                    />
+                    <div class="player-frame">
+                        <StreamPlayer
+                            room={stream.pretalxRoom}
+                            src={`${cccEmbed(stream.ccc)}/hls/native/no-autoplay`}
+                            title={`${stream.name} livestream`}
+                        />
+                        <button
+                            class="cinema-toggle"
+                            type="button"
+                            aria-pressed="false"
+                            aria-label="Cinema mode"
+                            title="Cinema mode: enlarge the stream and move the schedule below it (Esc to leave)"
+                        >
+                            <img src="/cinema.svg" alt="" width="20" height="20" />
+                        </button>
+                    </div>
                     <ChatLinks chat={stream.chat} ccc={cccStream(stream.ccc)} />
                 </div>
                 <div class="agenda">
@@ -107,6 +174,25 @@ const { stream } = Astro.props;
         </div>
     </section>
 </BaseLayout>
+<script>
+    // Cinema mode is the pressed state of the toggle, which the CSS reacts to. The view transition animates the
+    // move where supported; without it the layout just switches.
+    const toggle = document.querySelector<HTMLButtonElement>(".cinema-toggle")!;
+    const isOn = () => toggle.getAttribute("aria-pressed") === "true";
+    const setCinema = (on: boolean) => {
+        const apply = () => {
+            toggle.setAttribute("aria-pressed", String(on));
+            // Entering moves the player; keep it in view. Leaving keeps the scroll position, which is less jumpy.
+            if (on) toggle.parentElement!.scrollIntoView({ block: "start" });
+        };
+        if (document.startViewTransition) document.startViewTransition(apply);
+        else apply();
+    };
+    toggle.addEventListener("click", () => setCinema(!isOn()));
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && isOn()) setCinema(false);
+    });
+</script>
 <script>
     // The schedule scrolls in its own box next to the stream on wide screens. Start it at the current talk and
     // tell the CSS how far it is scrolled, so its edges fade only while there is more to scroll to.
