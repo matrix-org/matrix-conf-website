@@ -226,20 +226,18 @@
     min-width: 0;
     line-height: var(--avatar-size, 1.5rem);
 }
-.schedule-list .norec {
+.schedule-list .norec,
+.schedule-list .rec {
     float: inline-end;
     margin-block-start: 0.25rem;
     margin-inline-start: var(--space-small);
     color: var(--secondary-color, #b8b8b8);
 }
 .schedule-list .rec {
-    float: inline-end;
     inline-size: 18px;
     block-size: 18px;
-    background-color: var(--secondary-color, #b8b8b8);
+    background-color: currentColor;
     mask: url("/film.svg") center / contain no-repeat;
-    margin-block-start: 0.25rem;
-    margin-inline-start: var(--space-small);
 }
 .schedule-list .norec svg {
     display: block;
