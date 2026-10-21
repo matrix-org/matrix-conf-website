@@ -100,7 +100,7 @@ let cache: Promise<Map<number, Room>> | undefined;
  */
 export function loadSchedule(): Promise<Map<number, Room>> {
     cache ??= Promise.all([
-        fetch(pretalxSchedule, { signal: AbortSignal.timeout(8000) }) // a hung request must not hide the content
+        fetch(pretalxSchedule, { signal: AbortSignal.timeout(8000) }) // a hanging request must not hide the content
             .then((response) =>
                 response.ok ? response.json() : Promise.reject(response.status),
             ),
