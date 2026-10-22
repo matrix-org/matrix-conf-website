@@ -15,5 +15,6 @@
     "en": "Peter"
   },
   "Start": "2026-10-22T12:45:00+02:00",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100595-side-effects-include-data-breaches-gdpr-fines-and-a-group-chat-with-47-nurses"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100595-side-effects-include-data-breaches-gdpr-fines-and-a-group-chat-with-47-nurses",
+  "slides": true
 }

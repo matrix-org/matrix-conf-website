@@ -15,5 +15,6 @@
     "en": "Sofya"
   },
   "Start": "2026-10-22T12:45:00+02:00",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100422-new-phone-who-dis-user-verification-using-x-509-certificates"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100422-new-phone-who-dis-user-verification-using-x-509-certificates",
+  "slides": true
 }
