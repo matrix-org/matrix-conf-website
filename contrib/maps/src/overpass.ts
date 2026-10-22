@@ -18,8 +18,14 @@ interface Element {
     type: string;
     lat: number;
     lon: number;
+    tags?: Record<string, string>;
     geometry?: Point[];
-    members?: Array<{ geometry?: Point[] }>;
+    members?: Array<{ role: string; geometry?: Point[] }>;
+}
+
+/** A node with the name it has in OpenStreetMap, if any. */
+export interface Node extends Point {
+    tags?: Record<string, string>;
 }
 
 let queue: Promise<unknown> = Promise.resolve();
@@ -71,7 +77,7 @@ async function fetchElements(url: string, data: string): Promise<Element[]> {
 }
 
 /** The nodes an Overpass query finds, for example `node[amenity=cafe]({{bbox}});out;`. */
-export async function findNodes(url: string, text: string, area: Area): Promise<Point[]> {
+export async function findNodes(url: string, text: string, area: Area): Promise<Node[]> {
     return (await query(url, text, area)).filter((element) => element.type === "node");
 }
 
@@ -84,7 +90,7 @@ export async function findLines(url: string, text: string, area: Area): Promise<
     for (const element of await query(url, text, area)) {
         if (element.geometry) lines.push(element.geometry);
         for (const member of element.members ?? []) {
-            if (member.geometry) lines.push(member.geometry);
+            if (member.geometry && member.role === "") lines.push(member.geometry); // the track, not platforms and stops
         }
     }
     return lines;

@@ -19,7 +19,9 @@ import {
     label,
     pinShape,
     pinText,
+    poiLabel,
     routeLine,
+    walkLine,
     scaleBar,
     type Overlay,
 } from "./overlays.ts";
@@ -28,9 +30,9 @@ import type { Pixel, Point, ReadyMap } from "./types.ts";
 
 /** Renders one map at the given size. Returns the image. */
 export async function render(map: ReadyMap, width: number, height: number): Promise<Buffer> {
-    const { places, route } = map;
+    const { places, route, walk } = map;
     const style = { theme: map.theme, scale: map.scale };
-    const points = [...places, ...route];
+    const points = [...places, ...route, ...walk];
     const zoom = map.zoom ?? fitZoom(points, width, height);
 
     // The points are centred in the image. `origin` is its top left corner on the map of the world.
@@ -47,6 +49,7 @@ export async function render(map: ReadyMap, width: number, height: number): Prom
         `<rect width="100%" height="100%" fill="${map.theme.background}"/>`,
         await drawTiles(style, origin, zoom, width, height),
         routeLine(style, route.map(toImage)),
+        walkLine(style, walk.map(toImage)),
     ];
     const overlays: Overlay[] = [];
 
@@ -58,15 +61,27 @@ export async function render(map: ReadyMap, width: number, height: number): Prom
         north: northWest.lat,
         east: southEast.lon,
     };
+    const placed = places.map(toImage);
     for (const poi of map.pois) {
         const symbol = poi.image && (await icon(poi.image, poi.size * map.scale));
+        const named = new Set<string>(); // OpenStreetMap often has several nodes for one station
         for (const node of await findNodes(map.overpassUrl, poi.query, area)) {
             const position = toImage(node);
+            const name = node.tags?.name;
+            const onPlace = placed.some(
+                (p) => Math.hypot(p.x - position.x, p.y - position.y) < 30 * map.scale,
+            );
+            if (onPlace || (name && named.has(name))) continue;
+            if (name) named.add(name);
             if (symbol)
                 overlays.push(
                     at(symbol, position.x - symbol.width / 2, position.y - symbol.height / 2),
                 );
             else svg.push(dot(style, position));
+            if (poi.label && name) {
+                const box = await poiLabel(style, name);
+                overlays.push(at(box, position.x + 8 * map.scale, position.y - box.height / 2));
+            }
         }
     }
 
@@ -74,14 +89,26 @@ export async function render(map: ReadyMap, width: number, height: number): Prom
         const position = toImage(place);
         if (place.image) {
             const symbol = await icon(place.image, place.size * map.scale);
-            overlays.push(at(symbol, position.x - symbol.width / 2, position.y - symbol.height));
+            overlays.push(
+                at(
+                    symbol,
+                    position.x - symbol.width / 2,
+                    position.y - symbol.height / (place.centred ? 2 : 1),
+                ),
+            );
         } else {
             svg.push(pinShape(style, position, place.size));
             overlays.push(await pinText(style, position, place.size));
         }
         if (place.label) {
             const box = await label(style, place.label);
-            overlays.push(at(box, position.x - box.width / 2, position.y + 8 * map.scale));
+            overlays.push(
+                at(
+                    box,
+                    position.x - box.width / 2,
+                    position.y + (place.centred ? place.size / 2 + 2 : 8) * map.scale,
+                ),
+            );
         }
     }
     if (map.note && route.length > 1) {

@@ -25,6 +25,8 @@ export interface Place extends Point {
     image?: string;
     /** Height of the pin in pixels. */
     size: number;
+    /** The image sits on the place, not above it. For symbols that are not a pin. */
+    centred: boolean;
 }
 
 export interface Poi {
@@ -32,6 +34,8 @@ export interface Poi {
     /** File of the symbol, a dot when missing. */
     image?: string;
     size: number;
+    /** Write the name of the node next to it. */
+    label: boolean;
 }
 
 /** Text on an area of the map, like the name of a sea. */
@@ -40,7 +44,7 @@ export interface AreaLabel extends Point {
 }
 
 /** The route is given as points or found with an Overpass query. */
-export type Route = Point[] | { overpass: string };
+export type Route = Point[] | { overpass: string; between?: [number, number] };
 
 /** A map as `loadConfig` returns it, with the defaults filled in. */
 export interface MapSpec {
@@ -52,6 +56,8 @@ export interface MapSpec {
     theme: Theme;
     places: Place[];
     route: Route;
+    /** Indexes of the places to walk between, along the paths of OpenStreetMap. */
+    walk?: [number, number];
     pois: Poi[];
     scaleBar: boolean;
     areaLabels: AreaLabel[];
@@ -59,7 +65,7 @@ export interface MapSpec {
 }
 
 /** A map whose route has been looked up, ready to render. */
-export type ReadyMap = Omit<MapSpec, "route"> & { route: Point[] };
+export type ReadyMap = Omit<MapSpec, "route" | "walk"> & { route: Point[]; walk: Point[] };
 
 /** Colours and the factor for sizes, which all the drawing code needs. */
 export interface Style {

@@ -8,7 +8,9 @@ import type { MapSpec, Point, Poi } from "./types.ts";
 interface Overridable {
     theme?: Partial<Theme> & { preset?: string };
     pin?: { image?: string | null; size?: number };
-    pois?: Array<{ query: string; image?: string; size?: number }>;
+    pois?: Array<{ query: string; image?: string; size?: number; label?: boolean }>;
+    /** Show the train stations around, with their names. */
+    transit?: boolean;
     overpassUrl?: string;
     scaleBar?: boolean;
     /** `false` turns off the labels of the top level. */
@@ -26,8 +28,15 @@ interface RawMap {
     zoom?: number;
     scale?: number;
     note?: string;
-    places?: Array<{ at: [number, number]; label?: string; image?: string | null; size?: number }>;
-    route?: [number, number][] | { overpass: string };
+    places?: Array<{
+        at: [number, number];
+        label?: string;
+        image?: string | null;
+        size?: number;
+        centred?: boolean;
+    }>;
+    route?: [number, number][] | { overpass: string; between?: [number, number] };
+    walk?: [number, number];
 }
 
 export interface Config {
@@ -35,6 +44,13 @@ export interface Config {
     format: string;
     maps: MapSpec[];
 }
+
+/** What `transit` adds: the stations, as small dots with their names. */
+const TRANSIT: Poi = {
+    query: 'node["railway"="station"]["station"!="subway"]({{bbox}});out;',
+    size: 24,
+    label: true,
+};
 
 /**
  * Reads the config file. Everything at its top level except `maps`, `out` and
@@ -70,15 +86,28 @@ export async function loadConfig(file: string): Promise<Config> {
                 })),
                 overpassUrl: map.overpassUrl ?? defaults.overpassUrl ?? DEFAULT_URL,
                 route: Array.isArray(map.route) ? map.route.map(point) : (map.route ?? []),
-                places: map.places.map(({ at, label = "", ...place }) => {
+                walk: map.walk,
+                places: map.places.map(({ at, label = "", centred = false, ...place }) => {
                     const { image, size } = { ...pin, ...place };
-                    return { ...point(at), label, image: path(image), size: size ?? pin.size };
+                    return {
+                        ...point(at),
+                        label,
+                        image: path(image),
+                        size: size ?? pin.size,
+                        centred,
+                    };
                 }),
-                pois: (map.pois ?? defaults.pois ?? []).map(({ query, image, size = 24 }): Poi => ({
-                    query,
-                    image: path(image),
-                    size,
-                })),
+                pois: [
+                    ...(map.pois ?? defaults.pois ?? []).map(
+                        ({ query, image, size = 24, label = false }): Poi => ({
+                            query,
+                            image: path(image),
+                            size,
+                            label,
+                        }),
+                    ),
+                    ...((map.transit ?? defaults.transit) ? [TRANSIT] : []),
+                ],
             };
         }),
     };

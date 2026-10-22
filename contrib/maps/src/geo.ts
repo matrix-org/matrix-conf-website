@@ -69,3 +69,8 @@ export function niceLength(limit: number): number {
     const power = 10 ** Math.floor(Math.log10(limit));
     return [5, 2, 1].map((step) => step * power).find((length) => length <= limit) ?? power;
 }
+
+/** Distance in degrees, enough to tell which point is closer. */
+export function gap(a: Point, b: Point): number {
+    return Math.hypot(a.lat - b.lat, (a.lon - b.lon) * Math.cos((a.lat * Math.PI) / 180));
+}

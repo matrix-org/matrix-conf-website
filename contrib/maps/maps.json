@@ -8,14 +8,33 @@
     "maps": {
         "Map": {
             "zoom": 15,
-            "pin": {
-                "size": 110
-            },
+            "transit": true,
+            "note": "about 3 min by train",
             "places": [
                 {
-                    "at": [55.5964139, 13.0013718]
+                    "at": [55.5964139, 13.0013718],
+                    "size": 110
+                },
+                {
+                    "at": [55.6091374, 13.0006612],
+                    "label": "Malmö Central",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
+                },
+                {
+                    "at": [55.5932928, 13.0010364],
+                    "label": "Triangeln",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
                 }
-            ]
+            ],
+            "route": {
+                "overpass": "relation(3274682);out geom;",
+                "between": [1, 2]
+            },
+            "walk": [2, 0]
         },
         "HackathonMap": {
             "zoom": 16.4,
@@ -51,7 +70,7 @@
             "areaLabels": [
                 {
                     "at": [55.64, 12.8],
-                    "text": "\u00d8resund"
+                    "text": "Øresund"
                 }
             ]
         }

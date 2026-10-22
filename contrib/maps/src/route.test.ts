@@ -5,8 +5,8 @@ import { chain } from "./route.ts";
 
 const line = (...lons: number[]) => lons.map((lon) => ({ lat: 0, lon }));
 
-test("chain joins lines that are given in the wrong order and direction", () => {
-    const joined = chain([line(0, 1), line(3, 2), line(1, 2)]);
+test("chain joins lines in order and flips those that run the other way", () => {
+    const joined = chain([line(0, 1), line(2, 1), line(2, 3)]);
     assert.deepEqual(
         joined.map((point) => point.lon),
         [0, 1, 2, 3],

@@ -50,28 +50,30 @@ Paths are relative to the config file.
 }
 ```
 
-| Key           | Where           | Meaning                                                                                                             |
-| ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `out`         | top             | Directory for the images, default is the one of the config                                                          |
-| `format`      | top             | `avif` (default), `png`, `webp` or `jpg`                                                                            |
-| `theme`       | top, map        | `preset` (`default` or `quiet`) and colours to change, the names are in `src/theme.ts`                              |
-| `pin`         | top, map, place | `image` (SVG or bitmap, default is the round `[m]` pin) and `size` (height in pixels, default 36)                   |
-| `pois`        | top, map        | Overpass queries whose nodes are drawn as dots or with an `image`. A map's list replaces the default                |
-| `overpassUrl` | top, map        | Another Overpass server                                                                                             |
-| `scale`       | map             | Factor for pins, labels, lines and dots, default 1. Use more for a map that is shown small                          |
-| `sizes`       | map             | List of `"WIDTHxHEIGHT"`, default `["1100x1100"]`. With several sizes the size is added to the name                 |
-| `zoom`        | map             | Zoom as on openstreetmap.org. Default: fit all places and the route, 16 for a single place                          |
-| `places`      | map             | `at` as `[latitude, longitude]`, optional `label`, `image` and `size`. `"image": null` turns it off                 |
-| `route`       | map             | Points `[[lat, lon], ...]` or `{ "overpass": "..." }`                                                               |
-| `scaleBar`    | top, map        | `true` draws a scale bar in the bottom left corner, default `false`                                                 |
-| `areaLabels`  | top, map        | `[{ "at": [lat, lon], "text": "Øresund" }]` quiet names of areas, such as a sea. `false` turns off those of the top |
-| `note`        | map             | Text in the middle of the route                                                                                     |
+| Key           | Where           | Meaning                                                                                                                                          |
+| ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `out`         | top             | Directory for the images, default is the one of the config                                                                                       |
+| `format`      | top             | `avif` (default), `png`, `webp` or `jpg`                                                                                                         |
+| `theme`       | top, map        | `preset` (`default` or `quiet`) and colours to change, the names are in `src/theme.ts`                                                           |
+| `pin`         | top, map, place | `image` (SVG or bitmap, default is the round `[m]` pin) and `size` (height in pixels, default 36)                                                |
+| `pois`        | top, map        | Overpass queries whose nodes are drawn as dots or with an `image`, with `"label": true` also with their names. A map's list replaces the default |
+| `overpassUrl` | top, map        | Another Overpass server                                                                                                                          |
+| `scale`       | map             | Factor for pins, labels, lines and dots, default 1. Use more for a map that is shown small                                                       |
+| `sizes`       | map             | List of `"WIDTHxHEIGHT"`, default `["1100x1100"]`. With several sizes the size is added to the name                                              |
+| `zoom`        | map             | Zoom as on openstreetmap.org. Default: fit all places and the route, 16 for a single place                                                       |
+| `places`      | map             | `at` as `[latitude, longitude]`, optional `label`, `image` and `size`. `"image": null` turns it off                                              |
+| `route`       | map             | Points `[[lat, lon], ...]` or `{ "overpass": "..." }`                                                                                            |
+| `transit`     | top, map        | `true` shows the train stations around the map with their names, as small dots under the pins                                                    |
+| `scaleBar`    | top, map        | `true` draws a scale bar in the bottom left corner, default `false`                                                                              |
+| `areaLabels`  | top, map        | `[{ "at": [lat, lon], "text": "Øresund" }]` quiet names of areas, such as a sea. `false` turns off those of the top                              |
+| `walk`        | map             | `[from, to]`, indexes of two places. The way on foot between them, found in OpenStreetMap and drawn as a dotted line                             |
+| `note`        | map             | Text in the middle of the route                                                                                                                  |
 
 The image of a pin has its tip, the bottom centre, on the place. Images of `pois` are centred on the node.
 
 ### Routes
 
-A route is a list of points or an Overpass query. The query selects one route relation and ends in `out geom;`. Its ways are joined into one line and cut to the part between the first and the last place, and the line is drawn smooth.
+A route is a list of points or an Overpass query. The query selects one route relation and ends in `out geom;`. Its ways are joined, in the order of the relation and without platforms and stops, into one line and cut to the part between the first and the last place (or the two places in `"between": [from, to]`), and the line is drawn smooth.
 
 To find the relation, open [Overpass Turbo](https://overpass-turbo.eu/) and look for route relations near the places, for example `relation["route"="train"]({{bbox}});out tags;`. The id is the number in the result. `relation(3345661);out geom;` is the Øresundståg between Copenhagen, Malmö and Gothenburg. `{{bbox}}` in a route query is the area around the places. The area of a route that is not a straight line is larger than that, so a relation is better selected by its id. Queries for `pois` use the area of the map.
 

@@ -55,6 +55,14 @@ export function routeLine({ theme, scale }: Style, line: Pixel[]): string {
     return `<path d="${d}" ${common} stroke="${theme.outline}" stroke-width="${11 * scale}"/><path d="${d}" ${common} stroke="${theme.route}" stroke-width="${7 * scale}"/>`;
 }
 
+/** The way on foot: dashed, so that it differs from the route by more than its colour. */
+export function walkLine({ theme, scale }: Style, line: Pixel[]): string {
+    if (line.length < 2) return "";
+    const d = smooth(line);
+    const common = 'fill="none" stroke-linecap="round" stroke-linejoin="round"';
+    return `<path d="${d}" ${common} stroke="#fff" stroke-width="${10 * scale}"/><path d="${d}" ${common} stroke="${theme.outline}" stroke-width="${6 * scale}" stroke-dasharray="0 ${11 * scale}"/>`;
+}
+
 /** Path through the points with rounded corners (a Catmull-Rom spline as Bézier curves). */
 function smooth(line: Pixel[]): string {
     let d = `M${line[0].x} ${line[0].y}`;
@@ -75,6 +83,16 @@ export function label({ theme, scale }: Style, text: string): Promise<Picture> {
         fill: theme.label,
         border: theme.labelBorder,
         padding: 8 * scale,
+    });
+}
+
+/** The name of a place of interest, small and on a faint panel. */
+export function poiLabel({ scale }: Style, text: string): Promise<Picture> {
+    return textBox(text, {
+        size: 12 * scale,
+        color: "#222222",
+        fill: "rgba(255,255,255,.75)",
+        padding: 3 * scale,
     });
 }
 

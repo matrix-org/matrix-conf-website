@@ -9,6 +9,7 @@ import sharp from "sharp";
 import { loadConfig } from "./src/config.ts";
 import { render } from "./src/render.ts";
 import { findRoute } from "./src/route.ts";
+import { findWalk } from "./src/walk.ts";
 
 const USAGE = `Usage: node map.ts CONFIG.json [--out DIR] [MAP...]
 
@@ -34,7 +35,7 @@ const out = values.out ?? config.out;
 await mkdir(out, { recursive: true });
 
 for (const spec of maps) {
-    const map = { ...spec, route: await findRoute(spec) };
+    const map = { ...spec, route: await findRoute(spec), walk: await findWalk(spec) };
     for (const size of map.sizes) {
         const [width, height] = size.split("x").map(Number);
         const name = map.sizes.length > 1 ? `${map.name}-${size}` : map.name;
