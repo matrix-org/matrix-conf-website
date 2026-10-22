@@ -1,0 +1,49 @@
+---
+import PrimaryCta from "./PrimaryCta.astro";
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem 2rem;
+        padding: 1rem 1.5rem;
+        margin-block-end: 2rem;
+        background-color: #000000;
+        border: 1px solid;
+        border-image: var(--gradient) 30; /* defined by PrimaryCta, same direction as the buttons */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin: 0.25rem 0 0;
+    }
+
+    @media (min-width: 800px) {
+        .box {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+</style>
+<div class="content-wrapper">
+    <div class="box">
+        <div>
+            <h2>Watch the talks from Malmö</h2>
+            <p>The recordings are online. Catch up on what you missed, or watch your favourites again.</p>
+        </div>
+        <PrimaryCta href="/watch">Watch the talks</PrimaryCta>
+    </div>
+</div>
