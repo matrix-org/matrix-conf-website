@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import Venue from "../img/AAUKoebenhavn.avif";
+import Map from "../img/HackathonMap.avif";
+import Route from "../img/MalmoCopenhagenMap.avif";
 import TrainO from "./TrainO.astro";
 import AppStoreButtons from "./AppStoreButtons.astro";
 ---
@@ -32,6 +34,11 @@ import AppStoreButtons from "./AppStoreButtons.astro";
         }
     }
 
+    h3:not(:first-child) {
+        margin-block-start: 1.5rem;
+    }
+
+    h3 + p,
     p:first-of-type {
         margin-block-start: 0.5rem;
     }
@@ -45,6 +52,22 @@ import AppStoreButtons from "./AppStoreButtons.astro";
     li {
         font-size: 1.125rem;
         color: var(--secondary-color);
+    }
+
+    .route {
+        grid-column: 1 / -1;
+    }
+
+    .route img,
+    .photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 0 1px #636569;
+    }
+
+    .photo {
+        margin-block-end: 1.5rem;
     }
 
     .map-grid {
@@ -82,9 +105,18 @@ import AppStoreButtons from "./AppStoreButtons.astro";
 <div class="content-wrapper">
     <h2>Getting There</h2>
     <div class="grid">
+        <div class="item route">
+            <Image
+                src={ Route }
+                alt="Map of the railway between the conference in Malmö on the right and the hackathon in Copenhagen on the left, crossing the Øresund Bridge. The train takes about 40 minutes."
+            />
+        </div>
         <div class="item">
-            <div class="map-grid">
+            <div class="photo">
                 <Image src={ Venue } alt="" />
+            </div>
+            <div class="map-grid">
+                <Image src={ Map } alt="Map of the area around the hackathon venue in Copenhagen." />
                 <a href="https://maps.app.goo.gl/bfAYfrKsEQbiXFZ87">Google Maps</a>
                 <a href="https://www.openstreetmap.org/directions?to=55.6504856%2C12.5428797#map=15/55.65130/12.53958&layers=S">
                   OpenStreet Map
@@ -93,6 +125,11 @@ import AppStoreButtons from "./AppStoreButtons.astro";
             <p>The address is: Aalborg Universitet København, A. C. Meyers Vænge 15, 2450 København, Denmark (Rooms 3.084A and 3.084B)</p>
         </div>
         <div class="item">
+            <h3>Easy From Malmö</h3>
+            <p>
+                Copenhagen is about 40 minutes from Malmö by direct <TrainO /> across the Øresund Bridge, with a train roughly
+                every 20 minutes.
+            </p>
             <h3>Public Transportation</h3>
             <p>
                 The hackathon marks the end of the conference and takes place at Aalborg University in Copenhagen,

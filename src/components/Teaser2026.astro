@@ -50,6 +50,10 @@ import PrimaryCta from "./PrimaryCta.astro";
         }
     }
 
+    .wide {
+        flex-basis: 100%;
+    }
+
     .highlight {
         border: 1px solid;
         border-image: linear-gradient(
@@ -74,6 +78,20 @@ import PrimaryCta from "./PrimaryCta.astro";
 </style>
 <div class="content-wrapper">
     <div class="items">
+        <div class="item wide">
+            <h2>Stay for the Hackathon</h2>
+            <p>
+                Join us on 23rd October at Aalborg University in Copenhagen. It
+                is only about 40 minutes from Malmö by train, so it is easy to
+                join in after the talks in Malmö and spend a day hacking on
+                Matrix.
+            </p>
+            <div class="actions">
+                <PrimaryCta href="/hackathon" flexBottom={true}>
+                    Join the Hackathon
+                </PrimaryCta>
+            </div>
+        </div>
         <div class="item smol">
             <h2>Attend</h2>
             <p>
