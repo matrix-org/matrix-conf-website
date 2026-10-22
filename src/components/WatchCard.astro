@@ -20,7 +20,6 @@ const hasThumbnail = existsSync(`static${thumbnailUrl}`);
 const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
-const room = talk.data.Room.en;
 const start = talk.data.Start.split('T')[0];
 const slides = talk.data.slides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
 const hasVideo = !!talk.data.youtube || !!talk.data.mediaCccDe;
@@ -229,7 +228,6 @@ import LinkIcon from '../img/link.svg';
             </div>
             <div class="talk-pills">
                 {track && <Pill Type="div" label={ track } />}
-                <Pill Type="div" label={ room } />
             </div>
         </div>
     </div>

@@ -1,0 +1,21 @@
+{
+  "ID": "LNVNTW",
+  "Proposal title": "MSG GOV: Building Brazil's Sovereign Government Messaging Platform on Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Governments increasingly need messaging that is secure, federated, and independent from foreign proprietary platforms, but turning an open protocol into a deployable government tool raises hard questions about sovereignty, infrastructure, and identity. This talk presents MSG GOV, a Matrix-based messaging platform for the Brazilian federal government. Today, it targets a defined set of public servants rather than the entire population or every government employee — a deliberate, controlled scope as the platform matures. We plan to share the factors that drove the need for a sovereign messaging app in the first place and to dig into how MSG GOV is built and run. The solution is designed to operate on SERPRO's sovereign cloud, the Brazilian government's own cloud infrastructure, with all the operational and trust implications that entail. At the center of the talk is identity: how MSG GOV integrates with gov.br, Brazil's national single-sign-on system, through a dedicated user management module we developed to bridge gov.br authentication with Matrix accounts.",
+  "Speaker names": [
+    "Diego Serpa",
+    "Jose Macedo"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T12:15:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102431-msg-gov-building-brazil-s-sovereign-government-messaging-platform-on-matrix",
+  "youtube": "https://youtu.be/F2KiK5W0Q8c"
+}

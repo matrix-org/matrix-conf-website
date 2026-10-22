@@ -1,0 +1,21 @@
+{
+  "ID": "NBEB99",
+  "Proposal title": "As a [server administrator], I want to [run Element successfully in my organisation/community]",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Matrix Inside"
+  },
+  "Abstract": "Introducing a new communication tool into an existing organisation or community usually means training users and addressing their common pain points as best as possible. Over the last few years, Element Server Suite (ESS) has empowered administrators to integrate Element in a way that makes sense for their organisations, through tools like Element Admin and recent improvements in the rest of the Matrix stack.\r\n\r\nThis talk will go through what the Element stack has to offer in terms of administration tooling, UX improvements for onboarding new users and integration with existing user directories. This includes concrete user-facing features like QR code login and many features introduced with Matrix Authentication Service, but also leveraging new features in the Matrix spec like extensible profiles.",
+  "Speaker names": [
+    "Quentin Gliech"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T15:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102410-as-a-server-administrator-i-want-to-run-element-successfully-in-my-organisation-community",
+  "slides": true,
+  "youtube": "https://youtu.be/-54bKuBLTv4"
+}

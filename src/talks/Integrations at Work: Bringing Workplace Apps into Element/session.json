@@ -1,0 +1,22 @@
+{
+  "ID": "JVU9AL",
+  "Proposal title": "Integrations at Work: Bringing Workplace Apps into Element",
+  "Session type": {
+    "en": "Lightning Talk"
+  },
+  "Track": {
+    "en": "Lightning Talks"
+  },
+  "Abstract": "In 2026, Element's Integrations team set out to make Matrix the productivity layer for sovereign workplaces, the place where your files, documents, projects, and calendar don't just link out, but live alongside your conversations. We'll walk through what we built, how we approached the hard problems, and what it means for organisations already running open-source workplace stacks. We'll also look at where this is headed and what it'll take for the wider Matrix ecosystem to build it together.",
+  "Speaker names": [
+    "David Langley",
+    "Half-Shot"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T11:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102369-integrations-at-work-bringing-workplace-apps-into-element",
+  "youtube": "https://youtu.be/IXXW3SQTvXk"
+}

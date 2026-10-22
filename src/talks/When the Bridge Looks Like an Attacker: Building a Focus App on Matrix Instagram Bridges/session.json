@@ -1,0 +1,19 @@
+{
+  "ID": "TDZNKE",
+  "Proposal title": "When the Bridge Looks Like an Attacker: Building a Focus App on Matrix Instagram Bridges",
+  "Session type": {
+    "en": "Lightning Talk"
+  },
+  "Track": {
+    "en": "Lightning Talks"
+  },
+  "Abstract": "BreakFree is an app blocker with a texting layer built on Matrix, it block Instagram's Reels and feed, keep your DMs. Most blockers make you nuke the whole app and lose messaging too. BreakFree routes DMs through mautrix-meta / mautrix-instagram so texting survives.\r\nThis talk is about what broke when a puppeting bridge went under thousands of non-technical users: unfamiliar-login flags, ban warnings from Instagram. Tead-receipt and reliability quirks, media storage, proxies, and the changes I made to the bridge and my Matrix setup to keep it standing. Plus the trust and privacy tradeoffs, and whether consumer-facing bridges can hold up as real infrastructure.",
+  "Speaker names": [
+    "Roshan Kattil"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T17:24:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101303-when-the-bridge-looks-like-an-attacker-building-a-focus-app-on-matrix-instagram-bridges"
+}

@@ -1,0 +1,18 @@
+{
+  "ID": "KDTBJ3",
+  "Proposal title": "Customize your Matrix messenger",
+  "Session type": {
+    "en": "Workshop"
+  },
+  "Track": {
+    "en": "Workshop"
+  },
+  "Abstract": "Based on Trixnity Messenger, different customization options of the Matrix messenger client are shown to create a new messenger - \"Malmy\".\r\nWe start easy with some white-labelling and re-route some parts of the app.\r\nWe continue with some adaptations of the existing UI and by adding a new feature that integrates seamlessly.\r\nLastly, we explore the possibility to re-use the messenger's UI logic to build a completely new UI layer on top.",
+  "Speaker names": [
+    "Michael Thiele"
+  ],
+  "Room": {
+    "en": "Workshop"
+  },
+  "Start": "2026-10-21T12:10:00+02:00"
+}

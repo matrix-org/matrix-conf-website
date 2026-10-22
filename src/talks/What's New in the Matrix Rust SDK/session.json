@@ -1,0 +1,19 @@
+{
+  "ID": "QEQAZY",
+  "Proposal title": "What's New in the Matrix Rust SDK",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "The Matrix Rust SDK has grown from an experimental client SDK into the\r\nfoundation that powers Element X and other Matrix applications. Along the way,\r\nit has gained support for major Matrix features while tackling some interesting\r\nengineering challenges.\r\n\r\nIn this talk, we'll explore recent additions to the SDK, including threads,\r\nspaces, QR code login, shared encrypted history, migration from Element Classic\r\nto Element X, and the centralized redecryption mechanism. We'll look at the\r\nproblems these features were designed to solve, the architectural decisions\r\nbehind them, and some of the lessons learned along the way.",
+  "Speaker names": [
+    "Damir Jelić"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T14:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100912-what-s-new-in-the-matrix-rust-sdk"
+}

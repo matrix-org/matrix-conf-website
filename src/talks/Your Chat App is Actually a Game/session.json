@@ -1,0 +1,18 @@
+{
+  "ID": "RXVU33",
+  "Proposal title": "Your Chat App is Actually a Game",
+  "Session type": {
+    "en": "Workshop"
+  },
+  "Track": {
+    "en": "Workshop"
+  },
+  "Abstract": "What if I told you that Matrix — the protocol you use to send memes and coordinate sprints — is secretly one of the best foundations for building interactive, stateful games?\r\nThis talk walks through the construction of a Matrix Treasure Hunt Bot: a Rust-based game engine where players solve riddles in DMs to unlock invites to new rooms, progressing through a story that lives entirely inside a federated chat network.\r\nBut this isn't just a fun project showcase. Under the hood, it's a solid example in the real challenges of building reliable bots on a federated protocol:\r\nThe Join Problem: Why room joins fail 30% of the time across homeservers — and how exponential backoff with jitter makes your bot resilient without hammering the federation.\r\nThe Ghost Problem: How bots silently accumulate thousands of orphaned rooms, and the automated housekeeping patterns that prevent it.\r\nStateful Sessions on a Stateless Stream: Mapping Matrix's event firehose to persistent player sessions, with versioned JSON state that survives reboots and code deploys.\r\nA Trait-Based Shell: Building an extensible command system inside a chat bot — so adding !hint or !stats is just implementing a single Rust trait.\r\nWhether you've never touched matrix-sdk or you're knee-deep in your own bot project, you'll leave with concrete, production-tested patterns for building bots that are as resilient as they are fun.\r\nThe code is open-source (GPL3) and the bot is live. You can play it today.",
+  "Speaker names": [
+    "nohkumado"
+  ],
+  "Room": {
+    "en": "Workshop"
+  },
+  "Start": "2026-10-22T16:15:00+02:00"
+}

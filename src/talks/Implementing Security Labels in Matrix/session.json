@@ -1,0 +1,22 @@
+{
+  "ID": "XE3K3B",
+  "Proposal title": "Implementing Security Labels in Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "In some environments, governments and regulated organisations can't simply put people in a room and let them talk. What can be shared, and who can read it, is governed by a formal classification policy and by the clearances held by everyone present.\r\n\r\nThis talk walks through a working implementation of security labelling in Matrix using Synapse, Element Web and Advanced Identity & Access Management. We'll cover how policies are expressed, how labels attach to rooms and messages, and how the server enforces them. We'll then finish with a live demo.",
+  "Speaker names": [
+    "Midhun Suresh R",
+    "Kieran Lane"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T13:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102289-implementing-security-labels-in-matrix",
+  "youtube": "https://youtu.be/TZLXA01a4cw"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "BQUNNE",
+  "Proposal title": "Speedrun Client with the Matrix Rust SDK",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "The Matrix Rust SDK is one of the most complete, mature, and performant SDK in the world. To illustrate our point, we will show off how to develop a Matrix CLI client from scratch with the Rust SDK live on stage, step by step, up to having a fully functional client, with a room list, a timeline, the ability to send and to receive messages, along with full end-to-end encryption support.",
+  "Speaker names": [
+    "Ivan Enderlin"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T15:15:00+02:00",
+  "youtube": "https://youtu.be/RrSK9drMhk4",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100919-speedrun-client-with-the-matrix-rust-sdk"
+}

@@ -1,0 +1,22 @@
+{
+  "ID": "XQU8GA",
+  "Proposal title": "Hello from the other side: a design workshop to bridge asymmetries between messaging clients",
+  "Session type": {
+    "en": "Workshop"
+  },
+  "Track": {
+    "en": "Workshop"
+  },
+  "Abstract": "When messaging across interoperable platforms or different clients in a decentralized network, there is a common set of functionalities defined by the common protocol or API bridging the conversation, but there may also be unique functionality exclusive to each client. These differences may sometimes have important implications in the user experience and privacy of the conversation partners, but there are no design patterns or agreed standards for dealing with them. For example, imagine that someone sends a \"view only once picture\" but the receiver's client lacks this functionality: would you expect the receiver to simply show the picture? To show an error message saying \"message not supported\"? Or should the sender client prevent the use of  \"asymmetrical functionality\" in the first place? \r\n\r\nIn this design workshop, we will introduce the concept of \"seamful design\", briefly present cases where asymmetrical functionalities may harm user experience, and engage all attendees in a prototyping activity to explore potential workarounds through design. Based on the prototyped design ideas, we will discuss trade-offs, challenges and potential best UX practices for designing around functional asymmetries in interoperable messaging.",
+  "Speaker names": [
+    "Carla Griggio",
+    "Stina Olsson",
+    "Xinyuan Liu",
+    "Tom Biselli"
+  ],
+  "Room": {
+    "en": "Workshop"
+  },
+  "Start": "2026-10-21T14:15:00+02:00",
+  "slides": true
+}

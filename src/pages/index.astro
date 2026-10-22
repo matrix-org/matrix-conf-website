@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import IndexHero from "../components/IndexHero.astro";
+import RecordingsBox from "../components/RecordingsBox.astro";
 import Teaser2026 from "../components/Teaser2026.astro";
 import Conf2025 from "../components/Conf2025.astro";
 import Talks2025 from "../components/Talks2025.astro";
 import WhatsNext from "../components/WhatsNext.astro";
 import SponsorsGrid from "../components/SponsorsGrid.astro";
-import StreamOverview from "../components/StreamOverview.astro";
+import { watchMode } from "../data/streams";
 ---
 
 <style>
@@ -41,13 +42,8 @@ import StreamOverview from "../components/StreamOverview.astro";
     <section id="hero">
         <IndexHero />
     </section>
-    <section id="watch-the-livestreams">
-        <div class="content-wrapper">
-        	<h2>Watch The Livestreams</h2>
-        	<StreamOverview />
-        </div>
-   	</section>
     <section id="teaser-2026">
+        {watchMode === "vod" && <RecordingsBox />}
         <Teaser2026 />
     </section>
     <section id="sponsors">

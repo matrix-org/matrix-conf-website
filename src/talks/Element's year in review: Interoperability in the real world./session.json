@@ -1,0 +1,21 @@
+{
+  "ID": "SFHGBL",
+  "Proposal title": "Element's year in review: Interoperability in the real world.",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "A fast-paced tour of everything we’ve been up to at Element in the past year, as well as what to expect in the future. \r\n\r\nThis year's highlights centre on Element's work to make Matrix genuinely interoperable for governments and large organisations in the wild. We’ll cover what’s gone into ESS Pro and Element Pro, as well as the migration from Classic. \r\n\r\nWe’ll also give an overview of all the goodies that have landed in Element X, Element Call, Element and Web. Not to mention our continued investment in protocol research.",
+  "Speaker names": [
+    "Neil Johnson"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T10:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102272-element-s-year-in-review-interoperability-in-the-real-world",
+  "youtube": "https://youtu.be/kdEDxI2MCjA"
+}

@@ -19,7 +19,7 @@ jq -c '.[]' "$INPUT" | while IFS= read -r session; do
         continue
     fi
 
-    dir="$TARGET_DIR/${title//\//-}" // replace any slashes with dashes
+    dir="$TARGET_DIR/${title//\//-}" # replace any slashes with dashes
     target="$dir/session.json"
     mkdir -p "$dir"
 

@@ -1,0 +1,20 @@
+{
+  "ID": "WDFVAP",
+  "Proposal title": "Matrix in Minutes",
+  "Session type": {
+    "en": "Workshop"
+  },
+  "Track": {
+    "en": "Workshop"
+  },
+  "Abstract": "I'll show you how to deploy a working Matrix server, live, in just a few minutes using Continuwuity. Then we'll get down to brass tacks and set up everything that makes Matrix great:\r\n- Moderation bots, and all the tooling you need to manage and scale a public Matrix community\r\n- Bridges beyond Matrix to message family on Whatsapp and signal or merge communities on Slack or Discord\r\n- Bots, bots, bots! Ping racing, reminders and handy custom tools\r\n\r\nI've got a plan, but this sessions is for you, so we'll go off the rails to follow what you want to know. The intention is that everyone has something useful to take home!",
+  "Speaker names": [
+    "Jade",
+    "Nex",
+    "Ginger"
+  ],
+  "Room": {
+    "en": "Workshop"
+  },
+  "Start": "2026-10-21T16:45:00+02:00"
+}

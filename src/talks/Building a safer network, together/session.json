@@ -1,0 +1,22 @@
+{
+  "ID": "NBMLXD",
+  "Proposal title": "Building a safer network, together",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Growing a Network"
+  },
+  "Abstract": "Join **Jim** from the Matrix.org Foundation Trust & Safety team, as he walks through the progress the ecosystem has made in building a safer network, and invites you to join us in building the future of safety on Matrix. Jim is joined by special guest **Juliet** from [ROOST](https://roost.tools), and you'll hear about their tools **Coop** and **Osprey**. We'll talk about how matrix.org is using those tools, and how we're making them more accessible for Matrix servers. Jim will also talk about **Reporting v2**, a flagship project for the Foundation Safety team, and **how you can help**.",
+  "Speaker names": [
+    "Jim Mackenzie",
+    "Juliet (she/her)"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T12:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102416-building-a-safer-network-together",
+  "youtube": "https://youtu.be/DXrHXBmIKPk"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "XTFYUT",
+  "Proposal title": "Feature asymmetry in interoperable messaging - a barrier for mitigating network effects?",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Growing a Network"
+  },
+  "Abstract": "This talk is about how feature asymmetries between interoperable messaging apps may disrupt users' online self-presentation, that is, how they choose what features to use with different groups of people to control the impression they form of them.\r\nMost users of messaging apps have their strategies to uphold some specific “persona”, if it is sending GIFs to add a humorous tone to the conversation, intentionally using dots at the end of messages to seem more intelligent or professional in front of their boss, or how they resonate when choosing a Snapchat avatar versus their profile picture for Teams. However, in interoperable messaging, some features are sometimes presented in different ways across clients. For example, one app may offer the sender to react to messages with an emoji, so they can reply to messages fast and with low effort, but the receiver app may attach animations to these reactions, bringing a more effortful and playful tone to the conversation. So how do these asymmetries affect users' self-presentation, when may they experience a conversation differently to how the receiver sees it? In this talk, I present a research study on how feature asymmetries across different protocols and clients may affect self-presentation and what this means for interoperability as a means for mitigating network effects.",
+  "Speaker names": [
+    "Stina Olsson"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T15:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101087-feature-asymmetry-in-interoperable-messaging-a-barrier-for-mitigating-network-effects"
+}

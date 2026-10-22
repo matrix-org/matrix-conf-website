@@ -1,0 +1,21 @@
+{
+  "ID": "BVPGVY",
+  "Proposal title": "The Matrix State of the Union",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "In which Matthew gives all the latest updates on Matrix - including ecosystem uptake, new clients, new servers, new MSCs, Hydra Phase 2 and 3 progress, P2P Matrix, MatrixRTC maturity, where (D)MLS fits in, and more!",
+  "Speaker names": [
+    "Matthew Hodgson"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T10:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100443-the-matrix-state-of-the-union",
+  "youtube": "https://youtu.be/U5LRRNgvTZE"
+}

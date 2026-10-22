@@ -1,0 +1,21 @@
+{
+  "ID": "YHV8XB",
+  "Proposal title": "Sovereignty meets Interoperability: The European Commission's Matrix Story",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "Enhancing open standards and data ownership within its ecosystem, the European Commission is walking the (sovereign) talk by introducing a new Digital Workplace service powered by Matrix / Element. This talk walks you through the EC's journey from early architecture decisions to deploying a production ready communication service. We will share the practical reality of integrating Matrix into a large-scale institutional ecosystem - balancing strict security and compliance requirements with user experience and the key lessons learned along the way.",
+  "Speaker names": [
+    "Alexandru VIGNIDE",
+    "Diana GHEORGHE"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T15:15:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103132-sovereignty-meets-interoperability-the-european-commission-s-matrix-story",
+  "youtube": "https://youtu.be/xCXaNIJQWk0"
+}

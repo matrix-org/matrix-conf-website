@@ -1,0 +1,22 @@
+{
+  "ID": "TQJAV9",
+  "Proposal title": "How can governments collaborate digitally without forcing every organization onto the same platform?",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "Sweden's eSam initiative(eSamverkansprogrammet) has explored Matrix as a foundation for interoperable communication across public-sector organizations. Starting with a live federation pilot between two national agencies, the work has evolved into a broader effort involving governance, security, legal frameworks, and long-term sustainability.\r\n\r\nThis session discusses how Matrix can support digital sovereignty, interoperability, and vendor independence while enabling practical collaboration across organizational boundaries.",
+  "Speaker names": [
+    "Kenneth Edwall",
+    "Cecilia Spiik"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T13:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-97741-how-can-governments-collaborate-digitally-without-forcing-every-organization-onto-the-same-platform",
+  "youtube": "https://youtu.be/6pRUx9_ksi8"
+}
