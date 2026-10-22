@@ -5,6 +5,7 @@ import { pretalxSchedulePage } from "../../data/pretalx";
 import { fmt, type Track } from "../../scripts/schedule";
 import { scheduleDays } from "../../scripts/schedule-days";
 import { Calendar } from "./Calendar";
+import { isLive } from "./SessionList";
 import { DateHeading } from "./DateHeading";
 import { FilterDialog, isActive, noFilters, type Filters } from "./Filters";
 import { useNow, useSchedule } from "./useSchedule";
@@ -71,9 +72,17 @@ export default function ConferenceSchedule({
     );
     const days = rooms.length ? scheduleDays(rooms) : [];
 
+    // Target of /schedule#now: the session that is live, else the next one.
+    const shown = days.flatMap((day) =>
+        rooms.flatMap((room) => day.sessionsOfRoom(room)),
+    );
+    const current =
+        shown.find((session) => isLive(session, now)) ??
+        shown.find((session) => +session.end > now);
+
     useEffect(() => {
-        // Direct date links load before the fetched headings exist.
-        if (all && /^#\d{4}-\d{2}-\d{2}$/.test(location.hash))
+        // Direct date and now links load before the fetched headings and sessions exist.
+        if (all && /^#(\d{4}-\d{2}-\d{2}|now)$/.test(location.hash))
             document.getElementById(location.hash.slice(1))?.scrollIntoView();
     }, [all]);
 
@@ -166,6 +175,7 @@ export default function ConferenceSchedule({
                                 day={day}
                                 now={now}
                                 links={links}
+                                current={current}
                             />
                         </Fragment>
                     ))

@@ -163,17 +163,20 @@ function RoomHead({
  * @param props.day Day to render, from {@link scheduleDays}.
  * @param props.now Time to render as "now", as milliseconds since the epoch.
  * @param props.links Map from a title keyword to a URL, for breaks that have a page to link to.
+ * @param props.current Session that gets the `now` id, if it is on this day.
  */
 export function Calendar({
     rooms,
     day,
     now,
     links,
+    current,
 }: {
     rooms: Room[];
     day: Day;
     now: number;
     links: Record<string, string>;
+    current?: Session;
 }) {
     const columns = rooms.filter((room) => day.sessionsOfRoom(room).length);
     const sessions = columns.flatMap((room) => day.sessionsOfRoom(room));
@@ -234,6 +237,7 @@ export function Calendar({
                             now={now}
                             links={links}
                             place={place}
+                            current={current}
                         />
                     </div>
                 );

@@ -70,6 +70,8 @@ type TileProps = {
     className: string;
     /** CSS `style` attribute value, or undefined when there is none. */
     style?: string;
+    /** Element id, or undefined when the tile has none. */
+    id?: string;
     /** The `<time>` element for the session's start and end. */
     time: preact.ComponentChildren;
     /** Screen reader only name of the room, or nothing when the room is already clear from the page. */
@@ -85,6 +87,7 @@ function BreakTile({
     session,
     className,
     style,
+    id,
     time,
     room,
     links,
@@ -95,7 +98,7 @@ function BreakTile({
     );
     if (!key)
         return (
-            <div class={`${className} break`} style={style}>
+            <div class={`${className} break`} style={style} id={id}>
                 {time}
                 <div>
                     {session.title}
@@ -108,6 +111,7 @@ function BreakTile({
         <a
             class={`${className} break`}
             style={style}
+            id={id}
             href={links[key]}
             {...(external && { target: "_blank", rel: "noopener noreferrer" })}
         >
@@ -130,6 +134,7 @@ function TalkTile({
     session,
     className,
     style,
+    id,
     time,
     room,
     badge,
@@ -138,6 +143,7 @@ function TalkTile({
         <a
             class={className}
             style={style}
+            id={id}
             href={session.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -183,6 +189,7 @@ function TalkTile({
  * @param props.now Time to render as "now", as milliseconds since the epoch.
  * @param props.links Map from a title keyword to a URL, for breaks that have a page to link to.
  * @param props.place Function placing a session in a grid (calendar view); omitted for a plain list.
+ * @param props.current Session that gets the `now` id, the target of `#now`.
  */
 export function SessionList({
     room,
@@ -190,12 +197,14 @@ export function SessionList({
     now,
     links,
     place,
+    current,
 }: {
     room: Room;
     items: Session[];
     now: number;
     links: Record<string, string>;
     place?: (session: Session) => Placement;
+    current?: Session;
 }) {
     const formatters = useMemo(
         () => ({ event: fmt(room.timezone), local: fmt(undefined) }),
@@ -248,6 +257,7 @@ export function SessionList({
                         session={session}
                         className={className}
                         style={style}
+                        id={session === current ? "now" : undefined}
                         time={time}
                         room={roomName}
                         links={links}
@@ -257,6 +267,7 @@ export function SessionList({
                         session={session}
                         className={className}
                         style={style}
+                        id={session === current ? "now" : undefined}
                         time={time}
                         room={roomName}
                         badge={
