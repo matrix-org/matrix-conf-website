@@ -55,12 +55,13 @@ export function routeLine({ theme, scale }: Style, line: Pixel[]): string {
     return `<path d="${d}" ${common} stroke="${theme.outline}" stroke-width="${11 * scale}"/><path d="${d}" ${common} stroke="${theme.route}" stroke-width="${7 * scale}"/>`;
 }
 
-/** The way on foot: dashed, so that it differs from the route by more than its colour. */
+/** The way on foot: dots in the colour of the route, so that it differs from the streets and from the route line. */
 export function walkLine({ theme, scale }: Style, line: Pixel[]): string {
     if (line.length < 2) return "";
     const d = smooth(line);
     const common = 'fill="none" stroke-linecap="round" stroke-linejoin="round"';
-    return `<path d="${d}" ${common} stroke="#fff" stroke-width="${10 * scale}"/><path d="${d}" ${common} stroke="${theme.outline}" stroke-width="${6 * scale}" stroke-dasharray="0 ${11 * scale}"/>`;
+    const dots = `${common} stroke-dasharray="0 ${13 * scale}"`;
+    return `<path d="${d}" ${dots} stroke="${theme.outline}" stroke-width="${11 * scale}"/><path d="${d}" ${dots} stroke="${theme.route}" stroke-width="${6 * scale}"/>`;
 }
 
 /** Path through the points with rounded corners (a Catmull-Rom spline as Bézier curves). */

@@ -37,15 +37,22 @@
             "walk": [2, 0]
         },
         "HackathonMap": {
-            "zoom": 16.4,
-            "pin": {
-                "size": 110
-            },
+            "zoom": 16,
+            "transit": true,
             "places": [
                 {
-                    "at": [55.6504856, 12.5428797]
+                    "at": [55.6504856, 12.5428797],
+                    "size": 110
+                },
+                {
+                    "at": [55.6458281, 12.544414],
+                    "label": "Sluseholmen",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
                 }
-            ]
+            ],
+            "walk": [1, 0]
         },
         "MalmoCopenhagenMap": {
             "sizes": ["1600x760"],
