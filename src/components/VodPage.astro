@@ -7,24 +7,19 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 const talks_collection = await getCollection("talks");
 const all_talks = talks_collection.toSorted((a,b) => new Date(a.data.Start).valueOf() - new Date(b.data.Start).valueOf());
-var talks = [];
 
-function incrementDate(tomorrow:Date, days:number) {
-    return tomorrow.setDate(tomorrow.getDate() + days);
-}
+// Talks are grouped by their calendar date in the time zone of the event.
+const timeZone = "Europe/Stockholm";
+const isoDate = new Intl.DateTimeFormat("sv-SE", { timeZone }); // YYYY-MM-DD
+const headingParts = new Intl.DateTimeFormat("en-GB", { timeZone, weekday: "long", day: "numeric", month: "long" });
 
-function formatDate(day:Date) {
-    var dow = '';
-    switch(day.getDay()) {
-        case 2: dow = 'Tuesday'; break;
-        case 3: dow = 'Wednesday'; break;
-        case 4: dow = 'Thursday'; break;
-        case 5: dow = 'Friday'; break;
-    }
-    return dow + ' ' + day.getDate();
+function dayHeading(start: Date) {
+    const parts = Object.fromEntries(headingParts.formatToParts(start).map((part) => [part.type, part.value]));
+    return { weekday: parts.weekday, day: Number(parts.day), month: parts.month };
 }
 
 function ordinalSuffix(date:number) {
+    if (date % 100 >= 11 && date % 100 <= 13) return 'th';
     return ({ 1: 'st', 2: 'nd', 3: 'rd' } as {[index: number]: string})[date % 10] ?? 'th';
 }
 
@@ -46,16 +41,14 @@ const track_order : {[index: string]:number} = Object.freeze({
 function compareTrack(a: CollectionEntry<"talks">,b: CollectionEntry<"talks">) {
     if (a.data.Track === undefined) return 1;
     if (b.data.Track === undefined) return -1;
-    return track_order[a.data.Track.en] - track_order[b.data.Track.en];
+    return (track_order[a.data.Track.en] ?? Infinity) - (track_order[b.data.Track.en] ?? Infinity) || 0;
 }
 
-for (let i = 0; i < 4; i++) {
-    const day = all_talks.filter((a: CollectionEntry<"talks">) =>
-        new Date(a.data.Start).valueOf() >= incrementDate(new Date("2026-10-20T00:00+02:00"),i) &&
-        new Date(a.data.Start).valueOf() < incrementDate(new Date("2026-10-22T00:00+02:00"),i)
-    ).toSorted(compareTrack);
-    if (day.length > 0) talks.push(day);
-}
+const byDay = Map.groupBy(all_talks, (talk) => isoDate.format(new Date(talk.data.Start)));
+const days = [...byDay.values()].map((day) => ({
+    talks: day.toSorted(compareTrack),
+    ...dayHeading(new Date(day[0].data.Start)),
+}));
 ---
 
 <style lang="scss">
@@ -171,7 +164,7 @@ for (let i = 0; i < 4; i++) {
     </section>
 
     <section id="recordings">
-        {talks.length === 0 ? (
+        {days.length === 0 ? (
         <div class="content-wrapper">
             <p class="empty-section">The recordings will be available here soon.</p>
         </div>
@@ -193,16 +186,16 @@ for (let i = 0; i < 4; i++) {
             </div>
         </div>
         <div class="content-wrapper" id="talks">
-            {talks.map((days_talks) => (
+            {days.map((day) => (
             <div class="date-separator">
-                <div class="date">{formatDate(new Date(days_talks[0].data.Start))}<sup>{ordinalSuffix(new Date(days_talks[0].data.Start).getDate())}</sup> October</div>
+                <div class="date">{day.weekday}{" "}{day.day}<sup>{ordinalSuffix(day.day)}</sup>{" "}{day.month}</div>
                 <div class="line"></div>
             </div>
             <div class="hidden empty-section">
                 There are no talks for this day that match the filters.
             </div>
             <div class="talks-grid">
-                {days_talks.map((talk: any) => (
+                {day.talks.map((talk) => (
                     <WatchCard talk={talk} />
                 ))}
             </div>
