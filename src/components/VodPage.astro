@@ -19,7 +19,6 @@ function dayHeading(start: Date) {
 }
 
 function ordinalSuffix(date:number) {
-    if (date % 100 >= 11 && date % 100 <= 13) return 'th';
     return ({ 1: 'st', 2: 'nd', 3: 'rd' } as {[index: number]: string})[date % 10] ?? 'th';
 }
 
