@@ -3,9 +3,12 @@ import SponsorsGrid from "../components/SponsorsGrid.astro";
 import WatchCard from "../components/WatchCard.astro";
 import Pill from "../components/Pill.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { streams } from "../data/streams";
 import { getCollection, type CollectionEntry } from "astro:content";
 
-const talks_collection = await getCollection("talks");
+const talks_collection = await getCollection("talks", (talk) =>
+    streams.some((stream) => stream.name === talk.data.Room.en),
+);
 const all_talks = talks_collection.toSorted((a,b) => new Date(a.data.Start).valueOf() - new Date(b.data.Start).valueOf());
 
 // Talks are grouped by their calendar date in the time zone of the event.
