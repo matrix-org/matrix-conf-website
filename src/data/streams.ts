@@ -8,7 +8,7 @@ export const cccRecordings = `https://media.ccc.de/public/conferences/${CCC_CONF
  * What /watch shows. "stream" is the livestream overview with a page per room, "vod" is the list of
  * recordings and no room pages.
  */
-export const watchMode: "stream" | "vod" = "vod";
+export const watchMode: "stream" | "vod" = "stream";
 
 export const streams = [
     {
