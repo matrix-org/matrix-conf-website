@@ -2,6 +2,7 @@
     "name": "matrix-conf-maps",
     "private": true,
     "type": "module",
+    "packageManager": "pnpm@12.15.0",
     "description": "Renders the static maps used on the conference website",
     "scripts": {
         "format": "prettier --write .",
