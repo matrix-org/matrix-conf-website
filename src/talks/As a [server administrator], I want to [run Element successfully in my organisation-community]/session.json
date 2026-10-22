@@ -15,5 +15,6 @@
     "en": "Peter"
   },
   "Start": "2026-10-21T15:45:00+02:00",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102410-as-a-server-administrator-i-want-to-run-element-successfully-in-my-organisation-community"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102410-as-a-server-administrator-i-want-to-run-element-successfully-in-my-organisation-community",
+  "slides": true
 }

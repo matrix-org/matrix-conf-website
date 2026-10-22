@@ -15,5 +15,6 @@
     "en": "Sofya"
   },
   "Start": "2026-10-21T15:15:00+02:00",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101034-project-hydra-phase-2-3-further-improving-the-security-of-the-federation-protocol"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101034-project-hydra-phase-2-3-further-improving-the-security-of-the-federation-protocol",
+  "slides": true
 }

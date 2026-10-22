@@ -16,5 +16,6 @@
     "en": "Sofya"
   },
   "Start": "2026-10-21T12:00:00+02:00",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101353-making-custom-profiles-in-matrix-more-useful"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101353-making-custom-profiles-in-matrix-more-useful",
+  "slides": true
 }
