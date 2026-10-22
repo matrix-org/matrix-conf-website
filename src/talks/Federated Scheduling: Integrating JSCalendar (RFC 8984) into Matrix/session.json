@@ -1,0 +1,20 @@
+{
+  "ID": "WWLM98",
+  "Proposal title": "Federated Scheduling: Integrating JSCalendar (RFC 8984) into Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "Matrix already provides the essential primitives for a decentralized calendar: room memberships, federated state exchange, spaces, and support for custom event and room types. This session explores the technical integration of RFC 8984 (JSCalendar) within the Matrix protocol. We will examine how the JSON-based representation of JSCalendar can be mapped to Matrix state events and what pieces are missing. The presentation concludes with a live demonstration of a working prototype within Tammy.",
+  "Speaker names": [
+    "Benedict Benken",
+    "Michael Thiele"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T14:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101050-federated-scheduling-integrating-jscalendar-rfc-8984-into-matrix"
+}

@@ -1,0 +1,18 @@
+{
+  "ID": "HDSVJB",
+  "Proposal title": "Matrix as an App Backend: The perfect container for private structured Data",
+  "Session type": {
+    "en": "Lightning Talk"
+  },
+  "Track": {
+    "en": "Lightning Talks"
+  },
+  "Abstract": "Have you ever wanted to use Matrix as a backend for privately shared notes, workout tracking, expense management, task lists, or local LLM memory storage?\r\n\r\nMatrix is a surprisingly strong fit for these use cases. It offers end-to-end encryption, solid SDK support, multiple homeserver implementations, and effortless redundant storage — simply join a room with two accounts on different homeservers.\r\n\r\nAll of this makes Matrix an ideal backend for apps that store personal data with owner-controlled collaboration and sharing. In this talk, I will present what requirements Matrix needs to fulfil to be the perfect container for this use case, where it currently falls short, and why the path forward is bright — requiring only minimal changes to the spec.\r\n\r\nThis talk grew out of discussions at the Matrix Conference 2025. At the Matrix Community Summit 2026, those topics were revisited and iterated across multiple widget and integration workshops.",
+  "Speaker names": [
+    "Timo Kandra"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T17:15:00+02:00"
+}

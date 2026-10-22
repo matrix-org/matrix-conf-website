@@ -1,0 +1,18 @@
+{
+  "ID": "UZT7QE",
+  "Proposal title": "Sustainable Digital Sovereignty",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Digital Sovereignty"
+  },
+  "Abstract": "Digital Sovereignty is on every lips, however whilst the tech is here, we have yet to find a financially sustainable solution to it. The tragedy of the commons of open source is not new, but we’ve got to the point of needing to solve it if we really want organisations to be sovereign and resilient whilst use secure and polished products. \r\n\r\nWe all know (or will know by the end of the conference!) that Matrix is the ideal answer for any organisation looking to break free from vendor lock-in for their communications, not only because of its intrinsic properties of decentralisation and end-to-end encryption, but because it is an open standard. An open standard brings neutrality and an ecosystem which allows multiple vendors to thrive, creating a healthy competition to raise the bar of product quality and target specific markets.\r\n\r\nThis makes Matrix the perfect microcosm to get concrete examples on how digital sovereignty can be preserved in a financially sustainable manner in order to build products which can compete with the vendor-locked incumbents: from the governance of the standard to the various vendors via the open source community, this talk will use concrete examples to highlight the best and most efficient practices to contribute back for everyone’s benefit.",
+  "Speaker names": [
+    "Amandine Le Pape"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T14:45:00+02:00"
+}

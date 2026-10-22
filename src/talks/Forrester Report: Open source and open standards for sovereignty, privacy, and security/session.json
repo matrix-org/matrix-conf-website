@@ -1,0 +1,19 @@
+{
+  "ID": "KZM8NW",
+  "Proposal title": "Forrester Report: Open source and open standards for sovereignty, privacy, and security",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Digital Sovereignty"
+  },
+  "Abstract": "Digital sovereignty is a board-level priority, but ambition often outpaces reality. In this session, Forrester analyst Dario Maisto presents findings from his latest report, drawing a clear line between sovereignty, privacy, and security, and examining the practical challenges organisations face in reducing dependency on dominant tech stacks, from productivity suites to communication. He explores how open standards and open source can support sovereignty goals, introducing a Minimum Viable Sovereignty framework for setting realistic targets.\r\n\r\nThe session also addresses the limits of open source, including project health, maintainer sustainability, and commercial support, as key factors in mission-critical viability, leaving attendees with a grounded framework for evaluating sovereignty initiatives.",
+  "Speaker names": [
+    "Dario Maisto"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T15:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103131-forrester-report-open-source-and-open-standards-for-sovereignty-privacy-and-security"
+}

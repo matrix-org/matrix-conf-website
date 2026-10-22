@@ -1,0 +1,19 @@
+{
+  "ID": "39DKCK",
+  "Proposal title": "Disappearing the Protocol: Integrating Matrix into a Multi-App Platform",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "In a comprehensive digital workspace, the ultimate measure of success for Matrix is invisibility. End-users shouldn't manage a separate Matrix profile, understand what a homeserver is, or manually exchange Matrix IDs. But how do you take a protocol designed to be the center of its own universe and cleanly relegate it to a silent, powerful chat engine under the hood of a broader platform? \r\n\r\nThis talk explores the architectural reality of \"disappearing\" Matrix into a cloud collaborative platform. We will explore how to hide Matrix-flavored concepts to users, and map platform-native user management or ACLs onto Matrix.\r\n\r\nBy looking at custom identity servers, and application bridges, we will share the practical engineering required to keep the protocol completely transparent to the user.",
+  "Speaker names": [
+    "Pierre 'McFly' Marty"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T17:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101196-disappearing-the-protocol-integrating-matrix-into-a-multi-app-platform"
+}

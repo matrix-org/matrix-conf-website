@@ -1,0 +1,21 @@
+{
+  "ID": "KDNVUL",
+  "Proposal title": "Bridging private federations across borders",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "This talk will first present an amazing demo where someone from the Swedish Matrix public sector deployment will magically be able to talk to someone on the French one, and perhaps perhaps we will even be joined by someone from the NATO one, what an amazing time to be alive!\r\n\r\nA presentation will follow to talk about how we manage to pull this through, being on a technological or human cooperation level.",
+  "Speaker names": [
+    "Mathieu Velten",
+    "Kenneth Edwall",
+    "Jeroen Franssen"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T14:15:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102388-bridging-private-federations-across-borders"
+}

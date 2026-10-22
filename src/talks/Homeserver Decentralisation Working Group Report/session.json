@@ -1,0 +1,18 @@
+{
+  "ID": "HKSYET",
+  "Proposal title": "Homeserver Decentralisation Working Group Report",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Foundation"
+  },
+  "Abstract": "Matrix was created with the idea of federation at the core, but nowadays there is matrix.org which contains a majority of the users of the wider matrix network, nullifying the benefits of it. This has since also started generating significant cost for The Matrix Foundation and lead to shutdown of some previously offered bridges. The Homeserver Decentralisation Working Group aims to improve the situation.",
+  "Speaker names": [
+    "Nicolas Da Mutten"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T16:15:00+02:00"
+}

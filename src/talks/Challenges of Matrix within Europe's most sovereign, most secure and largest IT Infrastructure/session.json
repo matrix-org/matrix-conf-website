@@ -1,0 +1,19 @@
+{
+  "ID": "RERS8J",
+  "Proposal title": "Challenges of Matrix within Europe's most sovereign, most secure and largest IT Infrastructure",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "Matrix was designed around strong end-to-end encryption and user-controlled trust. While this model is ideal for private communication, large public-sector and critical infrastructure deployments face additional requirements that go beyond traditional E2EE.\r\n\r\nThis talk explores the challenges of operating Matrix within one of Europe's largest sovereign and security-critical IT infrastructures, where legal archiving obligations, compliance requirements, incident handling, automation and long-term information governance must coexist with modern encrypted communication.\r\n\r\nWe discuss why classic end-to-end encryption is not always sufficient in enterprise environments and examine the concept of End-to-Organization Encryption (E2OE) as a potential architectural approach. Rather than focusing solely on technical implementation, the session evaluates the trade-offs between confidentiality, organizational trust, operational resilience and regulatory compliance.\r\n\r\nTopics include message archiving, eDiscovery, compliance scanning, bot integration, fall handling, key recovery, device loss, and organizational access models. We will also discuss how these requirements influence Matrix client architecture, headless clients, encryption key management and federation.\r\n\r\nThe presentation is intended for Matrix developers, infrastructure architects, security professionals and public-sector operators interested in deploying Matrix at national scale while balancing sovereignty, usability and compliance.",
+  "Speaker names": [
+    "Richard Schlögl"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T11:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102423-challenges-of-matrix-within-europe-s-most-sovereign-most-secure-and-largest-it-infrastructure"
+}

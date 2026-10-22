@@ -1,0 +1,19 @@
+{
+  "ID": "A8MVMH",
+  "Proposal title": "New phone who dis: User verification using X.509 certificates",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Cryptography"
+  },
+  "Abstract": "At Element, we've been thinking about how you can be sure you are chatting to the right person, not an intruder, without reading out numbers or emoji over a video call.\r\n\r\nOne approach we've been experimenting with is the use of X.509 certificates issued by a trusted certificate authority. I'll be talking about how this helps (and when it doesn't), as well as covering some technical details of the implementation.\r\n\r\nThis talk is aimed at people interested in how we can improve the user experience of encryption of Matrix. I'll assume familiarity with concepts around encryption in Matrix such as user identities, but you won't need detailed cryptographic knowledge!",
+  "Speaker names": [
+    "Richard van der Hoff"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T12:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100422-new-phone-who-dis-user-verification-using-x-509-certificates"
+}

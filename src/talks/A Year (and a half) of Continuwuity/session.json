@@ -1,0 +1,21 @@
+{
+  "ID": "9KHRGR",
+  "Proposal title": "A Year (and a half) of Continuwuity",
+  "Session type": {
+    "en": "Lightning Talk"
+  },
+  "Track": {
+    "en": "Lightning Talks"
+  },
+  "Abstract": "In April 2025, a new homeserver burst onto the scene. Soon enough, hundreds of servers were running this mysterious new software - and the momentum didn't drop. Today, more than one and a half thousand servers on the public federation run [Continuwuity](https://continuwuity.org/). \r\n\r\nThat leads to some questions. Where did it come from? What happened? Where is it going? Well, We've got anwers for all of that. Right here. Exclusively. This is a breakdown from the team behind the ~~mystery~~ well-regarded open source project, going over all of that and more. You know you're interested.",
+  "Speaker names": [
+    "Jade",
+    "Nex",
+    "Ginger"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T11:29:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-99063-a-year-and-a-half-of-continuwuity"
+}

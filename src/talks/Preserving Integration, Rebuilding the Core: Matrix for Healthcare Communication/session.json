@@ -1,0 +1,19 @@
+{
+  "ID": "HVRHVW",
+  "Proposal title": "Preserving Integration, Rebuilding the Core: Matrix for Healthcare Communication",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Healthcare sponsored by CGM"
+  },
+  "Abstract": "The hardest part of modernizing healthcare communication is not building a new platform. It is preserving decades of existing integrations while enabling an entirely new communication model.\r\nGermany's healthcare sector currently relies on two communication systems with very different characteristics.\r\nKIM is the widely adopted communication backbone of the healthcare system. It enables critical workflows such as electronic certificates of incapacity for work and is deeply integrated into healthcare information systems. However, its architecture is based on traditional email technologies and on infrastructure that will have to evolve significantly in the coming years.\r\nThe TI-Messenger, based on Matrix, provides a modern communication architecture that already aligns with many design principles of Germany's future health infrastructure. It enables secure communication between healthcare professionals and also includes insured persons as participants in the communication ecosystem. Nevertheless, adoption has not yet reached the level required to achieve strong network effects.\r\nInstead of operating two independent communication ecosystems, we are pursuing a convergence strategy: a unified communication platform that preserves existing integrations and workflows while modernizing the backend infrastructure and enabling interoperability across user groups.\r\nThis talk presents the architectural challenges, migration strategy and interoperability concepts for transforming a nationwide, mission critical healthcare communication ecosystem towards a Matrix based future.",
+  "Speaker names": [
+    "Jan Kohnert"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T11:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-98326-preserving-integration-rebuilding-the-core-matrix-for-healthcare-communication"
+}

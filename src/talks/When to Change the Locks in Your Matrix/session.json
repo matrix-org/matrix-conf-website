@@ -1,0 +1,20 @@
+{
+  "ID": "8ZCYUQ",
+  "Proposal title": "When to Change the Locks in Your Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Cryptography"
+  },
+  "Abstract": "When you operate communication infrastructure for one of Europe's largest defense organizations, \"good enough\" is never good enough.\r\nAt BWI, we do not just run Matrix. We trust in the idea behind it: that secure, open communication should be a public good.\r\n\r\nWhen we introduced Matrix into the Bundeswehr, we made a deliberate decision: everything, always, end-to-end encrypted. No exceptions, no fallbacks. That single switch revealed the hard problems. Olm and Megolm, built on the Signal Protocol, are the gold standard of modern encryption, but they were not designed for large rooms with thousands of participants at government scale. Those cracks are what brought us to MLS, the IETF standard built for exactly those harder problems: scalable group key management, stronger forward secrecy, post-compromise security. MLS does not just change how keys are managed. It changes how little the server needs to know. And that is not a side effect. It is a design goal. The less the server knows, the less it can leak, and required by VS-AP0024, the BSI guidance we operate under.\r\n\r\nThat settled the what. Rust settles the how. Not as a language choice, but as the foundation that makes formal verification of the functional core possible, and memory safety everywhere else a given.\r\n\r\nWe wrote MSC2546 ourselves, defining how MLS integrates into the Matrix protocol at the spec level. Now we are ready to share what happened next.\r\n\r\nIn this talk, Timm and David from BWI will show you what it takes to bring MLS into a real production stack: what changes in the SDK, what it means for backend modules, and how Rust becomes the common thread that holds it all together. Expect no polished success story. Expect honest engineering: what was built, where it broke, and what it cost. And at the end, the first thing they shipped with it. A new way to have a conversation that leaves no trace. Come find out when to change the locks.\r\n\r\nJoin our journey.",
+  "Speaker names": [
+    "Bjoern Reiners",
+    "Timm Behner",
+    "David Lassig"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T14:15:00+02:00"
+}

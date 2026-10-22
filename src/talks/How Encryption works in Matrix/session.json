@@ -1,0 +1,20 @@
+{
+  "ID": "DDYYQW",
+  "Proposal title": "How Encryption works in Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Cryptography"
+  },
+  "Abstract": "Intended for people who don't know much about encryption or Matrix, this session will give an overview of how your messages are kept safe, using end-to-end encryption.\r\n\r\nWe'll very briefly review what we are trying to do: be sure who we're talking to, and be sure no-one else can read our messages. Then we'll discuss how Matrix does this: devices talk to each other with something called Olm, and messages in rooms use Megolm.\r\n\r\nBy the end of this session you should be confident talking about how Matrix keeps your data safe, and you should know enough that you are able to dig deeper when you need to.",
+  "Speaker names": [
+    "Andy Balaam"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T11:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-98869-how-encryption-works-in-matrix"
+}

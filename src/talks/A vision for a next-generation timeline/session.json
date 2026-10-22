@@ -1,0 +1,21 @@
+{
+  "ID": "WRGTRX",
+  "Proposal title": "A vision for a next-generation timeline",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "The timeline is the most interacted-with piece of any chat software. It's where messages live! It's hard to have a chat app without one.\r\n\r\nUnfortunately, the matrix protocol has... compromises... in the timeline made for the sake of federation. From the incosistent ordering between sync and history on Synapse, to the inability to jump to pinned messages from before you joined, to the mystery of what happens when you join a room your server previously left. \r\n\r\nThe good news is we have a solution! The bad news is it's gonna take a while. This talk is a rundown of every step needed to get a next-generation timeline. I'll explain stitched ordering, timeline fragments, and why we need state DAGs.",
+  "Speaker names": [
+    "Jade",
+    "Ginger"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T12:30:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-99070-a-vision-for-a-next-generation-timeline"
+}

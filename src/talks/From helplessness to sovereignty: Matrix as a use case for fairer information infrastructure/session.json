@@ -1,0 +1,19 @@
+{
+  "ID": "QXZEQJ",
+  "Proposal title": "From helplessness to sovereignty: Matrix as a use case for fairer information infrastructure",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Digital Sovereignty"
+  },
+  "Abstract": "The privacy paradox (the theory that people say they care about their privacy but behave as if they do not), assumes that user behaviours are irrational, uninformed, and based on choosing convenience above their own data protection.\r\nMy research points to a different perspective: people do care, and they also behave inconsistently, but not always out of convenience. At its core, it seems that people behave inconsistently because they feel they have no agency and that “there is no point” in trying to protect their personal information. In this sense, we all live more in a state of privacy helplessness than in a paradox – a paradox implies a choice we don’t all have.\r\n\r\nRegulations like the GDPR can’t be the sole solution for such a widespread and structural issue, nor are they a substitute for measures which focus on actual empowerment. Geopolitical considerations are also leading private organisations and governments to more carefully ownership and control of their data, which leads to questions around autonomy and digital sovereignty.\r\n\r\nIn this talk I will go through the reasons why decentralised, end-to-end-encrypted public infrastructure, built on open standards, could be the structural answer to these problems. Matrix is one of the few working examples of this kind of technology being deployed in the public sector at scale. Matrix based communications are a key case study to show why open technology is essential to address individual concerns around helplessness, as well as national level issues associated with digital sovereignty (or lack of it).",
+  "Speaker names": [
+    "Denise Almeida"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T16:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100709-from-helplessness-to-sovereignty-matrix-as-a-use-case-for-fairer-information-infrastructure"
+}

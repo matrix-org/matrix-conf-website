@@ -1,0 +1,18 @@
+{
+  "ID": "RAJEHG",
+  "Proposal title": "Matrix Wrench - an admin tool for operators and community managers",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "Are you operating a large server, bridge or bot? Are you managing lots of spaces or rooms?\r\nDo you sometimes need to modify rooms outside of your regular account?\r\nTry Matrix Wrench. It's is a powerful, open-source web app to view and edit room states. It works with access tokens from users and AppServices.",
+  "Speaker names": [
+    "Christian Paul"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T14:15:00+02:00"
+}

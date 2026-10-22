@@ -1,0 +1,20 @@
+{
+  "ID": "7GYBAP",
+  "Proposal title": "Next Generation Matrix: P2P, DMLS and more!",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "2026 has seen the resurgence of Next Generation Matrix research funded by Element, as we get back to futureproofing Matrix for the medium-long term.\r\n\r\nThe main project has been the return to P2P Matrix: embedding homeservers inside modern Matrix clients, speaking the very latest Matrix room versions, supporting arbitrary overlay networks.  This opens up the world of Matrix for pure mesh communications, and can radically improve metadata footprint (given in a world with no servers, there's nowhere for metadata to gather).  Funded by the Dutch Government, we announced this at last year's Matrix Conference in the Matrix State of the Union, and work began in earnest in April.  With first releases due in July, we should have an awful lot to talk about by the time of The Matrix Conference in October!\r\n\r\nAlongside this, there's also been a bunch of work around next generation encryption and yet more ways of marrying together Matrix and MLS, the IETF standard for group key exchange.  One of the more interesting directions has been Project Tachyon: what happens if you layer all of Matrix over Decentralised MLS, using MLS to define which devices can participate in the conversation - but use clientside Matrix state resolution for decentralised authorisation having decrypted the traffic?  In return you entirely solve the metadata problem: the server doesn't even know rooms exist; all it does is pass DMLS payloads around over to-device messages.\r\n\r\nIn this talk, we'll do a deeper dive into the latest P2P Matrix and DMLS work - and explore how Tachyon might also provide an answer to the eternal question of \"Portable Matrix\": how do you run Matrix over an existing store-and-forward protocol like SMTP, XMPP, ActivityPub, etc?",
+  "Speaker names": [
+    "Matthew Hodgson"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T16:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102417-next-generation-matrix-p2p-dmls-and-more"
+}

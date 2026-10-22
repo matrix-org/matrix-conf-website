@@ -1,0 +1,19 @@
+{
+  "ID": "37GLHX",
+  "Proposal title": "Common challenges for organizations when deploying [matrix]",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "A vanilla matrix deployment already offers a lot options and is part of many digital sovereign communication solutions (and for good reasons). It can solve some of its tech dependency issues and can be a great alternative to Teams, Slack, WhatsApp etc.\r\n\r\nHowever, some organizational requirements still require more careful thought and planning than one might expect at first glance.\r\n\r\nThis talk summarizes some of our experiences with often overlooked challenges, decisions with potentially far-reaching consequences and possible solutions/approaches when trying to implement a Matrix-Deployment for bigger organizations like schools, universities or other public organizations and similar projects. We take a quick look at the law, matrixID, administration and moderation, clients, videocall and possible useful extensions/widgets as well as what we did when the vanilla matrix wasnt enough.",
+  "Speaker names": [
+    "Jan Krammer (Janonym)",
+    "Philipp Monz"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T15:15:00+02:00"
+}

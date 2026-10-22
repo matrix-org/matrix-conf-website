@@ -1,0 +1,21 @@
+{
+  "ID": "8EBDVB",
+  "Proposal title": "Why Is There Rust in our Matrix?",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "When you operate communication infrastructure for one of Europe's largest defense organizations, \"good enough\" is never good enough.\r\nAt BWI, we do not just run Matrix. We trust in the idea behind it: that secure, open communication should be a public good.\r\n\r\nThis talk traces that journey. It begins with our decision to adopt Matrix as the sovereign communication backbone for the German armed forces, and the architectural ambition that drives our work: a communication stack where the functional core is formally verifiable, and memory safety is a given everywhere else. An engineering target we are actively working toward.\r\n\r\nAs a first step toward that goal, working with Element, we brought a Rust-based cryptographic SDK into existence, the Matrix Rust SDK, a unified crypto platform shared across all our client applications, born from our security requirements and built to last. Rust was not an aesthetic choice. It was a deliberate decision rooted in memory safety, auditability, and the practical requirements of formal verification tooling.\r\n\r\nOur work did not stop with the SDK. The same questions that shaped our cryptographic foundation led us to ask **harder** ones about the **backend**: what would a homeserver look like if security and formal verifiability were first-class requirements from day one, not afterthoughts? We have been exploring that question, and in this talk we want to share what we have learned so far, the decisions we faced, and where those explorations have taken us.\r\n\r\nJoin our journey.",
+  "Speaker names": [
+    "Bjoern Reiners",
+    "Nico",
+    "David Lassig"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T12:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-93687-why-is-there-rust-in-our-matrix"
+}

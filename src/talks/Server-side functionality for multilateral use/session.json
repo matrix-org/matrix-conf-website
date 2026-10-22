@@ -1,0 +1,19 @@
+{
+  "ID": "CWLX8Z",
+  "Proposal title": "Server-side functionality for multilateral use",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "To make the most of the sovereignty and interoperability enabled by Matrix, governments need to deploy at scale; across multiple organisations within their own country, between partner countries and mission partner environments. At an even larger scale, they may also need to support government to citizen communications - literally tens or even hundreds of millions of people.\r\n\r\nThis session explores what’s required to deliver these types of production environments straight out of the box. We'll cover server-side interoperability, mixing and matching Element Server Suite Pro with other Matrix-based solutions without friction, and how to make federation genuinely easy to deploy and manage - within large organisations and with external partners.\r\n\r\nFor example, when you federate with a partner you should be able to find your colleague in their directory. You should be able to share files with them and collaborate seamlessly, but also safely and in a controlled manner; such as checking what goes in and out of your network with proven Secure Border Gateways.\r\n\r\nFinally, we'll explore air-gapped deployments and cross-domain functionality - enabling secure communications across classification boundaries where external connectivity simply isn't an option.",
+  "Speaker names": [
+    "Patrick Maier"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T14:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101809-server-side-functionality-for-multilateral-use"
+}

@@ -1,0 +1,19 @@
+{
+  "ID": "KS3A8F",
+  "Proposal title": "Starting a Sovereign Chat Project in the Dutch Government: Early Lessons",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector"
+  },
+  "Abstract": "How do you start a sovereign, secure chat project in the public sector? Together with the Dutch Ministry of Defence, we are launching a Matrix-based solution to enable interoperable, archivable, and decentralized communication.\r\nIn this talk, we share our early experiences, including the challenges of compliance, archiving, and adoption, as well as the lessons learned so far. \r\nJoin us to explore how Matrix can support sovereign, future-proof communication for government organizations.",
+  "Speaker names": [
+    "Manfred Zielinski",
+    "Gideon Bleumink"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-22T16:15:00+02:00"
+}

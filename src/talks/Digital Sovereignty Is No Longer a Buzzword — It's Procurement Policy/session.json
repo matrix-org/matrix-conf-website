@@ -1,0 +1,20 @@
+{
+  "ID": "MFBXVD",
+  "Proposal title": "Digital Sovereignty Is No Longer a Buzzword — It's Procurement Policy",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Digital Sovereignty"
+  },
+  "Abstract": "Just days before this conference, the European Commission adopted the **European Technological Sovereignty Package**, placing open source explicitly at the centre of Europe's digital strategy for the first time. The timing is not coincidental. It is the political response to a structural dependency Europe can no longer afford to ignore: critical infrastructure — including healthcare — running on platforms controlled by others.\r\n\r\nThis talk makes a practical argument: digital sovereignty has moved from political rhetoric to **procurement reality**. Across Europe, more than 20 governments have already chosen Matrix as their foundation for sovereign, vendor-agnostic communication — from Germany's Bundeswehr and BundesMessenger to France's Tchap and LaSuite, Sweden's SAFOS Chatt, and the European Commission itself. This is no longer a pilot phase. It is production infrastructure.\r\n\r\nHealthcare is where the argument becomes hardest — and most compelling. Germany's **TI-Messenger**, mandated by gematik and built on the Matrix open standard, connects over 150,000 healthcare organizations and reached 74 million statutory insured citizens in July 2025, making it the largest Matrix deployment worldwide. Yet real-world adoption reveals a tension that no technical standard alone can resolve: clinical staff default to WhatsApp not out of ignorance, but because it works and patients are already there. Studies show 82% of healthcare organizations carry significant shadow IT exposure, and the NHS has internally described WhatsApp use as a *\"privacy and clinical safety timebomb\"*. The problem is not the technology. It is incentives and governance.\r\n\r\nDrawing on experience as a healthcare IT vendor building on the Matrix protocol, this talk examines **three dimensions of sovereignty** — data, infrastructure, and protocol — and shows how Matrix uniquely addresses all three simultaneously, in contrast to WhatsApp, Signal, and Microsoft Teams. It traces lessons from government deployments to their implications for regulated healthcare, and covers the regulatory drivers now turning sovereignty from aspiration into obligation: NIS2 designates healthcare as an \"essential entity\" subject to proactive audits and fines up to €10 million; the EHDS mandates structured interoperability; and the EU Technological Sovereignty Package is beginning to shape procurement criteria directly.\r\n\r\nThe talk closes with a challenge to the Matrix community: the TI-Messenger specification is a blueprint, not a ceiling. Building shared certification frameworks for healthcare across Europe — and treating interoperability between Matrix vendors as a competitive strength rather than a threat — is the next step. The window, opened by this week's EU package, will not stay open indefinitely.\r\n\r\n**Attendees will leave with:** a clear framework for positioning Matrix in regulated procurement; an honest account of where adoption stalls and why; and a concrete call to action for the Matrix ecosystem in European healthcare.",
+  "Speaker names": [
+    "Jens-Uwe Thieme"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T17:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100495-digital-sovereignty-is-no-longer-a-buzzword-it-s-procurement-policy"
+}

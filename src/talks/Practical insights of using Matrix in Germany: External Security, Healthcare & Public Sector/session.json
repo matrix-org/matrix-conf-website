@@ -1,0 +1,21 @@
+{
+  "ID": "EYBZT9",
+  "Proposal title": "Practical insights of using Matrix in Germany: External Security, Healthcare & Public Sector",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "In our talk, we would like to give conference participants an insight into practical use cases for the Matrix solution. We will cover projects in the healthcare sector, external security, and public administration.",
+  "Speaker names": [
+    "Franziska Streidt",
+    "Oliver Graml"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T17:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101054-practical-insights-of-using-matrix-in-germany-external-security-healthcare-public-sector"
+}
