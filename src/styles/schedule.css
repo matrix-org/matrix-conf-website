@@ -242,8 +242,5 @@
     margin-inline-start: var(--space-small);
 }
 .schedule-list .rec {
-    inline-size: 18px;
-    block-size: 18px;
-    background-color: currentColor;
-    mask: url("/film.svg") center / contain no-repeat;
+    mask-image: url("/film.svg");
 }
