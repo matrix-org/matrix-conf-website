@@ -1,0 +1,59 @@
+{
+    "out": "../../src/img",
+    "format": "avif",
+    "pin": {
+        "image": "assets/pin.svg",
+        "size": 48
+    },
+    "maps": {
+        "Map": {
+            "zoom": 15,
+            "pin": {
+                "size": 110
+            },
+            "places": [
+                {
+                    "at": [55.5964139, 13.0013718]
+                }
+            ]
+        },
+        "HackathonMap": {
+            "zoom": 16.4,
+            "pin": {
+                "size": 110
+            },
+            "places": [
+                {
+                    "at": [55.6504856, 12.5428797]
+                }
+            ]
+        },
+        "MalmoCopenhagenMap": {
+            "sizes": ["1600x760"],
+            "note": "about 40 min by train",
+            "places": [
+                {
+                    "at": [55.6505, 12.5429],
+                    "label": "Hackathon"
+                },
+                {
+                    "at": [55.5964139, 13.0013718],
+                    "label": "Conference"
+                }
+            ],
+            "route": {
+                "overpass": "relation(3345661);out geom;"
+            },
+            "theme": {
+                "preset": "quiet"
+            },
+            "scaleBar": true,
+            "areaLabels": [
+                {
+                    "at": [55.64, 12.8],
+                    "text": "\u00d8resund"
+                }
+            ]
+        }
+    }
+}
