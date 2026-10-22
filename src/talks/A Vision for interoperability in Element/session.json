@@ -1,0 +1,18 @@
+{
+  "ID": "MY8PLV",
+  "Proposal title": "A Vision for interoperability in Element",
+  "Session type": {
+    "en": "Workshop"
+  },
+  "Track": {
+    "en": "Workshop"
+  },
+  "Abstract": "Federation is working. But does the experience reflect it?\r\nThe goal of this collaborative workshop is to understand how interoperability and federation translates inside the product.\r\nTogether we’ll look at search, directories, shared rooms and how the experience can be tailored for users. \r\nWe want to test our assumptions, hear what resonates and understand what we're missing. Your input will directly shape the product.",
+  "Speaker names": [
+    "Gaëlle Hunt"
+  ],
+  "Room": {
+    "en": "Workshop"
+  },
+  "Start": "2026-10-22T14:15:00+02:00"
+}

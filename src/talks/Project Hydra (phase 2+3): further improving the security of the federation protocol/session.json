@@ -1,0 +1,19 @@
+{
+  "ID": "M3A3HK",
+  "Proposal title": "Project Hydra (phase 2+3): further improving the security of the federation protocol",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "The federation protocol is how Matrix homeservers communicate between each other. In private federations this isn't particularly challenging as the network is trusted but in the public federation this isn't true. This talk dives into what protocol improvements are in the works to make the public federation more secure against Byzantine actors, particularly against \"backdating\": intentional misuse of the concurrency primitives to manipulate the authorisation algorithm. We'll explore why this problem is hard, what some of the failure modes are, and how we are working on addressing them.\r\n\r\nSome of this work was presented in a [peer-reviewed article](https://dl.acm.org/doi/10.1145/3806077.3806691).",
+  "Speaker names": [
+    "Kegan Dougal"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T15:15:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101034-project-hydra-phase-2-3-further-improving-the-security-of-the-federation-protocol"
+}

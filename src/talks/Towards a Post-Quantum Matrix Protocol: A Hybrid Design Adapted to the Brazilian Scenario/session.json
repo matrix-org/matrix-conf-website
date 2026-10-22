@@ -1,0 +1,19 @@
+{
+  "ID": "TZ8ZYX",
+  "Proposal title": "Towards a Post-Quantum Matrix Protocol: A Hybrid Design Adapted to the Brazilian Scenario",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Cryptography"
+  },
+  "Abstract": "This presentation outlines the development experience of a post-quantum cryptography (PQC) extension for the vodozemac library, tailored for its use in MSG GOV, a Matrix-powered E2EE messenger for the Brazilian federal government. Our hybrid design is adapted to support multiple PQC algorithms, including ML-KEM and Brazil's state-mandated cryptography. The talk details the practical software engineering challenges associated with the hybrid integration of flexible PQC features into the Matrix protocol, extending both the key agreement and the Double Ratchet algorithm while preserving compatibility.",
+  "Speaker names": [
+    "Paulo A L Rego",
+    "Rodrigo Pacheco"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T14:45:00+02:00"
+}

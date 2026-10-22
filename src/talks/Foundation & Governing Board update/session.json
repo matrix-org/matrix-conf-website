@@ -1,0 +1,23 @@
+{
+  "ID": "FYKJMY",
+  "Proposal title": "Foundation & Governing Board update",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "The Matrix.org Foundation is the key to Matrix' independence from any commercial vendor. It exists to protect the neutrality of the Matrix protocol, promote Matrix as an open standard, give a voice to the members of the ecosystem and ensure trust and safety within the open network. This keynote will give an overview of the latest about the Foundation and will include a presentation from the Governing Board on the activities led by the various Committees and Working Groups.",
+  "Speaker names": [
+    "Amandine Le Pape",
+    "Nico",
+    "Neil Johnson",
+    "Richard van der Hoff"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-22T10:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100236-foundation-governing-board-update"
+}

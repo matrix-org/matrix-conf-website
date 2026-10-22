@@ -1,0 +1,21 @@
+{
+  "ID": "V9PXRV",
+  "Proposal title": "Our Common Journey to a Federated User Directory",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "Currently user search can only be done locally, which would at best get a list of all users known to the server.\r\n\r\nThis talk aims at explaining the research we did regarding speccing and implementing a spec change proposal for the user federated search (MSC4258).\r\n\r\nWe will also explain the different solutions we thought about and the associated tradeoffs regarding data privacy, performance and complexity.\r\n\r\nThis talk is also about a collaboration between two public sector teams from two different countries :)",
+  "Speaker names": [
+    "Kai A. Hiller",
+    "Maghen Calinghee"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T15:45:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101803-a-common-journey-to-user-federated-search"
+}

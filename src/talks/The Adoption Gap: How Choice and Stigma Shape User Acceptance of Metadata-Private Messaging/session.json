@@ -1,0 +1,19 @@
+{
+  "ID": "7TNQFM",
+  "Proposal title": "The Adoption Gap: How Choice and Stigma Shape User Acceptance of Metadata-Private Messaging",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Growing a Network"
+  },
+  "Abstract": "Tools for enabling metadata privacy - which prevents network observers from inferring who communicates with whom - have technically matured over decades. Yet, despite their maturity, these tools remain absent from today's mainstream messaging platforms. This talk looks beyond technical aspects and presents research into adoption barriers focusing on potential users themselves. It presents a study with 96 messaging app users investigating three key questions: How do users understand metadata privacy? What do they perceive as benefits and risks of metadata-private features? And under what conditions would they actually adopt metadata-private features?\r\nThe results reveal (1) limited understanding of metadata privacy, (2) dual-use potential as serving both legitimate and illegitimate actors, and (3) two fundamental adoption barriers. This includes a prosocial adoption gap in which despite recognizing legitimate beneficiaries (journalists, activists, whistleblowers), the majority of users would not adopt a novel metadata-private app for the sake of others' benefit. The other adoption gap we identify is a choice stigma paradox in which the optionality of metadata-private features enables acceptance but at the same time leads to social stigma, with users worrying about appearing suspicious for choosing increased privacy.  \r\nBuilding on these insights, I discuss what these findings mean for deploying metadata privacy in practice - including why universal defaults may succeed where optional features fail.",
+  "Speaker names": [
+    "Tom Biselli"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T12:30:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101186-the-adoption-gap-how-choice-and-stigma-shape-user-acceptance-of-metadata-private-messaging"
+}

@@ -1,0 +1,18 @@
+{
+  "ID": "FEBUFM",
+  "Proposal title": "Making Matrix Feel Like WhatsApp Without Centralizing It",
+  "Session type": {
+    "en": "Lightning Talk"
+  },
+  "Track": {
+    "en": "Lightning Talks"
+  },
+  "Abstract": "Gua is an experimental Matrix-based messenger built around a deliberately provocative question: can a federated, end-to-end encrypted network feel as simple as WhatsApp, and what do you have to \"centralize\" to get there?\r\n\r\nThe project is an experiment built around the Matrix ecosystem. It builds on Element clients for iOS, Android, and Web, Synapse, and Matrix Authentication Service, with targeted Gua-specific forks where the user experience requires it. The goal is to keep the robustness of Matrix federation while hiding the complexity that usually scares off everyday users: homeserver choice, full Matrix IDs, server-specific login details, and federation topology.\r\n\r\nGua is an early-stage architecture and product-design case study about making Matrix federation usable for people who would otherwise never adopt a federated messenger.",
+  "Speaker names": [
+    "Sarah L. Silva"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T17:33:00+02:00"
+}

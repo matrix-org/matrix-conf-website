@@ -1,0 +1,20 @@
+{
+  "ID": "AWDD8K",
+  "Proposal title": "TI-Messenger goes Europe: Austrian healthcare adopts matrix protocol",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Healthcare sponsored by CGM"
+  },
+  "Abstract": "Famedly talks about the developments in the Austrian healthcare market and the adoption of matrix as the messenger protocol of choice. Leaning into the similarities and differences between Germany and Austria.",
+  "Speaker names": [
+    "Phillipp Kurtz"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T12:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-102356-ti-messenger-goes-europe-austrian-healthcare-adopts-matrix-protocol"
+}

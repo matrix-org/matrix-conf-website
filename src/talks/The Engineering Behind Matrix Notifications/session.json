@@ -1,0 +1,18 @@
+{
+  "ID": "87JMFS",
+  "Proposal title": "The Engineering Behind Matrix Notifications",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "A notification seems simple: a message arrives, and the phone vibrates. But in the Matrix ecosystem, a single \"ping\" triggers a complex chain of events involving E2EE decryption, push rule evaluation, and state synchronization. This talk dives into the architectural challenges of implementing a robust, privacy-respecting, and energy-efficient notification engine in Trixnity.",
+  "Speaker names": [
+    "Benedict Benken"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-22T16:15:00+02:00"
+}

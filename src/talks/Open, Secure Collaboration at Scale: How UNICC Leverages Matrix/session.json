@@ -1,0 +1,20 @@
+{
+  "ID": "DNNLEW",
+  "Proposal title": "Open, Secure Collaboration at Scale: How UNICC Leverages Matrix",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "Over five decades, is the largest strategic partner for common, trusted, and cybersecure\r\ndigital foundations across the entire UN system. Today, UNICC serves over 100 UN entities and other international organizations, operating in a global environment where secure, cross-agency collaboration is essential to fulfilling its mandates. Therefore, UNICC is uniquely positioned to identify and promote the reuse of open-source solutions across the UN system and beyond.\r\n\r\nOperating within the UN context requires strict adherence to institutional independence,\r\ntechnological neutrality, data privacy, and digital sovereignty. Matrix’s open, decentralized standard has helped UNICC ensure that sensitive inter-agency communications, crisis management, and incident response operations remain under complete institutional control, protected by end-to-end encryption.\r\n\r\nThis session explores UNICC’s practical journey in deploying Matrix at scale. Attendees\r\nwill gain insights into multi-tenant federation, open-source governance, and how\r\ndecentralized protocols provide a resilient, sovereign digital backbone for global public\r\ngoods.\r\n\r\nKey Takeaways:\r\n\r\n- Strategic Evolution: How UNICC shifted to open standards for global UN collaboration.\r\n- Digital Sovereignty &amp; Data Protection: Protecting sensitive data through decentralized, end-to-end encrypted architecture that strengthens institutional control and reduces dependency on proprietary platforms.\r\n- Operational Value: Real-world benefits of federated communication in emergency response and automated workflows.",
+  "Speaker names": [
+    "Sameer Chauhan"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T17:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103133-open-secure-collaboration-at-scale-how-unicc-leverages-matrix"
+}

@@ -1,0 +1,21 @@
+{
+  "ID": "UV3NTW",
+  "Proposal title": "Bringing MatrixRTC to the Matrix Ecosystem",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "Element Call already proves what is possible with MatrixRTC: decentralised, federated, end-to-end encrypted video and voice calls powered entirely by the Matrix protocol — but most of the Matrix ecosystem hasn't yet adopted it.\r\nTo change this we need to build an ecosystem around MatrixRTC that is as vibrant as Matix itself.\r\nThis talk outlines the vision of components for such an ecosystem and consolidates all the details required to efficiently build on top of MatrixRTC or add support to clients and sdks.\r\n\r\nThis talk starts with a quick tour of MatrixRTC from the ground up. We start with the core specification ([MSC4143](https://github.com/matrix-org/matrix-spec-proposals/pull/4143)): what a MatrixRTC session actually is, how participants announce themselves via `m.call.member` sticky events, and how a call across a federated network of homeservers and multiple LiveKit SFUs (Selective Forwarding Unit) works.\r\n\r\nWith the foundations in place, we explore what MatrixRTC makes possible beyond video calls: low-latency data channels, real-time collaborative features, game state synchronisation, and more — all authenticated by Matrix and federated by default.\r\n\r\nThe second half of the talk will be a conversation about **how** to build on MatrixRTC correctly and **why** it matters. We share our learning how to structure SDKs around MatrixRTC and evaluate possible shared building blocks. The goal is to build an ecosystem with components suited for most tasks without reinventing the wheel.\r\n\r\nAttendees will gain a basic understanding of the technology so you leave the room knowing exactly where to start, and an awareness of what components are available to make your life easier and the final products stable and compatible. Let's bring MatrixRTC to the whole Matrix ecosystem.",
+  "Speaker names": [
+    "Timo Kandra",
+    "Robin Townsend"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T14:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101088-bringing-matrixrtc-to-the-matrix-ecosystem"
+}

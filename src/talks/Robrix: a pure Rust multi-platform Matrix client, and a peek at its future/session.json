@@ -1,0 +1,20 @@
+{
+  "ID": "PUQNED",
+  "Proposal title": "Robrix: a pure Rust multi-platform Matrix client, and a peek at its future",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Matrix Inside"
+  },
+  "Abstract": "Robrix is a \"new\" FOSS Matrix client written entirely from scratch in Rust, with some cool power user features like a **dockable-tabs view** of multiple rooms side-by-side, just like your favorite IDE. It's simple and flexible enough for casual chatters as well, and can seamlessly transition into a sleek mobile-friendly adaptive UI for narrow screens.\r\n\r\nRobrix runs smoothly and consistently across mobile & desktop platforms, thanks to the underlying Makepad UI toolkit and Robius abstraction crates, which we also wrote ourselves in Rust. After several years of hard work on those components, we have finally reached the milestone of publishing Robrix to major app stores.\r\n\r\nJoin us to learn more, see some fun live demos, and give it a try yourself. We'll also preview some of our future ideas, such as making Matrix the best medium for coordinating and managing multi-agent workflows (even better than Telegram!).",
+  "Speaker names": [
+    "Kevin Boos"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T15:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100881-robrix-a-pure-rust-multi-platform-matrix-client-and-a-peek-at-its-future"
+}

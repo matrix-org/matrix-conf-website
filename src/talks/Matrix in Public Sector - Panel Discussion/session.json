@@ -1,0 +1,24 @@
+{
+  "ID": "VZQLU3",
+  "Proposal title": "Matrix in Public Sector - Panel Discussion",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "This panel discussion will gather several public sector organisations who have deployed Matrix at scale to discuss about the relevance of Matrix in public sector, the importance of cross-border collaboration / cross-border interoperability, supporting the ecosystem (and challenges thereof) and benefits of using Matrix over proprietary solutions.",
+  "Speaker names": [
+    "Marco Holz",
+    "Patrick Weber",
+    "Kenneth Edwall",
+    "Amandine Le Pape",
+    "Mathieu Velten"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T12:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100965-matrix-in-public-sector-panel-discussion"
+}

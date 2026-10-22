@@ -1,0 +1,20 @@
+{
+  "ID": "QD377V",
+  "Proposal title": "Making Custom Profiles in Matrix More Useful",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Next Gen Spec"
+  },
+  "Abstract": "An overview of the UX design and technical implementation challenges faced when implementing \"live-update\" support for Profile Fields in Matrix.",
+  "Speaker names": [
+    "Andrew Morgan (anoa)",
+    "Aaron Thornburgh"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T12:00:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101353-making-custom-profiles-in-matrix-more-useful"
+}

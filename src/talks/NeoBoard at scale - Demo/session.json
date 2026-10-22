@@ -1,0 +1,19 @@
+{
+  "ID": "7BLS3N",
+  "Proposal title": "NeoBoard at scale - Demo",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Matrix Inside"
+  },
+  "Abstract": "NeoBoard, the open-source real-time collaborative whiteboard built on the Matrix protocol, has come a long way since its first appearance at the Matrix Conference. In this talk, Nordeck's CEO gives an honest account of where the product stands today — the architecture, the open-source release, the feature roadmap — and announces some surprises that take NeoBoard beyond the developer community and into everyday use.",
+  "Speaker names": [
+    "Hato Nordeck"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T14:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101042-neoboard-at-scale-demo"
+}

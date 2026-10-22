@@ -1,0 +1,19 @@
+{
+  "ID": "3GTLFM",
+  "Proposal title": "Between the protocol and the customer: federation expectations in production",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Public Sector sponsored by Element"
+  },
+  "Abstract": "Every organization that adopts Matrix federation makes the protocol more valuable. Every gap they hit makes adoption harder. Rocket.Chat runs Matrix federation in production for government, defence, and critical infrastructure organizations, and that work shows where the protocol already meets customer expectations, and where it can go further. This talk shares our findings from real-world implementation conversations, findings from adoption, and proposals for native capabilities.",
+  "Speaker names": [
+    "Renato Becker"
+  ],
+  "Room": {
+    "en": "Katherine"
+  },
+  "Start": "2026-10-21T16:45:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103106-between-the-protocol-and-the-customer-federation-expectations-in-production"
+}

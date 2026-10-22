@@ -1,0 +1,20 @@
+{
+  "ID": "3PYU7E",
+  "Proposal title": "Using Matrix to extend trust across military C2 infrastructure",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Matrix Inside"
+  },
+  "Abstract": "Modern military operations depend on command and control (C2) systems that can share information quickly and securely across organisational, national and network boundaries. Building and keeping trust across these environments is still one of the hardest problems in defence communications. In this session, Luke Wattan will share Labrys Technologies’ view on how Matrix can help extend trust across C2 infrastructure. He’ll cover the challenges, the opportunities, and what this could mean for secure, interoperable communications in defence.",
+  "Speaker names": [
+    "Luke Wattam",
+    "Dan Woodel"
+  ],
+  "Room": {
+    "en": "Peter"
+  },
+  "Start": "2026-10-21T14:15:00+02:00",
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103135-using-matrix-to-extend-trust-across-military-c2-infrastructure"
+}

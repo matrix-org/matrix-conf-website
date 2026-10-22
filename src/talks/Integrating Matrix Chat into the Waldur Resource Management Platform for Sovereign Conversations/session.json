@@ -1,0 +1,20 @@
+{
+  "ID": "E9YU9X",
+  "Proposal title": "Integrating Matrix Chat into the Waldur Resource Management Platform for Sovereign Conversations",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "In Practice"
+  },
+  "Abstract": "Waldur is a multi-tenant cloud and HPC resource-management platform. In Estonia it powers the state cloud (Riigipilv) and the national scientific computing infrastructure (ETAIS), where deployments routinely involve personal and sensitive data. Yet support for all of it happens across scattered channels: Slack, Signal, email, whatever a given user reaches for. The context for any single deployment is split across all of them. To debug a problem you reconstruct the story from fragments in different apps, there is no durable history tied to the project, and sensitive conversations end up sitting in third-party consumer tools.\r\nWe are building a Matrix integration for Waldur using the Application Service API, giving every project its own room. Room membership mirrors project membership: members are invited and synced automatically from their existing project roles, so the people in the conversation are exactly the people with access to the resource. The chat renders directly in the Waldur UI, and for support staff who prefer it, the same chat is also available on the go.\r\nWe have finished implementing the first version and are now pushing it to our first users for testing. This talk introduces the problem, walks through the solution we are building, and shares our future plans for Matrix inside Waldur.",
+  "Speaker names": [
+    "Hendrik Jaks"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T17:15:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101171-integrating-matrix-chat-into-the-waldur-resource-management-platform-for-sovereign-conversations"
+}

@@ -1,0 +1,20 @@
+{
+  "ID": "N9AQGY",
+  "Proposal title": "Opening",
+  "Session type": {
+    "en": "Talk"
+  },
+  "Track": {
+    "en": "Keynote"
+  },
+  "Abstract": "Welcome to The Matrix Conference 2026!",
+  "Speaker names": [
+    "Andy Piper"
+  ],
+  "Room": {
+    "en": "Sofya"
+  },
+  "Start": "2026-10-21T10:00:00+02:00",
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101394-opening"
+}
