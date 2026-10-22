@@ -4,6 +4,11 @@ export const CCC_CONFERENCE = "matrix-conf-2026";
 
 /** media.ccc.de API listing of the released recordings. */
 export const cccRecordings = `https://media.ccc.de/public/conferences/${CCC_CONFERENCE}`;
+/**
+ * What /watch shows. "stream" is the livestream overview with a page per room, "vod" is the list of
+ * recordings and no room pages.
+ */
+export const watchMode: "stream" | "vod" = "stream";
 
 export const streams = [
     {

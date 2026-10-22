@@ -1,0 +1,62 @@
+---
+import slugify from '@sindresorhus/slugify';
+
+const { Type, label } = Astro.props;
+const slug = slugify(label);
+---
+
+<style lang="scss">
+    @use "sass:color";
+
+    @mixin track($text-color, $pill-color) {
+        color: $text-color;
+        background-color: $pill-color;
+        &:hover {
+            background-color: color.adjust($pill-color, $lightness: 2.5%);
+        }
+        &.selected {
+            color: $pill-color;
+            background-color: $text-color;
+            border: 1px solid $pill-color;
+            &:hover {
+                background-color: color.adjust($text-color, $lightness: 15%);
+            }
+        }
+    }
+
+    .pill {
+        line-height: 1.5;
+        display: inline-block;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        padding: 0em .5em;
+        color: #000;
+        background-color: #b3b3b3;
+
+        &:focus {
+            outline: 1px solid black;
+        }
+    }
+
+    button.pill {
+        cursor: pointer;
+    }
+
+    // Track colours are the ones configured in pretalx. The keynote track is
+    // black there, which would not show on the black page background.
+    .pill.keynote { @include track(#000, #fff); }
+    .pill.workshop { @include track(#000, #37b5ab); }
+    .pill.public-sector,
+    .pill.public-sector-sponsored-by-element { @include track(#fff, #9c27b0); }
+    .pill.cryptography { @include track(#000, #f67268); }
+    .pill.lightning-talks { @include track(#000, #ffd045); }
+    .pill.healthcare-sponsored-by-cgm { @include track(#000, #59a9ec); }
+    .pill.matrix-inside { @include track(#fff, #0071c5); }
+    .pill.in-practice { @include track(#000, #8bc34a); }
+    .pill.digital-sovereignty { @include track(#000, #9a7f75); }
+    .pill.growing-a-network { @include track(#fff, #3b883e); }
+    .pill.next-gen-spec { @include track(#000, #f16a9a); }
+    .pill.foundation { @include track(#000, #a1a1a1); }
+</style>
+
+<Type class:list={['pill', slug]}>{ label }</Type>
