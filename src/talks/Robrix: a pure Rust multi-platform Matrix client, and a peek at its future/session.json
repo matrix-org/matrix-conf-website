@@ -16,5 +16,6 @@
   },
   "Start": "2026-10-21T15:15:00+02:00",
   "slides": true,
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100881-robrix-a-pure-rust-multi-platform-matrix-client-and-a-peek-at-its-future"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100881-robrix-a-pure-rust-multi-platform-matrix-client-and-a-peek-at-its-future",
+  "youtube": "https://youtu.be/6OoaisBPDxc"
 }
