@@ -16,5 +16,6 @@
     "en": "Peter"
   },
   "Start": "2026-10-22T16:45:00+02:00",
-  "slides": true
+  "slides": true,
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100950-a-faster-rustier-element-web"
 }
