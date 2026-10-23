@@ -20,6 +20,9 @@ export const DEFAULT_THEME = {
     labelBorder: "#636569",
     poi: "#000000",
     areaLabel: "#1f4f6b",
+    // The faint panels of the small texts: scale bar, credit and names of places.
+    panel: "rgba(255,255,255,.8)",
+    panelText: "#222222",
 };
 
 export type Theme = Record<keyof typeof DEFAULT_THEME, string>;
@@ -40,6 +43,26 @@ export const THEMES: Record<string, Theme> = {
         road: "#46514f",
         roadMid: "#7b8787",
         roadMinor: "#b5bdbd",
+    },
+    // Fits the dark pages of the site. Roads are light on the dark ground, the rail has dark ties.
+    dark: {
+        ...DEFAULT_THEME,
+        background: "#101214",
+        green: "#2c5538",
+        dots: "#4d8a5c",
+        park: "#27492f",
+        town: "#8a6830",
+        campus: "#4a4a2c",
+        water: "#1d4a68",
+        building: "#d9993f",
+        road: "#d3dada",
+        roadMid: "#939e9e",
+        roadMinor: "#667070",
+        railTies: "#101214",
+        labelBorder: "#9aa0a6",
+        areaLabel: "#9fcbe8",
+        panel: "rgba(16,18,20,.8)",
+        panelText: "#e6e9eb",
     },
 };
 

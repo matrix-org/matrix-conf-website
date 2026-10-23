@@ -70,9 +70,6 @@
             "route": {
                 "overpass": "relation(3345661);out geom;"
             },
-            "theme": {
-                "preset": "quiet"
-            },
             "scaleBar": true,
             "areaLabels": [
                 {
@@ -81,5 +78,8 @@
                 }
             ]
         }
+    },
+    "theme": {
+        "preset": "dark"
     }
 }

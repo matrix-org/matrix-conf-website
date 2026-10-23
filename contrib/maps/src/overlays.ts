@@ -88,11 +88,11 @@ export function label({ theme, scale }: Style, text: string): Promise<Picture> {
 }
 
 /** The name of a place of interest, small and on a faint panel. */
-export function poiLabel({ scale }: Style, text: string): Promise<Picture> {
+export function poiLabel({ theme, scale }: Style, text: string): Promise<Picture> {
     return textBox(text, {
         size: 12 * scale,
-        color: "#222222",
-        fill: "rgba(255,255,255,.75)",
+        color: theme.panelText,
+        fill: theme.panel,
         padding: 3 * scale,
     });
 }
@@ -103,18 +103,22 @@ export function areaLabel({ theme, scale }: Style, text: string): Promise<Pictur
 }
 
 /** A scale bar `pixels` long that stands for `metres`. */
-export async function scaleBar({ scale }: Style, metres: number, pixels: number): Promise<Picture> {
+export async function scaleBar(
+    { theme, scale }: Style,
+    metres: number,
+    pixels: number,
+): Promise<Picture> {
     const text = await renderText(
         metres >= 1000 ? `${metres / 1000} km` : `${metres} m`,
         13 * scale,
-        "#222222",
+        theme.panelText,
     );
     const padding = 5 * scale;
     const width = Math.ceil(Math.max(pixels, text.width) + 2 * padding);
     const height = Math.ceil(text.height + 8 * scale + 2 * padding);
     const [left, right, y] = [padding, padding + pixels, 2 * scale + padding];
-    const box = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="${width}" height="${height}" fill="rgba(255,255,255,.65)"/>
-<path d="M${left} ${y - 3 * scale}V${y + 3 * scale}M${left} ${y}H${right}M${right} ${y - 3 * scale}V${y + 3 * scale}" stroke="#444444" stroke-width="${scale}" fill="none"/></svg>`;
+    const box = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="${width}" height="${height}" fill="${theme.panel}"/>
+<path d="M${left} ${y - 3 * scale}V${y + 3 * scale}M${left} ${y}H${right}M${right} ${y - 3 * scale}V${y + 3 * scale}" stroke="${theme.panelText}" stroke-width="${scale}" fill="none"/></svg>`;
     const input = await sharp(Buffer.from(box))
         .composite([
             { input: text.input, left: Math.round(padding), top: Math.round(y + 5 * scale) },
@@ -124,11 +128,11 @@ export async function scaleBar({ scale }: Style, metres: number, pixels: number)
     return { input, width, height };
 }
 
-export function credit({ scale }: Style): Promise<Picture> {
+export function credit({ theme, scale }: Style): Promise<Picture> {
     return textBox(CREDIT, {
         size: 12 * scale,
-        color: "#222222",
-        fill: "rgba(255,255,255,.8)",
+        color: theme.panelText,
+        fill: theme.panel,
         padding: 4 * scale,
     });
 }

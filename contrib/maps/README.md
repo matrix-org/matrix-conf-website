@@ -54,7 +54,7 @@ Paths are relative to the config file.
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `out`         | top             | Directory for the images, default is the one of the config                                                                                       |
 | `format`      | top             | `avif` (default), `png`, `webp` or `jpg`                                                                                                         |
-| `theme`       | top, map        | `preset` (`default` or `quiet`) and colours to change, the names are in `src/theme.ts`                                                           |
+| `theme`       | top, map        | `preset` (`default`, `quiet` or `dark`) and colours to change, the names are in `src/theme.ts`                                                   |
 | `pin`         | top, map, place | `image` (SVG or bitmap, default is the round `[m]` pin) and `size` (height in pixels, default 36)                                                |
 | `pois`        | top, map        | Overpass queries whose nodes are drawn as dots or with an `image`, with `"label": true` also with their names. A map's list replaces the default |
 | `overpassUrl` | top, map        | Another Overpass server                                                                                                                          |
@@ -77,7 +77,7 @@ A route is a list of points or an Overpass query. The query selects one route re
 
 To find the relation, open [Overpass Turbo](https://overpass-turbo.eu/) and look for route relations near the places, for example `relation["route"="train"]({{bbox}});out tags;`. The id is the number in the result. `relation(3345661);out geom;` is the Øresundståg between Copenhagen, Malmö and Gothenburg. `{{bbox}}` in a route query is the area around the places. The area of a route that is not a straight line is larger than that, so a relation is better selected by its id. Queries for `pois` use the area of the map.
 
-The `quiet` theme mutes the base map, so that the route and the pins are the only strong colours. It fits overview maps. The default theme matches the other maps of the site.
+The `quiet` theme mutes the base map, so that the route and the pins are the only strong colours. It fits overview maps. The `dark` theme is for dark pages: light roads, dim fills, and the same pins and route. The default theme is light.
 
 ## Overpass
 
