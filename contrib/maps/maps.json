@@ -1,0 +1,85 @@
+{
+    "out": "../../src/img",
+    "format": "avif",
+    "pin": {
+        "image": "assets/pin.svg",
+        "size": 48
+    },
+    "maps": {
+        "Map": {
+            "zoom": 15,
+            "transit": true,
+            "note": "about 3 min by train",
+            "places": [
+                {
+                    "at": [55.5964139, 13.0013718],
+                    "size": 110
+                },
+                {
+                    "at": [55.6091374, 13.0006612],
+                    "label": "Malmö Central",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
+                },
+                {
+                    "at": [55.5932928, 13.0010364],
+                    "label": "Triangeln",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
+                }
+            ],
+            "route": {
+                "overpass": "relation(3274682);out geom;",
+                "between": [1, 2]
+            },
+            "walk": [2, 0]
+        },
+        "HackathonMap": {
+            "zoom": 16,
+            "transit": true,
+            "places": [
+                {
+                    "at": [55.6504856, 12.5428797],
+                    "size": 110
+                },
+                {
+                    "at": [55.6458281, 12.544414],
+                    "label": "Sluseholmen",
+                    "image": "assets/station.svg",
+                    "size": 34,
+                    "centred": true
+                }
+            ],
+            "walk": [1, 0]
+        },
+        "MalmoCopenhagenMap": {
+            "sizes": ["1600x760"],
+            "note": "about 40 min by train",
+            "places": [
+                {
+                    "at": [55.6505, 12.5429],
+                    "label": "Hackathon"
+                },
+                {
+                    "at": [55.5964139, 13.0013718],
+                    "label": "Conference"
+                }
+            ],
+            "route": {
+                "overpass": "relation(3345661);out geom;"
+            },
+            "scaleBar": true,
+            "areaLabels": [
+                {
+                    "at": [55.64, 12.8],
+                    "text": "Øresund"
+                }
+            ]
+        }
+    },
+    "theme": {
+        "preset": "dark"
+    }
+}

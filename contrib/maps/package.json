@@ -1,0 +1,29 @@
+{
+    "name": "matrix-conf-maps",
+    "private": true,
+    "type": "module",
+    "packageManager": "pnpm@12.15.0",
+    "description": "Renders the static maps used on the conference website",
+    "scripts": {
+        "format": "prettier --write .",
+        "test": "node --test",
+        "lint": "eslint .",
+        "check": "tsc"
+    },
+    "engines": {
+        "node": ">=22.18"
+    },
+    "dependencies": {
+        "@mapbox/vector-tile": "^3.0.0",
+        "pbf": "^5.1.2",
+        "sharp": "^0.35.5"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^26.6.5",
+        "eslint": "^10.13.0",
+        "prettier": "^3.9.10",
+        "typescript": "6.0.3",
+        "typescript-eslint": "^8.72.0"
+    }
+}
