@@ -16,5 +16,6 @@
   },
   "Start": "2026-10-21T14:45:00+02:00",
   "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-101042-neoboard-at-scale-demo",
-  "youtube": "https://youtu.be/6oyQOLSCdcc"
+  "youtube": "https://youtu.be/6oyQOLSCdcc",
+  "slides": true
 }

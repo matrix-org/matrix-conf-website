@@ -16,5 +16,6 @@
   },
   "Start": "2026-10-22T15:15:00+02:00",
   "youtube": "https://youtu.be/RrSK9drMhk4",
-  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100919-speedrun-client-with-the-matrix-rust-sdk"
+  "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-100919-speedrun-client-with-the-matrix-rust-sdk",
+  "slides": true
 }
