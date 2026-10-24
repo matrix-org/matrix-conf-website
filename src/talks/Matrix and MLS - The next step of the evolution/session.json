@@ -18,5 +18,6 @@
   },
   "Start": "2026-10-22T10:30:00+02:00",
   "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-103858-matrix-and-mls-the-next-step-of-the-evolution",
-  "youtube": "https://youtu.be/cXLgKaktL4o"
+  "youtube": "https://youtu.be/cXLgKaktL4o",
+  "slides": true
 }
