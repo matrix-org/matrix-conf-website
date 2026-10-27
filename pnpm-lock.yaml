@@ -11,6 +11,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.4(typescript@5.9.2)
+      '@astrojs/markdown-remark':
+        specifier: 6.3.6
+        version: 6.3.6
       '@astrojs/sitemap':
         specifier: ^3.5.1
         version: 3.5.1
