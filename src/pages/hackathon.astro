@@ -8,6 +8,9 @@ import HackathonSponsors from "../components/HackathonSponsors.astro";
 
 import Fosdem from "../img/Fosdem.avif";
 import Fosdem2 from "../img/Fosdem2.avif";
+import HackathonMatrixLive from "../img/HackathonMatrixLive.avif";
+import YouTubeIcon from "../img/YouTube.svg";
+import { Image } from "astro:assets";
 
 const pageTitle = "Attend The Hackathon"
 const pageDescription = "Join us for a hackathon on 23rd October, 2026. In collaboration with Dr Carla Griggio and the mInt Research Lab on User-Centered Messaging Interoperability at the Department of Computer Science, Aalborg University, the hackathon will take place in Copenhagen, Denmark."
@@ -44,6 +47,45 @@ const pageDescription = "Join us for a hackathon on 23rd October, 2026. In colla
 
     .actions {
         margin-top: 1rem;
+    }
+
+    #recording .content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        align-items: start;
+    }
+
+    .recording-card {
+        border: 1px solid #d2d2d2;
+        background: #000;
+    }
+
+    .recording-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .recording-card a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 24px;
+        border-block-start: 1px solid #d2d2d2;
+        text-decoration: none;
+    }
+
+    .recording-card a:hover {
+        background: #262626;
+    }
+
+    @media (max-width: 800px) {
+        #recording .content-wrapper {
+            grid-template-columns: 1fr;
+        }
     }
 
     p,
@@ -109,6 +151,21 @@ const pageDescription = "Join us for a hackathon on 23rd October, 2026. In colla
       		</PrimaryCta>
         </div>
     	</TextAndImage>
+    </section>
+    <section id="recording">
+        <div class="content-wrapper">
+            <div>
+                <h2>Catch Up on the Hackathon</h2>
+                <p>At the end of the Copenhagen hackathon, attendees shared what they worked on in a Matrix Live show and tell.</p>
+                <p>Watch them discuss calendar interoperability, ideas for Matrix certification, widget experiments, and more.</p>
+            </div>
+            <div class="recording-card">
+                <Image src={HackathonMatrixLive} alt="" loading="eager" />
+                <a href="https://www.youtube.com/watch?v=iGxbWGTUVic" aria-label="Watch Matrix Live from The Matrix Conference Hackathon 2026 on YouTube">
+                    Watch on YouTube <YouTubeIcon width={32} height={32} aria-hidden="true" />
+                </a>
+            </div>
+        </div>
     </section>
     <section>
     	<TextAndImage imgSrc={ Fosdem } reverse={ true }>
