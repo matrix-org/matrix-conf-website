@@ -18,5 +18,6 @@
   },
   "Start": "2026-10-22T12:45:00+02:00",
   "mediaCccDe": "https://media.ccc.de/v/matrix-conference-2026-93687-why-is-there-rust-in-our-matrix",
-  "youtube": "https://youtu.be/DVvBLoEwwoI"
+  "youtube": "https://youtu.be/DVvBLoEwwoI",
+  "slides": true
 }
