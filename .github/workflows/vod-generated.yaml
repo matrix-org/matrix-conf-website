@@ -1,0 +1,102 @@
+---
+name: Check VOD generated files
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+
+permissions: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    outputs:
+      changed_files: ${{ steps.files.outputs.changed_files }}
+      failed_step: ${{ steps.tools.outcome == 'failure' && 'Install image tools' || steps.sessions.outcome == 'failure' && 'Generate session files' || steps.thumbnails.outcome == 'failure' && 'Generate thumbnails' || steps.slides.outcome == 'failure' && 'Generate slides' || steps.links.outcome == 'failure' && 'Add recording links' || steps.files.outcome == 'failure' && 'Check generated files' || 'See run logs' }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install image tools
+        id: tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick jq libheif-plugin-aomdec libheif-plugin-aomenc
+      - name: Generate session files
+        id: sessions
+        run: ./scripts/split-sessions.sh
+      - name: Generate thumbnails
+        id: thumbnails
+        run: ./scripts/copy-thumbs.sh
+      - name: Generate slides
+        id: slides
+        run: ./scripts/copy-slides.sh
+      - name: Add recording links
+        id: links
+        run: ./scripts/set-media-ccc-de-links.sh
+      - name: Check generated files
+        id: files
+        if: always()
+        run: |
+          changes="$(git status --short --untracked-files=all)"
+          printf '%s\n' "$changes"
+          delimiter="VOD_FILES_${GITHUB_RUN_ID}"
+          {
+            echo "changed_files<<$delimiter"
+            printf '%s\n' "$changes"
+            echo "$delimiter"
+          } >> "$GITHUB_OUTPUT"
+          test -z "$changes"
+
+  report:
+    needs: check
+    if: ${{ always() && github.event_name == 'schedule' && (needs.check.result == 'success' || needs.check.result == 'failure') }}
+    runs-on: ubuntu-26.04
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      CHECK_RESULT: ${{ needs.check.result }}
+      FAILED_STEP: ${{ needs.check.outputs.failed_step }}
+      CHANGED_FILES: ${{ needs.check.outputs.changed_files }}
+    steps:
+      - name: Update tracking issue
+        run: |
+          title="VOD generation status"
+          issue=$(gh issue list --state all --limit 1000 --json number,title --jq 'map(select(.title == "VOD generation status")) | first | .number // empty')
+          run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          body_file="$RUNNER_TEMP/vod-status.md"
+
+          if [ "$CHECK_RESULT" = failure ]; then
+            status="❌ Needs attention"
+          else
+            status="✅ Current"
+          fi
+
+          {
+            echo '# VOD generation status'
+            echo
+            echo "**Status:** $status"
+            echo "**Latest check:** [View workflow run]($run_url)"
+            if [ "$CHECK_RESULT" = failure ]; then
+              echo "**Failed step:** ${FAILED_STEP:-See workflow run}"
+              echo
+              if [ -n "$CHANGED_FILES" ]; then
+                echo '### Changed or new files'
+                echo '```text'
+                printf '%s\n' "$CHANGED_FILES"
+                echo '```'
+              else
+                echo 'See the workflow run for the error details.'
+              fi
+            fi
+          } > "$body_file"
+
+          if [ -n "$issue" ]; then
+            gh issue edit "$issue" --body-file "$body_file"
+          else
+            gh issue create --title "$title" --body-file "$body_file"
+          fi
