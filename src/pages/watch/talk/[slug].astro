@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Pill from "../../../components/Pill.astro";
+import PrimaryCta from "../../../components/PrimaryCta.astro";
+import { streams } from "../../../data/streams";
+import { renderTalkMarkdown } from "../../../data/talk-markdown";
+import { getCollection, type CollectionEntry } from "astro:content";
+import slugify from "@sindresorhus/slugify";
+
+interface Props {
+    talk: CollectionEntry<"talks">;
+}
+
+export async function getStaticPaths() {
+    const talks = await getCollection("talks", (talk) =>
+        streams.some((stream) => stream.name === talk.data.Room.en),
+    );
+    return talks.map((talk) => ({
+        params: { slug: slugify(talk.data["Proposal title"]) },
+        props: { talk },
+    }));
+}
+
+const { talk } = Astro.props;
+const abstractHtml = await renderTalkMarkdown(talk.data.Abstract);
+const title = talk.data["Proposal title"];
+const speakers = talk.data["Speaker names"].join(", ");
+const date = new Intl.DateTimeFormat("en-GB", {
+    dateStyle: "long",
+    timeStyle: "short",
+    timeZone: "Europe/Stockholm",
+}).format(new Date(talk.data.Start));
+---
+
+<style>
+    .content-wrapper {
+        max-width: var(--max-page-width);
+        margin-inline: auto;
+    }
+
+    .back {
+        display: inline-block;
+        margin-block-end: 2rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        line-height: 1.2;
+        margin-block: 0 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-block: 2rem 0.5rem;
+    }
+
+    .meta {
+        color: var(--secondary-color);
+        margin-block: 0 1.5rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-block: 2rem;
+    }
+
+    .player {
+        aspect-ratio: 16 / 9;
+        margin-block: 2rem;
+    }
+
+    .player iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .description {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .description :global(a) {
+        color: var(--link-color);
+    }
+</style>
+
+<BaseLayout
+    pageTitle={`${title} – The Matrix Conference`}
+    description={`Read about ${title} at The Matrix Conference 2026.`}
+>
+    <section id="talk">
+        <div class="content-wrapper">
+            <a class="back" href={`/watch/#${slugify(title)}`}>← All talks</a>
+            <h1>{title}</h1>
+            <p class="meta">{speakers} · {date} · {talk.data.Room.en}</p>
+            {talk.data.Track && <Pill Type="div" label={talk.data.Track.en} />}
+            {talk.data.mediaCccDe && (
+                <div class="player">
+                    <iframe
+                        src={`${talk.data.mediaCccDe}/oembed`}
+                        title={`${title} recording on media.ccc.de`}
+                        loading="lazy"
+                        allowfullscreen
+                    />
+                </div>
+            )}
+            {(talk.data.mediaCccDe || talk.data.youtube || talk.data.slides) && (
+                <nav class="actions" aria-label="Talk resources">
+                    {talk.data.mediaCccDe && <PrimaryCta href={talk.data.mediaCccDe}>Watch on media.ccc.de</PrimaryCta>}
+                    {talk.data.youtube && <PrimaryCta href={talk.data.youtube}>Watch on YouTube</PrimaryCta>}
+                    {talk.data.slides && <PrimaryCta href={`/slides/slides_${talk.data.ID}.pdf`}>View slides</PrimaryCta>}
+                </nav>
+            )}
+            <h2>About this talk</h2>
+            <div class="description" set:html={abstractHtml} />
+        </div>
+    </section>
+</BaseLayout>

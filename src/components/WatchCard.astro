@@ -8,8 +8,10 @@ import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import { Image } from "astro:assets";
 import { existsSync } from "node:fs";
+import { renderTalkMarkdown } from "../data/talk-markdown";
 
 const { talk } = Astro.props;
+const abstractHtml = await renderTalkMarkdown(talk.data.Abstract);
 const youtube = talk.data.youtube;
 const mediaCccDe = talk.data.mediaCccDe;
 const title = talk.data['Proposal title'];
@@ -18,7 +20,6 @@ const talkId = talk.data.ID;
 const thumbnailUrl = `/talks/thumbnail_${talkId}.avif`;
 const hasThumbnail = existsSync(`static${thumbnailUrl}`);
 const track = talk.data.Track ? talk.data.Track.en : '';
-const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
 const start = talk.data.Start.split('T')[0];
 const slides = talk.data.slides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
@@ -64,9 +65,8 @@ import LinkIcon from '../img/link.svg';
                 height: 3lh;
             }
 
-            p {
+            .summary {
                 line-height: 1.4;
-                margin-block: 0;
                 font-size: 1rem;
                 display: -webkit-inline-box;
                 -webkit-box-orient: vertical;
@@ -74,6 +74,17 @@ import LinkIcon from '../img/link.svg';
                 line-clamp: 3;
                 overflow: clip;
                 height: 3lh;
+            }
+
+            .summary :global(p) {
+                margin-block: 0;
+            }
+
+            .summary :global(a) {
+                color: var(--link-color);
+                position: relative;
+                z-index: 2;
+                text-decoration: underline;
             }
 
             .speaker {
@@ -118,6 +129,17 @@ import LinkIcon from '../img/link.svg';
     .card-content {
         background-color: var(--bg-primary);
         flex-grow: 1;
+        position: relative;
+    }
+
+    .card-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+    .card-content:hover h2 {
+        text-decoration: underline;
     }
 
     /* Add a spezi gradient border around the active card */
@@ -189,6 +211,7 @@ import LinkIcon from '../img/link.svg';
         padding: 10px;
         position: absolute;
         top: 0;
+        z-index: 3;
     }
 
     .permalink-anchor {
@@ -222,7 +245,7 @@ import LinkIcon from '../img/link.svg';
         )}
         <div class="info-container">
             <h2>{ title }</h2>
-            <p>{ summary }</p>
+            <div class="summary" set:html={abstractHtml} />
             <div class="speaker">
                 { speakerNames }
             </div>
@@ -230,6 +253,7 @@ import LinkIcon from '../img/link.svg';
                 {track && <Pill Type="div" label={ track } />}
             </div>
         </div>
+        <a class="card-overlay" href={`/watch/talk/${titleSlug}`} aria-label={`View details for ${title}`} />
     </div>
     <div class="additional-links">
         {
