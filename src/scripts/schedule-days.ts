@@ -10,8 +10,6 @@ export type Day = {
      * Short date label shown in the heading and navigation.
      */
     labelShort: string;
-    /** The date heading, ready to be put in front of the day's sessions. */
-    heading: string;
     /**
      * The sessions of `room` that are on this day.
      *
@@ -49,12 +47,10 @@ export function scheduleDays(rooms: Room[]): Day[] {
             );
         const firstSessionOfDay = rooms.flatMap(sessionsOfRoom)[0];
         const dateLabel = labels.day.format(firstSessionOfDay.start);
-        const heading = `<div class="date-separator" id="${id}"><h3 class="date">${dateLabel}</h3><div class="line" aria-hidden="true"></div></div>`;
         return {
             id,
             label: dateLabel,
             labelShort: labels.dayShort.format(firstSessionOfDay.start),
-            heading,
             sessionsOfRoom
         };
     });
