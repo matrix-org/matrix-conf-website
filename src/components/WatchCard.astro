@@ -8,6 +8,7 @@ import Pill from "../components/Pill.astro";
 import type { CollectionEntry } from 'astro:content';
 import { Image } from "astro:assets";
 import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
 
 const { talk } = Astro.props;
 const youtube = talk.data.youtube;
@@ -21,7 +22,8 @@ const track = talk.data.Track ? talk.data.Track.en : '';
 const summary = talk.data.Abstract;
 const speakerNames = talk.data['Speaker names'].join(", ");
 const start = talk.data.Start.split('T')[0];
-const slides = talk.data.slides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
+const hasSlides = talk.filePath && existsSync(join(dirname(talk.filePath), "slides.pdf"));
+const slides = hasSlides ? `MC26_${[start, speakerNames, title].map(seg => slugify(seg)).join("_")}.pdf` : "";
 const hasVideo = !!talk.data.youtube || !!talk.data.mediaCccDe;
 import Voctocat from '../img/voctocat.svg';
 import YouTubeIcon from '../img/YouTube.svg';

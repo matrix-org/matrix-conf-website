@@ -56,6 +56,6 @@ To fill it with the talks:
 - Export the schedule from [pretalx](https://pretalx.com/orga/event/matrix-conference-2026/schedule/export/#tab-custom) as JSON with the fields proposal title, session type, track, abstract, speaker names, room and start.
 - Save the file as `static/watch/sessions.json`.
 - Run `./scripts/split-sessions.sh` to create one `src/talks/<title>/session.json` per session. It needs `jq`.
-- Optional: put a `thumbnail.avif` and a `slides.pdf` into a talk's directory, then run `./scripts/copy-thumbs.sh` (needs `magick`) and `./scripts/copy-slides.sh`.
+- Optional: put a `thumbnail.avif` and a `slides.pdf` into a talk's directory. Run `./scripts/copy-thumbs.sh` (needs `magick`) for thumbnails; Astro publishes the slides automatically when building the site.
 - Once the videos are on media.ccc.de, run `./scripts/set-media-ccc-de-links.sh` to add the links to the sessions.
 - To show the page on `/watch`, set `watchMode` to `"vod"` in `src/data/streams.ts`.
