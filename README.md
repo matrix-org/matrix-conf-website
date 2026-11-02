@@ -58,4 +58,5 @@ To fill it with the talks:
 - Run `./scripts/split-sessions.sh` to create one `src/talks/<title>/session.json` per session. It needs `jq`.
 - Optional: put a `thumbnail.avif` and a `slides.pdf` into a talk's directory, then run `./scripts/copy-thumbs.sh` (needs `magick`) and `./scripts/copy-slides.sh`.
 - Once the videos are on media.ccc.de, run `./scripts/set-media-ccc-de-links.sh` to add the links to the sessions.
+- For YouTube, install Python 3 and [yt-dlp](https://github.com/yt-dlp/yt-dlp), then run `./scripts/set-youtube-links.py 'https://www.youtube.com/playlist?list=PLFDUAtPqCX98' --dry-run` to preview the current conference playlist. Remove `--dry-run` to update the sessions. Use the new year's playlist URL next year. Videos are matched by the Pretalx talk links in their descriptions; missing or ambiguous matches are reported and keep their existing links.
 - To show the page on `/watch`, set `watchMode` to `"vod"` in `src/data/streams.ts`.
