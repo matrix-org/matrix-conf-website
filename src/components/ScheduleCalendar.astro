@@ -199,6 +199,11 @@ const { links = {} } = Astro.props;
         ) {
             calendar.innerHTML = html;
             calendar.dataset.html = html;
+            // Anchor for /schedule#now: the session that is live, else the next one.
+            const current =
+                calendar.querySelector<HTMLElement>(".session.live") ??
+                calendar.querySelector<HTMLElement>(".session:not(.past)");
+            if (current) current.id = "now";
         }
         if (dates.dataset.days !== days.map((day) => day.id).join(",")) {
             dates.replaceChildren();
@@ -296,8 +301,8 @@ const { links = {} } = Astro.props;
             controls.hidden = false;
             back.hidden = false;
             render();
-            if (/^#\d{4}-\d{2}-\d{2}$/.test(location.hash)) {
-                // Direct date links load before the fetched headings exist.
+            if (/^#(\d{4}-\d{2}-\d{2}|now)$/.test(location.hash)) {
+                // Direct date and now links load before the fetched headings and sessions exist.
                 document
                     .getElementById(location.hash.slice(1))
                     ?.scrollIntoView();
