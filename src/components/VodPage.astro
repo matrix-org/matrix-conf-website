@@ -74,6 +74,7 @@ const days = [...byDay.values()].map((day) => ({
         font-size: 2.5rem;
         line-height: 120%;
         text-align: center;
+        margin-block-end: 1.5rem;
     }
 
     h2 {
@@ -159,13 +160,10 @@ const days = [...byDay.values()].map((day) => ({
     pageTitle="Watch the Conference Talks"
     description="Follow along the Matrix Conference even if you couldn't make it to Malmö"
 >
-    <section id="hero">
-        <div class="content-wrapper">
-            <h1>Watch the talks</h1>
-        </div>
-    </section>
-
     <section id="recordings">
+        <div class="content-wrapper">
+            <h1>Watch the Talks</h1>
+        </div>
         {days.length === 0 ? (
         <div class="content-wrapper">
             <p class="empty-section">The recordings will be available here soon.</p>
