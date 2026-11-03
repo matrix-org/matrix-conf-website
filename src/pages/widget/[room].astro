@@ -43,23 +43,5 @@ const { name } = Astro.props;
             Full schedule
         </a>
     </p>
-    <ScheduleList room={name} />
+    <ScheduleList room={name} scroll="page" />
 </WidgetLayout>
-
-<script>
-    // Bring what is on now (or next) into view once, when the list has rendered.
-    const list = document.querySelector(".schedule-list")!;
-    const scrollToNow = () => {
-        const hit = list.querySelector(".session.live, .now-line, .badge.next"); // live talk, else the gap we are in, else the next talk
-        const target = hit?.classList.contains("now-line")
-            ? hit
-            : hit?.closest(".session");
-        if (!target) return false;
-        target.scrollIntoView({ block: "center" });
-        return true;
-    };
-    const watcher = new MutationObserver(
-        () => scrollToNow() && watcher.disconnect(),
-    );
-    watcher.observe(list, { childList: true });
-</script>

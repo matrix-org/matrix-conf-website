@@ -102,46 +102,9 @@ const { stream } = Astro.props;
                     <ChatLinks chat={stream.chat} ccc={cccStream(stream.ccc)} />
                 </div>
                 <div class="agenda">
-                    <ScheduleList room={stream.pretalxRoom} />
+                    <ScheduleList room={stream.pretalxRoom} scroll="list" />
                 </div>
             </div>
         </div>
     </section>
 </BaseLayout>
-<script>
-    // The schedule scrolls in its own box next to the stream on wide screens. Start it at the current talk and
-    // tell the CSS how far it is scrolled, so its edges fade only while there is more to scroll to.
-    const list = document.querySelector<HTMLElement>(".agenda .schedule-list");
-    let started = false;
-    const update = () => {
-        if (!list) return;
-        list.style.setProperty("--scroll-top", `${list.scrollTop}px`);
-        list.style.setProperty(
-            "--scroll-bottom",
-            `${list.scrollHeight - list.clientHeight - list.scrollTop}px`,
-        );
-    };
-    const scrollToCurrent = () => {
-        const marker = list?.querySelector<HTMLElement>(
-            ".session.live, .now-line, .session:has(.badge.next)",
-        );
-        if (!list || !marker || list.scrollHeight <= list.clientHeight) return;
-        list.scrollTop =
-            marker.getBoundingClientRect().top -
-            list.getBoundingClientRect().top +
-            list.scrollTop;
-    };
-    if (list) {
-        list.addEventListener("scroll", update, { passive: true });
-        new ResizeObserver(update).observe(list);
-        new MutationObserver(() => {
-            if (!started && list.querySelector(".session")) {
-                started = true;
-                scrollToCurrent();
-            }
-            update();
-        }).observe(list, { childList: true });
-        scrollToCurrent();
-        update();
-    }
-</script>
