@@ -25,7 +25,6 @@ import { Image } from "astro:assets";
         background-position: top right;
         background-size: calc(var(--logo-width-base)/(var(--hero-columns)*2));
         min-height: round(up, calc(8*var(--pattern-cell-size)), calc(48px*2)); /* height of the logo plus 1 row of pattern around it */
-        height: round(up, 100%, calc(48px*2));
     }
 
     .logo-wrapper {
@@ -77,7 +76,6 @@ import { Image } from "astro:assets";
             background-image: url("/pattern.svg");
             background-position: calc(50% - 24px);
             min-height: unset;
-            height: unset;
         }
 
         .right-half {
@@ -126,3 +124,22 @@ import { Image } from "astro:assets";
         </div>
     </div>
 </div>
+<script>
+    const hero = document.querySelector<HTMLElement>("#hero .content-wrapper");
+    const right = hero?.querySelector(".right-half");
+
+    if (hero && right) {
+        const resizeHero = () => {
+            hero.style.minHeight = "";
+            if (matchMedia("(min-width: 1101px)").matches) {
+                // Match the 96px repeat height of the background pattern.
+                hero.style.minHeight = `${Math.ceil(hero.offsetHeight / 96) * 96}px`;
+            }
+        };
+
+        const observer = new ResizeObserver(resizeHero);
+        for (const child of right.children) observer.observe(child);
+        window.addEventListener("resize", resizeHero);
+        resizeHero();
+    }
+</script>
