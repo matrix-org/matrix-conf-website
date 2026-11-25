@@ -11,3 +11,7 @@ The sites for previous years are archived to YYYY branches matching the respecti
 
 The processes for development on this repository are inherited from the main matrix.org website repo
 and can be found at <https://github.com/matrix-org/matrix.org/blob/main/CONTRIBUTING.md>.
+
+## Code of Conduct
+
+All participants of the Matrix community, including contributors, are expected to adhere to the Matrix Code of Conduct. For more information, visit <https://matrix.org/legal/code-of-conduct/>.
